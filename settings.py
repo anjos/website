@@ -2,7 +2,7 @@
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-INSTALLMENT = '/home/rabello/webapps/stuff'
+INSTALLMENT = '/home/andre/work/stuff'
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
