@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-20 23:52+0100\n"
+"POT-Creation-Date: 2007-03-22 00:09+0100\n"
 "PO-Revision-Date: 2007-03-20 23:52+0100\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,3 +47,22 @@ msgstr "publicação"
 #: models.py:24
 msgid "publications"
 msgstr "publicações"
+
+#: template/detail.html:3
+#, fuzzy
+msgid "Publication"
+msgstr "Publicação"
+
+#: template/list.html:3
+#, fuzzy
+msgid "Publications"
+msgstr "Publicações"
+
+#: template/list.html:7
+#, python-format
+msgid "%(site_name)s, Publications"
+msgstr "%(site_name)s, Publicações"
+
+#: template/list.html:16
+msgid "No publications are available."
+msgstr "Não há publicações disponíveis."
