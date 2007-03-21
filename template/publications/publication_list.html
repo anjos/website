@@ -1,29 +1,27 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+{% load i18n %}
 <html>
   <head>
-    <title>Publication list of Andr&eacute; Anjos</title>
+    <title>{% blocktrans %}{{ site_name }} :: Publications{% endblocktrans %}</title>
     <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/archive/2007/03/11/site.css" />
   </head>
 
   <body>
     <div class="title">
-      <h1>Publication list of Andr&eacute; Anjos</h1>
+      <h1>{% blocktrans %}{{ site_name }}, Publications{% endblocktrans %}</h1>
     </div>
-    {% if publications %}
+    {% if object_list %}
     <ul>
-      {% for p in publications %}
+      {% for p in object_list %}
       <li><a href="{{ p.id }}">{{ p.title }}</a></li>
       {% endfor %}
     </ul>
     {% else %}
-    <p>No publications are available.</p>
+    <p>{% trans "No publications are available." %}</p>
     {% endif %}
 
-
-    {% if create_time %}
     <div class="footer">
-     <hr/><p>Automatically generated at {{ create_time }}</p>
+     <hr/><p>{% trans "Automatically generated at " %}{% now "r" %}</p>
     </div>
-    {% endif %}
  </body>
 </html>
