@@ -1,12 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 {% load i18n %}
-<html>
-  <head>
-    <title>{% blocktrans %}{{ site_name }} :: Publications{% endblocktrans %}</title>
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/archive/2007/03/11/site.css" />
-  </head>
+{% extends "themes/simple.html" %}
+{% block title %}{% trans "Publications" %}{% endblock %}
 
-  <body>
+{% block content %}
     <div class="title">
       <h1>{% blocktrans %}{{ site_name }}, Publications{% endblocktrans %}</h1>
     </div>
@@ -19,9 +15,4 @@
     {% else %}
     <p>{% trans "No publications are available." %}</p>
     {% endif %}
-
-    <div class="footer">
-     <hr/><p>{% trans "Automatically generated at " %}{% now "r" %}</p>
-    </div>
- </body>
-</html>
+{% endblock %}

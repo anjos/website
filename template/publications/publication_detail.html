@@ -1,11 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 {% load i18n %}
-<html>
-  <head>
-    <title>{% blocktrans %}{{ site_name }} :: Publication :: {{ object }}{% endblocktrans %}</title>
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/archive/2007/03/11/site.css" />
-  </head>
+{% extends "themes/simple.html" %}
+{% block title %}{% trans "Publication" %} :: {{ object }}{% endblock %}
 
+{% block content %}
   <body>
     <div class="publication">
        <p class="title">{{ object.title }}</p>
@@ -22,9 +19,5 @@
       </table>
       {% endif %}
     </div>
+{% endblock %}
 
-    <div class="footer">
-     <hr/><p>{% trans "Automatically generated at " %}{% now "r" %}</p>
-    </div>
- </body>
-</html>
