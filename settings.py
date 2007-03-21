@@ -2,7 +2,8 @@
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-INSTALLMENT = '/home/andre/work/stuff'
+import os.path
+INSTALLMENT = os.path.realpath(os.path.dirname(__file__))
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
