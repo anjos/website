@@ -65,7 +65,8 @@ ROOT_URLCONF = 'stuff.urls'
 TEMPLATE_DIRS = (
   # Put strings here, like "/home/html/django_templates".
   # Always use forward slashes, even on Windows.
-  '%s/template' % INSTALLMENT
+  '%s/template' % INSTALLMENT,
+  '%s/publications/template' % INSTALLMENT,
 )
 
 INSTALLED_APPS = (
