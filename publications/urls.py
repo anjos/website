@@ -10,11 +10,13 @@ from django.contrib.sites.models import Site
 #                        (r'^(?P<pub_id>\d+)/$', 'get'))
 
 publication_list = { 'queryset': Publication.objects.all().order_by('-date'),
+                     'template_name': 'list.html',
                      'extra_context': {'site_name': Site.objects.filter(id=1)[0].name,
                                        }
                      }
 
 publication_detail = { 'queryset': Publication.objects.filter(),
+                       'template_name': 'detail.html',
                        'extra_context': {'site_name': Site.objects.filter(id=1)[0].name,
                                          'media_url': MEDIA_URL,
                                          }
