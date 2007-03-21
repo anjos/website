@@ -26,6 +26,8 @@ TIME_ZONE = 'Europe/Zurich'
 # http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
 # http://blogs.law.harvard.edu/tech/stories/storyReader$15
 LANGUAGE_CODE = 'en'
+LOCALE_PATHS = ( '%s/template/locale' % INSTALLMENT, 
+                )
 
 SITE_ID = 1
 
