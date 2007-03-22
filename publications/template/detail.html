@@ -6,13 +6,14 @@
   <body>
     <div class="publication">
        <p class="title">{{ object.title }}</p>
-       <p class="detail">At {{ object.date }} in 
-          {{ object.media }}</p>
+       <p class="detail">
+         {% blocktrans with object.date as date and object.media as media %}At {{ date }} in {{ media }}{% endblocktrans %}
+       </p>
       <p class="authors">{{ object.author_list }}</p>
       <p class="abstract">{{ object.abstract }}</p>
       {% if object.files %}
       <table class="files">
-          <tr><th>File(s)</th></tr>
+          <tr><th>{% trans "File(s)" %}</th></tr>
           {% for f in object.files.all %}
           <tr><td><a href="{{ media_url }}{{ f.data }}">{{ f.title }}</a></td></tr>
           {% endfor %}

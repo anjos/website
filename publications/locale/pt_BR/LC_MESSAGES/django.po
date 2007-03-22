@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-22 00:09+0100\n"
+"POT-Creation-Date: 2007-03-22 01:16+0100\n"
 "PO-Revision-Date: 2007-03-20 23:52+0100\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,6 +52,15 @@ msgstr "publicações"
 #, fuzzy
 msgid "Publication"
 msgstr "Publicação"
+
+#: template/detail.html:10
+#, python-format
+msgid "At %(date)s in %(media)s"
+msgstr "Em %(media)s, %(date)s"
+
+#: template/detail.html:16
+msgid "File(s)"
+msgstr "Arquivo(s)"
 
 #: template/list.html:3
 #, fuzzy
