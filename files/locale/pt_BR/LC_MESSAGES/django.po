@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: files 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-20 19:52+0100\n"
+"POT-Creation-Date: 2007-03-24 22:28+0100\n"
 "PO-Revision-Date: 2007-03-20 19:50+CEST\n"
 "Last-Translator: Andre Anjos <Andre.dos.Anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,17 +17,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: models.py:10
-msgid "File name"
-msgstr "Nome do arquivo"
+msgid "Name"
+msgstr "Nome"
 
-#: models.py:13
+#: models.py:11
+msgid "Description"
+msgstr "Descrição"
+
+#: models.py:12
+#, fuzzy
+msgid "File"
+msgstr "Arquivo"
+
+#: models.py:14
 msgid "Upload date"
 msgstr "Data de upload"
 
-#: models.py:17
+#: models.py:15
+msgid "Publicly visible"
+msgstr "Visível publicamente"
+
+#: models.py:19
 msgid "file"
 msgstr "arquivo"
 
-#: models.py:18
+#: models.py:20
 msgid "files"
 msgstr "arquivos"

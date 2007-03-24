@@ -68,6 +68,7 @@ TEMPLATE_DIRS = (
   # Put strings here, like "/home/html/django_templates".
   # Always use forward slashes, even on Windows.
   '%s/template' % INSTALLMENT,
+  '%s/files/template' % INSTALLMENT,
   '%s/publications/template' % INSTALLMENT,
 )
 

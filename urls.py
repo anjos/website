@@ -6,6 +6,7 @@ urlpatterns = patterns('',
                        (r'^admin/', include('django.contrib.admin.urls')),
                        
                        (r'^publication/', include('stuff.publications.urls')),
+                       (r'^file/', include('stuff.files.urls')),
                        
                        # Media serving
                        (r'^archive/(?P<path>.*)$',

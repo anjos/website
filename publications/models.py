@@ -13,11 +13,11 @@ class Publication(models.Model):
   title = models.CharField(_('Title of the publication'), maxlength=256)
   date = models.DateField(_('Publishing date'))
   author_list = models.TextField(_('Author names'))
-  media = models.CharField(_('Journal or proceedings'), maxlength=256)
-  number = models.TextField(_('Number'), null=True, blank=True, maxlength=16)
-  volume = models.TextField(_('Volume'), null=True, blank=True, maxlength=16)
-  pages = models.TextField(_('Pages'), null=True, blank=True, maxlength=16)
   pub_type = models.CharField(_('Type of publication'), maxlength=64)
+  media = models.CharField(_('Journal or proceedings'), maxlength=256)
+  volume = models.CharField(_('Volume'), null=True, blank=True, maxlength=16)
+  number = models.CharField(_('Number'), null=True, blank=True, maxlength=16)
+  pages = models.CharField(_('Pages'), null=True, blank=True, maxlength=16)
   abstract = models.TextField(_('A summary of the work'), blank=True)
   files = models.ManyToManyField(File, filter_interface=models.HORIZONTAL,
                                  null=True, blank=True)
@@ -25,6 +25,7 @@ class Publication(models.Model):
   def count_files(self):
     """Counts the number of files attached to this publication."""
     return len(self.files.all())
+  count_files.short_description = _('Files')
 
   # make it translatable
   class Meta:
@@ -33,11 +34,19 @@ class Publication(models.Model):
 
   # make it admin'able
   class Admin:
-    list_display = ('title', 'media', 'date', 'count_files')
+    list_display = ('title', 'date', 'pub_type', 'count_files')
     list_filter = ['date']
+    list_per_page = 10
     ordering = ['-date']
-    search_fields = ['title', 'media', 'date']
+    search_fields = ['title', 'date', 'media']
     date_hierarchy = 'date'
+    fields = (
+        (None, {'fields': ('title', 'date', 'author_list', 
+                           ('pub_type', 'media'),
+                           ('volume', 'number', 'pages'), 
+                           'abstract')}),
+        (_('Files'), {'classes': 'collapse', 'fields': ('files',)}),
+        )
     
   def __str__(self):
     return '%s (%s)' % (self.title, self.date.strftime('%B %Y'))

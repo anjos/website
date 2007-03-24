@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2007 Andre dos Anjos
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: files 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-20 19:46+0100\n"
+"POT-Creation-Date: 2007-03-24 22:28+0100\n"
 "PO-Revision-Date: 2007-03-20 19:46+CEST\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,17 +17,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: models.py:10
-msgid "File name"
-msgstr "File name"
+msgid "Name"
+msgstr "Name"
 
-#: models.py:13
+#: models.py:11
+msgid "Description"
+msgstr "Description"
+
+#: models.py:12
+#, fuzzy
+msgid "File"
+msgstr "File"
+
+#: models.py:14
 msgid "Upload date"
 msgstr "Upload date"
 
-#: models.py:17
+#: models.py:15
+msgid "Publicly visible"
+msgstr "Publicly visible"
+
+#: models.py:19
 msgid "file"
 msgstr "file"
 
-#: models.py:18
+#: models.py:20
 msgid "files"
 msgstr "files"

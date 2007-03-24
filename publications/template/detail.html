@@ -15,7 +15,7 @@
       <table class="files">
           <tr><th>{% trans "File(s)" %}</th></tr>
           {% for f in object.files.all %}
-          <tr><td><a href="{{ media_url }}{{ f.data }}">{{ f.title }}</a></td></tr>
+          <tr><td><a href="{{ f.url }}">{{ f.name }}</a></td></tr>
           {% endfor %}
       </table>
       {% endif %}
