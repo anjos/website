@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-22 01:16+0100\n"
+"POT-Creation-Date: 2007-03-25 00:41+0100\n"
 "PO-Revision-Date: 2007-03-20 23:52+0100\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,27 +29,50 @@ msgid "Author names"
 msgstr "Nome dos autores"
 
 #: models.py:16
-msgid "Journal or proceedings"
-msgstr "Journal ou anais"
-
-#: models.py:17
 msgid "Type of publication"
 msgstr "Tipo de publicação"
 
+#: models.py:17
+msgid "Journal or proceedings"
+msgstr "Journal ou anais"
+
 #: models.py:18
+msgid "Volume"
+msgstr "Volume"
+
+#: models.py:19
+msgid "Number"
+msgstr "Número"
+
+#: models.py:20
+msgid "Pages"
+msgstr "Páginas"
+
+#: models.py:21
 msgid "A summary of the work"
 msgstr "Resumo do trabalho"
 
-#: models.py:23
+#: models.py:28 models.py:48
+msgid "Files"
+msgstr "Arquivos"
+
+#: models.py:32
 msgid "publication"
 msgstr "publicação"
 
-#: models.py:24
+#: models.py:33
 msgid "publications"
 msgstr "publicações"
 
+#: feeds.py:11
+msgid "Publications at "
+msgstr "Publicacoes em "
+
+#: feeds.py:13
+msgid "The last things I wrote"
+msgstr "As ultimas coisas que escrevi"
+
 #: template/detail.html:3
-#, fuzzy
 msgid "Publication"
 msgstr "Publicação"
 
@@ -58,12 +81,11 @@ msgstr "Publicação"
 msgid "At %(date)s in %(media)s"
 msgstr "Em %(media)s, %(date)s"
 
-#: template/detail.html:16
+#: template/detail.html:16 template/feeds/publications_description.html:7
 msgid "File(s)"
 msgstr "Arquivo(s)"
 
 #: template/list.html:3
-#, fuzzy
 msgid "Publications"
 msgstr "Publicações"
 

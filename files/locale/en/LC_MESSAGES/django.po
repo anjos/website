@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: files 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-24 22:28+0100\n"
+"POT-Creation-Date: 2007-03-25 00:39+0100\n"
 "PO-Revision-Date: 2007-03-20 19:46+CEST\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,3 +44,12 @@ msgstr "file"
 #: models.py:20
 msgid "files"
 msgstr "files"
+
+#: feeds.py:10
+#, python-format
+msgid "Files at %s"
+msgstr "Files at %s"
+
+#: feeds.py:12
+msgid "The last public uploads to the site"
+msgstr "The last public uploads to the site"
