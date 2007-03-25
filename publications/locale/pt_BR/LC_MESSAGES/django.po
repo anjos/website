@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-25 00:41+0100\n"
+"POT-Creation-Date: 2007-03-25 21:17+0200\n"
 "PO-Revision-Date: 2007-03-20 23:52+0100\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,19 +48,19 @@ msgstr "Número"
 msgid "Pages"
 msgstr "Páginas"
 
-#: models.py:21
-msgid "A summary of the work"
-msgstr "Resumo do trabalho"
+#: models.py:21 models.py:33
+msgid "Abstract"
+msgstr "Sumário"
 
-#: models.py:28 models.py:48
+#: models.py:28 models.py:53
 msgid "Files"
 msgstr "Arquivos"
 
-#: models.py:32
+#: models.py:37
 msgid "publication"
 msgstr "publicação"
 
-#: models.py:33
+#: models.py:38
 msgid "publications"
 msgstr "publicações"
 
@@ -72,28 +72,39 @@ msgstr "Publicacoes em "
 msgid "The last things I wrote"
 msgstr "As ultimas coisas que escrevi"
 
-#: template/detail.html:3
+#: template/detail.html:4
 msgid "Publication"
 msgstr "Publicação"
 
-#: template/detail.html:10
+#: template/detail.html:11
 #, python-format
-msgid "At %(date)s in %(media)s"
+msgid " At %(date)s in %(media)s"
 msgstr "Em %(media)s, %(date)s"
 
-#: template/detail.html:16 template/feeds/publications_description.html:7
+#: template/detail.html:11
+msgid "volume"
+msgstr "volume"
+
+#: template/detail.html:11
+msgid "number"
+msgstr "número"
+
+#: template/detail.html:11
+msgid "pages"
+msgstr "páginas"
+
+#: template/detail.html:17 template/feeds/publications_description.html:7
 msgid "File(s)"
 msgstr "Arquivo(s)"
 
-#: template/list.html:3
+#: template/detail.html:27
+msgid "edit"
+msgstr "editar"
+
+#: template/list.html:6 template/list.html.py:10
 msgid "Publications"
 msgstr "Publicações"
 
-#: template/list.html:7
-#, python-format
-msgid "%(site_name)s, Publications"
-msgstr "%(site_name)s, Publicações"
-
-#: template/list.html:16
+#: template/list.html:19
 msgid "No publications are available."
 msgstr "Não há publicações disponíveis."

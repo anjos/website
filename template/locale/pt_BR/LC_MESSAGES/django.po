@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-22 00:10+0100\n"
+"POT-Creation-Date: 2007-03-25 20:33+0200\n"
 "PO-Revision-Date: 2007-03-22 00:10+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: themes/simple.html:13
+#: themes/simple.html:12 themes/themed.html:31
 msgid "Automatically generated at "
 msgstr "Gerada automaticamente em "
+
+#: themes/themed.html:18
+msgid "publications"
+msgstr "publicações"
+
+#: themes/themed.html:19
+msgid "photos"
+msgstr "fotos"
+
+#: themes/themed.html:20
+msgid "repository"
+msgstr "repositório"
