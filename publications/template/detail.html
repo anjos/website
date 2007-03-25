@@ -1,5 +1,6 @@
 {% load i18n %}
-{% extends "themes/simple.html" %}
+{% load markup %}
+{% extends "themes/themed.html" %}
 {% block title %}{% trans "Publication" %} :: {{ object }}{% endblock %}
 
 {% block content %}
@@ -7,18 +8,23 @@
     <div class="publication">
        <p class="title">{{ object.title }}</p>
        <p class="detail">
-         {% blocktrans with object.date as date and object.media as media %}At {{ date }} in {{ media }}{% endblocktrans %}
+        {% if object.pub_type %}[{{ object.pub_type }}]{% endif %} {% blocktrans with object.date|date:"F/Y" as date and object.media as media %} At {{ date }} in {{ media }}{% endblocktrans %}{% if object.volume %}, {% trans "volume" %} {{ object.volume }}{% endif %}{% if object.number %}, {% trans "number" %} {{ object.number }}{% endif %}{% if object.pages %}, {% trans "pages" %} {{ object.pages }}{% endif %}
        </p>
       <p class="authors">{{ object.author_list }}</p>
-      <p class="abstract">{{ object.abstract }}</p>
-      {% if object.files %}
+      <div class="abstract">{{ object.abstract|textile }}</div>
+      {% if object.count_files %}
       <table class="files">
           <tr><th>{% trans "File(s)" %}</th></tr>
           {% for f in object.files.all %}
+          {% if f.public %}
           <tr><td><a href="{{ f.url }}">{{ f.name }}</a></td></tr>
+          {% endif %}
           {% endfor %}
       </table>
       {% endif %}
+    </div>
+    <div class="actions">
+    [ <a href="http://{{ site.domain }}/admin/publications/publication/{{ object.id }}/">{% trans "edit" %}</a> ]
     </div>
 {% endblock %}
 

@@ -18,7 +18,7 @@ class Publication(models.Model):
   volume = models.CharField(_('Volume'), null=True, blank=True, maxlength=16)
   number = models.CharField(_('Number'), null=True, blank=True, maxlength=16)
   pages = models.CharField(_('Pages'), null=True, blank=True, maxlength=16)
-  abstract = models.TextField(_('A summary of the work'), blank=True)
+  abstract = models.TextField(_('Abstract'), blank=True)
   files = models.ManyToManyField(File, filter_interface=models.HORIZONTAL,
                                  null=True, blank=True)
 
@@ -27,6 +27,11 @@ class Publication(models.Model):
     return len(self.files.all())
   count_files.short_description = _('Files')
 
+  def has_abstract(self):
+    """Tells if this article has an abstract or not."""
+    return len(str(self.abstract))
+  has_abstract.short_description = _('Abstract')
+
   # make it translatable
   class Meta:
     verbose_name = _('publication')
@@ -34,7 +39,7 @@ class Publication(models.Model):
 
   # make it admin'able
   class Admin:
-    list_display = ('title', 'date', 'pub_type', 'count_files')
+    list_display = ('title', 'date', 'pub_type', 'has_abstract', 'count_files')
     list_filter = ['date']
     list_per_page = 10
     ordering = ['-date']

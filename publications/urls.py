@@ -8,21 +8,23 @@ from django.contrib.sites.models import Site
 
 feeds = { 'latest': TenLastPublications, }
 
+# the location of the site CSS
+css = MEDIA_URL + 'themed.css'
+banner = MEDIA_URL + 'banner.jpg'
+site = Site.objects.filter(id=1)[0]
+
 # urlpatterns = patterns('stuff.publications.views',
 #                        (r'^$', 'index'),
 #                        (r'^(?P<pub_id>\d+)/$', 'get'))
 
 publication_list = { 'queryset': Publication.objects.order_by('-date'),
                      'template_name': 'list.html',
-                     'extra_context': {'site_name': Site.objects.filter(id=1)[0].name,
-                                       }
+                     'extra_context': {'site': site, 'css': css, 'banner': banner },
                      }
 
 publication_detail = { 'queryset': Publication.objects.filter(),
                        'template_name': 'detail.html',
-                       'extra_context': {'site_name': Site.objects.filter(id=1)[0].name,
-                                         'media_url': MEDIA_URL,
-                                         }
+                       'extra_context': {'site': site, 'css': css, 'banner': banner },
                        }
 
 urlpatterns = patterns('',
