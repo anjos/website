@@ -13,7 +13,7 @@ css = MEDIA_URL + 'themed.css'
 banner = MEDIA_URL + 'banner.jpg'
 site = Site.objects.filter(id=1)[0]
 
-# urlpatterns = patterns('stuff.publications.views',
+# urlpatterns = patterns('publications.views',
 #                        (r'^$', 'index'),
 #                        (r'^(?P<pub_id>\d+)/$', 'get'))
 

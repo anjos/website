@@ -1,17 +1,16 @@
-import stuff.settings
+import settings
 from django.conf.urls.defaults import *
+subdir = 'andre/'
 
 urlpatterns = patterns('',
-                       # Uncomment this for admin:
-                       (r'^admin/', include('django.contrib.admin.urls')),
-                       
-                       (r'^publication/', include('stuff.publications.urls')),
-                       (r'^file/', include('stuff.files.urls')),
-                       
-                       # Media serving
-                       (r'^archive/(?P<path>.*)$',
-                        'django.views.static.serve',
-                        {'document_root': stuff.settings.MEDIA_ROOT,
-                        'show_indexes': True}
-                        ), 
-)
+    (r'^%sadmin/' % subdir, include('django.contrib.admin.urls')),
+    (r'^%spublication/' % subdir, include('stuff.publications.urls')),
+    (r'^%sfile/' % subdir, include('stuff.files.urls')),
+
+    # Media serving
+    #(r'^archive/(?P<path>.*)$',
+    # 'django.views.static.serve',
+    # {'document_root': settings.MEDIA_ROOT,
+    # 'show_indexes': True}
+    # ), 
+    )

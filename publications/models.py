@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
 from django.db import models
@@ -29,7 +29,7 @@ class Publication(models.Model):
 
   def has_abstract(self):
     """Tells if this article has an abstract or not."""
-    return len(str(self.abstract))
+    return bool(len(self.abstract))
   has_abstract.short_description = _('Abstract')
 
   # make it translatable

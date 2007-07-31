@@ -3,7 +3,7 @@ from django.utils.feedgenerator import Atom1Feed
 from django.contrib.sites.models import Site
 from files.models import File
 from settings import MEDIA_URL
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ugettext_lazy as _
 
 class TenLastFilesUploaded(Feed):
     feed_type = Atom1Feed

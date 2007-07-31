@@ -4,6 +4,7 @@
   <head>
     <title>{{ site.name }} :: {% block title %} NO TITLE? {% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{{ css }}" />
+    <link rel="icon" href="/andre/media/favicon.ico" type="image/x-icon"/>
     {% block header %}<!-- No header extensions provided -->{% endblock %}
   </head>
 
@@ -16,8 +17,8 @@
 
   <div class="navigation">
     <a href="http://{{ site.domain }}/publication/">{% trans "publications" %}</a> &middot; 
-    <a href="http://adois.dyndns.org/photo">{% trans "photos" %}</a> &middot; 
-    <a href="http://adois.dyndns.org/svn">{% trans "repository" %}</a>
+    <a href="http://adois.org/photo">{% trans "photos" %}</a> &middot; 
+    <a href="http://adois.org/trac/browser">{% trans "repository" %}</a>
   </div>
 
   <div class="path">

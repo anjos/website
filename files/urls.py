@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from stuff.files.feeds import TenLastFilesUploaded
+from files.feeds import TenLastFilesUploaded
 
 feeds = { 'latest': TenLastFilesUploaded, }
 
