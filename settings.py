@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 import os
 INSTALLMENT = os.getcwd() + '/stuff'
-DATABASE = '%s/db.sql3' % INSTALLMENT
+DATABASE = os.getcwd() + '/db.sql3' 
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
