@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-25 21:17+0200\n"
+"POT-Creation-Date: 2008-02-27 08:37-0800\n"
 "PO-Revision-Date: 2007-03-20 23:52+0100\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,61 +16,61 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models.py:13
-msgid "Title of the publication"
-msgstr "Title of the publication"
-
-#: models.py:14
-msgid "Publishing date"
-msgstr "Publishing date"
-
-#: models.py:15
-msgid "Author names"
-msgstr "Author names"
-
-#: models.py:16
-msgid "Type of publication"
-msgstr "Type of publication"
-
-#: models.py:17
-msgid "Journal or proceedings"
-msgstr "Journal or proceedings"
-
-#: models.py:18
-msgid "Volume"
-msgstr "Volume"
-
-#: models.py:19
-msgid "Number"
-msgstr "Number"
-
-#: models.py:20
-msgid "Pages"
-msgstr "Pages"
-
-#: models.py:21 models.py:33
-msgid "Abstract"
-msgstr "Abstract"
-
-#: models.py:28 models.py:53
-msgid "Files"
-msgstr "Files"
-
-#: models.py:37
-msgid "publication"
-msgstr "publication"
-
-#: models.py:38
-msgid "publications"
-msgstr "publications"
-
-#: feeds.py:11
+#: feeds.py:12
 msgid "Publications at "
 msgstr "Publications at "
 
-#: feeds.py:13
+#: feeds.py:14
 msgid "The last things I wrote"
 msgstr "The last things I wrote"
+
+#: models.py:23
+msgid "Title of the publication"
+msgstr "Title of the publication"
+
+#: models.py:24
+msgid "Publishing date"
+msgstr "Publishing date"
+
+#: models.py:25
+msgid "Author names"
+msgstr "Author names"
+
+#: models.py:26
+msgid "Type of publication"
+msgstr "Type of publication"
+
+#: models.py:27
+msgid "Journal or proceedings"
+msgstr "Journal or proceedings"
+
+#: models.py:28
+msgid "Volume"
+msgstr "Volume"
+
+#: models.py:29
+msgid "Number"
+msgstr "Number"
+
+#: models.py:30
+msgid "Pages"
+msgstr "Pages"
+
+#: models.py:31 models.py:43
+msgid "Abstract"
+msgstr "Abstract"
+
+#: models.py:38 models.py:63
+msgid "Files"
+msgstr "Files"
+
+#: models.py:47
+msgid "publication"
+msgstr "publication"
+
+#: models.py:48
+msgid "publications"
+msgstr "publications"
 
 #: template/detail.html:4
 msgid "Publication"

@@ -64,4 +64,4 @@ class Publication(models.Model):
         )
     
   def __str__(self):
-    return unicode2html(self.title + ('(%s)' % self.date.strftime('%B %Y')))
+    return unicode2html(self.title + (' (%s)' % self.date.strftime('%B %Y')))
