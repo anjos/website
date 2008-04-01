@@ -7,7 +7,7 @@ from settings import MEDIA_URL
 class File(models.Model):
   """This model describes an uploaded file.
   """
-  name = models.CharField(_('Name'), maxlength=256)
+  name = models.CharField(_('Name'), max_length=256)
   description = models.TextField(_('Description'), null=True, blank=True)
   data = models.FileField(_('File'),
                           upload_to='%Y/%m/%d')

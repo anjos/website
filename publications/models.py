@@ -20,14 +20,14 @@ class Publication(models.Model):
   proceedings.
   """
   
-  title = models.CharField(_('Title of the publication'), maxlength=256)
+  title = models.CharField(_('Title of the publication'), max_length=256)
   date = models.DateField(_('Publishing date'))
   author_list = models.TextField(_('Author names'))
-  pub_type = models.CharField(_('Type of publication'), maxlength=64)
-  media = models.CharField(_('Journal or proceedings'), maxlength=256)
-  volume = models.CharField(_('Volume'), null=True, blank=True, maxlength=16)
-  number = models.CharField(_('Number'), null=True, blank=True, maxlength=16)
-  pages = models.CharField(_('Pages'), null=True, blank=True, maxlength=16)
+  pub_type = models.CharField(_('Type of publication'), max_length=64)
+  media = models.CharField(_('Journal or proceedings'), max_length=256)
+  volume = models.CharField(_('Volume'), null=True, blank=True, max_length=16)
+  number = models.CharField(_('Number'), null=True, blank=True, max_length=16)
+  pages = models.CharField(_('Pages'), null=True, blank=True, max_length=16)
   abstract = models.TextField(_('Abstract'), blank=True)
   files = models.ManyToManyField(File, filter_interface=models.HORIZONTAL,
                                  null=True, blank=True)
