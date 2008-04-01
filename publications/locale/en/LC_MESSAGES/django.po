@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-27 08:37-0800\n"
+"POT-Creation-Date: 2008-04-01 14:44+0200\n"
 "PO-Revision-Date: 2007-03-20 23:52+0100\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,51 +24,51 @@ msgstr "Publications at "
 msgid "The last things I wrote"
 msgstr "The last things I wrote"
 
-#: models.py:23
+#: models.py:22
 msgid "Title of the publication"
 msgstr "Title of the publication"
 
-#: models.py:24
+#: models.py:23
 msgid "Publishing date"
 msgstr "Publishing date"
 
-#: models.py:25
+#: models.py:24
 msgid "Author names"
 msgstr "Author names"
 
-#: models.py:26
+#: models.py:25
 msgid "Type of publication"
 msgstr "Type of publication"
 
-#: models.py:27
+#: models.py:26
 msgid "Journal or proceedings"
 msgstr "Journal or proceedings"
 
-#: models.py:28
+#: models.py:27
 msgid "Volume"
 msgstr "Volume"
 
-#: models.py:29
+#: models.py:28
 msgid "Number"
 msgstr "Number"
 
-#: models.py:30
+#: models.py:29
 msgid "Pages"
 msgstr "Pages"
 
-#: models.py:31 models.py:43
+#: models.py:30 models.py:42
 msgid "Abstract"
 msgstr "Abstract"
 
-#: models.py:38 models.py:63
+#: models.py:37 models.py:62
 msgid "Files"
 msgstr "Files"
 
-#: models.py:47
+#: models.py:46
 msgid "publication"
 msgstr "publication"
 
-#: models.py:48
+#: models.py:47
 msgid "publications"
 msgstr "publications"
 

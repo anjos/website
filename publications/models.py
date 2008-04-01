@@ -3,7 +3,6 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import string_concat  as _cat
 
 # Create your models here.
-from django.db import models
 from files.models import File
 
 def unicode2html(s):

@@ -1,0 +1,36 @@
+{% extends "themes/themed.html" %}
+{% load i18n %}
+{% block header %}
+{% endblock %}
+{% block title %}{% trans "Gallery list" %}{% endblock %}
+
+{% block content %}
+  <body>
+    <div class="picasaweb">
+      <p class="title">{% blocktrans %}Gallery list{% endblocktrans %}</p>
+      {% if object_list %}
+      <table>
+        {% for p in object_list %}
+          <tr>
+            <td>
+              {% if not p.userinfo.is_valid %}
+              {% blocktrans with p.email as email %}Warning: Picasaweb account {{ email }} is not valid!{% endblocktrans %}
+              {% else %}
+              <table><tr>
+                  <td><img src="{{ p.userinfo.thumbnail }}"/></td>
+                  <td>
+                    {{ p.userinfo.nickname }} ({{ p.email }})<br/> 
+                    {% blocktrans with p.userinfo.available_items as total and p.userinfo.available_items|pluralize as plural %}{{ total }} album{{ plural }} available{% endblocktrans %}
+                  </td>
+              </tr></table>
+              {% endif %}
+            <td>
+          </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>{% trans "No Picasaweb galleries are available." %}</p>
+      {% endif %}
+    </div>
+  </body>
+{% endblock %}

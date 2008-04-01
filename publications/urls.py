@@ -18,12 +18,12 @@ site = Site.objects.filter(id=1)[0]
 #                        (r'^(?P<pub_id>\d+)/$', 'get'))
 
 publication_list = { 'queryset': Publication.objects.order_by('-date'),
-                     'template_name': 'list.html',
+                     'template_name': 'publication_list.html',
                      'extra_context': {'site': site, 'css': css, 'banner': banner },
                      }
 
 publication_detail = { 'queryset': Publication.objects.filter(),
-                       'template_name': 'detail.html',
+                       'template_name': 'publication_detail.html',
                        'extra_context': {'site': site, 'css': css, 'banner': banner },
                        }
 

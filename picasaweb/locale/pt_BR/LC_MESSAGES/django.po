@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-04-01 14:44+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:27
+msgid "Picasaweb e-mail"
+msgstr ""
+
+#: models.py:28
+msgid "Insert the e-mail of a picasaweb user in the form of user@domain"
+msgstr ""
+
+#: models.py:30
+msgid "Number of albums to display"
+msgstr ""
+
+#: models.py:31
+msgid "The special value of 0 (zero) will display all albums"
+msgstr ""
+
+#: models.py:73
+msgid "%{email}s (limit to %{num_albums})"
+msgstr ""
+
+#: template/detail.html:4
+msgid "Photos"
+msgstr ""
+
+#: template/detail.html:11
+#, python-format
+msgid " At %(date)s in %(media)s"
+msgstr ""
+
+#: template/detail.html:11
+msgid "volume"
+msgstr ""
+
+#: template/detail.html:11
+msgid "number"
+msgstr ""
+
+#: template/detail.html:11
+msgid "pages"
+msgstr ""
+
+#: template/detail.html:17
+msgid "File(s)"
+msgstr ""
+
+#: template/detail.html:27
+msgid "edit"
+msgstr ""
+
+#: template/list.html:5 template/list.html.py:9
+msgid "Gallery list"
+msgstr ""
+
+#: template/list.html:17
+msgid "Warning: Picasaweb account"
+msgstr ""
+
+#: template/list.html:18
+msgid "is not valid!"
+msgstr ""
+
+#: template/list.html:21
+msgid "albums available"
+msgstr ""
+
+#: template/list.html:28
+msgid "No Picasaweb galleries are available."
+msgstr ""

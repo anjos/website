@@ -1,0 +1,23 @@
+{% extends "themes/themed.html" %}
+{% load i18n %}
+{% block header %}
+  <link rel="alternate" type="application/atom+xml" title="Andre dos Anjos Publications" href="http://{{ site.domain }}/publication/feeds/latest/" />
+{% endblock %}
+{% block title %}{% trans "Publications" %}{% endblock %}
+
+{% block content %}
+  <body>
+    <div class="publication">
+      <p class="title">{% blocktrans %}Publications{% endblocktrans %}</p>
+      {% if object_list %}
+        <ul>
+        {% for p in object_list %}
+        <li>[{% if p.pub_type %}{{ p.pub_type }}, {% endif %}{{ p.date|date:"F/Y" }}] <a href="{{ p.id }}">{{ p.title }}</a></li>
+        {% endfor %}
+        </li>
+      {% else %}
+      <p>{% trans "No publications are available." %}</p>
+      {% endif %}
+    </div>
+  </body>
+{% endblock %}

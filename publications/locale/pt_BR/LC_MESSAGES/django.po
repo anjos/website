@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-27 08:37-0800\n"
+"POT-Creation-Date: 2008-04-01 14:44+0200\n"
 "PO-Revision-Date: 2007-08-19 21:39+0200\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
@@ -25,51 +25,51 @@ msgstr "Publicacoes em "
 msgid "The last things I wrote"
 msgstr "As ultimas coisas que escrevi"
 
-#: models.py:23
+#: models.py:22
 msgid "Title of the publication"
 msgstr "Título da publicação"
 
-#: models.py:24
+#: models.py:23
 msgid "Publishing date"
 msgstr "Data de publicação"
 
-#: models.py:25
+#: models.py:24
 msgid "Author names"
 msgstr "Nome dos autores"
 
-#: models.py:26
+#: models.py:25
 msgid "Type of publication"
 msgstr "Tipo de publicação"
 
-#: models.py:27
+#: models.py:26
 msgid "Journal or proceedings"
 msgstr "Journal ou anais"
 
-#: models.py:28
+#: models.py:27
 msgid "Volume"
 msgstr "Volume"
 
-#: models.py:29
+#: models.py:28
 msgid "Number"
 msgstr "Número"
 
-#: models.py:30
+#: models.py:29
 msgid "Pages"
 msgstr "Páginas"
 
-#: models.py:31 models.py:43
+#: models.py:30 models.py:42
 msgid "Abstract"
 msgstr "Sumário"
 
-#: models.py:38 models.py:63
+#: models.py:37 models.py:62
 msgid "Files"
 msgstr "Arquivos"
 
-#: models.py:47
+#: models.py:46
 msgid "publication"
 msgstr "publicação"
 
-#: models.py:48
+#: models.py:47
 msgid "publications"
 msgstr "publicações"
 
