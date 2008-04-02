@@ -70,6 +70,8 @@ TEMPLATE_DIRS = (
   '%s/template' % INSTALLMENT,
   '%s/files/template' % INSTALLMENT,
   '%s/publications/template' % INSTALLMENT,
+  '%s/picasaweb/template' % INSTALLMENT,
+  '%s/picasaweb/templatetags' % INSTALLMENT,
 )
 
 INSTALLED_APPS = (
@@ -82,6 +84,7 @@ INSTALLED_APPS = (
 
   # These are mine
   'stuff.publications',
-  'stuff.files'
+  'stuff.files',
+  'stuff.picasaweb',
 )
 
