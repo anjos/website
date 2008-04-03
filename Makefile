@@ -7,12 +7,12 @@ GDATA=$$HOME/sw/gdata.py-1.0.11.1/src
 MAKE_MESSAGE=$(DJANGO)/django/bin/make-messages.py
 COMPILE_MESSAGE=$(DJANGO)/django/bin/compile-messages.py
 PYTHONPATH=$(DJANGO):$(ETREE):$(GDATA)
-PROJECT=template files publications
+PROJECT=template files publications picasaweb
 PYTHON=PYTHONPATH=$(PYTHONPATH) python2.4
 
 .PHONY: clean 
 
-all: clean build-en build-pt_BR
+all: clean msg-en build-en msg-pt_BR build-pt_BR
 
 msg-%:
 	@echo "Updating language files for '"$(@:msg-%=%)"'"
@@ -37,6 +37,12 @@ validate:
 syncdb: validate
 	@echo "Sychronizing database (initialize, if empty)..."
 	$(PYTHON) manage.py syncdb
+
+help: 
+	$(PYTHON) manage.py help
+
+shell:
+	$(PYTHON) manage.py shell
 
 test: validate syncdb
 	@echo "Running python test server..."
