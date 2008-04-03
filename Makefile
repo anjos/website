@@ -12,7 +12,11 @@ PYTHON=PYTHONPATH=$(PYTHONPATH) python2.4
 
 .PHONY: clean 
 
-all: clean msg-en build-en msg-pt_BR build-pt_BR
+all: clean build
+
+msg: msg-en msg-pt_BR
+
+build: build-en build-pt_BR
 
 msg-%:
 	@echo "Updating language files for '"$(@:msg-%=%)"'"
