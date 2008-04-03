@@ -2,12 +2,12 @@
 {% load i18n %}
 {% load markup %}
 {% load picasaweb_filters %}
-{% block title %}{% trans "Photo Gallery" %}{% endblock %}
+{% block title %}{% trans "Photo Gallery" %}{% if owner %} ({{ owner }}){% endif %}{% endblock %}
 
 {% block content %}
   <body>
     <div class="picasaweb">
-      <p class="title">{% trans "Photo Gallery" %}</p>
+      <p class="title">{% trans "Photo Gallery" %}{% if owner %} ({{ owner }}){% endif %}</p>
       {% for entry in entries %}
       <table>
         <tr>
@@ -35,9 +35,10 @@
               {% else %}{% trans "No geo tags specified" %}
               {% endif %}
               </div> -->
-              <div class="photos">{{ entry.numphotos.text }} photo(s)</div>
-              <div class="published">{% trans "published" %} {{ entry.published.text|gd_date:"%c" }}</div>
-              <div class="updated">{% trans "updated" %} {{ entry.updated.text|gd_date:"%c" }}</div>
+              <div class="photos">{% blocktrans with entry.numphotos.text as numphotos and entry.numphotos.text|str2int|pluralize as plural %}{{ numphotos }} photo{{ plural }} by{% endblocktrans %}
+                <a href="http://{{ site.domain }}/photo/{{ usermap|getitem:entry.user.text }}">{{ entry.nickname.text|lower }}</a></div>
+              <div class="published">{% trans "published" %} {{ entry.published.text|gd_date:"%a, %d/%b/%Y" }}</div>
+              <div class="updated">{% trans "updated" %} {{ entry.updated.text|gd_date:"%a, %d/%b/%Y" }}</div>
             </div>
           </td>
         </tr>

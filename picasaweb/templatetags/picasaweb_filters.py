@@ -5,7 +5,7 @@
 
 from django.template import Library
 from django.template.defaultfilters import stringfilter
-import datetime
+import time
 
 register = Library()
 
@@ -14,7 +14,24 @@ register = Library()
 def gd_date(value, arg):
   """Formats a Google Data style date into the format you want"""
   try:
-    dt = datetime.datetime.strptime(value.split('.')[0], '%Y-%m-%dT%H:%M:%S')
+    return time.strftime(str(arg), 
+                         time.strptime(value.split('.')[0], '%Y-%m-%dT%H:%M:%S'))
   except:
     return value
-  return dt.strftime(str(arg))
+
+@register.filter
+@stringfilter
+def str2int(value):
+  """Returns the value as integer"""
+  try:
+    return int(value)
+  except:
+    return value
+
+@register.filter
+def getitem(value, arg):
+  """Gets an item from a dictionary"""
+  try: 
+    return value[arg]
+  except:
+    return ''

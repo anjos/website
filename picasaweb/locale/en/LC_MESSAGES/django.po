@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-01 14:44+0200\n"
+"POT-Creation-Date: 2008-04-02 05:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,55 +32,53 @@ msgstr ""
 msgid "The special value of 0 (zero) will display all albums"
 msgstr ""
 
-#: models.py:73
-msgid "%{email}s (limit to %{num_albums})"
-msgstr ""
-
-#: template/detail.html:4
+#: template/picasaweb_detail.html:5
 msgid "Photos"
 msgstr ""
 
-#: template/detail.html:11
+#: template/picasaweb_detail.html:10
+msgid "Picasaweb account of"
+msgstr ""
+
+#: template/picasaweb_detail.html:29 template/picasaweb_gallery.html:29
+msgid "No location specified"
+msgstr ""
+
+#: template/picasaweb_detail.html:35 template/picasaweb_gallery.html:35
+msgid "No geo tags specified"
+msgstr ""
+
+#: template/picasaweb_detail.html:39 template/picasaweb_gallery.html:40
+msgid "published"
+msgstr ""
+
+#: template/picasaweb_detail.html:40 template/picasaweb_gallery.html:41
+msgid "updated"
+msgstr ""
+
+#: template/picasaweb_gallery.html:5 template/picasaweb_gallery.html.py:10
+msgid "Photo Gallery"
+msgstr ""
+
+#: template/picasaweb_gallery.html:38
 #, python-format
-msgid " At %(date)s in %(media)s"
+msgid "%(numphotos)s photo%(plural)s by"
 msgstr ""
 
-#: template/detail.html:11
-msgid "volume"
-msgstr ""
-
-#: template/detail.html:11
-msgid "number"
-msgstr ""
-
-#: template/detail.html:11
-msgid "pages"
-msgstr ""
-
-#: template/detail.html:17
-msgid "File(s)"
-msgstr ""
-
-#: template/detail.html:27
-msgid "edit"
-msgstr ""
-
-#: template/list.html:5 template/list.html.py:9
+#: template/picasaweb_list.html:5 template/picasaweb_list.html.py:10
 msgid "Gallery list"
 msgstr ""
 
-#: template/list.html:17
-msgid "Warning: Picasaweb account"
+#: template/picasaweb_list.html:17
+#, python-format
+msgid "Warning: Picasaweb account %(email)s is not valid!"
 msgstr ""
 
-#: template/list.html:18
-msgid "is not valid!"
+#: template/picasaweb_list.html:23
+#, python-format
+msgid "%(total)s album%(plural)s available"
 msgstr ""
 
-#: template/list.html:21
-msgid "albums available"
-msgstr ""
-
-#: template/list.html:28
+#: template/picasaweb_list.html:32
 msgid "No Picasaweb galleries are available."
 msgstr ""
