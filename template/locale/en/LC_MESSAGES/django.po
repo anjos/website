@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-01 14:44+0200\n"
+"POT-Creation-Date: 2008-04-02 05:31-0700\n"
 "PO-Revision-Date: 2007-03-22 00:10+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgid ""
 "interested on."
 msgstr ""
 
-#: themes/simple.html:12 themes/themed.html:45
+#: themes/simple.html:12 themes/themed.html:39
 msgid "Automatically generated at "
 msgstr "Automatically generated at "
 
@@ -38,22 +38,22 @@ msgstr "Automatically generated at "
 msgid "bookmarks"
 msgstr "bookmarks"
 
-#: themes/themed.html:24
+#: themes/themed.html:23
 msgid "publications"
 msgstr "publications"
 
-#: themes/themed.html:26
+#: themes/themed.html:24
 msgid "r&eacute;sum&eacute;"
 msgstr "r&eacute;sum&eacute;"
 
-#: themes/themed.html:28
+#: themes/themed.html:25
 msgid "photos"
 msgstr "photos"
 
-#: themes/themed.html:30
+#: themes/themed.html:26
 msgid "repository"
 msgstr "repository"
 
-#: themes/themed.html:32
+#: themes/themed.html:27
 msgid "cavaquinho"
 msgstr "cavaquinho"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-01 14:44+0200\n"
+"POT-Creation-Date: 2008-04-02 05:31-0700\n"
 "PO-Revision-Date: 2007-03-20 23:52+0100\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,39 +72,40 @@ msgstr "publication"
 msgid "publications"
 msgstr "publications"
 
-#: template/detail.html:4
+#: template/publication_detail.html:4
 msgid "Publication"
 msgstr "Publication"
 
-#: template/detail.html:11
+#: template/publication_detail.html:11
 #, python-format
 msgid " At %(date)s in %(media)s"
 msgstr "At %(date)s in %(media)s"
 
-#: template/detail.html:11
+#: template/publication_detail.html:11
 msgid "volume"
 msgstr "volume"
 
-#: template/detail.html:11
+#: template/publication_detail.html:11
 msgid "number"
 msgstr "number"
 
-#: template/detail.html:11
+#: template/publication_detail.html:11
 msgid "pages"
 msgstr "pages"
 
-#: template/detail.html:17 template/feeds/publications_description.html:7
+#: template/publication_detail.html:17
+#: template/feeds/publications_description.html:7
 msgid "File(s)"
 msgstr "File(s)"
 
-#: template/detail.html:27
+#: template/publication_detail.html:27
 msgid "edit"
 msgstr "edit"
 
-#: template/list.html:6 template/list.html.py:10
+#: template/publication_list.html:6 template/publication_list.html.py:11
 msgid "Publications"
 msgstr "Publications"
 
-#: template/list.html:19
+#: template/publication_list.html:19
 msgid "No publications are available."
 msgstr "No publications are available."

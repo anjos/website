@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-01 14:44+0200\n"
+"POT-Creation-Date: 2008-04-02 05:31-0700\n"
 "PO-Revision-Date: 2007-08-19 21:39+0200\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
@@ -73,39 +73,40 @@ msgstr "publicação"
 msgid "publications"
 msgstr "publicações"
 
-#: template/detail.html:4
+#: template/publication_detail.html:4
 msgid "Publication"
 msgstr "Publicação"
 
-#: template/detail.html:11
+#: template/publication_detail.html:11
 #, python-format
 msgid " At %(date)s in %(media)s"
 msgstr "Em %(media)s, %(date)s"
 
-#: template/detail.html:11
+#: template/publication_detail.html:11
 msgid "volume"
 msgstr "volume"
 
-#: template/detail.html:11
+#: template/publication_detail.html:11
 msgid "number"
 msgstr "número"
 
-#: template/detail.html:11
+#: template/publication_detail.html:11
 msgid "pages"
 msgstr "páginas"
 
-#: template/detail.html:17 template/feeds/publications_description.html:7
+#: template/publication_detail.html:17
+#: template/feeds/publications_description.html:7
 msgid "File(s)"
 msgstr "Arquivo(s)"
 
-#: template/detail.html:27
+#: template/publication_detail.html:27
 msgid "edit"
 msgstr "editar"
 
-#: template/list.html:6 template/list.html.py:10
+#: template/publication_list.html:6 template/publication_list.html.py:11
 msgid "Publications"
 msgstr "Publicações"
 
-#: template/list.html:19
+#: template/publication_list.html:19
 msgid "No publications are available."
 msgstr "Não há publicações disponíveis."
