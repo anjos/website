@@ -30,9 +30,7 @@ msgstr "N&uacute;mero de &aacute;lbuns a mostrar"
 
 #: models.py:31
 msgid "The special value of 0 (zero) will display all albums"
-msgstr ""
-"O valor especial 0 (zero) far&aacute; com que eu mostre todos os &aacule;"
-"lbuns dispon&iacute;veis"
+msgstr "O valor especial 0 (zero) far&aacute; com que eu mostre todos os &aacule;lbuns dispon&iacute;veis"
 
 #: template/picasaweb_detail.html:5
 msgid "Photos"
@@ -66,7 +64,7 @@ msgstr "Galeria de Fotos"
 #: template/picasaweb_gallery.html:38
 #, python-format
 msgid "%(numphotos)s photo%(plural)s by"
-msgstr "%(numphotos)s photo%(plural)s por"
+msgstr "%(numphotos)s foto%(plural)s por"
 
 #: template/picasaweb_list.html:5 template/picasaweb_list.html.py:10
 msgid "Gallery list"
@@ -75,9 +73,7 @@ msgstr "Lista de galerias"
 #: template/picasaweb_list.html:17
 #, python-format
 msgid "Warning: Picasaweb account %(email)s is not valid!"
-msgstr ""
-"Aten&ccedil;&atilde;o: A conta picasaweb %(email)s n&atilde;o &eacute; "
-"v&aacute&lida!"
+msgstr "Aten&ccedil;&atilde;o: A conta picasaweb %(email)s n&atilde;o &eacute; v&aacute&lida!"
 
 #: template/picasaweb_list.html:23
 #, python-format
