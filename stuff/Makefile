@@ -2,19 +2,20 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # This you must set correctly
-INSTALL_DIR=$$HOME/website
+BASEDIR=/home/rabello/website/stuff
+PYTHON=python
 
 # This is automatic
-PYTHON_VERSION=$(shell python -c 'import sys; print "python%d.%d" % sys.version_info[0:2]')
-PYTHONPATH=$(INSTALL_DIR)/sw/installed/lib/$(PYTHON_VERSION)/site-packages
+PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "python%d.%d" % sys.version_info[0:2]')
+PYTHONPATH=$(BASEDIR)/sw/installed/lib/$(PYTHON_VERSION)/site-packages
 
 # Find my django projects
 PROJECT=template files publications picasaweb
 
 # These are helpers
-PYTHON=PYTHONPATH=$(PYTHONPATH) $(PYTHON_VERSION)
-MAKE_MESSAGE=$(PYTHON) -m 'django.bin.make-messages'
-COMPILE_MESSAGE=$(PYTHON) -m 'django.bin.compile-messages'
+PY=PYTHONPATH=$(PYTHONPATH) $(PYTHON_VERSION)
+MAKE_MESSAGE=$(PY) -m 'django.bin.make-messages'
+COMPILE_MESSAGE=$(PY) -m 'django.bin.compile-messages'
 
 .PHONY: clean 
 
@@ -42,21 +43,21 @@ build-%:
 
 validate:
 	@echo "Validating django models..."
-	$(PYTHON) manage.py validate 
+	$(PY) manage.py validate 
 
 syncdb: validate
 	@echo "Sychronizing database (initialize, if empty)..."
-	$(PYTHON) manage.py syncdb
+	$(PY) manage.py syncdb
 
 help: 
-	$(PYTHON) manage.py help
+	$(PY) manage.py help
 
 shell:
-	$(PYTHON) manage.py shell
+	$(PY) manage.py shell
 
 test: validate syncdb
 	@echo "Running python test server..."
-	$(PYTHON) manage.py runserver 8080
+	$(PY) manage.py runserver 8080
 
 clean: 	
 	find . -name '*~' -print0 | xargs -0 rm -vf 
