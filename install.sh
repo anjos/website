@@ -17,13 +17,14 @@ function replace () {
 
 for f in bootstrap.sh Makefile; do
   cp $f $f~
-  replace PYTHON python2.5 $f
+  replace PYTHON $1 $f
   replace BASEDIR $PWD $f
 done
 
 for f in stuff/Makefile; do
   cp $f $f~
-  replace BASEDIR $PWD/stuff $f
+  replace BASEDIR $PWD $f
+  replace PYTHON $1 $f
 done
 
 for f in stuff/settings.py; do
