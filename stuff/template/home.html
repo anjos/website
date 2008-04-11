@@ -1,0 +1,14 @@
+{% extends "themes/themed.html" %}
+{% load i18n %}
+{% block header %}
+{% endblock %}
+{% block title %}{% trans "Home Page" %}{% endblock %}
+
+{% block content %}
+    <div class="title">
+      <h2>{% blocktrans %}So...{% endblocktrans %}</h2>
+    </div>
+    <div class="content">
+      <p>{% blocktrans %}...use the links above to select the particular information you are interested on.{% endblocktrans %}</p>
+    </div>
+{% endblock %}

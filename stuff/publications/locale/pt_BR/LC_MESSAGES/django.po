@@ -1,0 +1,112 @@
+# Portuguese translation of publications.
+# Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Andre Anjos <andre.dos.anjos@gmail.com>, 2007.
+# , fuzzy
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: publications 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-04-02 05:31-0700\n"
+"PO-Revision-Date: 2007-08-19 21:39+0200\n"
+"Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
+"Language-Team: Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: feeds.py:12
+msgid "Publications at "
+msgstr "Publicacoes em "
+
+#: feeds.py:14
+msgid "The last things I wrote"
+msgstr "As ultimas coisas que escrevi"
+
+#: models.py:22
+msgid "Title of the publication"
+msgstr "Título da publicação"
+
+#: models.py:23
+msgid "Publishing date"
+msgstr "Data de publicação"
+
+#: models.py:24
+msgid "Author names"
+msgstr "Nome dos autores"
+
+#: models.py:25
+msgid "Type of publication"
+msgstr "Tipo de publicação"
+
+#: models.py:26
+msgid "Journal or proceedings"
+msgstr "Journal ou anais"
+
+#: models.py:27
+msgid "Volume"
+msgstr "Volume"
+
+#: models.py:28
+msgid "Number"
+msgstr "Número"
+
+#: models.py:29
+msgid "Pages"
+msgstr "Páginas"
+
+#: models.py:30 models.py:42
+msgid "Abstract"
+msgstr "Sumário"
+
+#: models.py:37 models.py:62
+msgid "Files"
+msgstr "Arquivos"
+
+#: models.py:46
+msgid "publication"
+msgstr "publicação"
+
+#: models.py:47
+msgid "publications"
+msgstr "publicações"
+
+#: template/publication_detail.html:4
+msgid "Publication"
+msgstr "Publicação"
+
+#: template/publication_detail.html:11
+#, python-format
+msgid " At %(date)s in %(media)s"
+msgstr "Em %(media)s, %(date)s"
+
+#: template/publication_detail.html:11
+msgid "volume"
+msgstr "volume"
+
+#: template/publication_detail.html:11
+msgid "number"
+msgstr "número"
+
+#: template/publication_detail.html:11
+msgid "pages"
+msgstr "páginas"
+
+#: template/publication_detail.html:17
+#: template/feeds/publications_description.html:7
+msgid "File(s)"
+msgstr "Arquivo(s)"
+
+#: template/publication_detail.html:27
+msgid "edit"
+msgstr "editar"
+
+#: template/publication_list.html:6 template/publication_list.html.py:11
+msgid "Publications"
+msgstr "Publicações"
+
+#: template/publication_list.html:19
+msgid "No publications are available."
+msgstr "Não há publicações disponíveis."

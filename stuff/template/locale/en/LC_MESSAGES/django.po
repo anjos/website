@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: simple-theme 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-04-02 05:31-0700\n"
+"PO-Revision-Date: 2007-03-22 00:10+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: home.html:5
+msgid "Home Page"
+msgstr "Home Page"
+
+#: home.html:9
+msgid "So..."
+msgstr "So..."
+
+#: home.html:12
+msgid ""
+"...use the links above to select the particular information you are "
+"interested on."
+msgstr ""
+
+#: themes/simple.html:12 themes/themed.html:39
+msgid "Automatically generated at "
+msgstr "Automatically generated at "
+
+#: themes/themed.html:22
+msgid "bookmarks"
+msgstr "bookmarks"
+
+#: themes/themed.html:23
+msgid "publications"
+msgstr "publications"
+
+#: themes/themed.html:24
+msgid "r&eacute;sum&eacute;"
+msgstr "r&eacute;sum&eacute;"
+
+#: themes/themed.html:25
+msgid "photos"
+msgstr "photos"
+
+#: themes/themed.html:26
+msgid "repository"
+msgstr "repository"
+
+#: themes/themed.html:27
+msgid "cavaquinho"
+msgstr "cavaquinho"
