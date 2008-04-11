@@ -2,13 +2,16 @@
 # Created by Andre Anjos <andre.dos.anjos@cern.ch>
 # Sex 04 Abr 2008 14:36:05 CEST
 
+# Automatically set!
+BASEDIR=/home/rabello/website
+PYTHON=python2.5
+
 # This script will download and install all necessary software for us
 [ ! -d sw/installed ] && mkdir -pv sw/installed;
 
 # A few environment setups
-install_dir=`pwd`/sw/installed;
-python_version=`python -c 'import sys; print "%d.%d" % sys.version_info[0:2]'`
-export PYTHONPATH=`pwd`/sw/installed/lib/python${python_version}/site-packages
+python_version=`${PYTHON} -c 'import sys; print "python%d.%d" % sys.version_info[0:2]'`
+export PYTHONPATH=`pwd`/sw/installed/lib/${python_version}/site-packages
 
 # Versions
 scons_version=0.98.0;
@@ -32,8 +35,8 @@ function zipget() {
 function setup() {
   echo "Setting up $1..."
   cd $1;
-  python setup.py --quiet build;
-  python setup.py --quiet install --prefix=${install_dir};
+  ${PYTHON} setup.py --quiet build;
+  ${PYTHON} setup.py --quiet install --prefix=${BASEDIR}/sw/installed;
   cd -;
 }
 
@@ -60,6 +63,8 @@ else
   svnup django-trunk
 fi
 setup django-trunk
+rm -f ../media/django;
+ln -s ${BASEDIR}/sw/installed/lib/${python_version}/site-packages/django/contrib/admin/media ../media/django
 
 # gdata
 if [ ! -d gdata.py-${gdata_version} ]; then
