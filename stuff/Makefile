@@ -2,8 +2,8 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # This you must set correctly
-BASEDIR=/home/rabello/website/stuff
-PYTHON=python
+BASEDIR=/home/rabello/website
+PYTHON=python2.5
 
 # This is automatic
 PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "python%d.%d" % sys.version_info[0:2]')
