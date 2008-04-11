@@ -9,7 +9,6 @@ all: deepclean compile restart
 
 update:
 	./bootstrap.sh
-	cd stuff && svn update . && cd -
 
 restart:
 	@skill -9 $(PROC)
