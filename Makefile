@@ -1,14 +1,20 @@
 # Dear emacs, this is -*- Makefile -*-
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
-DJANGO=$$HOME/sw/django-trunk
-ETREE=$$HOME/sw/elementtree-1.2.6-20050316
-GDATA=$$HOME/sw/gdata.py-1.0.11.1/src
-MAKE_MESSAGE=$(DJANGO)/django/bin/make-messages.py
-COMPILE_MESSAGE=$(DJANGO)/django/bin/compile-messages.py
-PYTHONPATH=$(DJANGO):$(ETREE):$(GDATA)
+# This you must set correctly
+INSTALL_DIR=$$HOME/website
+
+# This is automatic
+PYTHON_VERSION=$(shell python -c 'import sys; print "python%d.%d" % sys.version_info[0:2]')
+PYTHONPATH=$(INSTALL_DIR)/sw/installed/lib/$(PYTHON_VERSION)/site-packages
+
+# Find my django projects
 PROJECT=template files publications picasaweb
-PYTHON=PYTHONPATH=$(PYTHONPATH) python2.4
+
+# These are helpers
+PYTHON=PYTHONPATH=$(PYTHONPATH) $(PYTHON_VERSION)
+MAKE_MESSAGE=$(PYTHON) -m 'django.bin.make-messages'
+COMPILE_MESSAGE=$(PYTHON) -m 'django.bin.compile-messages'
 
 .PHONY: clean 
 
@@ -22,7 +28,7 @@ msg-%:
 	@echo "Updating language files for '"$(@:msg-%=%)"'"
 	@for p in $(PROJECT); do cd $$p; \
 		echo "Updating subproject '"$$p"'..."; \
-	  PYTHONPATH=$(PYTHONPATH) $(MAKE_MESSAGE) -l $(@:msg-%=%); \
+	  $(MAKE_MESSAGE) -l $(@:msg-%=%); \
 		echo "Subproject '"$$p"' done."; \
 		cd -; done
 
@@ -30,7 +36,7 @@ build-%:
 	@echo "Compiling language files for '"$(@:msg-%=%)"'"
 	@for p in $(PROJECT); do cd $$p; \
 		echo "Compiling subproject '"$$p"'..."; \
-	  PYTHONPATH=$(PYTHONPATH) $(COMPILE_MESSAGE); \
+	  $(COMPILE_MESSAGE); \
 		echo "Subproject '"$$p"' done."; \
 		cd -; done
 

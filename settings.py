@@ -3,8 +3,8 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 import os
-INSTALLMENT = os.getcwd() + '/stuff'
-DATABASE = os.getcwd() + '/db.sql3' 
+INSTALLMENT = os.getcwd()
+DATABASE = os.path.realpath(INSTALLMENT + '/../db.sql3')
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -38,7 +38,7 @@ MEDIA_ROOT = '%s/../media/' % INSTALLMENT
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
-MEDIA_URL = 'http://adois.org/andre/media/'
+MEDIA_URL = 'http://localhost:8080/andre/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
