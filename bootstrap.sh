@@ -3,7 +3,7 @@
 # Sex 04 Abr 2008 14:36:05 CEST
 
 # Automatically set!
-BASEDIR=/home/rabello/website
+BASEDIR=/Users/andre/Sites/website
 PYTHON=python2.5
 
 # This script will download and install all necessary software for us
@@ -20,6 +20,7 @@ etree_version=1.2.6-20050316;
 feedparser_version=4.1;
 pydelicious_version=0.5.0;
 textile_version=2.0.11;
+pysqlite2_version=2.4.1;
 
 function target() {
   echo "Retrieving `basename $1`..."
@@ -96,6 +97,7 @@ setup docutils-trunk
 
 # feedparser (we need special code for this one)
 if [ ! -d feedparser-${feedparser_version} ]; then
+  echo "Installing feedparser..."
   wget --quiet http://feedparser.googlecode.com/files/feedparser-${feedparser_version}.zip
   mkdir feedparser-${feedparser_version};
   cd feedparser-${feedparser_version};
@@ -115,5 +117,11 @@ if [ ! -d textile-${textile_version} ]; then
   target http://pytextile.googlecode.com/files/textile-${textile_version}.tar.gz
 fi
 setup textile-${textile_version}
+
+# pysqlite 2
+if [ ! -d pysqlite-${pysqlite2_version} ]; then
+  target http://oss.itsystementwicklung.de/download/pysqlite/2.4/2.4.1/pysqlite-2.4.1.tar.gz
+fi
+setup pysqlite-${pysqlite2_version}
 
 popd
