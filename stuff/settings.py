@@ -4,8 +4,9 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 import os
 
-BASEDIR = '/home/rabello/website/stuff'
-DATABASE = '/home/rabello/website/db.sql3'
+BASEDIR = '/Users/andre/Sites/website'
+INSTALLDIR = os.path.join(BASEDIR, 'stuff')
+DATABASE = os.path.join(BASEDIR, 'db.sql3')
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -28,14 +29,14 @@ TIME_ZONE = 'Europe/Zurich'
 # http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
 # http://blogs.law.harvard.edu/tech/stories/storyReader$15
 LANGUAGE_CODE = 'en'
-LOCALE_PATHS = ( '%s/template/locale' % BASEDIR, 
+LOCALE_PATHS = ( '%s/template/locale' % INSTALLDIR, 
                 )
 
 SITE_ID = 1
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/home/rabello/website/media'
+MEDIA_ROOT = os.path.join(BASEDIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
@@ -68,11 +69,11 @@ ROOT_URLCONF = 'stuff.urls'
 TEMPLATE_DIRS = (
   # Put strings here, like "/home/html/django_templates".
   # Always use forward slashes, even on Windows.
-  '%s/template' % BASEDIR,
-  '%s/files/template' % BASEDIR,
-  '%s/publications/template' % BASEDIR,
-  '%s/picasaweb/template' % BASEDIR,
-  '%s/picasaweb/templatetags' % BASEDIR,
+  '%s/template' % INSTALLDIR,
+  '%s/files/template' % INSTALLDIR,
+  '%s/publications/template' % INSTALLDIR,
+  '%s/picasaweb/template' % INSTALLDIR,
+  '%s/picasaweb/templatetags' % INSTALLDIR,
 )
 
 INSTALLED_APPS = (
