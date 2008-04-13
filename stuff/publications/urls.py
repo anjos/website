@@ -9,8 +9,6 @@ from django.contrib.sites.models import Site
 feeds = { 'latest': TenLastPublications, }
 
 # the location of the site CSS
-css = MEDIA_URL + 'themed.css'
-banner = MEDIA_URL + 'banner.jpg'
 site = Site.objects.filter(id=1)[0]
 
 # urlpatterns = patterns('publications.views',
@@ -19,12 +17,12 @@ site = Site.objects.filter(id=1)[0]
 
 publication_list = { 'queryset': Publication.objects.order_by('-date'),
                      'template_name': 'publication_list.html',
-                     'extra_context': {'site': site, 'css': css, 'banner': banner },
+                     'extra_context': {'site': site, 'media': MEDIA_URL},
                      }
 
 publication_detail = { 'queryset': Publication.objects.filter(),
                        'template_name': 'publication_detail.html',
-                       'extra_context': {'site': site, 'css': css, 'banner': banner },
+                       'extra_context': {'site': site, 'media': MEDIA_URL},
                        }
 
 urlpatterns = patterns('',

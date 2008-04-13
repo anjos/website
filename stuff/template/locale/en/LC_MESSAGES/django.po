@@ -30,30 +30,30 @@ msgid ""
 "interested on."
 msgstr ""
 
-#: themes/simple.html:12 themes/themed.html:39
+#: themes/simple.html:12 themes/theme1.html:39
 msgid "Automatically generated at "
 msgstr "Automatically generated at "
 
-#: themes/themed.html:22
+#: themes/theme1.html:22
 msgid "bookmarks"
 msgstr "bookmarks"
 
-#: themes/themed.html:23
+#: themes/theme1.html:23
 msgid "publications"
 msgstr "publications"
 
-#: themes/themed.html:24
+#: themes/theme1.html:24
 msgid "r&eacute;sum&eacute;"
 msgstr "r&eacute;sum&eacute;"
 
-#: themes/themed.html:25
+#: themes/theme1.html:25
 msgid "photos"
 msgstr "photos"
 
-#: themes/themed.html:26
+#: themes/theme1.html:26
 msgid "repository"
 msgstr "repository"
 
-#: themes/themed.html:27
+#: themes/theme1.html:27
 msgid "cavaquinho"
 msgstr "cavaquinho"

@@ -10,9 +10,9 @@ urlpatterns = patterns('',
     (r'^%s$' % subdir, 'stuff.views.index'),
 
     # Media serving
-    #(r'^%smedia/(?P<path>.*)$' % subdir,
-    # 'django.views.static.serve',
-    # {'document_root': settings.MEDIA_ROOT,
-    # 'show_indexes': True}
-    # ), 
+    (r'^%smedia/(?P<path>.*)$' % subdir,
+     'django.views.static.serve',
+     {'document_root': settings.MEDIA_ROOT,
+     'show_indexes': True}
+     ), 
     )

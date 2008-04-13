@@ -7,9 +7,6 @@ import locale
 from settings import MEDIA_URL
 from django.contrib.sites.models import Site
 
-# the location of the site CSS
-css = MEDIA_URL + 'themed.css'
-banner = MEDIA_URL + 'banner.jpg'
 site = Site.objects.filter(id=1)[0]
 
 def gd_date(s):
@@ -45,5 +42,5 @@ def view_gallery(request, id=None):
   entries = [k[1] for k in entries]
 
   return render_to_response('picasaweb_gallery.html', 
-      {'entries': entries, 'site': site, 'css': css, 'banner': banner, 
+      {'entries': entries, 'site': site, 'media': MEDIA_URL,  
       'usermap': usermap, 'owner': owner})

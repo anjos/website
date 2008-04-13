@@ -7,11 +7,8 @@ from settings import MEDIA_URL
 from django.contrib.sites.models import Site
 
 # the location of the site CSS
-css = MEDIA_URL + 'themed.css'
-banner = MEDIA_URL + 'banner.jpg'
 site = Site.objects.filter(id=1)[0]
 
 def index(request):
   return render_to_response('home.html', {'site': site, 
-                                          'css': css, 
-                                          'banner': banner})
+                                          'media': MEDIA_URL})
