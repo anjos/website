@@ -2,7 +2,7 @@
 
 body {
   background-color: #ffffff;
-  background-image: url('/andre/media/bg.jpg');
+  background-image: url('/andre/media/theme1/bg.jpg');
   background-repeat: repeat-x;
   color: #303030;
   text-align: center;
@@ -123,7 +123,8 @@ div.picasaweb p.title {
 
 div.picasaweb table {
   display: inline;
-  width: 100%;
+  width: 32%;
+  height: 260px;
 }
 
 div.picasaweb div.thumbnail {
