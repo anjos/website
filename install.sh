@@ -12,25 +12,20 @@ function replace () {
   #2. newvalue, 
   #3. file
   echo "Changing file $3...";
-  sed -i -e "s#^$1\(\s*\)=\(\s*\).\+#$1\1=\2$2#" $3
+  sed -e "s%^$1\(\s*\)=\(\s*\).*%$1\1=\2$2%" -i '~' $3
 }
 
 for f in bootstrap.sh Makefile; do
-  cp $f $f~
   replace PYTHON $1 $f
   replace BASEDIR $PWD $f
 done
 
 for f in stuff/Makefile; do
-  cp $f $f~
   replace BASEDIR $PWD $f
   replace PYTHON $1 $f
 done
 
 for f in stuff/settings.py; do
-  cp $f $f~
   replace BASEDIR "'$PWD/stuff'" $f
-  replace DATABASE "'$PWD/db.sql3'" $f
-  replace MEDIA_ROOT "'$PWD/media'" $f
 done
 
