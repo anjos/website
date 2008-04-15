@@ -26,6 +26,6 @@ for f in stuff/Makefile; do
 done
 
 for f in stuff/settings.py; do
-  replace BASEDIR "'$PWD/stuff'" $f
+  replace BASEDIR "'$PWD'" $f
 done
 
