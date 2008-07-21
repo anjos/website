@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 import os
 
-BASEDIR = '/Users/andre/Sites/website'
+BASEDIR = os.path.realpath('..')
 INSTALLDIR = os.path.join(BASEDIR, 'stuff')
 DATABASE = os.path.join(BASEDIR, 'db.sql3')
 
