@@ -2,7 +2,7 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # This you must set correctly
-BASEDIR=/Users/andre/Sites/website
+BASEDIR=..
 PYTHON=python2.5
 
 # This is automatic
