@@ -3,7 +3,7 @@
 # Sex 04 Abr 2008 14:36:05 CEST
 
 # Automatically set!
-BASEDIR=/Users/andre/Sites/website
+BASEDIR=`pwd`
 PYTHON=python2.5
 
 # This script will download and install all necessary software for us
