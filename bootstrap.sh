@@ -4,7 +4,7 @@
 
 # Automatically set!
 BASEDIR=`pwd`
-PYTHON=python2.5
+PYTHON=python
 
 # This script will download and install all necessary software for us
 [ ! -d sw/installed ] && mkdir -pv sw/installed;
@@ -14,8 +14,8 @@ python_version=`${PYTHON} -c 'import sys; print "python%d.%d" % sys.version_info
 export PYTHONPATH=`pwd`/sw/installed/lib/${python_version}/site-packages
 
 # Versions
-scons_version=0.98.0;
-gdata_version=1.0.11.1;
+scons_version=0.98.5;
+gdata_version=1.1.1;
 etree_version=1.2.6-20050316;
 feedparser_version=4.1;
 pydelicious_version=0.5.0;
