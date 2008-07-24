@@ -73,14 +73,6 @@ class PicasawebAccount(models.Model):
   # dynamic property
   feed = property(_cache_feed)
 
-  # make it admin'able
-  class Admin:
-    list_display = ('email', 'num_albums')
-    list_filter = ['email']
-    search_fields = 'date'
-    list_per_page = 10
-    ordering = ['email']
-
   def __str__(self):
     """A string representation of myself"""
     if self.num_albums:

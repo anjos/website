@@ -3,17 +3,17 @@
 
 # This you must set correctly
 BASEDIR=$(shell dirname `pwd`)
-PYTHON=python2.5
+PYTHON=python
 
 # This is automatic
-PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "python%d.%d" % sys.version_info[0:2]')
-PYTHONPATH=$(BASEDIR)/sw/installed/lib/$(PYTHON_VERSION)/site-packages
+PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "%d.%d" % sys.version_info[0:2]')
+PYTHONPATH=$(BASEDIR)/sw/installed/lib/python$(PYTHON_VERSION)/site-packages
 
 # Find my django projects
 PROJECT=template files publications picasaweb
 
 # These are helpers
-PY=PYTHONPATH=$(PYTHONPATH) $(PYTHON_VERSION)
+PY=PYTHONPATH=$(PYTHONPATH) $(PYTHON)
 MAKE_MESSAGE=$(PY) -m 'django.bin.make-messages'
 COMPILE_MESSAGE=$(PY) -m 'django.bin.compile-messages'
 

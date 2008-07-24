@@ -19,15 +19,6 @@ class File(models.Model):
     verbose_name = _('file')
     verbose_name_plural = _('files')
 
-  # make it admin'able
-  class Admin:
-    list_display = ('name', 'date', 'public')
-    list_filter = ['date']
-    search_fields = ['name', 'date']
-    date_hierarchy = 'date'
-    list_per_page = 10
-    ordering = ['-date']
-
   def url(self):
     """Returns a valid URL for this entry"""
     return MEDIA_URL + self.data

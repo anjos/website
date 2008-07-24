@@ -28,8 +28,7 @@ class Publication(models.Model):
   number = models.CharField(_('Number'), null=True, blank=True, max_length=16)
   pages = models.CharField(_('Pages'), null=True, blank=True, max_length=16)
   abstract = models.TextField(_('Abstract'), blank=True)
-  files = models.ManyToManyField(File, filter_interface=models.HORIZONTAL,
-                                 null=True, blank=True)
+  files = models.ManyToManyField(File, null=True, blank=True)
 
   def count_files(self):
     """Counts the number of files attached to this publication."""
@@ -46,21 +45,5 @@ class Publication(models.Model):
     verbose_name = _('publication')
     verbose_name_plural = _('publications')
 
-  # make it admin'able
-  class Admin:
-    list_display = ('title', 'date', 'pub_type', 'has_abstract', 'count_files')
-    list_filter = ['date']
-    list_per_page = 10
-    ordering = ['-date']
-    search_fields = ['title', 'date', 'media']
-    date_hierarchy = 'date'
-    fields = (
-        (None, {'fields': ('title', 'date', 'author_list', 
-                           ('pub_type', 'media'),
-                           ('volume', 'number', 'pages'), 
-                           'abstract')}),
-        (_('Files'), {'classes': 'collapse', 'fields': ('files',)}),
-        )
-    
   def __str__(self):
     return unicode2html(self.title + (' (%s)' % self.date.strftime('%B %Y')))

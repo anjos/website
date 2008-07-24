@@ -1,12 +1,15 @@
 import settings
 from django.conf.urls.defaults import *
-subdir = 'andre/'
+from django.contrib import admin
 
+admin.autodiscover()
+
+subdir = 'andre/'
 urlpatterns = patterns('',
-    (r'^%sadmin/' % subdir, include('django.contrib.admin.urls')),
-    (r'^%spublication/' % subdir, include('stuff.publications.urls')),
-    (r'^%sfile/' % subdir, include('stuff.files.urls')),
-    (r'^%sphoto/' % subdir, include('stuff.picasaweb.urls')),
+    (r'^%sadmin/(.*)' % subdir, admin.site.root),
+    (r'^%spublication/(.*)' % subdir, include('stuff.publications.urls')),
+    (r'^%sfile/(.*)' % subdir, include('stuff.files.urls')),
+    (r'^%sphoto/(.*)' % subdir, include('stuff.picasaweb.urls')),
     (r'^%s$' % subdir, 'stuff.views.index'),
 
     # Media serving
