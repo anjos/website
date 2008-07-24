@@ -7,9 +7,9 @@ admin.autodiscover()
 subdir = 'andre/'
 urlpatterns = patterns('',
     (r'^%sadmin/(.*)' % subdir, admin.site.root),
-    (r'^%spublication/(.*)' % subdir, include('stuff.publications.urls')),
-    (r'^%sfile/(.*)' % subdir, include('stuff.files.urls')),
-    (r'^%sphoto/(.*)' % subdir, include('stuff.picasaweb.urls')),
+    (r'^%spublication/' % subdir, include('stuff.publications.urls')),
+    (r'^%sfile/' % subdir, include('stuff.files.urls')),
+    (r'^%sphoto/' % subdir, include('stuff.picasaweb.urls')),
     (r'^%s$' % subdir, 'stuff.views.index'),
 
     # Media serving
