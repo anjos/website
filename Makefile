@@ -2,13 +2,13 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # This you must set correctly
-BASEDIR=/Users/andre/Sites/website
-PYTHON=python2.5
+BASEDIR=$(shell pwd)
+PYTHON=python
 
 # This is automatic
-PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "python%d.%d" % sys.version_info[0:2]')
-PYTHONPATH=$(BASEDIR)/sw/installed/lib/$(PYTHON_VERSION)/site-packages
-PY=PYTHONPATH=$(PYTHONPATH) $(PYTHON_VERSION)
+PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "%d.%d" % sys.version_info[0:2]')
+PYTHONPATH=$(BASEDIR)/sw/installed/lib/python$(PYTHON_VERSION)/site-packages
+PY=PYTHONPATH=$(PYTHONPATH) $(PYTHON) 
 
 PROC=$(shell ps awux | grep fcgi | grep python | grep -v ps | awk '{ print $$2 }')
 
