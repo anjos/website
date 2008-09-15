@@ -15,14 +15,12 @@ function replace () {
   sed -e "s%^$1\(\s*\)=\(\s*\).*%$1\1=\2$2%" -i '~' $3
 }
 
-for f in bootstrap.sh Makefile; do
+for f in bootstrap.sh Makefile stuff/Makefile; do
   replace PYTHON $1 $f
-  replace BASEDIR $PWD $f
 done
 
 for f in stuff/Makefile; do
   replace BASEDIR $PWD $f
-  replace PYTHON $1 $f
 done
 
 for f in stuff/settings.py; do
