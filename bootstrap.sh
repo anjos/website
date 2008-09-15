@@ -5,7 +5,7 @@
 # Automatically set!
 BASEDIR=`pwd`
 PYTHON=python2.4
-INSTALLDIR=${BASEDIR}/sw/installed
+INSTALLDIR=${BASEDIR}/sw
 python_version=`${PYTHON} -c 'import sys;print "%d.%d" % sys.version_info[0:2]'`
 
 # Versions
