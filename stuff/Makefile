@@ -2,12 +2,12 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # This you must set correctly
-BASEDIR=$(shell dirname `pwd`)
-PYTHON=python
+BASEDIR=/home/andreanjos/adois.org/andre
+PYTHON=python2.4
 
 # This is automatic
 PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "%d.%d" % sys.version_info[0:2]')
-PYTHONPATH=$(BASEDIR)/sw/installed/lib/python$(PYTHON_VERSION)/site-packages
+PYTHONPATH=$(BASEDIR)/sw
 
 # Find my django projects
 PROJECT=template files publications picasaweb
