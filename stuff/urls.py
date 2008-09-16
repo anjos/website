@@ -4,7 +4,7 @@ from django.contrib import admin
 
 admin.autodiscover()
 
-subdir = 'andre/'
+subdir = ''
 urlpatterns = patterns('',
     (r'^%sadmin/(.*)' % subdir, admin.site.root),
     (r'^%spublication/' % subdir, include('stuff.publications.urls')),

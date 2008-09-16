@@ -2,20 +2,20 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # This you must set correctly
-BASEDIR=/home/andreanjos/adois.org/andre
+BASEDIR=/home/andreanjos/andre.adois.org
 PYTHON=python2.4
 
 # This is automatic
 PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "%d.%d" % sys.version_info[0:2]')
-PYTHONPATH=$(BASEDIR)/sw
+PYTHONPATH=$(BASEDIR):$(BASEDIR)/sw
 
 # Find my django projects
 PROJECT=template files publications picasaweb
 
 # These are helpers
 PY=PYTHONPATH=$(PYTHONPATH) $(PYTHON)
-MAKE_MESSAGE=$(PY) -m 'django.bin.make-messages'
-COMPILE_MESSAGE=$(PY) -m 'django.bin.compile-messages'
+MAKE_MESSAGE=$(PY) $(BASEDIR)/sw/django-admin.py makemessages
+COMPILE_MESSAGE=$(PY) $(BASEDIR)/sw/django-admin.py compilemessages
 
 .PHONY: clean 
 
@@ -36,7 +36,7 @@ msg-%:
 	@echo "Updating language files for '"$(@:msg-%=%)"'"
 	@for p in $(PROJECT); do cd $$p; \
 		echo "Updating subproject '"$$p"'..."; \
-	  $(MAKE_MESSAGE) -l $(@:msg-%=%); \
+	  $(MAKE_MESSAGE) -l $(@:msg-%=%); \:
 		echo "Subproject '"$$p"' done."; \
 		cd -; done
 

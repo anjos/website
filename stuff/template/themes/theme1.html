@@ -3,8 +3,8 @@
 <html>
   <head>
     <title>{{ site.name }} :: {% block title %} NO TITLE? {% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ media }}/theme1/style.css" />
-    <link rel="icon" href="/andre/media/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{{ media }}theme1/style.css" />
+    <link rel="icon" href="{{ media }}theme1/favicon.ico" type="image/x-icon"/>
     {% block header %}<!-- No header extensions provided -->{% endblock %}
   </head>
 
@@ -21,9 +21,9 @@
   <div class="navigation">
     <a href="http://del.icio.us/andre.anjos">{% trans "bookmarks" %}</a> &middot;
     <a href="http://{{ site.domain }}/publication/">{% trans "publications" %}</a> &middot; 
-    <a href="http://{{ site.domain }}/media/cv/cv.pdf">{% trans "r&eacute;sum&eacute;" %}</a> &middot; 
+    <a href="{{ media }}cv/cv.pdf">{% trans "r&eacute;sum&eacute;" %}</a> &middot; 
     <a href="http://{{ site.domain }}/photo/">{% trans "photos" %}</a> &middot; 
-    <a href="http://adois.org/trac/browser">{% trans "repository" %}</a> 
+    <a href="http://trac.adois.org">{% trans "projects" %}</a>
   </div>
 
   <div class="path">

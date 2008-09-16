@@ -4,7 +4,8 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 import os
 
-BASEDIR = os.path.realpath('..')
+BASEDIR = os.environ['BASEDIR'] #defined by the caller!
+
 INSTALLDIR = os.path.join(BASEDIR, 'stuff')
 DATABASE = os.path.join(BASEDIR, 'db.sql3')
 
@@ -40,12 +41,12 @@ MEDIA_ROOT = os.path.join(BASEDIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
-MEDIA_URL = 'http://localhost:8080/andre/media/'
+MEDIA_URL = 'http://andre.adois.org/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/andre/media/django/'
+ADMIN_MEDIA_PREFIX = '/media/django/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'wk&_+uqn)()=fz07y0qdl%@=m^gp^taf$&7ql&@-ffjk9aln_7'
