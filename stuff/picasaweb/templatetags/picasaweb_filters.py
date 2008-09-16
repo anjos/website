@@ -9,29 +9,39 @@ import time
 
 register = Library()
 
-@register.filter
-@stringfilter
+# @register.filter # py2.4
+# @stringfilter
 def gd_date(value, arg):
   """Formats a Google Data style date into the format you want"""
   try:
     return time.strftime(str(arg), 
-                         time.strptime(value.split('.')[0], '%Y-%m-%dT%H:%M:%S'))
+             time.strptime(value.split('.')[0], '%Y-%m-%dT%H:%M:%S'))
   except:
     return value
+# python 2.3 decorators
+register.filter('gd_date', gd_date)
+stringfilter(gd_date)
 
-@register.filter
-@stringfilter
+# @register.filter # py2.4
+# @stringfilter
 def str2int(value):
   """Returns the value as integer"""
   try:
     return int(value)
   except:
     return value
+# python 2.3 decorators
+register.filter('str2int', str2int)
+stringfilter(str2int)
 
-@register.filter
+# @register.filter # py2.4
+# @stringfilter
 def getitem(value, arg):
   """Gets an item from a dictionary"""
   try: 
     return value[arg]
   except:
     return ''
+# python 2.3 decorators
+register.filter('getitem', getitem)
+stringfilter(getitem)
