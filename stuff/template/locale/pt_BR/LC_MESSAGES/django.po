@@ -54,8 +54,8 @@ msgid "photos"
 msgstr "fotos"
 
 #: themes/theme1.html:26
-msgid "repository"
-msgstr "repositório"
+msgid "projects"
+msgstr "projetos"
 
 #: themes/theme1.html:27
 msgid "cavaquinho"
