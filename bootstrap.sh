@@ -4,9 +4,9 @@
 
 # Automatically set!
 BASEDIR=`pwd`
-PYTHON=python2.3
-INSTALLDIR=${BASEDIR}/sw
+PYTHON=python
 python_version=`${PYTHON} -c 'import sys;print "%d.%d" % sys.version_info[0:2]'`
+INSTALLDIR=${BASEDIR}/sw
 
 # Versions
 setuptools_egg=setuptools-0.6c8-py${python_version}.egg
@@ -21,22 +21,28 @@ pydelicious=http://pydelicious.googlecode.com/files/pydelicious-0.5.0.zip
 textile=http://pypi.python.org/packages/source/t/textile/textile-2.0.11.tar.gz
 pysqlite2=http://oss.itsystementwicklung.de/download/pysqlite/2.5/2.5.0/pysqlite-2.5.0.tar.gz
 
-
 # This script will download and install all necessary software for us
-[ ! -d ${INSTALLDIR} ] && mkdir -pv ${INSTALLDIR}
+if [ ! -d ${INSTALLDIR}-python${python_version} ]; then
+  mkdir -pv ${INSTALLDIR}-python${python_version};
+  cd `dirname ${INSTALLDIR}`;
+  ln -s `basename ${INSTALLDIR}`-python${python_version} `basename ${INSTALLDIR}`;
+fi
 
 export PYTHONPATH=${INSTALLDIR}
-# A few environment setups
-# First we install the setuptools
-echo "### Installing ${setuptools_egg}..."
-wget ${setuptools} 
-sh ${setuptools_egg} --install-dir=${INSTALLDIR}
-rm -f ${setuptools_egg}
-echo "### Installation of ${setuptools_egg} is done!"
+
+if [ -z `which easy_install-${python_version}` ]; then
+  # We install the setuptools
+  echo "### Installing ${setuptools_egg}..."
+  wget ${setuptools} 
+  sh ${setuptools_egg} --install-dir=${INSTALLDIR}
+  rm -f ${setuptools_egg}
+  export PATH=${INSTALLDIR}:${PATH}
+  echo "### Installation of ${setuptools_egg} is done!"
+fi
 
 function install () {
   echo "### Installing $1..."
-  ${PYTHON} ${INSTALLDIR}/easy_install-${python_version} --install-dir=${INSTALLDIR} $2;
+  easy_install-${python_version} --install-dir=${INSTALLDIR} $2;
   echo "### Installation of $1 is done!"
 }
 
