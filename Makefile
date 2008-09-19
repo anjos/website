@@ -2,7 +2,7 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # This you must set correctly
-PYTHON=python2.4
+PYTHON=python
 PROC=$(shell ps awux | grep fcgi | grep $(PYTHON) | grep -v ps | awk '{ print $$2 }')
 
 all: clean restart

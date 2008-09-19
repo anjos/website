@@ -4,7 +4,7 @@
   <head>
     <title>{{ site.name }} :: {% block title %} NO TITLE? {% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{{ media }}theme1/style.css" />
-    <link rel="icon" href="{{ media }}theme1/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
     {% block header %}<!-- No header extensions provided -->{% endblock %}
   </head>
 
@@ -13,17 +13,17 @@
 
   <div class="banner">
     <a href="http://{{ site.domain }}">
-      Andr&eacute; Anjos
-      <!--<img src="{{ banner }}" alt="{{ site.name }}"/>-->
+      <img src="{{ media }}theme1/banner.png" title="{% trans 'Swing back to the home page' %}" alt="{{ site.name }}"/>
     </a>
   </div>
 
   <div class="navigation">
-    <a href="http://del.icio.us/andre.anjos">{% trans "bookmarks" %}</a> &middot;
-    <a href="http://{{ site.domain }}/publication/">{% trans "publications" %}</a> &middot; 
-    <a href="{{ media }}cv/cv.pdf">{% trans "r&eacute;sum&eacute;" %}</a> &middot; 
-    <a href="http://{{ site.domain }}/photo/">{% trans "photos" %}</a> &middot; 
-    <a href="http://trac.adois.org">{% trans "projects" %}</a>
+    <!--<a href="http://del.icio.us/andre.anjos">{% trans "bookmarks" %}</a> &middot;-->
+    <a href="http://{{ site.domain }}/bookmark/" title="{% trans 'My latest bookmarks' %}">{% trans "bookmarks" %}</a> &middot; 
+    <a href="http://{{ site.domain }}/publication/" title="{% trans 'All my publications' %}">{% trans "publications" %}</a> &middot; 
+    <a href="{{ media }}cv/cv.pdf" title="{% trans 'My Curriculum Vitae' %}">{% trans "r&eacute;sum&eacute;" %}</a> &middot; 
+    <a href="http://{{ site.domain }}/photo/" title="{% trans 'My preferred photos' %}" %}>{% trans "photos" %}</a> &middot; 
+    <a href="http://trac.adois.org" title="{% trans 'Source code, documents and other stuff in a Repository' %}">{% trans "projects" %}</a>
   </div>
 
   <div class="path">
@@ -34,9 +34,8 @@
   </div>
 
   <div class="footer">
-   <hr/>
    <p>{% trans "Automatically generated at " %}{% now "r" %}
-     <a href="http://www.dreamhost.com/r.cgi?295665/green.cgi?adois.org|ANJOSREBATE47"><img border="0" alt="Green Web Hosting! This site hosted by DreamHost." src="https://secure.newdream.net/green3.gif" height="15" width="80" /></a>
+     <a title="{% trans 'Get a US$ 47 rebate subscribing to Dreamhost by clicking here now!' %}" href="http://www.dreamhost.com/r.cgi?295665/green.cgi?adois.org|ANJOSREBATE47"><img border="0" alt="Green Web Hosting! This site hosted by DreamHost." src="https://secure.newdream.net/green3.gif" height="15" width="80" /></a>
    </p>
   </div>
 

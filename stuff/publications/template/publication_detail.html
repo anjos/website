@@ -12,19 +12,16 @@
        </p>
       <p class="authors">{{ object.author_list }}</p>
       <div class="abstract">{{ object.abstract|textile }}</div>
-      {% if object.count_files %}
-      <table class="files">
-          <tr><th>{% trans "File(s)" %}</th></tr>
-          {% for f in object.files.all %}
-          {% if f.public %}
-          <tr><td><a href="{{ f.url }}">{{ f.name }}</a></td></tr>
-          {% endif %}
-          {% endfor %}
-      </table>
-      {% endif %}
     </div>
     <div class="actions">
-    [ <a href="http://{{ site.domain }}/admin/publications/publication/{{ object.id }}/">{% trans "edit" %}</a> ]
+      [ <a href="http://{{ site.domain }}/admin/publications/publication/{{ object.id }}/">{% trans "edit" %}</a> ]
+      {% if object.count_files %}
+        [ downloads: 
+        {% for f in object.files.all %}
+          {% if f.public %}<a href="{{ f.url }}">{{ f.name }}</a>{% endif %}
+        {% endfor %}
+        ]
+      {% endif %}
     </div>
   </body>
 {% endblock %}

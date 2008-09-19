@@ -2,8 +2,8 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # This you must set correctly
-BASEDIR=/home/andreanjos/andre.adois.org
-PYTHON=python2.4
+BASEDIR=/Users/andre/Sites/andre.adois.org
+PYTHON=python
 
 # This is automatic
 PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "%d.%d" % sys.version_info[0:2]')

@@ -4,4 +4,4 @@
 
 export PATH=`pwd`/sw:${PATH}
 export PYTHONPATH=`pwd`:`pwd`/sw:${PYTHONPATH}
-alias python=python2.4
+export BASEDIR=`pwd`

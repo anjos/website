@@ -6,18 +6,21 @@
 {% block title %}{% trans "Publications" %}{% endblock %}
 
 {% block content %}
-  <body>
     <div class="publication">
-      <p class="title">{% blocktrans %}Publications{% endblocktrans %}</p>
+      <p class="title">{% blocktrans %}Publications (in reverse chronological
+      order){% endblocktrans %}</p>
       {% if object_list %}
-        <ul>
-        {% for p in object_list %}
-        <li>[{% if p.pub_type %}{{ p.pub_type }}, {% endif %}{{ p.date|date:"F/Y" }}] <a href="{{ p.id }}">{{ p.title }}</a></li>
-        {% endfor %}
-        </li>
+        <table class="publication_list">
+          {% for p in object_list %}
+          <tr class="{% cycle 'even' 'odd' %}">
+            <td class="publication_date">{{ p.date|date:"F/Y" }}</td> 
+            <td class="publication_type">{{ p.pub_type }}</td>
+            <td class="publication_title"><a href="{{ p.id }}">{{ p.title }}</a></td>
+          </tr>
+          {% endfor %}
+        </table>
       {% else %}
       <p>{% trans "No publications are available." %}</p>
       {% endif %}
     </div>
-  </body>
 {% endblock %}
