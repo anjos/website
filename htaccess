@@ -1,1 +1,0 @@
-RewriteRule ^(favicon\.ico)$ media/favicon.ico [L]
