@@ -179,3 +179,31 @@ div.picasaweb div.caption div.updated {
   color: #cbcbcb;
 }
 
+div.delicious p.title {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+div.delicious table {
+  width: 100%;
+  padding: 5px;
+}
+
+div.delicious font.entry_title {
+  font-size: 90%;
+  font-weight: bold;
+}
+
+div.delicious font.entry_text {
+  font-size: 70%;
+}
+
+div.delicious font.entry_date {
+  font-size: 50%;
+  font-style: italic;
+}
+
+div.delicious table tr.even {
+  background-color: #ddd;
+}
