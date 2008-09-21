@@ -41,7 +41,7 @@ MEDIA_ROOT = os.path.join(BASEDIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
-MEDIA_URL = 'http://andre.adois.org/media/'
+MEDIA_URL = 'http://localhost:8080/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -75,6 +75,7 @@ TEMPLATE_DIRS = (
   '%s/publications/template' % INSTALLDIR,
   '%s/picasaweb/template' % INSTALLDIR,
   '%s/picasaweb/templatetags' % INSTALLDIR,
+  '%s/delicious/template' % INSTALLDIR,
 )
 
 INSTALLED_APPS = (
@@ -90,6 +91,6 @@ INSTALLED_APPS = (
   'stuff.publications',
   'stuff.files',
   'stuff.picasaweb',
-  #'stuff.delicious',
+  'stuff.delicious',
 )
 

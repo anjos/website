@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the simple-theme package.
 # andre <EMAIL@ADDRESS>, 2007.
 # , fuzzy
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-02 05:31-0700\n"
+"POT-Creation-Date: 2008-09-21 11:01+0200\n"
 "PO-Revision-Date: 2007-08-19 21:37+0200\n"
 "Last-Translator: andre <(null)>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
@@ -22,41 +22,69 @@ msgid "Home Page"
 msgstr "Página Inicial"
 
 #: home.html:9
-msgid "So..."
-msgstr "Então..."
-
-#: home.html:12
-msgid ""
-"...use the links above to select the particular information you are "
-"interested on."
+msgid "Select what you wish to see from the links above."
 msgstr ""
-"...use os links acima para selecionar a informação na qual você está "
-"interessado."
 
-#: themes/simple.html:12 themes/theme1.html:39
+#: themes/simple.html:12 themes/theme1.html:37
 msgid "Automatically generated at "
 msgstr "Gerada automaticamente em "
 
-#: themes/theme1.html:22
+#: themes/theme1.html:16
+msgid "Swing back to the home page"
+msgstr ""
+
+#: themes/theme1.html:21 themes/theme1.html.py:22
 msgid "bookmarks"
 msgstr "favoritos"
+
+#: themes/theme1.html:22
+#, fuzzy
+msgid "My latest bookmarks"
+msgstr "favoritos"
+
+#: themes/theme1.html:23
+#, fuzzy
+msgid "All my publications"
+msgstr "publicações"
 
 #: themes/theme1.html:23
 msgid "publications"
 msgstr "publicações"
 
 #: themes/theme1.html:24
+msgid "My Curriculum Vitae"
+msgstr ""
+
+#: themes/theme1.html:24
 msgid "r&eacute;sum&eacute;"
 msgstr "curriculum"
+
+#: themes/theme1.html:25
+msgid "My preferred photos"
+msgstr ""
 
 #: themes/theme1.html:25
 msgid "photos"
 msgstr "fotos"
 
 #: themes/theme1.html:26
+msgid "Source code, documents and other stuff in a Repository"
+msgstr ""
+
+#: themes/theme1.html:26
 msgid "projects"
 msgstr "projetos"
 
-#: themes/theme1.html:27
-msgid "cavaquinho"
+#: themes/theme1.html:38
+msgid "Get a US$ 47 rebate subscribing to Dreamhost by clicking here now!"
 msgstr ""
+
+#~ msgid "So..."
+#~ msgstr "Então..."
+
+#~ msgid ""
+#~ "...use the links above to select the particular information you are "
+#~ "interested on."
+#~ msgstr ""
+#~ "...use os links acima para selecionar a informação na qual você está "
+#~ "interessado."

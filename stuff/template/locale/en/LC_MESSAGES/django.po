@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-02 05:31-0700\n"
+"POT-Creation-Date: 2008-09-21 11:01+0200\n"
 "PO-Revision-Date: 2007-03-22 00:10+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,39 +21,68 @@ msgid "Home Page"
 msgstr "Home Page"
 
 #: home.html:9
-msgid "So..."
-msgstr "So..."
-
-#: home.html:12
-msgid ""
-"...use the links above to select the particular information you are "
-"interested on."
+msgid "Select what you wish to see from the links above."
 msgstr ""
 
-#: themes/simple.html:12 themes/theme1.html:39
+#: themes/simple.html:12 themes/theme1.html:37
 msgid "Automatically generated at "
 msgstr "Automatically generated at "
 
-#: themes/theme1.html:22
+#: themes/theme1.html:16
+msgid "Swing back to the home page"
+msgstr ""
+
+#: themes/theme1.html:21 themes/theme1.html.py:22
 msgid "bookmarks"
 msgstr "bookmarks"
+
+#: themes/theme1.html:22
+#, fuzzy
+msgid "My latest bookmarks"
+msgstr "bookmarks"
+
+#: themes/theme1.html:23
+#, fuzzy
+msgid "All my publications"
+msgstr "publications"
 
 #: themes/theme1.html:23
 msgid "publications"
 msgstr "publications"
 
 #: themes/theme1.html:24
+msgid "My Curriculum Vitae"
+msgstr ""
+
+#: themes/theme1.html:24
 msgid "r&eacute;sum&eacute;"
 msgstr "r&eacute;sum&eacute;"
+
+#: themes/theme1.html:25
+msgid "My preferred photos"
+msgstr ""
 
 #: themes/theme1.html:25
 msgid "photos"
 msgstr "photos"
 
 #: themes/theme1.html:26
-msgid "repository"
-msgstr "repository"
+msgid "Source code, documents and other stuff in a Repository"
+msgstr ""
 
-#: themes/theme1.html:27
-msgid "cavaquinho"
-msgstr "cavaquinho"
+#: themes/theme1.html:26
+msgid "projects"
+msgstr ""
+
+#: themes/theme1.html:38
+msgid "Get a US$ 47 rebate subscribing to Dreamhost by clicking here now!"
+msgstr ""
+
+#~ msgid "So..."
+#~ msgstr "So..."
+
+#~ msgid "repository"
+#~ msgstr "repository"
+
+#~ msgid "cavaquinho"
+#~ msgstr "cavaquinho"

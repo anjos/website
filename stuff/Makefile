@@ -10,7 +10,7 @@ PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "%d.%d" % sys.version_inf
 PYTHONPATH=$(BASEDIR):$(BASEDIR)/sw
 
 # Find my django projects
-PROJECT=template files publications picasaweb
+PROJECT=template files publications picasaweb delicious
 
 # These are helpers
 PY=PYTHONPATH=$(PYTHONPATH) $(PYTHON)
@@ -36,7 +36,7 @@ msg-%:
 	@echo "Updating language files for '"$(@:msg-%=%)"'"
 	@for p in $(PROJECT); do cd $$p; \
 		echo "Updating subproject '"$$p"'..."; \
-	  $(MAKE_MESSAGE) -l $(@:msg-%=%); \:
+	  $(MAKE_MESSAGE) --locale=$(@:msg-%=%) --extension=.html --extension=.py; \
 		echo "Subproject '"$$p"' done."; \
 		cd -; done
 
