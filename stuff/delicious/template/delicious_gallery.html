@@ -10,9 +10,7 @@
       {% for entry in entries %}
       <table>
         <tr class="{% cycle 'even' 'odd' %}"><td>
-          <a href="{{ entry.links.0.href }}">
-            <font class="entry_title">{{ entry.title }}</font>
-          </a>  
+          <a href="{{ entry.links.0.href }}"><font class="entry_title">{{ entry.title }}</font></a>  
           <font class="entry_text">{{ entry.summary }}</font>
           <font class="entry_date">{% trans "bookmarked on" %} {{ entry.updated }}</font>
     </td></a></tr>
