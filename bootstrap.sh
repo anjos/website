@@ -17,7 +17,6 @@ scons=http://prdownloads.sourceforge.net/scons/scons-1.0.1.tar.gz;
 gdata=http://gdata-python-client.googlecode.com/files/gdata.py-1.1.1.tar.gz;
 etree=http://effbot.org/media/downloads/elementtree-1.2.6-20050316.tar.gz
 feedparser=http://feedparser.googlecode.com/files/feedparser-4.1.zip
-pydelicious=http://pydelicious.googlecode.com/files/pydelicious-0.5.0.zip
 textile=http://pypi.python.org/packages/source/t/textile/textile-2.0.11.tar.gz
 pysqlite2=http://oss.itsystementwicklung.de/download/pysqlite/2.5/2.5.0/pysqlite-2.5.0.tar.gz
 
@@ -52,7 +51,6 @@ install scons ${scons}
 install gdata ${gdata}
 install elementTree ${etree}
 install feedparser ${feedparser}
-install pydelicious ${pydelicious}
 install textile ${textile}
 install pysqlite2 ${pysqlite2}
 
