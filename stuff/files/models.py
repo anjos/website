@@ -26,8 +26,8 @@ class File(models.Model):
     curr_md5 = None
 
     if os.path.exists(self.path()):
-      from md5 import md5
-      curr_md5 = md5.new(self.path()).digest()
+      import md5
+      curr_md5 = md5.new(file(self.path(),'rb').read()).hexdigest()
 
     else:
       return
@@ -64,8 +64,8 @@ class File(models.Model):
       self.save()
       return True
     else:
-      from md5 import md5
-      return self.md5 != md5.new(self.path()).digest()
+      import md5
+      return self.md5 != md5.new(file(self.path(),'rb').read()).digest()
 
   def __str__(self):
       return '%s (%s)' % (self.name, self.date)
