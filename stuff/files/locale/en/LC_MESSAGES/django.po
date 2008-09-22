@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: files 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-21 11:01+0200\n"
+"POT-Creation-Date: 2008-09-22 18:41+0200\n"
 "PO-Revision-Date: 2007-03-20 19:46+CEST\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,31 +25,61 @@ msgstr "Files at %s"
 msgid "The last public uploads to the site"
 msgstr "The last public uploads to the site"
 
-#: models.py:10
+#: models.py:11
 msgid "Name"
 msgstr "Name"
 
-#: models.py:11
+#: models.py:12
+msgid "The name of the file. Can contain spaces and other special characters"
+msgstr ""
+
+#: models.py:13
 msgid "Description"
 msgstr "Description"
 
-#: models.py:12
+#: models.py:14
+msgid "Explain what this file is - be verbose!"
+msgstr ""
+
+#: models.py:15
 #, fuzzy
 msgid "File"
 msgstr "File"
 
-#: models.py:14
+#: models.py:16
+msgid "Specify here the file that will be uploaded."
+msgstr ""
+
+#: models.py:17
 msgid "Upload date"
 msgstr "Upload date"
 
-#: models.py:15
+#: models.py:18
+msgid "Sets the insertion date of this file"
+msgstr ""
+
+#: models.py:19
 msgid "Publicly visible"
 msgstr "Publicly visible"
 
-#: models.py:19
+#: models.py:20
+msgid "Sets the visibility of this file for not anonymous users."
+msgstr ""
+
+#: models.py:21
+msgid "MD5 checksum"
+msgstr ""
+
+#: models.py:22
+msgid ""
+"Insert an optional MD5 checksum. If you leave it blank I'll calculate the "
+"checksum based on the file contents I stored"
+msgstr ""
+
+#: models.py:50
 msgid "file"
 msgstr "file"
 
-#: models.py:20
+#: models.py:51
 msgid "files"
 msgstr "files"

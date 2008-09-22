@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-21 11:01+0200\n"
+"POT-Creation-Date: 2008-09-22 18:41+0200\n"
 "PO-Revision-Date: 2007-03-22 00:10+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,57 +24,57 @@ msgstr "Home Page"
 msgid "Select what you wish to see from the links above."
 msgstr ""
 
-#: themes/simple.html:12 themes/theme1.html:37
+#: themes/simple.html:12 themes/theme1.html:38
 msgid "Automatically generated at "
 msgstr "Automatically generated at "
 
-#: themes/theme1.html:16
+#: themes/theme1.html:17
 msgid "Swing back to the home page"
 msgstr ""
 
-#: themes/theme1.html:21 themes/theme1.html.py:22
+#: themes/theme1.html:22 themes/theme1.html.py:23
 msgid "bookmarks"
 msgstr "bookmarks"
 
-#: themes/theme1.html:22
+#: themes/theme1.html:23
 #, fuzzy
 msgid "My latest bookmarks"
 msgstr "bookmarks"
 
-#: themes/theme1.html:23
+#: themes/theme1.html:24
 #, fuzzy
 msgid "All my publications"
 msgstr "publications"
 
-#: themes/theme1.html:23
+#: themes/theme1.html:24
 msgid "publications"
 msgstr "publications"
 
-#: themes/theme1.html:24
+#: themes/theme1.html:25
 msgid "My Curriculum Vitae"
 msgstr ""
 
-#: themes/theme1.html:24
+#: themes/theme1.html:25
 msgid "r&eacute;sum&eacute;"
 msgstr "r&eacute;sum&eacute;"
 
-#: themes/theme1.html:25
+#: themes/theme1.html:26
 msgid "My preferred photos"
 msgstr ""
 
-#: themes/theme1.html:25
+#: themes/theme1.html:26
 msgid "photos"
 msgstr "photos"
 
-#: themes/theme1.html:26
+#: themes/theme1.html:27
 msgid "Source code, documents and other stuff in a Repository"
 msgstr ""
 
-#: themes/theme1.html:26
+#: themes/theme1.html:27
 msgid "projects"
 msgstr ""
 
-#: themes/theme1.html:38
+#: themes/theme1.html:39
 msgid "Get a US$ 47 rebate subscribing to Dreamhost by clicking here now!"
 msgstr ""
 

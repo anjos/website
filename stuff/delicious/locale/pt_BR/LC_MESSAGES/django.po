@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: stuff.delicious\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-21 11:01+0200\n"
+"POT-Creation-Date: 2008-09-22 18:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,13 +33,13 @@ msgid ""
 "Number of posts to retrieve. The special value zero retrieves the default "
 "number of posts allowed by delicious (currently is 15)."
 msgstr ""
-"Número de ítens a mostrar. O valor especial zero baixa o número de "
-"ítens máximo definido pelo delicious (atualmente 15)."
+"Número de ítens a mostrar. O valor especial zero baixa o número de ítens "
+"máximo definido pelo delicious (atualmente 15)."
 
 #: template/delicious_gallery.html:4 template/delicious_gallery.html.py:9
 msgid "Bookmark Gallery"
 msgstr "Galeria de Favoritos"
 
-#: template/delicious_gallery.html:17
+#: template/delicious_gallery.html:15
 msgid "bookmarked on"
 msgstr "salvo em"
