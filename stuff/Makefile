@@ -2,20 +2,19 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # This you must set correctly
-BASEDIR=/Users/andre/Sites/andre.adois.org
-PYTHON=python
+PYTHON=/usr/bin/python2.4
 
 # This is automatic
 PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "%d.%d" % sys.version_info[0:2]')
-PYTHONPATH=$(BASEDIR):$(BASEDIR)/sw
+PYTHONPATH=$($BASEDIR):$(BASEDIR)/sw
 
 # Find my django projects
 PROJECT=template files publications picasaweb delicious
 
 # These are helpers
 PY=PYTHONPATH=$(PYTHONPATH) $(PYTHON)
-MAKE_MESSAGE=$(PY) $(BASEDIR)/sw/django-admin.py makemessages
-COMPILE_MESSAGE=$(PY) $(BASEDIR)/sw/django-admin.py compilemessages
+MAKE_MESSAGE=$(PY) $($BASEDIR)/sw/django-admin.py makemessages
+COMPILE_MESSAGE=$(PY) $($BASEDIR)/sw/django-admin.py compilemessages
 
 .PHONY: clean 
 
