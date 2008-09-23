@@ -2,9 +2,14 @@
 # Created by Andre Anjos <andre.dos.anjos@cern.ch>
 # Sex 04 Abr 2008 14:36:05 CEST
 
+if [ $# = 0 ]; then
+  echo "usage: $0 <python interpreter path>";
+  exit 1;
+fi
+
 # Automatically set!
 BASEDIR=`pwd`
-PYTHON=python
+PYTHON=$1
 python_version=`${PYTHON} -c 'import sys;print "%d.%d" % sys.version_info[0:2]'`
 INSTALLDIR=${BASEDIR}/sw
 
@@ -21,11 +26,11 @@ textile=http://pypi.python.org/packages/source/t/textile/textile-2.0.11.tar.gz
 pysqlite2=http://oss.itsystementwicklung.de/download/pysqlite/2.5/2.5.0/pysqlite-2.5.0.tar.gz
 
 # This script will download and install all necessary software for us
-if [ ! -d ${INSTALLDIR}-python${python_version} ]; then
-  mkdir -pv ${INSTALLDIR}-python${python_version};
-  cd `dirname ${INSTALLDIR}`;
-  ln -s `basename ${INSTALLDIR}`-python${python_version} `basename ${INSTALLDIR}`;
-fi
+[ -r sw ] && rm -rf sw;
+[ -d ${INSTALLDIR}-python${python_version} ] && rm -rf ${INSTALLDIR}-python${python_version};
+mkdir -pv ${INSTALLDIR}-python${python_version};
+cd `dirname ${INSTALLDIR}`;
+ln -s `basename ${INSTALLDIR}`-python${python_version} `basename ${INSTALLDIR}`;
 
 export PYTHONPATH=${INSTALLDIR}
 

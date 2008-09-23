@@ -15,7 +15,7 @@ function replace () {
   sed -e "s%^$1\(\s*\)=\(\s*\).*%$1\1=\2$2%" -i '~' $3
 }
 
-for f in bootstrap.sh Makefile stuff/Makefile; do
+for f in Makefile stuff/Makefile; do
   replace PYTHON $1 $f
 done
 
