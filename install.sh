@@ -19,11 +19,3 @@ for f in Makefile stuff/Makefile; do
   replace PYTHON $1 $f
 done
 
-for f in stuff/Makefile; do
-  replace BASEDIR $PWD $f
-done
-
-for f in stuff/settings.py; do
-  replace BASEDIR "'$PWD/stuff'" $f
-done
-
