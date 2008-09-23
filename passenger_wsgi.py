@@ -4,6 +4,9 @@
 
 import sys, os
 
+INTERP = "/usr/bin/python2.4"
+if sys.executable != INTERP: os.execl(INTERP, INTERP, *sys.argv)
+
 base = '/home/andreanjos/andre.adois.org'
 
 for f in os.listdir(base + '/sw'):
