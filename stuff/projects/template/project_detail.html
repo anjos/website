@@ -1,0 +1,28 @@
+{% extends "themes/theme1.html" %}
+{% load i18n %}
+{% load markup %}
+{% block title %}{% trans "Publication" %} :: {{ object }}{% endblock %}
+
+{% block content %}
+  <body>
+    <div class="publication">
+       <p class="title">{{ object.title }}</p>
+       <p class="detail">
+        {% if object.pub_type %}[{{ object.pub_type }}]{% endif %} {% blocktrans with object.date|date:"F/Y" as date and object.media as media %} At {{ date }} in {{ media }}{% endblocktrans %}{% if object.volume %}, {% trans "volume" %} {{ object.volume }}{% endif %}{% if object.number %}, {% trans "number" %} {{ object.number }}{% endif %}{% if object.pages %}, {% trans "pages" %} {{ object.pages }}{% endif %}
+       </p>
+      <p class="authors">{{ object.author_list }}</p>
+      <div class="abstract">{{ object.abstract|textile }}</div>
+    </div>
+    <div class="actions">
+      [ <a href="http://{{ site.domain }}/admin/publications/publication/{{ object.id }}/">{% trans "edit" %}</a> ]
+      {% if object.count_files %}
+        [ downloads: 
+        {% for f in object.files.all %}
+          {% if f.public %}<a href="{{ f.url }}">{{ f.name }}</a>{% endif %}
+        {% endfor %}
+        ]
+      {% endif %}
+    </div>
+  </body>
+{% endblock %}
+
