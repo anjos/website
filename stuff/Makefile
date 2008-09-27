@@ -2,7 +2,7 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # This you must set correctly
-PYTHON=/usr/bin/python2.4
+PYTHON=python
 
 # This is automatic
 PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "%d.%d" % sys.version_info[0:2]')
@@ -66,6 +66,10 @@ help:
 # available, excellent for prototyping filters
 shell:
 	$(PY) manage.py shell
+
+# ACTION: goes into the database shell so you can edit things manually 
+dbshell:
+	$(PY) manage.py dbshell
 
 # ACTION: this will actually validate, syncdb and start the development
 # webserver, bound to port 8080 of your machine

@@ -6,6 +6,12 @@
     <link rel="stylesheet" type="text/css" href="{{ media }}theme1/style.css" />
     <link rel="icon" href="/media/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="/media/favicon.ico" type="image/x-icon"/>
+
+    <!-- Feeds go here if the caller has provided so -->
+    {% for feed in feeds %}
+    <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}" href="http://{{ site.domain }}{{ feed.link }}feeds/{{ feed.basename }}/"/>
+    {% endfor %}
+
     {% block header %}<!-- No header extensions provided -->{% endblock %}
   </head>
 
@@ -19,12 +25,11 @@
   </div>
 
   <div class="navigation">
-    <!--<a href="http://del.icio.us/andre.anjos">{% trans "bookmarks" %}</a> &middot;-->
     <a href="http://{{ site.domain }}/bookmark/" title="{% trans 'My latest bookmarks' %}">{% trans "bookmarks" %}</a> &middot; 
     <a href="http://{{ site.domain }}/publication/" title="{% trans 'All my publications' %}">{% trans "publications" %}</a> &middot; 
     <a href="{{ media }}cv/cv.pdf" title="{% trans 'My Curriculum Vitae' %}">{% trans "r&eacute;sum&eacute;" %}</a> &middot; 
     <a href="http://{{ site.domain }}/photo/" title="{% trans 'My preferred photos' %}" %}>{% trans "photos" %}</a> &middot; 
-    <a href="http://trac.adois.org" title="{% trans 'Source code, documents and other stuff in a Repository' %}">{% trans "projects" %}</a>
+    <a href="http://{{ site.domain }}/project/" title="{% trans 'Source code, documents and other stuff in a Repository' %}">{% trans "projects" %}</a>
   </div>
 
   <div class="path">

@@ -76,6 +76,7 @@ TEMPLATE_DIRS = (
   '%s/picasaweb/template' % INSTALLDIR,
   '%s/picasaweb/templatetags' % INSTALLDIR,
   '%s/delicious/template' % INSTALLDIR,
+  '%s/projects/template' % INSTALLDIR,
 )
 
 INSTALLED_APPS = (
@@ -92,5 +93,6 @@ INSTALLED_APPS = (
   'stuff.files',
   'stuff.picasaweb',
   'stuff.delicious',
+  'stuff.projects',
 )
 
