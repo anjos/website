@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from settings import MEDIA_ROOT
-import os
+import os, logging
 
 # Create your models here.
 
@@ -23,14 +22,15 @@ class File(models.Model):
 
   def save(self, force_insert=False, force_update=False):
 
-    curr_md5 = None
+    curr_md5 = '' 
 
-    if os.path.exists(self.path()):
+    if os.path.exists(self.data.path):
       import md5
-      curr_md5 = md5.new(file(self.path(),'rb').read()).hexdigest()
+      curr_md5 = md5.new(file(self.data.path,'rb').read()).hexdigest()
 
     else:
-      return
+      logging.warn('File "%s" is not found. Ignoring MD5 settings.' % \
+          self.data.path)
 
     if not self.md5:
       # calculate the md5sum for the user, based on the data we have received.
@@ -41,22 +41,19 @@ class File(models.Model):
     else:
       # in this case, we check that the md5 sum of the data we received is
       # consistent with what the user passed us. If not, we just return
-      if self.md5 != curr_md5: return
+      if len(curr_md5) > 0 and self.md5 != curr_md5:
+        logging.warn('File "%s" has a self calculated MD5 check sum of "%s", which does not match the user provided one "%s". Not saving.' % \
+          (self.data.path, curr_md5, self.md5))
+        return
 
+    # this is called only if either the file is not available or the user
+    # has supplied a matching md5 checksum.
     super(File, self).save(force_insert, force_update)
 
   # make it translatable
   class Meta:
     verbose_name = _('file')
     verbose_name_plural = _('files')
-
-  def url(self):
-    """Returns a valid URL for this entry"""
-    return self.data.url
-
-  def path(self):
-    """Returns a valid URL for this entry"""
-    return os.path.join(MEDIA_ROOT, self.data.name)
 
   def md5_checksum(self):
     """Checks and updates the MD5 if none is present"""
@@ -65,7 +62,12 @@ class File(models.Model):
       return True
     else:
       import md5
-      return self.md5 != md5.new(file(self.path(),'rb').read()).digest()
+      return self.md5 != md5.new(file(self.data.path,'rb').read()).digest()
+
+  def size(self):
+    """Returns the size of this file, in bytes"""
+    return self.data.size
+  size.short_description = _('Size (bytes)')
 
   def __str__(self):
       return '%s (%s)' % (self.name, self.date)
