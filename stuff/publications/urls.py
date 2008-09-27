@@ -1,12 +1,14 @@
 from django.conf.urls.defaults import *
 from django.views.generic import list_detail
 from publications.models import Publication
-from publications.feeds import TenLastPublications
+from publications.feeds import LatestPublications, LatestDocuments
 
 from settings import MEDIA_URL
 from django.contrib.sites.models import Site
 
-feeds = { 'latest': TenLastPublications, }
+feeds = { LatestPublications.basename: LatestPublications, 
+          LatestDocuments.basename   : LatestDocuments,
+        }
 
 # the location of the site CSS
 site = Site.objects.filter(id=1)[0]
@@ -17,8 +19,9 @@ site = Site.objects.filter(id=1)[0]
 
 publication_list = { 'queryset': Publication.objects.order_by('-date'),
                      'template_name': 'publication_list.html',
-                     'extra_context': {'site': site, 'media': MEDIA_URL},
-                     }
+                     'extra_context': {'site': site, 'media': MEDIA_URL,
+                                       'feeds': feeds.values()},
+                    }
 
 publication_detail = { 'queryset': Publication.objects.filter(),
                        'template_name': 'publication_detail.html',

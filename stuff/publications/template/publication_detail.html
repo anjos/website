@@ -15,9 +15,9 @@
     </div>
     <div class="actions">
       [ <a href="http://{{ site.domain }}/admin/publications/publication/{{ object.id }}/">{% trans "edit" %}</a> ]
-      {% if object.count_files %}
+      {% if object.count_documents %}
         [ downloads: 
-        {% for f in object.files.all %}
+        {% for f in object.document_set.all %}
           {% if f.public %}<a href="{{ f.url }}">{{ f.name }}</a>{% endif %}
         {% endfor %}
         ]

@@ -1,12 +1,23 @@
 {% load i18n %}
+{% load markup %}
+
+<h1>{{ obj.title }}</h1>
+<p><b>{% trans "Publisher" %}: </b>{% if obj.pub_type %}[{{ obj.pub_type }}]{% endif %} {% blocktrans with obj.date|date:"F/Y" as date and obj.media as media %} At {{ date }} in {{ media }}{% endblocktrans %}{% if obj.volume %}, {% trans "volume" %} {{ obj.volume }}{% endif %}{% if obj.number %}, {% trans "number" %} {{ obj.number }}{% endif %}{% if obj.pages %}, {% trans "pages" %} {{ obj.pages }}{% endif %}</p>
+<p><b>{% trans "Authors" %}: </b>{{ obj.author_list }}</p>
+
 {% if obj.abstract %}
-<p class="abstract feed">{{ obj.abstract }}</p>
+<h3>{% trans "Abstract" %}</h3>
+<p>{{ obj.abstract|textile }}</p>
 {% endif %}
-{% if obj.count_files %}
-<table class="files feed">
-    <tr><th>{% trans "File(s)" %}</th></tr>
-    {% for f in obj.files.all %}
-    <tr><td><a href="{{ f.url }}">{{ f.name }}</a></td></tr>
-    {% endfor %}
-</table>
+
+<!-- This is for the attached files -->
+{% if obj.count_documents %}
+<h4 style="font-style: italic;">{% trans "Document(s) attached" %}</h4>
+<ul>
+  {% for f in obj.document_set.all %}
+  <li>
+   <a href="{{ f.data.url }}">{{ f.name }}</a>, {{ f.data.size }} bytes</li>
+   </li>
+  {% endfor %}
+</ul>
 {% endif %}
