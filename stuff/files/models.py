@@ -4,6 +4,15 @@ import os, logging
 
 # Create your models here.
 
+def unicode2html(s):
+  """Converts the unicode string given as input into HTML entities."""
+  from htmlentitydefs import codepoint2name as c2n
+  r = u''
+  for k in s:
+    if c2n.has_key(ord(k)): r += '&' + c2n[ord(k)] + ';'
+    else: r += k
+  return r
+
 class File(models.Model):
   """This model describes an uploaded file.
   """

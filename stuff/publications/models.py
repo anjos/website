@@ -3,16 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import string_concat  as _cat
 
 # Create your models here.
-from files.models import File
-
-def unicode2html(s):
-  """Converts the unicode string given as input into HTML entities."""
-  from htmlentitydefs import codepoint2name as c2n
-  r = u''
-  for k in s:
-    if c2n.has_key(ord(k)): r += '&' + c2n[ord(k)] + ';'
-    else: r += k
-  return r
+from files.models import File, unicode2html
 
 class Publication(models.Model):
   """This model describes a publication in a magazine, journal or conference
