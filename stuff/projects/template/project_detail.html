@@ -45,7 +45,7 @@
         </td></tr>
         {% endif %}
         {% if object.wiki_page %}
-        <tr><td>{% trans "Wiki" %}: {{ object.wiki_page }}</td></tr>
+        <tr><td>{% trans "Wiki" %}: <a href="{{ object.wiki_page }}">{{ object.wiki_page }}</a></td></tr>
         {% endif %}
         {% if object.dsa_pubkey %}
         <tr><td>{% trans "Public DSA Key" %}: <pre>{{ object.dsa_pubkey }}</pre></td></tr>
