@@ -44,8 +44,8 @@
         <tr><td>{% trans "Version Control Repository" %}: <a href="{{ object.vc_url }}{{ object.trunk_dir }}">{{ object.vc_url }}{{ object.trunk_dir }}</a>
         </td></tr>
         {% endif %}
-        {% if object.wiki %}
-        <tr><td>{% trans "Wiki" %}: {{ object.wiki }}</td></tr>
+        {% if object.wiki_page %}
+        <tr><td>{% trans "Wiki" %}: {{ object.wiki_page }}</td></tr>
         {% endif %}
         {% if object.dsa_pubkey %}
         <tr><td>{% trans "Public DSA Key" %}: <pre>{{ object.dsa_pubkey }}</pre></td></tr>
