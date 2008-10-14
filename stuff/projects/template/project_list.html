@@ -1,26 +1,22 @@
 {% extends "themes/theme1.html" %}
 {% load i18n %}
-{% block header %}
-  <link rel="alternate" type="application/atom+xml" title="Andre dos Anjos Publications" href="http://{{ site.domain }}/publication/feeds/latest/" />
-{% endblock %}
-{% block title %}{% trans "Publications" %}{% endblock %}
+{% block title %}{% trans "Projects" %}{% endblock %}
 
 {% block content %}
-    <div class="publication">
-      <p class="title">{% blocktrans %}Publications (in reverse chronological
-      order){% endblocktrans %}</p>
+    <div class="project">
+      <p class="title">{% blocktrans %}Projects (last updated first){% endblocktrans %}</p>
       {% if object_list %}
-        <table class="publication_list">
+        <table class="project_list">
           {% for p in object_list %}
           <tr class="{% cycle 'even' 'odd' %}">
-            <td class="publication_date">{{ p.date|date:"F/Y" }}</td> 
-            <td class="publication_type">{{ p.pub_type }}</td>
-            <td class="publication_title"><a href="{{ p.id }}">{{ p.title }}</a></td>
+            <td class="project_name">{{ p.updated_on|date:"j/F/Y" }} <a
+                href="{{ p.id }}">{{ p.name }}</a></td>
+            <td class="project_description">{{ p.brief }}</td> 
           </tr>
           {% endfor %}
         </table>
       {% else %}
-      <p>{% trans "No publications are available." %}</p>
+      <p>{% trans "No projects are available." %}</p>
       {% endif %}
     </div>
 {% endblock %}

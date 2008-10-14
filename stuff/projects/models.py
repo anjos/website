@@ -6,10 +6,15 @@ from files.models import File, unicode2html
 class Project(models.Model):
   """Describes a software project."""
   
-  name = models.CharField(_('Project name'), max_length=256,
+  name = models.CharField(_('Project name'), max_length=128,
       help_text=_('Insert a short, meaningful name for your project.'))
-  date = models.DateField(_('Start date'), auto_now_add=True,
+  date = models.DateField(_('Start date'),
       help_text=_('The start date of this project.'))
+  updated = models.DateField(_('Last update'), auto_now_add=True,
+      help_text=_('The date on the last update of this project description.'))
+  brief = models.CharField(_('Brief description'), max_length=1024,
+      help_text=_('Brief description of this project (max %d characters)' % \
+        1024))
   description = models.TextField(_('Description'), null=True, blank=True,
       help_text=_('The description of the project is presented on its detailed view page. You should be really descriptive here.'))
   vc_url = models.CharField(_('Version control repository URL'), max_length=1024,
@@ -25,6 +30,40 @@ class Project(models.Model):
     """Counts the number of downloads attached to this project."""
     return len(self.download_set.all())
   count_downloads.short_description = _('Downloads')
+
+  def count_screenshots(self):
+    """Counts the number of screenshots attached to this project."""
+    return len(self.screenshot_set.all())
+  count_screenshots.short_description = _('Screenshots')
+
+  def count_icons(self):
+    """Counts the number of icons attached to this project."""
+    return len(self.icon_set.all())
+  count_icons.short_description = _('Icons')
+  
+  def updated_on(self):
+    """Returns the last modification time for this project.
+    
+    Returns the last time a download was added to this project or the last
+    time a modification was done to its description (the most recent of the two
+    is returned."""
+    downloads = [k.date for k in self.download_set.all()]
+    screenshots = [k.date for k in self.screenshot_set.all()]
+    icons = [k.date for k in self.icon_set.all()]
+    latest = None
+    if downloads: latest = max(downloads)
+    if screenshots and max(screenshots) > latest: latest = max(screenshots)
+    if icons and max(icons) > latest: latest = max(icons)
+
+    if latest:
+      from datetime import datetime
+      uptime = datetime.combine(self.update, datetime.time(0))
+      if  uptime > latest:
+        return self.update
+      return latest.date()
+    else:
+      return self.update
+  updated_on.short_description = _('Last updated')
 
   # make it translatable
   class Meta:
@@ -55,3 +94,24 @@ class Download(File):
     verbose_name = _('download')
     verbose_name_plural = _('downloads')
 
+class Screenshot(File):
+  """Describes a screenshot of your project"""
+
+  # a screenshot applies to a single project
+  project=models.ForeignKey(Project)
+
+  # make it translatable
+  class Meta:
+    verbose_name = _('screenshot')
+    verbose_name_plural = _('screenshots')
+
+class Icon(File):
+  """Describes an icon file associated with a project"""
+
+  # an icon applies to a single project
+  project=models.ForeignKey(Project)
+
+  # make it translatable
+  class Meta:
+    verbose_name = _('icon')
+    verbose_name_plural = _('icons')
