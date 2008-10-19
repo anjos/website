@@ -9,14 +9,13 @@ entries_per_feed = 20
 
 class LatestPublications(Feed):
     feed_type = Atom1Feed
-    title = _("Andre Anjos::Latest publications")
+    title = _("Andre Anjos latest publications")
     description = _("The last %d publications I have written" % entries_per_feed)
-    link = "/publication/"
     title_template = "feeds/publications_title.html"
     description_template = "feeds/publications_description.html"
 
     # stuff for our synchronization between this file and urls.py
-    basename = 'latest_publications'
+    basename = 'publications'
 
     def items(self):
       return Publication.objects.order_by('-date')[:entries_per_feed]
@@ -26,14 +25,13 @@ class LatestPublications(Feed):
 
 class LatestDocuments(Feed):
     feed_type = Atom1Feed
-    title = _("Andre Anjos::Latest files")
+    title = _("Andre Anjos latest documents")
     description = _("The last %d documents I have uploaded" % entries_per_feed)
-    link = "/publication/"
     title_template = "feeds/documents_title.html"
     description_template = "feeds/documents_description.html"
 
     # stuff for our synchronization between this file and urls.py
-    basename = 'latest_documents'
+    basename = 'documents'
 
     def items(self):
       return Document.objects.order_by('-date').filter(public=True)[:20]

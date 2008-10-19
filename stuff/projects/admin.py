@@ -8,7 +8,7 @@ from projects.models import Project, Download, Screenshot, Icon
 from django.utils.translation import ugettext_lazy as _
 
 class ProjectAdmin(admin.ModelAdmin):
-  list_display = ('name', 'updated_on', 'vc_url', 'wiki_page', 'count_downloads')
+  list_display = ('name', 'updated_on', 'vc_url', 'wiki_page', 'count_downloads', 'count_all_downloads')
   list_filter = ['updated', 'name']
   list_per_page = 10
   ordering = ['-updated']

@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load markup %}
+<html>
+  <head>
+    <title>{{ object.project.name }} {% trans "version" %} {{ object.version }}, {{ object.date|date:"j/F/Y" }}, {{ object.data.size }} {% trans "bytes" %}</title>
+  </head>
+  <body>
+    <h1>{{ object.project.name }} {% trans "version" %} {{ object.version }}</h1>
+    {{ object.description|textile }}
+    <h2>{% trans "Download details" %}</h2>
+    <ul>
+      <li><b>Upload date</b>: {{ object.date }}</li> 
+      <li><b>Size</b>: {{ object.data.size }} {% trans "bytes" %}</li>
+      <li><b>MD5 checksum</b>: <code>{{ object.md5 }}</code></li>
+      {% if object.dsa_digest %}
+      <li><b>DSA digest</b>: <code>{{ object.dsa_digest}}</code></li>
+      {% endif %}
+      {% if object.tag_dir %}
+      <li><b>VC tag</b>: <a href="{{ object.project.vc_url }}{{ object.tag_dir }}">{{ object.project.vc_url }}{{ object.tag_dir }}</a></li>
+      {% endif %}
+</ul>
+  </body>
+</html>

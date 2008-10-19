@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load markup %}
+
+{{ obj.description|textile }}
+
+<h2>{% trans "Download details" %}</h2>
+<ul>
+  <li><b>Upload date</b>: {{ obj.date|date:"j/F/Y" }}</li> 
+  <li><b>Size</b>: {{ obj.data.size }} {% trans "bytes" %}</li>
+  <li><b>MD5 checksum</b>: <code>{{ obj.md5 }}</code></li>
+  {% if obj.dsa_digest %}
+  <li><b>DSA digest</b>: <code>{{ obj.dsa_digest}}</code></li>
+  {% endif %}
+  {% if obj.tag_dir %}
+  <li><b>VC tag</b>: <a href="{{ obj.project.vc_url }}{{ obj.tag_dir }}">{{ obj.project.vc_url }}{{ obj.tag_dir }}</a></li>
+  {% endif %}
+</ul>

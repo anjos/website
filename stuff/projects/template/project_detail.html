@@ -1,25 +1,31 @@
 {% extends "themes/theme1.html" %}
 {% load i18n %}
 {% load markup %}
+
+{% block header %}
+  <!-- Feeds go here if the caller has provided so -->
+  {% for feed in feeds %}
+  <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}"
+  href="http://{{ site.domain }}/project/feeds/{{ feed.basename }}/{{ object.name }}"/>
+  {% endfor %}
+{% endblock %}
 {% block title %}{% trans "Project" %} :: {{ object }}{% endblock %}
 
 {% block content %}
   <body>
     <div class="project">
-      {% if object.count_downloads %}
+      {% if object.public_downloads %}
       <div class="downloads">
         <!-- <p class="downloads_header">
         <a href="downloads" title="{% trans 'Click here for a exhaustive listing of all downloads available for this project' %}">{% trans "Downloads" %}</a></p> -->
-        {% for f in object.download_set.all %}
-        {% if f.public %}
-        <a class="download_link" href="{{ f.data.url }}" title="{% trans 'Download the latest version' %}">
+        {% for f in object.public_downloads %}
+        <a class="download_link" href="http://{{ site.domain }}/project/download/{{ f.id }}" title="{% trans 'Download the latest version' %}">
           <p class="download_entry">
           <span class="download_decoration"></span>
           <font class="download_name">{{ f.name }}</font><br />
           <font class="download_detail">{{ f.data.size }} {% trans "bytes" %}, {{ f.date|date:"j/F/Y" }}</font>
           </p>
         </a>
-        {% endif %}
         {% endfor %}
       </div>
       {% endif %}
@@ -38,7 +44,7 @@
       <table>
         <tr><td>{% trans "Creation Date" %}: {{ object.date|date:"j/F/Y" }}
         </td></tr>
-        <tr><td>{% trans "Last updated" %}: {{ object.updated|date:"j/F/Y" }}
+        <tr><td>{% trans "Last updated" %}: {{ object.updated_on|date:"j/F/Y" }}
         </td></tr>
         {% if object.vc_url %}
         <tr><td>{% trans "Version Control Repository" %}: <a href="{{ object.vc_url }}{{ object.trunk_dir }}">{{ object.vc_url }}{{ object.trunk_dir }}</a>
@@ -48,12 +54,12 @@
         <tr><td>{% trans "Wiki" %}: <a href="{{ object.wiki_page }}">{{ object.wiki_page }}</a></td></tr>
         {% endif %}
         {% if object.dsa_pubkey %}
-        <tr><td>{% trans "Public DSA Key" %}: <pre>{{ object.dsa_pubkey }}</pre></td></tr>
+        <tr><td>{% trans "Public DSA key" %}: <a href="http://{{ site.domain }}/project/dsakey/{{ object.name }}">http://{{ site.domain }}/project/dsakey/{{ object.name }}</a></td></tr>
         {% endif %}
       </table>
     </div>
     <div class="actions">
-      [ <a href="http://{{ site.domain }}/admin/projects/project/{{ object.id }}/">{% trans "edit" %}</a> | <a href="http://{{ site.domain }}/admin/projects/download/add/">{% trans "upload" %}</a> ]
+      [ <a href="http://{{ site.domain }}/admin/projects/project/{{ object.name }}/">{% trans "edit" %}</a> | <a href="http://{{ site.domain }}/admin/projects/download/add/">{% trans "upload" %}</a> ]
     </div>
   </body>
 {% endblock %}
