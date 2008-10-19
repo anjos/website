@@ -7,7 +7,7 @@ import locale
 from settings import MEDIA_URL
 from django.contrib.sites.models import Site
 
-site = Site.objects.filter(id=1)[0]
+site = Site.objects.get_current()
 
 def gd_date(s):
   """Converts a google data date representation into a real date"""

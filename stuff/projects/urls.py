@@ -8,7 +8,7 @@ from settings import MEDIA_URL
 from django.contrib.sites.models import Site
 
 # the location of the site CSS
-site = Site.objects.filter(id=1)[0]
+site = Site.objects.get_current()
 
 feeds = dict()
 feeds[LatestDownloadsForProject.basename] = LatestDownloadsForProject

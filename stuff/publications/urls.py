@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from django.views.generic import list_detail
 from publications.models import Publication
-from publications.feeds import LatestPublications, LatestDocuments
+from publications.feeds import * 
 
 from settings import MEDIA_URL
 from django.contrib.sites.models import Site
@@ -10,12 +10,7 @@ feeds = { LatestPublications.basename: LatestPublications,
           LatestDocuments.basename   : LatestDocuments,
         }
 
-# the location of the site CSS
-site = Site.objects.filter(id=1)[0]
-
-# urlpatterns = patterns('publications.views',
-#                        (r'^$', 'index'),
-#                        (r'^(?P<pub_id>\d+)/$', 'get'))
+site = Site.objects.get_current()
 
 publication_list = { 'queryset': Publication.objects.order_by('-date'),
                      'template_name': 'publication_list.html',
