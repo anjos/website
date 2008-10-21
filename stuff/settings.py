@@ -41,7 +41,7 @@ MEDIA_ROOT = os.path.join(BASEDIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
-MEDIA_URL = 'http://localhost:8080/media/'
+MEDIA_URL = 'http://localhost:8080/media'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -55,6 +55,13 @@ SECRET_KEY = 'wk&_+uqn)()=fz07y0qdl%@=m^gp^taf$&7ql&@-ffjk9aln_7'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.load_template_source',
     'django.template.loaders.app_directories.load_template_source',
+)
+
+# What we like to have in every page we render, as context
+TEMPLATE_CONTEXT_PROCESSORS = (
+  'django.core.context_processors.auth', #for users and permissions
+  'django.core.context_processors.media', #for MEDIA_URL
+  'stuff.context_processors.site', #for site
 )
 
 MIDDLEWARE_CLASSES = (

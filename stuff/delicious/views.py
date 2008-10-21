@@ -4,11 +4,6 @@ from delicious.models import DeliciousAccount
 import datetime
 import locale
 
-from settings import MEDIA_URL
-from django.contrib.sites.models import Site
-
-site = Site.objects.get_current()
-
 def gd_date(s):
   """Converts a delicious date representation into a real date"""
   return datetime.datetime(*s[0:6])
@@ -40,4 +35,4 @@ def view_gallery(request, id=None):
   entries = [k[1] for k in entries]
 
   return render_to_response('delicious_gallery.html', 
-      {'entries': entries, 'site': site, 'media': MEDIA_URL, 'owner': owner})
+      {'entries': entries, 'owner': owner})

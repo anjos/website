@@ -4,12 +4,6 @@ from projects.models import Project, Download
 from projects.feeds import * 
 from projects.views import *
 
-from settings import MEDIA_URL
-from django.contrib.sites.models import Site
-
-# the location of the site CSS
-site = Site.objects.get_current()
-
 feeds = dict()
 feeds[LatestDownloadsForProject.basename] = LatestDownloadsForProject
 feeds[LatestDeveloperDownloadsForProject.basename] = \
@@ -20,23 +14,19 @@ all_feeds[SparkleUpdatesForProject.basename] = SparkleUpdatesForProject
 
 project_list = { 'queryset': Project.objects.order_by('-date'),
                  'template_name': 'project_list.html',
-                 'extra_context': {'site': site, 'media': MEDIA_URL},
                }
 
 project_detail = { 'queryset': Project.objects.filter(),
                    'template_name': 'project_detail.html',
-                   'extra_context': {'site': site, 'media': MEDIA_URL, 
-                                     'feeds': feeds.values()},
+                   'extra_context': {'feeds': feeds.values()},
                  }
 
 download_detail = { 'queryset': Download.objects.filter(),
                     'template_name': 'download_detail.html',
-                    'extra_context': {'site': site, 'media': MEDIA_URL},
                   }
 
 notes_detail = { 'queryset': Download.objects.filter(),
                  'template_name': 'notes_detail.html',
-                 'extra_context': {'site': site, 'media': MEDIA_URL},
                }
 
 urlpatterns = patterns('',

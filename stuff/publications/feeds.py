@@ -12,7 +12,7 @@ class LatestPublications(Feed):
     feed_type = Atom1Feed
     title = _("Andre Anjos latest publications")
     description = _("The last %d publications I have written" % entries_per_feed)
-    link = '%s/publication' % site.domain
+    link = 'http://%s/publication' % site.domain
 
     title_template = "feeds/publications_title.html"
     description_template = "feeds/publications_description.html"
@@ -24,13 +24,13 @@ class LatestPublications(Feed):
       return Publication.objects.order_by('-date')[:entries_per_feed]
 
     def item_link(self, item):
-      return '/publication/' + str(item.id) + '/'
+      return 'http://%s/publication/%d' % (site.domain, item.id)
 
 class LatestDocuments(Feed):
     feed_type = Atom1Feed
     title = _("Andre Anjos latest documents")
     description = _("The last %d documents I have uploaded" % entries_per_feed)
-    link = '%s/publication' % site.domain
+    link = 'http://%s/publication' % site.domain
 
     title_template = "feeds/documents_title.html"
     description_template = "feeds/documents_description.html"

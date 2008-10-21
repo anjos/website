@@ -3,11 +3,8 @@
 # Mon 13 Aug 2007 08:43:49 AM PDT 
 
 from django.shortcuts import render_to_response
-from settings import MEDIA_URL
-
-from django.contrib.sites.models import Site
-site = Site.objects.get_current()
+from django.template import RequestContext
 
 def index(request):
-  return render_to_response('home.html', {'site': site, 
-                                          'media': MEDIA_URL})
+  return render_to_response('home.html',
+                            context_instance=RequestContext(request))

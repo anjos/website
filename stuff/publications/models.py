@@ -39,12 +39,12 @@ class Publication(models.Model):
   has_abstract.short_description = _('Abstract')
 
   # make it translatable
-  class Meta:
+  class meta:
     verbose_name = _('publication')
     verbose_name_plural = _('publications')
 
   def __str__(self):
-    return unicode2html(self.title + (' (%s)' % self.date.strftime('%B %Y')))
+    return unicode2html(self.title + (' (%s)' % self.date.strftime('%b %y')))
 
 class Document(File):
   """Describes a document that is associated with a publication."""

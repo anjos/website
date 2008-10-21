@@ -2,14 +2,6 @@ import settings
 from django.conf.urls.defaults import *
 from django.contrib import admin
 
-# databrowse capabilities to our stuff
-# from django.contrib import databrowse
-# from stuff.publications.models import Publication
-# databrowse.site.register(Publication)
-
-# authentication required for databrowsing
-# from django.contrib.auth.decorators import login_required
-
 admin.autodiscover()
 
 subdir = ''

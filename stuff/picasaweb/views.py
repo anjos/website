@@ -4,11 +4,6 @@ from picasaweb.models import PicasawebAccount
 import time, datetime
 import locale
 
-from settings import MEDIA_URL
-from django.contrib.sites.models import Site
-
-site = Site.objects.get_current()
-
 def gd_date(s):
   """Converts a google data date representation into a real date"""
   return datetime.datetime(*(time.strptime(s.split('.')[0], '%Y-%m-%dT%H:%M:%S')[0:6]))
@@ -42,5 +37,4 @@ def view_gallery(request, id=None):
   entries = [k[1] for k in entries]
 
   return render_to_response('picasaweb_gallery.html', 
-      {'entries': entries, 'site': site, 'media': MEDIA_URL,  
-      'usermap': usermap, 'owner': owner})
+      {'entries': entries, 'usermap': usermap, 'owner': owner})
