@@ -1,4 +1,5 @@
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from delicious.models import DeliciousAccount
 
 import datetime
@@ -35,4 +36,6 @@ def view_gallery(request, id=None):
   entries = [k[1] for k in entries]
 
   return render_to_response('delicious_gallery.html', 
-      {'entries': entries, 'owner': owner})
+                            {'entries': entries, 'owner': owner},
+                            context_instance=RequestContext(request))
+

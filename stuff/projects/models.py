@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import string_concat  as _cat
-from files.models import File, unicode2html
+from files.models import File
 
 class Project(models.Model):
   """Describes a software project."""
@@ -78,8 +78,8 @@ class Project(models.Model):
     verbose_name = _('project')
     verbose_name_plural = _('projects')
 
-  def __str__(self):
-    return unicode2html(self.name)
+  def __unicode__(self):
+    return self.name
 
 class Download(File):
   """Describes a file that is associated with a project and can be downloaded."""

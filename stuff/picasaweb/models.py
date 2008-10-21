@@ -1,11 +1,10 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ugettext as _str
+from django.utils.translation import ugettext
 from django.utils.translation import string_concat  as _cat
+
 # Picasaweb support from Google (search gdata.py)
 import gdata.photos.service
-
-# Create your models here.
 
 class UserInfo:
   """Describes the user info class"""
@@ -73,13 +72,13 @@ class PicasawebAccount(models.Model):
   # dynamic property
   feed = property(_cache_feed)
 
-  def __str__(self):
+  def __unicode__(self):
     """A string representation of myself"""
     if self.num_albums:
       if self.num_albums == 1:
-        return _str('Last uploaded album of %(email)s' % {'email': self.email})
+        return ugettext(u'Last uploaded album of %(email)s' % {'email': self.email})
       else:
-        return _str('%(email)s, last %(num_albums)s albums' % \
+        return ugettext(u'%(email)s, last %(num_albums)s albums' % \
             {'email': self.email, 'num_albums': self.num_albums})
 
-    return _str('%(email)s' % {'email': self.email})
+    return ugettext(u'%(email)s' % {'email': self.email})

@@ -3,9 +3,9 @@
 <html>
   <head>
     <title>{{ site.name }} :: {% block title %} NO TITLE? {% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/theme2/style.css" />
-    <link rel="icon" href="{{ MEDIA_URL}}/favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="{{ MEDIA_URL }}/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}theme2/style.css" />
+    <link rel="icon" href="{{ MEDIA_URL}}favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico" type="image/x-icon"/>
 
     {% block header %}<!-- No header extensions provided -->{% endblock %}
   </head>
@@ -15,14 +15,14 @@
 
   <div class="banner">
     <a href="http://{{ site.domain }}">
-      <img src="{{ MEDIA_URL }}/theme1/banner.png" title="{% trans 'Swing back to the home page' %}" alt="{{ site.name }}"/>
+      <img src="{{ MEDIA_URL }}theme1/banner.png" title="{% trans 'Swing back to the home page' %}" alt="{{ site.name }}"/>
     </a>
   </div>
 
   <div class="navigation">
     <a href="http://{{ site.domain }}/bookmark/" title="{% trans 'My latest bookmarks' %}">{% trans "bookmarks" %}</a> &middot; 
     <a href="http://{{ site.domain }}/publication/" title="{% trans 'All my publications' %}">{% trans "publications" %}</a> &middot; 
-    <a href="{{ MEDIA_URL }}/cv/cv.pdf" title="{% trans 'My Curriculum Vitae' %}">{% trans "r&eacute;sum&eacute;" %}</a> &middot; 
+    <a href="{{ MEDIA_URL }}cv/cv.pdf" title="{% trans 'My Curriculum Vitae' %}">{% trans "r&eacute;sum&eacute;" %}</a> &middot; 
     <a href="http://{{ site.domain }}/photo/" title="{% trans 'My preferred photos' %}" %}>{% trans "photos" %}</a> &middot; 
     <a href="http://{{ site.domain }}/project/" title="{% trans 'Source code, documents and other stuff in a Repository' %}">{% trans "projects" %}</a>
   </div>

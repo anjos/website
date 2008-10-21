@@ -1,4 +1,5 @@
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from picasaweb.models import PicasawebAccount
 
 import time, datetime
@@ -37,4 +38,7 @@ def view_gallery(request, id=None):
   entries = [k[1] for k in entries]
 
   return render_to_response('picasaweb_gallery.html', 
-      {'entries': entries, 'usermap': usermap, 'owner': owner})
+                            {'entries': entries, 
+                             'usermap': usermap, 
+                             'owner': owner},
+                            context_instance=RequestContext(request))

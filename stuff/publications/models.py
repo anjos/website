@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import string_concat  as _cat
 
 # Create your models here.
-from files.models import File, unicode2html
+from files.models import File
 
 class Publication(models.Model):
   """This model describes a publication in a magazine, journal or conference
@@ -43,8 +43,8 @@ class Publication(models.Model):
     verbose_name = _('publication')
     verbose_name_plural = _('publications')
 
-  def __str__(self):
-    return unicode2html(self.title + (' (%s)' % self.date.strftime('%b %y')))
+  def __unicode__(self):
+    return self.title + (' (%s)' % self.date.strftime('%b %y'))
 
 class Document(File):
   """Describes a document that is associated with a publication."""
@@ -52,6 +52,6 @@ class Document(File):
   # a document can only belong to a single publication
   publication=models.ForeignKey(Publication)
 
-  def __str__(self):
-      return '%s (%s), belongs to "%s"' % (self.name, self.date, self.publication)
+  def __unicode__(self):
+      return u'%s (%s), belongs to "%s"' % (self.name, self.date, self.publication)
 

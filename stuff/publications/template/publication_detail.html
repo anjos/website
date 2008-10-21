@@ -18,7 +18,7 @@
       {% if object.count_documents %}
         [ downloads: 
         {% for f in object.document_set.all %}
-          {% if f.public %}<a href="{{ f.url }}">{{ f.name }}</a>{% endif %}
+          {% if f.public %}<a href="{{ f.data.url }}">{{ f.name }}</a>{% endif %}
         {% endfor %}
         ]
       {% endif %}
