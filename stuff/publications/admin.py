@@ -8,7 +8,7 @@ from publications.models import Publication, Document
 from django.utils.translation import ugettext_lazy as _
 
 class PublicationAdmin(admin.ModelAdmin):
-  list_display = ('title', 'date', 'pub_type', 'has_abstract', 
+  list_display = ('title', 'date', 'publication_type', 'has_abstract', 
       'count_documents')
   list_filter = ['date']
   list_per_page = 10
@@ -17,7 +17,7 @@ class PublicationAdmin(admin.ModelAdmin):
   date_hierarchy = 'date'
   fieldsets = (
       (None, {'fields': ('title', 'date', 'author_list', 
-                         ('pub_type', 'media'),
+                         ('publication_type', 'media'),
                          ('volume', 'number', 'pages'), 
                          'abstract')}),
   )
