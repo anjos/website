@@ -4,17 +4,12 @@
 # This you must set correctly
 PYTHON=python
 
-# This is automatic
-PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print "%d.%d" % sys.version_info[0:2]')
-PYTHONPATH=$($BASEDIR):$(BASEDIR)/sw
-
 # Find my django projects
 PROJECT=template files publications picasaweb delicious
 
 # These are helpers
-PY=PYTHONPATH=$(PYTHONPATH) $(PYTHON)
-MAKE_MESSAGE=$(PY) $($BASEDIR)/sw/django-admin.py makemessages
-COMPILE_MESSAGE=$(PY) $($BASEDIR)/sw/django-admin.py compilemessages
+MAKE_MESSAGE=$(PYTHON) $($BASEDIR)/sw/django-admin.py makemessages
+COMPILE_MESSAGE=$(PYTHON) $($BASEDIR)/sw/django-admin.py compilemessages
 
 .PHONY: clean 
 
@@ -50,32 +45,32 @@ build-%:
 # ACTION: validates django models and nothing else
 validate:
 	@echo "Validating django models..."
-	$(PY) manage.py validate 
+	$(PYTHON) manage.py validate 
 
 # ACTION: makes sure the existing DB schema is a reflection of what the current
 # application models are
 syncdb: validate
 	@echo "Sychronizing database (initialize, if empty)..."
-	$(PY) manage.py syncdb
+	$(PYTHON) manage.py syncdb
 
 # ACTION: prints the django help message
 help: 
-	$(PY) manage.py help
+	$(PYTHON) manage.py help
 
 # ACTION: launches a python prompt with all our application and models
 # available, excellent for prototyping filters
 shell:
-	$(PY) manage.py shell
+	$(PYTHON) manage.py shell
 
 # ACTION: goes into the database shell so you can edit things manually 
 dbshell:
-	$(PY) manage.py dbshell
+	$(PYTHON) manage.py dbshell
 
 # ACTION: this will actually validate, syncdb and start the development
 # webserver, bound to port 8080 of your machine
 test: validate syncdb
 	@echo "Running python test server..."
-	$(PY) manage.py runserver 8080
+	$(PYTHON) manage.py runserver 8080
 
 clean: 	
 	find . -name '*~' -print0 | xargs -0 rm -vf 
