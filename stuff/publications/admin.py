@@ -17,7 +17,7 @@ class PublicationAdmin(admin.ModelAdmin):
   date_hierarchy = 'date'
   fieldsets = (
       (None, {'fields': ('title', 'date', 'author_list', 
-                         ('publication_type', 'media'),
+                         ('audience', 'publication_type', 'media'),
                          ('volume', 'number', 'pages'), 
                          'abstract')}),
   )
