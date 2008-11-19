@@ -64,16 +64,34 @@ body div.content {
   padding: 5px;
 }
 
+div.publication p.publication_year {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+div.publication table {
+  width: 100%;
+}
+
 div.publication table.publication_list {
   font-size: 14px;
 }
 
 div.publication table.publication_list tr {
+  background-color: #eee;
   height: 50px;
 }
 
+div.publication table.publication_list td.publication_date {
+  width: 15%;
+}
+
+div.publication table.publication_list td.publication_type {
+  width: 20%;
+}
+
 div.publication table.publication_list tr.even {
-  background-color: #ddd;
+  background-color: #ccc;
 }
 
 div.publication ul li.odd {
