@@ -25,8 +25,8 @@ body div.navigation {
   color: #7af;
   text-align: center;
   font-weight: bold;
-  font-size: 18px;
-  padding: 10px;
+  font-size: 1.2em;
+  padding: 0.5em;
 }
 
 body div.navigation a {
@@ -37,6 +37,23 @@ body div.navigation a {
 body div.navigation a:hover {
   text-decoration: underline;
   color: #ddf;
+}
+
+body div.subnavigation {
+  color: #26a;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+body div.subnavigation a {
+  text-decoration: none;
+  color: #26a;
+}
+
+body div.subnavigation a:hover {
+  text-decoration: underline;
+  color: #048;
 }
 
 body div.main {
@@ -97,12 +114,6 @@ div.publication table.publication_list tr.even {
 div.publication ul li.odd {
 }
 
-div.publication p.title {
-  font-size: 18px;
-  text-align: center;
-  font-weight: bold;
-}
-
 div.publication p.detail {
   font-size: 12px;
   text-align: center;
@@ -152,7 +163,7 @@ div.actions a:hover {
   text-decoration: underline;
 }
 
-div.picasaweb p.title {
+p.title {
   font-size: 18px;
   text-align: center;
   font-weight: bold;
@@ -197,12 +208,6 @@ div.picasaweb div.caption div.updated {
   color: #cbcbcb;
 }
 
-div.delicious p.title {
-  font-size: 18px;
-  text-align: center;
-  font-weight: bold;
-}
-
 div.delicious table {
   width: 100%;
   padding: 5px;
@@ -224,12 +229,6 @@ div.delicious font.entry_date {
 
 div.delicious table tr.even {
   background-color: #afa;
-}
-
-div.project p.title {
-  font-size: 18px;
-  text-align: center;
-  font-weight: bold;
 }
 
 div.project p.details {
@@ -306,5 +305,9 @@ div.project a.screenshot_link {
 div.project p.screenshot_caption {
   font-style: italic;
   font-size: 0.6em;
+}
+
+div.multimedia table.multimedia_list tr.even {
+  background-color: #ccc;
 }
 
