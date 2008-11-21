@@ -1,0 +1,32 @@
+{% extends "themed.html" %}
+{% load i18n %}
+{% block header %}
+  <!-- Feeds go here if the caller has provided so -->
+  {% for feed in feeds %}
+  <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}" href="http://{{ site.domain }}/publication/feeds/{{ feed.basename }}/"/>
+  {% endfor %}
+{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="subnavigation">
+  <a href="/multimedia/press">Public events</a> &middot;
+  <a href="/multimedia/personal">Personal files</a> &middot;
+  <a href="/multimedia/other">Other files</a>
+</div>
+<div class="multimedia">
+  <p class="title">{{ title }} {% blocktrans %}(in reverse chronological order){% endblocktrans %}</p>
+  {% if object_list %}
+  <table class="multimedia_list">
+    {% for o in object_list %}
+    <tr class="{% cycle 'even' 'odd' %}">
+      <td class="preview">{% autoescape off %}{{ o.thumbnail }}{% endautoescape %}</td> 
+      <td class="description">{{ o.description }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p>{% trans "No multimedia files are available in this category." %}</p>
+  {% endif %}
+</div>
+{% endblock %}
