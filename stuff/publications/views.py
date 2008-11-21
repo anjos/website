@@ -3,7 +3,7 @@
 # Created by Andre Anjos <andre.dos.anjos@cern.ch>
 # Tue 18 Nov 15:52:08 2008 
 
-"""Specialized views for projects.
+"""Specialized views for publications.
 """
 
 from django.shortcuts import render_to_response
