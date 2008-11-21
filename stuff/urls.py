@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     (r'^%sphoto/' % subdir, include('stuff.picasaweb.urls')),
     (r'^%sbookmark/' % subdir, include('stuff.delicious.urls')),
     (r'^%sproject/' % subdir, include('stuff.projects.urls')),
+    (r'^%smultimedia/' % subdir, include('stuff.multimedia.urls')),
     # (r'^%sdb/(.*)' % subdir, databrowse.site.root),
     (r'^%s$' % subdir, 'stuff.views.index'),
 

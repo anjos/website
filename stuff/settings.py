@@ -33,7 +33,7 @@ LANGUAGE_CODE = 'en'
 LOCALE_PATHS = ( '%s/template/locale' % INSTALLDIR, 
                 )
 
-SITE_ID = 1
+SITE_ID = 2
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -84,6 +84,7 @@ TEMPLATE_DIRS = (
   '%s/picasaweb/templatetags' % INSTALLDIR,
   '%s/delicious/template' % INSTALLDIR,
   '%s/projects/template' % INSTALLDIR,
+  '%s/multimedia/template' % INSTALLDIR,
 )
 
 INSTALLED_APPS = (
@@ -101,5 +102,6 @@ INSTALLED_APPS = (
   'stuff.picasaweb',
   'stuff.delicious',
   'stuff.projects',
+  'stuff.multimedia',
 )
 
