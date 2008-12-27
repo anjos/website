@@ -14,6 +14,7 @@ publication_detail = { 'queryset': Publication.objects.filter(),
 
 urlpatterns = patterns('',
                        (r'^$', publications_by_year),
+                       (r'^list/$', simple_list),
                        (r'^feeds/(?P<url>.*)/$', 
                         'django.contrib.syndication.views.feed', 
                         {'feed_dict': feeds}),

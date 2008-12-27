@@ -34,3 +34,21 @@ def publications_by_year(request):
                              'feeds': feeds.values(),
                             },
                             context_instance=RequestContext(request))
+
+def simple_list(request):
+  """A simple listing of publications"""
+
+  data = {}
+  for p in Publication.objects.order_by('-date'):
+    if data.has_key(p.date.year): data[p.date.year].append(p)
+    else: data[p.date.year] = [p]
+
+  years = data.keys()
+  years.sort(reverse=True)
+
+  data = [(y, data[y]) for y in years]
+
+  return render_to_response('simple_list.html',
+                            {'objects_by_year': data, 
+                            },
+                            context_instance=RequestContext(request))

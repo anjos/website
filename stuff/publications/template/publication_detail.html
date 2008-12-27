@@ -4,25 +4,23 @@
 {% block title %}{% trans "Publication" %} :: {{ object }}{% endblock %}
 
 {% block content %}
-  <body>
-    <div class="publication">
-       <p class="title">{{ object.title }}</p>
-       <p class="detail">
-         [{{ object.get_publication_type_display }}] {% blocktrans with object.date|date:"F/Y" as date and object.media as media %} At {{ date }} in {{ media }}{% endblocktrans %}{% if object.volume %}, {% trans "volume" %} {{ object.volume }}{% endif %}{% if object.number %}, {% trans "number" %} {{ object.number }}{% endif %}{% if object.pages %}, {% trans "pages" %} {{ object.pages }}{% endif %}
-       </p>
-      <p class="authors">{{ object.author_list }}</p>
-      <div class="abstract">{{ object.abstract|textile }}</div>
-    </div>
-    <div class="actions">
-      [ <a href="http://{{ site.domain }}/admin/publications/publication/{{ object.id }}/">{% trans "edit" %}</a> ]
-      {% if object.count_documents %}
-        [ downloads: 
-        {% for f in object.document_set.all %}
-          {% if f.public %}<a href="{{ f.data.url }}">{{ f.name }}</a>{% endif %}
-        {% endfor %}
-        ]
-      {% endif %}
-    </div>
-  </body>
+  <div class="publication">
+     <p class="title">{{ object.title }}</p>
+     <p class="detail">
+       [{{ object.get_publication_type_display }}] {% blocktrans with object.date|date:"F/Y" as date and object.media as media %} At {{ date }} in {{ media }}{% endblocktrans %}{% if object.volume %}, {% trans "volume" %} {{ object.volume }}{% endif %}{% if object.number %}, {% trans "number" %} {{ object.number }}{% endif %}{% if object.pages %}, {% trans "pages" %} {{ object.pages }}{% endif %}
+     </p>
+    <p class="authors">{{ object.author_list }}</p>
+    <div class="abstract">{{ object.abstract|textile }}</div>
+  </div>
+  <div class="actions">
+    [ <a href="http://{{ site.domain }}/admin/publications/publication/{{ object.id }}/">{% trans "edit" %}</a> ]
+    {% if object.count_documents %}
+      [ downloads: 
+      {% for f in object.document_set.all %}
+        {% if f.public %}<a href="{{ f.data.url }}">{{ f.name }}</a>{% endif %}
+      {% endfor %}
+      ]
+    {% endif %}
+  </div>
 {% endblock %}
 
