@@ -11,7 +11,7 @@
           <p class="publication_year">{{ year }}</p>
           <ul>
           {% for p in object_list %}
-          <li><font class="author_list">{{ p.author_list }}</font>, <font class="publication_title">"{{ p.title }}"</font>, <font class="publication_type">{{ p.get_publication_type_display }}</font>, {% blocktrans with p.date|date:"F/Y" as date and p.media as media %}<font class="date">{{ date }}</font>, <font class="media">{{ media }}</font>{% endblocktrans %}<font class="details">{% if p.volume %}, {% trans "volume" %}{{ p.volume }}{% endif %}{% if p.number %}, {% trans "number" %}{{ p.number }}{% endif %}{% if p.pages %}, {% trans "pages" %}{{ p.pages }}{% endif %}</font></li>
+          <li><font class="author_list">{{ p.author_list }}</font>, <font class="publication_title">"{{ p.title }}"</font>, <font class="publication_type">{{ p.get_publication_type_display }}</font>, {% blocktrans with p.date|date:"F/Y" as date and p.media as media %}<font class="date">{{ date }}</font>, <font class="media">{{ media }}</font>{% endblocktrans %}<font class="details">{% if p.volume %}, {% trans "volume" %} {{ p.volume }}{% endif %}{% if p.number %}, {% trans "number" %} {{ p.number }}{% endif %}{% if p.pages %}, {% trans "pages" %} {{ p.pages }}{% endif %}</font></li>
           {% endfor %}
           </ul>
         {% endfor %}
