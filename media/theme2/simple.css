@@ -1,0 +1,16 @@
+/* General layout: one column */
+
+div.publication p.title {
+  font-size: 2em;
+}
+
+div.publication p.publication_year {
+  font-size: 1.4em;
+}
+
+div.publication font.publication_title {
+  font-style: italic;
+  font-weight: bold;
+}
+
+
