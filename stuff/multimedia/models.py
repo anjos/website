@@ -11,9 +11,9 @@ picture_extensions = ('jpg', 'jpeg', 'bmp', 'png', 'gif', 'pdf')
 class Item(models.Model):
   """Describes an item displayed in my Multimedia gallery"""
 
-  category_choices = (('M', _(u'Media')),
-                      ('P', _(u'Personal')),
-                      ('V', _(u'Varieties')),
+  category_choices = (('M', _(u'Public events')),
+                      ('P', _(u'Personal files')),
+                      ('V', _(u'Other files')),
                      )
 
   category = models.CharField(_('Category'), max_length=1,

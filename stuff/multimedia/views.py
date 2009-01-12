@@ -6,6 +6,8 @@
 """Specialized views for publications.
 """
 
+from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import string_concat  as _cat
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponsePermanentRedirect
@@ -13,25 +15,31 @@ from django.core.exceptions import ObjectDoesNotExist
 
 from multimedia.models import File, Embedded, Item
 
-def multimedia_file_by_category(request, category):
+def multimedia_file_by_category(request, category=None):
   """A personalized listing of multimedia files, by category."""
-
-  object_list = \
-      list(File.objects.filter(category=category).order_by('-date')) + \
-      list(Embedded.objects.filter(category=category).order_by('-date'))
+  
+  if category:
+    object_list = list(File.objects.filter(category=category).order_by('-date')) + list(Embedded.objects.filter(category=category).order_by('-date'))
+    title = [k[1] for k in Item.category_choices if k[0] == category]
+    if title: title = title[0]
+    else: title = _(u'Undefined category (%s)' % category)
+  else:
+    object_list = list(File.objects.order_by('-date')) + \
+      list(Embedded.objects.order_by('-date'))
+    title = u'Multimedia Files'
 
   object_list.sort(key=lambda obj: obj.date, reverse=True) 
-
-  title = [k[1] for k in Item.category_choices if k[0] == category]
-  if title: title = title[0]
-  else: title = u'Undefined category (%s)' % category
 
   return render_to_response('media_list.html',
                             {'object_list': object_list, 
                              'feeds': [],
+                             'show_category': not bool(category),
                              'title': title,
                             },
                             context_instance=RequestContext(request))
+
+def multimedia_all(request):
+  return multimedia_file_by_category(request) 
 
 def multimedia_public(request):
   return multimedia_file_by_category(request, 'M') 
