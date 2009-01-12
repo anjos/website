@@ -324,7 +324,18 @@ div.project p.screenshot_caption {
   font-size: 0.6em;
 }
 
+div.multimedia table.multimedia_list {
+  padding: 0.3em;
+}
+
 div.multimedia table.multimedia_list tr.even {
   background-color: #ccc;
 }
 
+div.multimedia table.multimedia_list td.description {
+  width: 100%;
+}
+
+div.multimedia table.multimedia_list td.preview img {
+  border-width: 0px;
+}
