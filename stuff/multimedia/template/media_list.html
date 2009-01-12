@@ -21,7 +21,13 @@
     {% for o in object_list %}
     <tr class="{% cycle 'even' 'odd' %}">
       <td class="preview"><a href="{{ o.id }}"><img src="{{ o.preview.url }}"></img></a></td> 
-      <td class="description">{% if show_category %}<div class="category">{% trans "In" %} "{{ o.get_category_display }}":<br /></div>{% endif %}{{ o.description }}<br /><div class="media_upload">{% trans "Uploaded on" %} {{ o.date|date:"j/F/Y" }}.</div></td>
+      <td class="caption">
+        <table>
+          {% if show_category %}<tr class="category"><td>{% trans "In" %} "{{ o.get_category_display }}":</td></tr>{% endif %}
+          <tr class="description"><td>{{ o.description }}</td></tr>
+          <tr class="media_upload"><td>{% trans "Uploaded on" %} {{ o.date|date:"j/F/Y" }}.</td></tr>
+        </table>
+      </td>
     </tr>
     {% endfor %}
   </table>
