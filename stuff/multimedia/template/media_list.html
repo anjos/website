@@ -20,8 +20,8 @@
   <table class="multimedia_list">
     {% for o in object_list %}
     <tr class="{% cycle 'even' 'odd' %}">
-      <td class="preview">{% autoescape off %}{{ o.thumbnail }}{% endautoescape %}</td> 
-      <td class="description">{{ o.description }}</td>
+      <td class="preview"><a href="{{ o.id }}"><img src="{{ o.preview.url }}"></img></a></td> 
+      <td class="description">{{ o.description }}<br /><div class="media_upload">{% trans "Uploaded on" %} {{ o.date|date:"j/F/Y" }}.</div></td>
     </tr>
     {% endfor %}
   </table>

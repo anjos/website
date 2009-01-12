@@ -19,6 +19,9 @@ class Item(models.Model):
   category = models.CharField(_('Category'), max_length=1,
       help_text=_('Choose the category of your file. Media events are the default shown in the multimedia start page.'), null=False, blank=False, choices=category_choices)
 
+  preview = models.FileField(_('Preview'), upload_to='%Y/%m/%d/preview',
+      help_text=_('Specify here the preview image (160x120 pixels) that will be shown. If you don\'t specify anything, this web application will try its best to come up with a thumbnail for your entry.'))
+
   # make it translatable
   class Meta:
     verbose_name = _('multimedia item')
@@ -41,15 +44,6 @@ class Embedded(Item):
     verbose_name = _('embedded multimedia object')
     verbose_name_plural = _('embedded multimedia objects')
 
-  def describe(self):
-    """Describes the object in more details..."""
-
-    # a simple approach for now...
-    return self.description
-
-  def thumbnail(self):
-    return self.object
-
   def __unicode__(self):
     return u'%s (%s), filed under %s' % (self.name, self.date,
           self.get_category_display())
@@ -57,23 +51,10 @@ class Embedded(Item):
 class File(files.models.File,Item):
   """Describes a multimedia file, uploaded to the website."""
 
-  preview = models.FileField(_('Preview'), upload_to='%Y/%m/%d/preview',
-      help_text=_('Specify here the preview image (300x300 pixels) that will be shown. If you don\'t specify anything, this web application will try its best to come up with a thumbnail for your entry.'))
-
   # make it translatable
   class Meta:
     verbose_name = _('multimedia file')
     verbose_name_plural = _('multimedia files')
-
-  def thumbnail(self):
-    """Returns the HTML object to be embedded as the preview..."""
-    return '<img src="%s"/>' % self.preview.url
-
-  def describe(self):
-    """Describes the object in more details..."""
-
-    # a simple approach for now...
-    return self.description
 
   def __unicode__(self):
     return u'%s (%s), filed under %s' % (self.name, self.date,

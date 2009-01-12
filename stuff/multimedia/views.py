@@ -8,8 +8,10 @@
 
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.http import HttpResponsePermanentRedirect
+from django.core.exceptions import ObjectDoesNotExist
 
-from multimedia.models import File, Embedded, Item 
+from multimedia.models import File, Embedded, Item
 
 def multimedia_file_by_category(request, category):
   """A personalized listing of multimedia files, by category."""
@@ -39,3 +41,23 @@ def multimedia_personal(request):
 
 def multimedia_other(request):
   return multimedia_file_by_category(request, 'V') 
+
+def multimedia_detail(request, object_id):
+  object = Item(id=object_id) 
+
+  # we try to convert the generic Item into the specific type
+  try: object = object.file
+  except ObjectDoesNotExist: pass
+  else: 
+    return HttpResponsePermanentRedirect(object.data.url)
+
+  try: object = object.embedded
+  except ObjectDoesNotExist: raise
+  else:
+    # current object is an embedded item, show a nice page to display it.
+    return render_to_response('media_embedded.html',
+                              {'object': object,
+                               'title': object.name,
+                              },
+                              context_instance=RequestContext(request))
+

@@ -1,0 +1,24 @@
+{% extends "themed.html" %}
+{% load i18n %}
+{% block header %}
+  <!-- Feeds go here if the caller has provided so -->
+  {% for feed in feeds %}
+  <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}" href="http://{{ site.domain }}/publication/feeds/{{ feed.basename }}/"/>
+  {% endfor %}
+{% endblock %}
+{% block title %}{{ object.get_category_display }} :: {{ title }}{% endblock %}
+
+{% block content %}
+<div class="subnavigation">
+  <a href="/multimedia/press">Public events</a> &middot;
+  <a href="/multimedia/personal">Personal files</a> &middot;
+  <a href="/multimedia/other">Other files</a>
+</div>
+<div class="multimedia">
+  <p class="title">{{ title }}</p>
+  <table class="multimedia_detail">
+    <tr><td class="embedded_object">{% autoescape off %}{{ object.object }}{% endautoescape %}</td></tr>
+    <tr><td class="description">{{ object.description }} ({% trans "Uploaded on" %} {{ object.date|date:"j/F/Y" }}.)</td></tr>
+  </table>
+</div>
+{% endblock %}
