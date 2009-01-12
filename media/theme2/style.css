@@ -339,3 +339,25 @@ div.multimedia table.multimedia_list td.description {
 div.multimedia table.multimedia_list td.preview img {
   border-width: 0px;
 }
+
+div.multimedia table.multimedia_list td.description {
+  font-size: 0.8em;
+}
+
+div.multimedia table.multimedia_list td.description div.media_upload {
+  font-style: italic;
+}
+
+div.multimedia table.multimedia_detail {
+  width: 100%;
+  padding: 0.3em;
+}
+
+div.multimedia table.multimedia_detail td {
+  text-align: center;
+}
+
+div.multimedia table.multimedia_detail td.description {
+  font-style: italic;
+  font-size: 0.8em;
+}
