@@ -21,6 +21,11 @@
                 <td class="publication_date">{{ p.date|date:"F" }}</td> 
                 <td class="publication_type">{{ p.get_publication_type_display }}</td>
                 <td class="publication_title"><a href="{{ p.id }}">{{ p.title }}</a></td>
+                <td class="publication_attachments">
+                  {% for a in p.document_set.all %}
+                    {% if a.public %}<a href="{{ a.data.url }}">{{ forloop.counter }}</a>{% endif %}
+                  {% endfor %}
+                </td>
               </tr>
               {% endfor %}
             </table>
