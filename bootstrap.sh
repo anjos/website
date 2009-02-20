@@ -19,7 +19,6 @@ setuptools_egg=setuptools-0.6c9-py${python_version}.egg
 setuptools=http://pypi.python.org/packages/${python_version}/s/setuptools/${setuptools_egg};
 docutils=http://docutils.sourceforge.net/docutils-snapshot.tgz
 django=django
-scons=scons
 gdata=gdata.py
 etree=elementtree
 feedparser=feedparser
@@ -70,7 +69,6 @@ function git_install () {
 
 install docutils ${docutils}
 install django ${django}
-install scons ${scons}
 install gdata ${gdata}
 install elementTree ${etree}
 install feedparser ${feedparser}
