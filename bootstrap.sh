@@ -27,7 +27,6 @@ textile=textile
 pysqlite2=http://oss.itsystementwicklung.de/download/pysqlite/2.5/2.5.1/pysqlite-2.5.1.tar.gz
 pygments=pygments
 gitpython=gitpython
-djangogit=git://github.com/sethtrain/django-git.git
 
 # This script will download and install all necessary software for us
 [ -r sw ] && rm -f sw;
@@ -79,4 +78,3 @@ install textile ${textile}
 install pysqlite2 ${pysqlite2}
 install pygments ${pygments}
 install gitpython ${gitpython}
-git_install djangogit ${djangogit}
