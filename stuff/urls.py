@@ -4,20 +4,20 @@ from django.contrib import admin
 
 admin.autodiscover()
 
-subdir = ''
 urlpatterns = patterns('',
-    (r'^%sadmin/(.*)' % subdir, admin.site.root),
-    (r'^%spublication/' % subdir, include('stuff.publications.urls')),
-    (r'^%sfile/' % subdir, include('stuff.files.urls')),
-    (r'^%sphoto/' % subdir, include('stuff.picasaweb.urls')),
-    (r'^%sbookmark/' % subdir, include('stuff.delicious.urls')),
-    (r'^%sproject/' % subdir, include('stuff.projects.urls')),
-    (r'^%smultimedia/' % subdir, include('stuff.multimedia.urls')),
-    # (r'^%sdb/(.*)' % subdir, databrowse.site.root),
-    (r'^%s$' % subdir, 'stuff.views.index'),
+    (r'^admin/(.*)', admin.site.root),
+    (r'^publication/', include('stuff.publications.urls')),
+    (r'^file/', include('stuff.files.urls')),
+    (r'^photo/', include('stuff.picasaweb.urls')),
+    (r'^bookmark/', include('stuff.delicious.urls')),
+    (r'^project/', include('stuff.projects.urls')),
+    (r'^multimedia/', include('stuff.multimedia.urls')),
+    (r'^git/', include('stuff.dit.urls')),
+    # (r'^db/(.*)', databrowse.site.root),
+    (r'^$', 'stuff.views.index'),
 
     # Media serving
-    (r'^%smedia/(?P<path>.*)$' % subdir,
+    (r'^%smedia/(?P<path>.*)$',
      'django.views.static.serve',
      {'document_root': settings.MEDIA_ROOT,
      'show_indexes': True}
