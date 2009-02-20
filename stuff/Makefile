@@ -8,8 +8,8 @@ PYTHON=python
 PROJECT=template files publications picasaweb delicious
 
 # These are helpers
-MAKE_MESSAGE=$(PYTHON) $($BASEDIR)/sw/django-admin.py makemessages
-COMPILE_MESSAGE=$(PYTHON) $($BASEDIR)/sw/django-admin.py compilemessages
+MAKE_MESSAGE=$(PYTHON) $$BASEDIR/sw/django-admin.py makemessages
+COMPILE_MESSAGE=$(PYTHON) $$BASEDIR/sw/django-admin.py compilemessages
 
 .PHONY: clean 
 
