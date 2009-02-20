@@ -56,7 +56,7 @@ class PicasawebAccount(models.Model):
         limit = None
         if self.num_albums > 0: limit = self.num_albums
         self.__feed__ = \
-            pws.GetUserFeed(user=self.email, limit=limit)
+            pws.GetUserFeed(user=str(self.email), limit=limit)
         # if you cache the feed, also cache user info
         self.__userinfo__ = UserInfo(self.__feed__.user.text,
                                      self.__feed__.nickname.text,
