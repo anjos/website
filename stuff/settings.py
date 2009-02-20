@@ -33,7 +33,7 @@ LANGUAGE_CODE = 'en'
 LOCALE_PATHS = ( '%s/template/locale' % INSTALLDIR, 
                 )
 
-SITE_ID = 1
+SITE_ID = 2
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -41,7 +41,7 @@ MEDIA_ROOT = os.path.join(BASEDIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
-MEDIA_URL = 'http://andreanjos.org/media/'
+MEDIA_URL = 'http://localhost:8080/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
