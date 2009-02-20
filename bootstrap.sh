@@ -23,6 +23,7 @@ gdata=gdata.py
 etree=elementtree
 feedparser=feedparser
 textile=textile
+uuid=uuid
 pysqlite2=http://oss.itsystementwicklung.de/download/pysqlite/2.5/2.5.1/pysqlite-2.5.1.tar.gz
 pygments=pygments
 gitpython=gitpython
@@ -73,6 +74,7 @@ install gdata ${gdata}
 install elementTree ${etree}
 install feedparser ${feedparser}
 install textile ${textile}
+install uuid ${uuid}
 install pysqlite2 ${pysqlite2}
 install pygments ${pygments}
 install gitpython ${gitpython}
