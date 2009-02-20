@@ -10,6 +10,7 @@ fi
 # Automatically set!
 BASEDIR=`pwd`
 PYTHON=$1
+UPGRADE=''
 python_version=`${PYTHON} -c 'import sys;print "%d.%d" % sys.version_info[0:2]'`
 INSTALLDIR=${BASEDIR}/sw
 
@@ -19,7 +20,7 @@ setuptools=http://pypi.python.org/packages/${python_version}/s/setuptools/${setu
 docutils=http://docutils.sourceforge.net/docutils-snapshot.tgz
 django=django
 scons=scons
-gdata=gdata
+gdata=gdata.py
 etree=elementtree
 feedparser=feedparser
 textile=textile
@@ -29,9 +30,14 @@ gitpython=gitpython
 djangogit=git://github.com/sethtrain/django-git.git
 
 # This script will download and install all necessary software for us
-[ -r sw ] && rm -rf sw;
-[ -d ${INSTALLDIR}-python${python_version} ] && rm -rf ${INSTALLDIR}-python${python_version};
-mkdir -pv ${INSTALLDIR}-python${python_version};
+[ -r sw ] && rm -f sw;
+if [ -d ${INSTALLDIR}-python${python_version} ]; then
+  echo "Directory ${INSTALLDIR}-python${python_version} exists. Upgrade only."
+  echo "If you need re-installing, remove the 'sw\*' directories manually."
+  UPGRADE='--upgrade'
+else
+  mkdir -pv ${INSTALLDIR}-python${python_version};
+fi
 cd `dirname ${INSTALLDIR}`;
 ln -s `basename ${INSTALLDIR}`-python${python_version} `basename ${INSTALLDIR}`;
 
@@ -49,7 +55,7 @@ fi
 
 function install () {
   echo "### Installing $1..."
-  easy_install-${python_version} --install-dir=${INSTALLDIR} $2;
+  easy_install-${python_version} ${UPGRADE} --install-dir=${INSTALLDIR} $2;
   echo "### Installation of $1 is done!"
 }
 
