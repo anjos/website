@@ -16,7 +16,11 @@ class File(models.Model):
   public = models.BooleanField(_('Publicly visible'), default=True,
       help_text=_('Sets the visibility of this file for not anonymous users.'))
   md5 = models.CharField(_('MD5 checksum'), max_length=256, null=True, blank=True,
-      help_text=_('Insert an optional MD5 checksum. If you leave it blank I\'ll calculate the checksum based on the file contents I stored'))
+  help_text=_('Insert an optional MD5 checksum. If you leave it blank I\'ll calculate the checksum based on the file contents I stored'))
+
+  def _path_exists(self):
+    return os.path.exists(self.data.path)
+  exists = property(_path_exists)
 
   def save(self, force_insert=False, force_update=False):
 
