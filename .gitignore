@@ -1,3 +1,6 @@
 *~
 sw
 sw-python*/
+*.pyc
+*.pyo
+django.mo
