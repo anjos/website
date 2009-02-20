@@ -5,3 +5,4 @@ sw-python*/
 *.pyo
 django.mo
 .*.swp
+db.sql3
