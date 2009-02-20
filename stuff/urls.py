@@ -12,12 +12,11 @@ urlpatterns = patterns('',
     (r'^bookmark/', include('stuff.delicious.urls')),
     (r'^project/', include('stuff.projects.urls')),
     (r'^multimedia/', include('stuff.multimedia.urls')),
-    (r'^git/', include('stuff.dit.urls')),
     # (r'^db/(.*)', databrowse.site.root),
     (r'^$', 'stuff.views.index'),
 
     # Media serving
-    (r'^%smedia/(?P<path>.*)$',
+    (r'^media/(?P<path>.*)$',
      'django.views.static.serve',
      {'document_root': settings.MEDIA_ROOT,
      'show_indexes': True}
