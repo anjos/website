@@ -14,16 +14,19 @@ python_version=`${PYTHON} -c 'import sys;print "%d.%d" % sys.version_info[0:2]'`
 INSTALLDIR=${BASEDIR}/sw
 
 # Versions
-setuptools_egg=setuptools-0.6c8-py${python_version}.egg
+setuptools_egg=setuptools-0.6c9-py${python_version}.egg
 setuptools=http://pypi.python.org/packages/${python_version}/s/setuptools/${setuptools_egg};
 docutils=http://docutils.sourceforge.net/docutils-snapshot.tgz
-django=http://www.djangoproject.com/download/1.0/tarball/;
-scons=http://prdownloads.sourceforge.net/scons/scons-1.0.1.tar.gz;
-gdata=http://gdata-python-client.googlecode.com/files/gdata.py-1.1.1.tar.gz;
-etree=http://effbot.org/media/downloads/elementtree-1.2.6-20050316.tar.gz
-feedparser=http://feedparser.googlecode.com/files/feedparser-4.1.zip
-textile=http://pypi.python.org/packages/source/t/textile/textile-2.0.11.tar.gz
-pysqlite2=http://oss.itsystementwicklung.de/download/pysqlite/2.5/2.5.0/pysqlite-2.5.0.tar.gz
+django=django
+scons=scons
+gdata=gdata
+etree=elementtree
+feedparser=feedparser
+textile=textile
+pysqlite2=http://oss.itsystementwicklung.de/download/pysqlite/2.5/2.5.1/pysqlite-2.5.1.tar.gz
+pygments=pygments
+gitpython=gitpython
+djangogit=git://github.com/sethtrain/django-git.git
 
 # This script will download and install all necessary software for us
 [ -r sw ] && rm -rf sw;
@@ -50,6 +53,16 @@ function install () {
   echo "### Installation of $1 is done!"
 }
 
+function git_install () {
+  echo "### Cloning $1..."
+  git clone $2
+  wdir=`basename $2 .git`
+  install $1 $wdir
+  echo "### Removing $wdir..."
+  rm -rf $wdir
+  echo "### Git based installation of $1 is done!"
+}
+
 install docutils ${docutils}
 install django ${django}
 install scons ${scons}
@@ -58,4 +71,6 @@ install elementTree ${etree}
 install feedparser ${feedparser}
 install textile ${textile}
 install pysqlite2 ${pysqlite2}
-
+install pygments ${pygments}
+install gitpython ${gitpython}
+git_install djangogit ${djangogit}
