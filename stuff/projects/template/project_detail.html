@@ -19,6 +19,7 @@
         <!-- <p class="downloads_header">
         <a href="downloads" title="{% trans 'Click here for a exhaustive listing of all downloads available for this project' %}">{% trans "Downloads" %}</a></p> -->
         {% for f in object.public_downloads %}
+        {% if f.exists %}
         <a class="download_link" href="http://{{ site.domain }}/project/download/{{ f.id }}" title="{% trans 'Download the latest version' %}">
           <p class="download_entry">
           <span class="download_decoration"></span>
@@ -26,6 +27,7 @@
           <font class="download_detail">{{ f.data.size }} {% trans "bytes" %}, {{ f.date|date:"j/F/Y" }}</font>
           </p>
         </a>
+        {% endif %}
         {% endfor %}
       </div>
       {% endif %}
