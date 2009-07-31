@@ -1,41 +1,36 @@
 # Dear emacs, this is -*- Makefile -*-
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
-# This you must set correctly
-PYTHON=python
-
 # Find my django projects
 PROJECT=template files publications picasaweb delicious
 
 # These are helpers
-MAKE_MESSAGE=$(PYTHON) $$BASEDIR/sw/django-admin.py makemessages
-COMPILE_MESSAGE=$(PYTHON) $$BASEDIR/sw/django-admin.py compilemessages
+MAKE_MESSAGE=django-admin.py makemessages
+COMPILE_MESSAGE=django-admin.py compilemessages
+LANGUAGES=en pt_BR
 
-.PHONY: clean 
+.PHONY: simpleclean clean 
 
 # ACTION: Executes a simple cleanup (remove '~' files and pyc files) and then
 # will compile the PO locale files.
-all: clean build
+all: build
 
 # ACTION: Builds the PO locale files, by reading our source code and updating
 # the existing message catalog. This will not compile the resulting PO source
 # files.
-msg: msg-en msg-pt_BR
+msg:
+	@for p in $(PROJECT); do cd $$p; \
+		echo "Updating subproject '"$$p"'..."; \
+		for l in $(LANGUAGES); do [ ! -d locale/$$l ] && mkdir -pv locale/$$l;done;\
+	  $(MAKE_MESSAGE) --all --extension=html,py,txt; \
+		echo "Subproject '"$$p"' done."; \
+		cd -; \
+	done
 
 # ACTION: This will literally compile the PO files into MO files, that can be
 # loaded by your web application
-build: build-en build-pt_BR
-
-msg-%:
-	@echo "Updating language files for '"$(@:msg-%=%)"'"
-	@for p in $(PROJECT); do cd $$p; \
-		echo "Updating subproject '"$$p"'..."; \
-	  $(MAKE_MESSAGE) --locale=$(@:msg-%=%) --extension=.html --extension=.py; \
-		echo "Subproject '"$$p"' done."; \
-		cd -; done
-
-build-%:
-	@echo "Compiling language files for '"$(@:msg-%=%)"'"
+build:
+	@echo "Compiling language files"
 	@for p in $(PROJECT); do cd $$p; \
 		echo "Compiling subproject '"$$p"'..."; \
 	  $(COMPILE_MESSAGE); \
@@ -68,10 +63,18 @@ dbshell:
 
 # ACTION: this will actually validate, syncdb and start the development
 # webserver, bound to port 8080 of your machine
-test: validate syncdb
+test: build validate syncdb
 	@echo "Running python test server..."
 	$(PYTHON) manage.py runserver 8080
 
-clean: 	
+# ACTION: spawns a test SMTP server
+smtp:
+	@echo "Spawing test SMTP server at localhost:1025..."
+	$(PYTHON) -m smtpd -n -c DebuggingServer localhost:1025
+
+clean: simpleclean	
+	$(PYTHON) -m compileall .
+
+simpleclean:
 	find . -name '*~' -print0 | xargs -0 rm -vf 
-	find . -name '*.py?' -print0 | xargs -0 rm -vf 
+	find . -name '*.py?' -print0 | xargs -0 rm -vf
