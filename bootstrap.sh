@@ -24,9 +24,12 @@ etree=elementtree
 feedparser=feedparser
 textile=textile
 uuid=uuid
-pysqlite2=http://oss.itsystementwicklung.de/download/pysqlite/2.5/2.5.1/pysqlite-2.5.1.tar.gz
+imaging=http://effbot.org/media/downloads/Imaging-1.1.6.tar.gz
+pysqlite2=http://oss.itsystementwicklung.de/download/pysqlite/2.5/2.5.5/pysqlite-2.5.5.tar.gz
 pygments=pygments
 gitpython=gitpython
+pytz=pytz
+flup=flup
 
 # This script will download and install all necessary software for us
 [ -r sw ] && rm -f sw;
