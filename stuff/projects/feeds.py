@@ -29,7 +29,7 @@ class LatestDownloadsForProject(Feed):
         (entries_per_feed, obj.name))
 
   def link(self, obj):
-    return "%s/project/%s" (site.domain, obj.name)
+    return "/project/%s" % (obj.name)
 
   title_template = "feeds/downloads_title.html"
   description_template = "feeds/downloads_description.html"
@@ -103,7 +103,7 @@ class SparkleUpdatesForProject(Feed):
         (entries_per_feed, obj.name))
 
   def link(self, obj):
-    return "%s/project/%s" % (site.domain, obj.name)
+    return "/project/%s" % (obj.name)
 
   title_template = "feeds/sparkle_title.html"
   description_template = "feeds/sparkle_description.html"
