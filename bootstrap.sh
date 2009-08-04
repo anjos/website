@@ -19,7 +19,7 @@ setuptools_egg=setuptools-0.6c9-py${python_version}.egg
 setuptools=http://pypi.python.org/packages/${python_version}/s/setuptools/${setuptools_egg};
 docutils=http://docutils.sourceforge.net/docutils-snapshot.tgz
 django=django
-gdata=gdata.py
+gdata=gdata
 etree=elementtree
 feedparser=feedparser
 textile=textile
@@ -71,6 +71,21 @@ function git_install () {
   echo "### Git based installation of $1 is done!"
 }
 
+function pilinstall () {
+  local start=`pwd`
+  echo "### Installing PIL..."
+  cd ${INSTALLDIR};
+  wget $1;
+  local project=`basename $1 .tar.gz`;
+  tar xvfz ${project}.tar.gz;
+  cd ${project}
+  ${PYTHON} setup.py build;
+  ${PYTHON} setup.py install --home=${INSTALLDIR}/PIL
+  cd ${INSTALLDIR};
+  rm -rf ${project} `basename $1`;
+  cd ${start}
+}
+
 install docutils ${docutils}
 install django ${django}
 install gdata ${gdata}
@@ -81,3 +96,6 @@ install uuid ${uuid}
 install pysqlite2 ${pysqlite2}
 install pygments ${pygments}
 install gitpython ${gitpython}
+pilinstall ${imaging}
+install pytz ${pytz}
+install flup ${flup}
