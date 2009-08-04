@@ -47,7 +47,7 @@
               {% endif %}
               </div> -->
               <div class="photos">{% blocktrans with entry.numphotos.text as numphotos and entry.numphotos.text|str2int|pluralize as plural %}{{ numphotos }} photo{{ plural }} by{% endblocktrans %}
-                <a href="http://{{ site.domain }}/photo/{{ usermap|getitem:entry.user.text }}">{{ entry.nickname.text|lower }}</a></div>
+                <a href="/google/photos/{{ usermap|getitem:entry.user.text }}">{{ entry.nickname.text|lower }}</a></div>
               <div class="published">{% trans "published" %} {{ entry.published.text|gd_date:"%a, %d/%b/%Y" }}</div>
               <div class="updated">{% trans "updated" %} {{ entry.updated.text|gd_date:"%a, %d/%b/%Y" }}</div>
             </div>

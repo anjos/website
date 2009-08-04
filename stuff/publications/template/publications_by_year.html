@@ -3,7 +3,7 @@
 {% block header %}
   <!-- Feeds go here if the caller has provided so -->
   {% for feed in feeds %}
-  <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}" href="http://{{ site.domain }}/publication/feeds/{{ feed.basename }}/"/>
+  <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}" href="/publication/feeds/{{ feed.basename }}/"/>
   {% endfor %}
 {% endblock %}
 {% block title %}{% trans "Publications" %}{% endblock %}

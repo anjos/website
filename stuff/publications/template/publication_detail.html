@@ -13,7 +13,7 @@
     <div class="abstract">{{ object.abstract|textile }}</div>
   </div>
   <div class="actions">
-    [ <a href="http://{{ site.domain }}/admin/publications/publication/{{ object.id }}/">{% trans "edit" %}</a> ]
+    [ <a href="/admin/publications/publication/{{ object.id }}/">{% trans "edit" %}</a> ]
     {% if object.count_documents %}
       [ downloads: 
       {% for f in object.document_set.all %}

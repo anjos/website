@@ -5,8 +5,7 @@
 {% block header %}
   <!-- Feeds go here if the caller has provided so -->
   {% for feed in feeds %}
-  <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}"
-  href="http://{{ site.domain }}/project/feeds/{{ feed.basename }}/{{ object.name }}"/>
+  <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}" href="/project/feeds/{{ feed.basename }}/{{ object.name }}"/>
   {% endfor %}
 {% endblock %}
 {% block title %}{% trans "Project" %} :: {{ object }}{% endblock %}
@@ -20,7 +19,7 @@
         <a href="downloads" title="{% trans 'Click here for a exhaustive listing of all downloads available for this project' %}">{% trans "Downloads" %}</a></p> -->
         {% for f in object.public_downloads %}
         {% if f.exists %}
-        <a class="download_link" href="http://{{ site.domain }}/project/download/{{ f.id }}" title="{% trans 'Download the latest version' %}">
+        <a class="download_link" href="/project/download/{{ f.id }}" title="{% trans 'Download the latest version' %}">
           <p class="download_entry">
           <span class="download_decoration"></span>
           <font class="download_name">{{ f.name }}</font><br />
@@ -56,12 +55,12 @@
         <tr><td>{% trans "Wiki" %}: <a href="{{ object.wiki_page }}">{{ object.wiki_page }}</a></td></tr>
         {% endif %}
         {% if object.dsa_pubkey %}
-        <tr><td>{% trans "Public DSA key" %}: <a href="http://{{ site.domain }}/project/dsakey/{{ object.name }}">http://{{ site.domain }}/project/dsakey/{{ object.name }}</a></td></tr>
+        <tr><td>{% trans "Public DSA key" %}: <a href="/project/dsakey/{{ object.name }}">DSA key</a></td></tr>
         {% endif %}
       </table>
     </div>
     <div class="actions">
-      [ <a href="http://{{ site.domain }}/admin/projects/project/{{ object.name }}/">{% trans "edit" %}</a> | <a href="http://{{ site.domain }}/admin/projects/download/add/">{% trans "upload" %}</a> ]
+      [ <a href="/admin/projects/project/{{ object.name }}/">{% trans "edit" %}</a> | <a href="/admin/projects/download/add/">{% trans "upload" %}</a> ]
     </div>
   </body>
 {% endblock %}
