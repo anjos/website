@@ -1,0 +1,32 @@
+{% extends "themed.html" %}
+{% load i18n %}
+{% load google_filters %}
+{% block title %}{% trans "Agenda" %}{% endblock %}
+
+{% block sidebar %}
+{% include "sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="post">
+<h2 class="title">{% trans "Next Concerts" %}</h2>
+{% if entries %}
+<p class="date">{% trans "updated" %}: {{ feed.updated.text|gd_date:"%d/%b/%y" }}</p>
+<table class="agenda-gallery">
+  {% for entry in entries %}
+  <tr class="{% cycle "even" "odd" %}"><td>
+      <p class="name"><a href="{{ entry.link }}">{{ entry.start_date|date:"l, d/F/Y" }} - {{ entry.title }}</a></p>
+      <ul class="description">
+        {% if entry.description %}<li>{% trans "Description" %}: {{ entry.description }}</li>{% endif %}
+        <li>{% trans "When" %}: {{ entry.start_date|date:"l, d/F/Y, H:i" }} {% trans "until" %} {% if entry.ends_at_same_day %}{{ entry.end_date|date:"H:i" }}{% else %}{{ entry.end_date|date:"l, d/F/Y, H:i" }}{% endif %}</li>
+        <li>{% trans "Where" %}: {{ entry.where }}</li>
+      </ul>
+  </td></tr>
+  {% endfor %}
+</table>
+{% else %}
+<p class="date">{% trans "updated" %}: {% now "H:i j/M/Y" %}</p> 
+  <p>{% trans "Cannot connecto to Google Calendar service at" %} {% now "H:i j/M/Y" %}</p>
+{% endif %}
+</div>
+{% endblock %}

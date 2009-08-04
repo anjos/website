@@ -1,0 +1,237 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-03 12:03+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:36
+msgid "Picasaweb e-mail"
+msgstr ""
+
+#: models.py:37
+msgid "Insert the e-mail of a picasaweb user in the form of user@domain"
+msgstr ""
+
+#: models.py:39
+msgid "Number of albums to display"
+msgstr ""
+
+#: models.py:40
+msgid "The special value of 0 (zero) will display all albums"
+msgstr ""
+
+#: models.py:43
+msgid "google picasa web account"
+msgstr ""
+
+#: models.py:44
+msgid "google picasa web accounts"
+msgstr ""
+
+#: models.py:111
+#, python-format
+msgid "Last uploaded album of %(email)s"
+msgstr ""
+
+#: models.py:113
+#, python-format
+msgid "%(email)s, last %(num_albums)s albums"
+msgstr ""
+
+#: models.py:116
+#, python-format
+msgid "%(email)s"
+msgstr ""
+
+#: models.py:121
+msgid "Calendar identifier"
+msgstr ""
+
+#: models.py:122
+msgid ""
+"Insert the identifier of a google calendar in the form of secret@domain. "
+"This identifier can be read by going into the calendar details of your "
+"google account."
+msgstr ""
+
+#: models.py:125
+msgid "google calendar"
+msgstr ""
+
+#: models.py:126
+msgid "google calendars"
+msgstr ""
+
+#: models.py:151
+#, python-format
+msgid "Public google calendar \"%s\""
+msgstr ""
+
+#: models.py:227
+msgid "Name"
+msgstr ""
+
+#: models.py:227
+msgid ""
+"Insert here a meaningful name so you remember what is this playlist key good "
+"for."
+msgstr ""
+
+#: models.py:228
+msgid "YouTube playlist identifier"
+msgstr ""
+
+#: models.py:228
+msgid "Insert the key of the youtube (public) playlist"
+msgstr ""
+
+#: models.py:231
+msgid "youtube playlist"
+msgstr ""
+
+#: models.py:232
+msgid "youtube playlists"
+msgstr ""
+
+#: models.py:265
+#, python-format
+msgid "Youtube playlist \"%(name)s\""
+msgstr ""
+
+#: template/agenda_entries.html:4
+msgid "Agenda"
+msgstr ""
+
+#: template/agenda_entries.html:12
+msgid "Next Concerts"
+msgstr ""
+
+#: template/agenda_entries.html:14 template/agenda_entries.html.py:28
+#: template/picasaweb_gallery.html:13 template/picasaweb_gallery.html.py:53
+#: template/picasaweb_last.html:18 template/youtube_gallery.html:13
+msgid "updated"
+msgstr ""
+
+#: template/agenda_entries.html:20 template/agenda_next.html:5
+#: template/youtube_video.html:17
+msgid "Description"
+msgstr ""
+
+#: template/agenda_entries.html:21 template/agenda_next.html:6
+msgid "When"
+msgstr ""
+
+#: template/agenda_entries.html:21 template/agenda_next.html:6
+msgid "until"
+msgstr ""
+
+#: template/agenda_entries.html:22 template/agenda_next.html:7
+msgid "Where"
+msgstr ""
+
+#: template/agenda_entries.html:29
+msgid "Cannot connecto to Google Calendar service at"
+msgstr ""
+
+#: template/agenda_next.html:10
+msgid "No new events (or cannot connect to Google Calendar service at"
+msgstr ""
+
+#: template/picasaweb_gallery.html:4 template/picasaweb_gallery.html.py:12
+msgid "Photo Gallery"
+msgstr ""
+
+#: template/picasaweb_gallery.html:14
+msgid ""
+"From this page you can access all of our photo albums. Click on the arrows "
+"bellow to go back in history."
+msgstr ""
+
+#: template/picasaweb_gallery.html:18 template/youtube_gallery.html:18
+msgid "First page"
+msgstr ""
+
+#: template/picasaweb_gallery.html:19 template/youtube_gallery.html:19
+msgid "Previous"
+msgstr ""
+
+#: template/picasaweb_gallery.html:21 template/youtube_gallery.html:21
+msgid "Page"
+msgstr ""
+
+#: template/picasaweb_gallery.html:21 template/youtube_gallery.html:21
+msgid "of"
+msgstr ""
+
+#: template/picasaweb_gallery.html:23 template/youtube_gallery.html:23
+msgid "Next"
+msgstr ""
+
+#: template/picasaweb_gallery.html:24 template/youtube_gallery.html:24
+msgid "Last page"
+msgstr ""
+
+#: template/picasaweb_gallery.html:42
+msgid "No location specified"
+msgstr ""
+
+#: template/picasaweb_gallery.html:48
+msgid "No geo tags specified"
+msgstr ""
+
+#: template/picasaweb_gallery.html:51
+#, python-format
+msgid "%(numphotos)s photo%(plural)s by"
+msgstr ""
+
+#: template/picasaweb_gallery.html:52 template/youtube_video.html:13
+msgid "published"
+msgstr ""
+
+#: template/picasaweb_gallery.html:59 template/picasaweb_last.html:34
+msgid "Cannot connect to PicasaWeb service at"
+msgstr ""
+
+#: template/picasaweb_last.html:18
+#, python-format
+msgid "%(numphotos)s photo%(plural)s"
+msgstr ""
+
+#: template/youtube_gallery.html:4 template/youtube_gallery.html.py:12
+#: template/youtube_video.html:4
+msgid "Video Gallery"
+msgstr ""
+
+#: template/youtube_gallery.html:14
+msgid ""
+"From this page you can access all of our videos. Click on the arrows bellow "
+"to go back in history."
+msgstr ""
+
+#: template/youtube_gallery.html:39 template/youtube_video.html:19
+msgid "seconds"
+msgstr ""
+
+#: template/youtube_gallery.html:45 template/youtube_video.html:22
+msgid "Cannot connect to YouTube service at"
+msgstr ""
+
+#: template/youtube_video.html:18
+msgid "Uploaded by"
+msgstr ""
+
+#: template/youtube_video.html:19
+msgid "Duration"
+msgstr ""
