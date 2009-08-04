@@ -33,7 +33,7 @@ LANGUAGE_CODE = 'en'
 LOCALE_PATHS = ( '%s/template/locale' % INSTALLDIR, 
                 )
 
-SITE_ID = 2
+SITE_ID = 1
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -41,7 +41,7 @@ MEDIA_ROOT = os.path.join(BASEDIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
-MEDIA_URL = 'http://localhost:8080/media/'
+MEDIA_URL = '/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -80,8 +80,8 @@ TEMPLATE_DIRS = (
   '%s/template' % INSTALLDIR,
   '%s/files/template' % INSTALLDIR,
   '%s/publications/template' % INSTALLDIR,
-  '%s/picasaweb/template' % INSTALLDIR,
-  '%s/picasaweb/templatetags' % INSTALLDIR,
+  '%s/google/template' % INSTALLDIR,
+  '%s/google/templatetags' % INSTALLDIR,
   '%s/delicious/template' % INSTALLDIR,
   '%s/projects/template' % INSTALLDIR,
   '%s/multimedia/template' % INSTALLDIR,
@@ -93,13 +93,12 @@ INSTALLED_APPS = (
   'django.contrib.sessions',
   'django.contrib.sites',
   'django.contrib.admin',
-  #'django.contrib.databrowse',
   'django.contrib.markup',
 
   # These are mine
   'stuff.publications',
   'stuff.files',
-  'stuff.picasaweb',
+  'stuff.google',
   'stuff.delicious',
   'stuff.projects',
   'stuff.multimedia',

@@ -2,7 +2,7 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # Find my django projects
-PROJECT=template files publications picasaweb delicious
+PROJECT=template files publications google delicious
 
 # These are helpers
 MAKE_MESSAGE=django-admin.py makemessages
