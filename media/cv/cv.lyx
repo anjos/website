@@ -1,0 +1,448 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+
+
+%% $Id: cv-en.tex,v 1.1 2003/03/02 21:46:05 rabello Exp $
+
+
+
+
+
+\usepackage{html}
+
+\usepackage{indentfirst}
+
+\usepackage{a4wide}
+
+
+%% new commands 
+\newcommand{\port}[1]{\foreignlanguage{portuges}{\em{#1\/}}}
+
+%% format definition
+\voffset = 0 pt
+\hoffset = 0 pt
+\oddsidemargin = 18 pt
+\topmargin = 18 pt
+\marginparsep = 0 pt
+\marginparwidth = 0 pt
+\textwidth = 442 pt
+\textheight = 623 pt
+
+\title{Curriculum Vit\ae}
+\author{André DOS ANJOS}
+\end_preamble
+\options a4paper
+\language english
+\inputencoding latin1
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize 11
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Personal Data
+\end_layout
+
+\begin_layout Description
+Name: André Anjos 
+\end_layout
+
+\begin_layout Description
+Title: Ph.D.
+ on Electronics Engineering
+\end_layout
+
+\begin_layout Description
+Birth: December, 31st.
+ 1973 (currently 34)
+\end_layout
+
+\begin_layout Description
+Marital\InsetSpace ~
+Status: Married
+\end_layout
+
+\begin_layout Description
+Nationality: Brazilian
+\end_layout
+
+\begin_layout Description
+Natural: Rio de Janeiro, Brazil 
+\end_layout
+
+\begin_layout Description
+Passport: CS 660727, issued on September, 7th.
+ 2006
+\end_layout
+
+\begin_layout Description
+Address: 39, Rue de la Servette, Switzerland, CH-1202
+\end_layout
+
+\begin_layout Description
+Phone: (+41) 0227344386
+\end_layout
+
+\begin_layout Description
+E-mail
+\family typewriter
+: 
+\begin_inset LatexCommand htmlurl
+target "mailto:andre.dos.anjos@cern.ch"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Homepage: 
+\begin_inset LatexCommand htmlurl
+target "http://adois.org/andre"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Main Interests
+\end_layout
+
+\begin_layout Standard
+My current professional interests are on the following areas:
+\end_layout
+
+\begin_layout Itemize
+Artificial Intelligence and associated stochastic methods;
+\end_layout
+
+\begin_layout Itemize
+Large-scale computing and systems integration.
+\end_layout
+
+\begin_layout Standard
+I would also like to do teaching and supervision of students in one or more
+ of the above areas, but have currently no formal experience in these academic
+ duties.
+\end_layout
+
+\begin_layout Section
+Education
+\end_layout
+
+\begin_layout Description
+1989-1993 Technical Course in Electronics at the Federal Center of Technology
+ of Rio de Janeiro - CEFET (from 1989 until 1992).
+ Degree issued on 1993;
+\end_layout
+
+\begin_layout Description
+1994-1999 Electronics Engineering at the Federal University of Rio de Janeiro.
+ Degree issued on December 1999.
+\end_layout
+
+\begin_layout Description
+2000-2001 Masters on Electronics Engineering (Signal Processing) at the
+ Post Graduate Program of the Federal University of Rio de Janeiro (COPPE/UFRJ).
+ Degree issued on June 2001.
+\end_layout
+
+\begin_layout Description
+2001-2006 PhD on Electronics Engineering (Signal Processing) at the Post
+ Graduate Program of the Federal University of Rio de Janeiro (COPPE/UFRJ).
+\end_layout
+
+\begin_layout Section
+Professional Experience
+\end_layout
+
+\begin_layout Description
+1995-1997 Two and a half years (from begin of 1995 till middle of 1997)
+ as a junior researcher on Signal Processing associated with the Brazilian
+ National Research Program (CNPq) at the Federal University of Rio de Janeiro.
+ Subjects: Digital filtering applied to particle identification, parallel
+ processing in Transputer-based machines and Neural networks applied to
+ particle identification;
+\end_layout
+
+\begin_layout Description
+1997-1998 One year and one month (September, 1997 till October 1998) as
+ a researcher at 
+\begin_inset LatexCommand htmlurl
+target "http://www.cern.ch"
+
+\end_inset
+
+ (European Center for Particle Physics - Geneva - Switzerland), on Systems
+ Engineering.
+ This work was developed in the context of the ATLAS experiment;
+\end_layout
+
+\begin_layout Description
+1998-1999 One year and two months as a researcher on Signal Processing associate
+d with the Signal Processing Laboratory (LPS) at the Federal University
+ of Rio de Janeiro.
+ Subject: High-performance computing applied to Signal Processing;
+\end_layout
+
+\begin_layout Description
+2000-2001 13 months associated with the Post Graduate Program of the Federal
+ University of Rio de Janeiro (COPPE/UFRJ).
+ Subject: Masters on Signal Processing;
+\end_layout
+
+\begin_layout Description
+2001-2004 3 years associated with the Post Graduate Program of the Federal
+ University of Rio de Janeiro (COPPE/UFRJ):
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Apr 2001-Nov 2001 Federal University of Rio de Janeiro, pre-thesis work;
+ 
+\end_layout
+
+\begin_layout Description
+Dec 2001-2004 CERN, Switzerland.
+ Collaborating for the implementation of the ATLAS Trigger Prototype.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+2004-present I'm currently working on the development and construction of
+ the final ATLAS Trigger System, as a full-time researcher associated with
+ the University of Wisconsin/Madison/USA.
+\end_layout
+
+\begin_layout Section
+Publications
+\end_layout
+
+\begin_layout Standard
+A complete list of publications, along with detailed information, can be
+ accessed at 
+\begin_inset LatexCommand htmlurl
+target "http://adois.org/andre/publication"
+
+\end_inset
+
+.
+ This is a selection, in reverse chronological order:
+\end_layout
+
+\begin_layout Description
+August/2007 Online Electron/Jet Neural High-Level Trigger over Independent
+ Calorimetry Information - Proceedings of Science (idem XI International
+ Workshop on Advanced Computing and Analysis Techniques in Physics Research,
+ April 23-27 2007 Amsterdam, the Netherlands);
+\end_layout
+
+\begin_layout Description
+August/2006 Deployment of the ATLAS High-Level Trigger - IEEE Transactions
+ on Nuclear Science, volume 53, pages 2144-2149;
+\end_layout
+
+\begin_layout Description
+May/2006 A configuration system for the ATLAS trigger - Journal of Instrumentati
+on, Institute of Physics Publishing and Sissa, number P05004;
+\end_layout
+
+\begin_layout Description
+February/2006 Testing on a Large Scale: running the ATLAS Data Acquisition
+ and High Level Trigger Software on 700 PC Nodes - Computing In High Energy
+ and Nuclear Physics;
+\end_layout
+
+\begin_layout Description
+June/2004 The Second Level Trigger of the ATLAS Experiment at CERN's LHC
+ - IEEE Transactions on Nuclear Science, volume 51;
+\end_layout
+
+\begin_layout Description
+June/2004 Studies for a common Event Selection Software: from LVL2 to Offline
+ reconstruction - IEEE Transactions on Nuclear Science, volume 51;
+\end_layout
+
+\begin_layout Description
+Agosto/2003 Neural Particle Discrimination for Triggering Interesting Physics
+ Channels with Calorimetry Data - Nuclear Instruments And Methods In Physics
+ Research A - Accelerators, Spectrometers, Detectors And Associated Equipment,
+ volume 502, number 2, pages 713-715;
+\end_layout
+
+\begin_layout Description
+June/1998 Neural Classifiers Implemented in a Transputer Based Parallel
+ Machine - International Meeting on Vector and Parallel Processing (VECPAR),
+ pp 839-849, Oporto, Portugal;
+\end_layout
+
+\begin_layout Description
+September/1997 A Neural On-line Triggering system Based on Parallel Processing-
+ IEEE transactions on Nuclear Science - August 1998, Volume 45, number 4,
+ ISBN 0018-9499;
+\end_layout
+
+\begin_layout Description
+September/1997 Fast Neural Decision System Based on DSP's and Parallel Processin
+g - IEEE Conference on Signal Processing and Technologies, San Diego, USA;
+\end_layout
+
+\begin_layout Description
+September/1996 Particle Discrimination using Sub-Optimal Filtering Techniques
+ - XI Brazilian Congress on Automatics, São Paulo, Brazil.
+\end_layout
+
+\begin_layout Subsection
+Thesis
+\end_layout
+
+\begin_layout Description
+September/1997 Classification system based on a Parallel Processing Machine
+ - Diploma thesis;
+\end_layout
+
+\begin_layout Description
+April/2001 Fast decision system based on High Energy Calorimetry - Masters
+ thesis;
+\end_layout
+
+\begin_layout Description
+December/2006 Online Trigger System in a High Event Rate Environment - Ph.D.
+ thesis;
+\end_layout
+
+\begin_layout Section
+Languages
+\end_layout
+
+\begin_layout Enumerate
+Portuguese - Mater language; 
+\end_layout
+
+\begin_layout Enumerate
+English - Read, write and speak fluently;
+\end_layout
+
+\begin_layout Enumerate
+French - Read, write and speak;
+\end_layout
+
+\begin_layout Enumerate
+Spanish - Basic communication skills; Can read well.
+\end_layout
+
+\begin_layout Section
+Computer Sciences
+\end_layout
+
+\begin_layout Enumerate
+Proficient in various Operating System types, including but not limited
+ to Linux, Microsoft's Windows and Apple's OSX;
+\end_layout
+
+\begin_layout Enumerate
+Advanced system and network administration skills;
+\end_layout
+
+\begin_layout Enumerate
+Concepts of networking (intra/Internet), firewalling, Internet publish,
+ network protocols, architectures and associated technologies;
+\end_layout
+
+\begin_layout Enumerate
+Masters structured (C, Pascal, etc.) and object-oriented programming (C++,
+ Java, etc.), including the use of software development tools (Revision Control,
+ Building Environments, Documentation Tools, High-level Description Tools,
+ Testing Frameworks, etc.);
+\end_layout
+
+\begin_layout Enumerate
+Masters techniques on concurrent/parallel programming, as well as the concepts
+ of programming on multi-task Operating Systems;
+\end_layout
+
+\begin_layout Enumerate
+Experience on building and integrating large software projects, managing
+ releases and software policies;
+\end_layout
+
+\begin_layout Enumerate
+Experience on the use and development of databases;
+\end_layout
+
+\begin_layout Enumerate
+Experience with large computer clusters.
+\end_layout
+
+\begin_layout Section
+Off-work Activities
+\end_layout
+
+\begin_layout Standard
+These are activities I like to conduct off work when time allows:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Sports
+\series default
+: Alpine skiing, Mountain hiking, Biking, Squash, Tennis, Swimming;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Music
+\series default
+: I enjoy playing music.
+ I practice and play various percussive instruments.
+ I can also play a Brazilian Cavaquinho, which is an harmonic instrument
+ used in Brazil;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Computing
+\series default
+: Explore new programming techniques and tools.
+\end_layout
+
+\end_body
+\end_document
