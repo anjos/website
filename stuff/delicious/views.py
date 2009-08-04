@@ -9,14 +9,24 @@ def gd_date(s):
   """Converts a delicious date representation into a real date"""
   return datetime.datetime(*s[0:6])
 
-def get_locale(s):
+def get_locale(s, enc=None):
+  s.replace('-','_')
+
   fields = s.split('-', 1)
   if len(fields) == 1: return locale.normalize(s) #nothing after the first dash
-  return fields[0] + '_' + fields[1].upper()
+  if enc: return locale.normalize('_'.join(fields) + '.' + enc)
+  return locale.normalize('_'.join(fields))
 
 def view_gallery(request, id=None):
   """Gives an overview of the whole available gallery"""
-  locale.setlocale(locale.LC_ALL, get_locale(request.LANGUAGE_CODE))
+  try:
+    # we try to set the current locale to something that is better
+    newloc = locale.normalize(request.LANGUAGE_CODE.replace('-','_')+'.utf8')
+    locale.setlocale(locale.LC_ALL, newloc)
+  except locale.Error:
+    # we simply ignore otherwise, and leave it be
+    pass
+
 
   if not id:
     account = DeliciousAccount.objects.all()
