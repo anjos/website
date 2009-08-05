@@ -3,14 +3,10 @@
 {% load google_filters %}
 {% block title %}{% trans "Video Gallery" %} :: {{ object.title }}{% endblock %}
 
-{% block sidebar %}
-{% include "sidebar.html" %}
-{% endblock %}
-
 {% block content %}
-<div class="post">
-  <h2 class="title">{{ object.title }}</h2>
-<p class="date">{% trans "published" %}: {{ object.published|date:"j/M/Y" }}</p> 
+<body>
+<p class="title">{{ object.title }}</p>
+
 {% if object %}
 <div class="youtube-video">
 {{ object.flash_player_html|safe }}<br/>
@@ -21,5 +17,6 @@
 {% else %}
 {% trans "Cannot connect to YouTube service at" %} {% now "H:i j/M/Y" %}
 {% endif %}
-</div>
+
+</body>
 {% endblock %}
