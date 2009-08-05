@@ -225,6 +225,7 @@ class YouTubePlayList(models.Model):
   """This model describes a youtube play list."""
 
   name = models.CharField(_('Name'), max_length=256, help_text=_('Insert here a meaningful name so you remember what is this playlist key good for.'))
+  slug = models.SlugField(_('Slug'), max_length=64, help_text=_('A short, web friendly name for this playlist')) 
   list = models.CharField(_('YouTube playlist identifier'), max_length=64, unique=True, help_text=_('Insert the key of the youtube (public) playlist'))
 
   class Meta: 

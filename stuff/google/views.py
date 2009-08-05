@@ -10,6 +10,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from google.models import *
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.utils.translation import ugettext_lazy as _
 
 import time
 import datetime
@@ -73,7 +74,7 @@ def view_gallery(request, id=None):
                              'owner': owner},
                             context_instance=RequestContext(request))
 
-def view_videos(request):
+def view_videos(request, slug=None):
   """Gives an overview of the whole available video gallery"""
   try:
     # we try to set the current locale to something that is better
@@ -84,6 +85,12 @@ def view_videos(request):
     pass
 
   playlists = YouTubePlayList.objects.all()
+  available = [(k.slug, k.name) for k in YouTubePlayList.objects.all()]
+  if not slug:
+    title = _(u'Video Gallery')
+  else:
+    playlists = (YouTublePlayList.objects.get(slug=slug),)
+    title = playlists[0].name 
     
   entries = []
 
@@ -104,8 +111,8 @@ def view_videos(request):
   except (EmptyPage, InvalidPage): now = paginator.page(paginator.num_pages)
 
   return render_to_response('youtube_gallery.html', 
-                            {'objects': now,}, 
-                            context_instance=RequestContext(request))
+      {'objects': now, 'title': title, 'available': available}, 
+      context_instance=RequestContext(request))
 
 def view_video(request, id, index):
   """Shows a single video"""
