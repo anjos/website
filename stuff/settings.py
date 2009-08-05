@@ -82,7 +82,6 @@ TEMPLATE_DIRS = (
   '%s/publications/template' % INSTALLDIR,
   '%s/google/template' % INSTALLDIR,
   '%s/google/templatetags' % INSTALLDIR,
-  '%s/delicious/template' % INSTALLDIR,
   '%s/projects/template' % INSTALLDIR,
 )
 
@@ -98,7 +97,6 @@ INSTALLED_APPS = (
   'stuff.publications',
   'stuff.files',
   'stuff.google',
-  'stuff.delicious',
   'stuff.projects',
 )
 
