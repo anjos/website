@@ -9,7 +9,7 @@ feeds = { LatestPublications.basename: LatestPublications,
         }
 
 publication_detail = { 'queryset': Publication.objects.filter(),
-                       'template_name': 'publication_detail.html',
+                       'template_name': 'publications/detail.html',
                      }
 
 urlpatterns = patterns('',

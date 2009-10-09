@@ -29,7 +29,7 @@ def publications_by_year(request):
 
   data = [(y, data[y]) for y in years]
 
-  return render_to_response('publications_by_year.html',
+  return render_to_response('publications/by_year.html',
                             {'objects_by_year': data, 
                              'feeds': feeds.values(),
                             },
@@ -48,7 +48,7 @@ def simple_list(request):
 
   data = [(y, data[y]) for y in years]
 
-  return render_to_response('simple_list.html',
+  return render_to_response('publications/simple_list.html',
                             {'objects_by_year': data, 
                             },
                             context_instance=RequestContext(request))

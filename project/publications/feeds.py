@@ -14,8 +14,8 @@ class LatestPublications(Feed):
     description = _("The last %d publications I have written" % entries_per_feed)
     link = '/publication'
 
-    title_template = "feeds/publications_title.html"
-    description_template = "feeds/publications_description.html"
+    title_template = "publications/feeds/title.html"
+    description_template = "publications/feeds/description.html"
 
     # stuff for our synchronization between this file and urls.py
     basename = 'publications'
@@ -32,8 +32,8 @@ class LatestFiles(Feed):
     description = _("The last %d files I have uploaded" % entries_per_feed)
     link = '/publication'
 
-    title_template = "feeds/files_title.html"
-    description_template = "feeds/files_description.html"
+    title_template = "publications/feeds/files_title.html"
+    description_template = "publications/feeds/files_description.html"
 
     # stuff for our synchronization between this file and urls.py
     basename = 'files'
