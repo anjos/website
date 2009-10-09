@@ -1,6 +1,6 @@
 from django.contrib.syndication.feeds import Feed
 from django.utils.feedgenerator import Atom1Feed
-from publications.models import Publication, Document
+from publications.models import Publication, File
 from django.utils.translation import ugettext_lazy as _
 
 entries_per_feed = 20
@@ -26,20 +26,20 @@ class LatestPublications(Feed):
     def item_link(self, item):
       return '/publication/%d' % (item.id)
 
-class LatestDocuments(Feed):
+class LatestFiles(Feed):
     feed_type = Atom1Feed
-    title = _("Andre Anjos latest documents")
-    description = _("The last %d documents I have uploaded" % entries_per_feed)
+    title = _("Andre Anjos latest files")
+    description = _("The last %d files I have uploaded" % entries_per_feed)
     link = '/publication'
 
-    title_template = "feeds/documents_title.html"
-    description_template = "feeds/documents_description.html"
+    title_template = "feeds/files_title.html"
+    description_template = "feeds/files_description.html"
 
     # stuff for our synchronization between this file and urls.py
-    basename = 'documents'
+    basename = 'files'
 
     def items(self):
-      return Document.objects.order_by('-date').filter(public=True)[:20]
+      return File.objects.order_by('-date').filter(public=True)[:20]
 
     def item_link(self, item):
       return item.data.url

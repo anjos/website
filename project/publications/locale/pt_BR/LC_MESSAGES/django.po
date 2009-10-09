@@ -28,12 +28,12 @@ msgid "The last %d publications I have written"
 msgstr "As ultimas coisas que escrevi"
 
 #: feeds.py:31
-msgid "Andre Anjos latest documents"
+msgid "Andre Anjos latest files"
 msgstr ""
 
 #: feeds.py:32
 #, python-format
-msgid "The last %d documents I have uploaded"
+msgid "The last %d files I have uploaded"
 msgstr ""
 
 #: models.py:15
@@ -242,7 +242,7 @@ msgid ""
 "<font class=\"date\">%(date)s</font>, <font class=\"media\">%(media)s</font>"
 msgstr ""
 
-#: template/feeds/documents_title.html:2
+#: template/feeds/files_title.html:2
 msgid "attached to"
 msgstr ""
 

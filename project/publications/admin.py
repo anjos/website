@@ -4,7 +4,7 @@
 # Thu 24 Jul 15:36:10 2008 
 
 from django.contrib import admin
-from publications.models import Publication, Document
+from publications.models import Publication, File
 from django.utils.translation import ugettext_lazy as _
 
 class PublicationAdmin(admin.ModelAdmin):
@@ -24,7 +24,7 @@ class PublicationAdmin(admin.ModelAdmin):
     
 admin.site.register(Publication, PublicationAdmin)
 
-class DocumentAdmin(admin.ModelAdmin):
+class FileAdmin(admin.ModelAdmin):
   list_display = ('name', 'date', 'public', 'md5', 'publication')
   list_filter = ['date']
   search_fields = ['name', 'date']
@@ -32,4 +32,4 @@ class DocumentAdmin(admin.ModelAdmin):
   list_per_page = 10
   ordering = ['-date']
 
-admin.site.register(Document, DocumentAdmin)
+admin.site.register(File, FileAdmin)

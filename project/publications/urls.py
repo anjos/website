@@ -5,7 +5,7 @@ from publications.feeds import *
 from publications.views import * 
 
 feeds = { LatestPublications.basename: LatestPublications, 
-          LatestDocuments.basename   : LatestDocuments,
+          LatestFiles.basename   : LatestFiles,
         }
 
 publication_detail = { 'queryset': Publication.objects.filter(),

@@ -11,10 +11,10 @@
 {% endif %}
 
 <!-- This is for the attached files -->
-{% if obj.count_documents %}
+{% if obj.count_files %}
 <h4 style="font-style: italic;">{% trans "Document(s) attached" %}</h4>
 <ul>
-  {% for f in obj.document_set.all %}
+  {% for f in obj.files_set.all %}
   <li>
    <a href="{{ f.data.url }}">{{ f.name }}</a>, {{ f.data.size }} bytes</li>
    </li>

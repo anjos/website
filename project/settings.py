@@ -5,7 +5,7 @@ TEMPLATE_DEBUG = DEBUG
 import os
 
 BASEDIR = os.environ['BASEDIR'] #defined by the caller!
-INSTALLDIR = os.environ['INSTALLDIR'] #defined by the caller!
+INSTALLDIR = os.path.join(BASEDIR, 'project') #defined by the caller!
 DATABASE = os.path.join(BASEDIR, 'db.sql3')
 
 ADMINS = (
@@ -76,9 +76,8 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATE_DIRS = (
   # Put strings here, like "/home/html/django_templates".
   # Always use forward slashes, even on Windows.
-  '%s/template' % INSTALLDIR,
+  '%s/templates' % INSTALLDIR,
   '%s/files/template' % INSTALLDIR,
-  '%s/publications/template' % INSTALLDIR,
   '%s/projects/template' % INSTALLDIR,
 )
 

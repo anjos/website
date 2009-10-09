@@ -13,7 +13,7 @@ from publications.models import Publication
 from publications.feeds import * 
 
 feeds = { LatestPublications.basename: LatestPublications, 
-          LatestDocuments.basename   : LatestDocuments,
+          LatestFiles.basename   : LatestFiles,
         }
 
 def publications_by_year(request):
