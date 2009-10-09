@@ -29,7 +29,7 @@ class LatestPublications(Feed):
 class LatestFiles(Feed):
     feed_type = Atom1Feed
     title = _("Andre Anjos latest files")
-    description = _("The last %d files I have uploaded" % entries_per_feed)
+    description = _("The last %d documents I have uploaded" % entries_per_feed)
     link = '/publication'
 
     title_template = "publications/feeds/files_title.html"
