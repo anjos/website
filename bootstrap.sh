@@ -10,26 +10,8 @@ fi
 # Automatically set!
 BASEDIR=`pwd`
 PYTHON=$1
-UPGRADE=''
 python_version=`${PYTHON} -c 'import sys;print "%d.%d" % sys.version_info[0:2]'`
 INSTALLDIR=${BASEDIR}/sw
-
-# Versions
-setuptools_egg=setuptools-0.6c9-py${python_version}.egg
-setuptools=http://pypi.python.org/packages/${python_version}/s/setuptools/${setuptools_egg};
-docutils=http://docutils.sourceforge.net/docutils-snapshot.tgz
-django=django
-gdata=gdata
-etree=elementtree
-feedparser=feedparser
-textile=textile
-uuid=uuid
-imaging=http://effbot.org/media/downloads/Imaging-1.1.6.tar.gz
-pysqlite2=http://oss.itsystementwicklung.de/download/pysqlite/2.5/2.5.5/pysqlite-2.5.5.tar.gz
-pygments=pygments
-gitpython=gitpython
-pytz=pytz
-flup=flup
 
 # This script will download and install all necessary software for us
 [ -r sw ] && rm -f sw;
@@ -45,6 +27,9 @@ ln -s `basename ${INSTALLDIR}`-python${python_version} `basename ${INSTALLDIR}`;
 
 export PYTHONPATH=${INSTALLDIR}
 
+setuptools_egg=setuptools-0.6c9-py${python_version}.egg
+setuptools=http://pypi.python.org/packages/${python_version}/s/setuptools/${setuptools_egg};
+
 if [ -z `which easy_install-${python_version}` ]; then
   # We install the setuptools
   echo "### Installing ${setuptools_egg}..."
@@ -55,47 +40,26 @@ if [ -z `which easy_install-${python_version}` ]; then
   echo "### Installation of ${setuptools_egg} is done!"
 fi
 
-function install () {
-  echo "### Installing $1..."
-  easy_install-${python_version} ${UPGRADE} --install-dir=${INSTALLDIR} $2;
-  echo "### Installation of $1 is done!"
-}
+source ./functions.sh
 
-function git_install () {
-  echo "### Cloning $1..."
-  git clone $2
-  wdir=`basename $2 .git`
-  install $1 $wdir
-  echo "### Removing $wdir..."
-  rm -rf $wdir
-  echo "### Git based installation of $1 is done!"
-}
+install docutils http://docutils.sourceforge.net/docutils-snapshot.tgz
+install django django 
+install gdata gdata
+install textile textile
+install uuid uuid
+install pygments pygments
+install gitpython gitpython
+install pytz pytz
+install flup flup
 
-function pilinstall () {
-  local start=`pwd`
-  echo "### Installing PIL..."
+install pil --find-links http://www.pythonware.com/products/pil/ ${imaging}
+# This fixes the PIL installation for Django
+if [ ! -e ${INSTALLDIR}/PIL ]; then
   cd ${INSTALLDIR};
-  wget $1;
-  local project=`basename $1 .tar.gz`;
-  tar xvfz ${project}.tar.gz;
-  cd ${project}
-  ${PYTHON} setup.py build;
-  ${PYTHON} setup.py install --home=${INSTALLDIR}/PIL
-  cd ${INSTALLDIR};
-  rm -rf ${project} `basename $1`;
-  cd ${start}
-}
+  ln -s PIL-* PIL;
+  cd -;
+fi
 
-install docutils ${docutils}
-install django ${django}
-install gdata ${gdata}
-install elementTree ${etree}
-install feedparser ${feedparser}
-install textile ${textile}
-install uuid ${uuid}
-install pysqlite2 ${pysqlite2}
-install pygments ${pygments}
-install gitpython ${gitpython}
-pilinstall ${imaging}
-install pytz ${pytz}
-install flup ${flup}
+# some projects of mine
+git_install djangoogle andreanjos@git.andreanjos.org:git/djangoogle.git
+git_install audit andreanjos@git.andreanjos.org:git/audit.git

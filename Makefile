@@ -19,7 +19,7 @@ reinstall:
 	
 clean: 	
 	@find . -name '*~' -print0 | xargs -0 rm -vf 
-	make --directory=stuff clean
+	make --directory=project clean
 
 pull:
 	@echo 'Pulling Git sources'
@@ -29,7 +29,7 @@ pull:
 	@echo 'Synchronize media directory'
 	$(RSYNC) $(RSYNC_MASTER)/media ./
 	@echo 'Re-compiling language files'
-	$(MAKE) -C stuff clean
+	$(MAKE) -C project clean
 	@echo 'Synchronization is done'
 
 push:

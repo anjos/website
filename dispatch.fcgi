@@ -14,10 +14,10 @@ sys.path.insert(0, pil) #or django complains...
 # for my django apps and project
 sys.path.insert(0, BASEDIR)
 sys.path.insert(0, extras)
-sys.path.insert(0, os.path.join(BASEDIR, 'stuff'))
+sys.path.insert(0, os.path.join(BASEDIR, 'project'))
 
 # Set the DJANGO_SETTINGS_MODULE environment variable.
-os.environ['DJANGO_SETTINGS_MODULE'] = "stuff.settings"
+os.environ['DJANGO_SETTINGS_MODULE'] = "project.settings"
 os.environ['BASEDIR'] = BASEDIR
 
 # Our time zone

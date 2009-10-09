@@ -17,11 +17,11 @@ That is it.
 
 To launch a test server for the website do the following:
 
-# cd into the django site definition, called 'stuff'
-$ cd stuff
+# cd into the django site definition, called 'project'
+$ cd project
 $ make all test
 
-Read the extra comments within stuff/Makefile to learn extra things you
+Read the extra comments within project/Makefile to learn extra things you
 can/should do to maintain this website.
 
 --

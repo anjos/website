@@ -369,35 +369,3 @@ div.multimedia table.multimedia_detail td.description {
   font-style: italic;
   font-size: 0.8em;
 }
-
-p.pagination {
-  text-align: center;
-  padding: 0.3em;
-  border: solid #ccc 1px;
-  background: #eee;
-  font-size: 0.7em;
-  -moz-border-radius: 0.5em; 
-  -khtml-border-radius: 0.5em; 
-  border-radius: 0.5em; 
-  width: 15em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-p.pagination img {
-  border-style: none;
-}
-
-p.playlists {
-  text-align: center;
-  padding: 0.3em;
-  border: solid #ccc 1px;
-  background: #efe;
-  font-size: 0.7em;
-  -moz-border-radius: 0.5em; 
-  -khtml-border-radius: 0.5em; 
-  border-radius: 0.5em; 
-  width: 15em;
-  margin-left: auto;
-  margin-right: auto;
-}
