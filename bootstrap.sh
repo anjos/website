@@ -2,16 +2,16 @@
 # Created by Andre Anjos <andre.dos.anjos@cern.ch>
 # Sex 04 Abr 2008 14:36:05 CEST
 
-if [ $# = 0 ]; then
-  echo "usage: $0 <python interpreter path>";
+if [ $# -gt 0 ]; then
+  echo "usage: $0";
   exit 1;
 fi
 
+# Load base definitions
+source ./setup.sh
+
 # Automatically set!
-BASEDIR=`pwd`
-PYTHON=$1
 python_version=`${PYTHON} -c 'import sys;print "%d.%d" % sys.version_info[0:2]'`
-INSTALLDIR=${BASEDIR}/sw
 
 # This script will download and install all necessary software for us
 [ -r sw ] && rm -f sw;
@@ -25,8 +25,6 @@ fi
 cd `dirname ${INSTALLDIR}`;
 ln -s `basename ${INSTALLDIR}`-python${python_version} `basename ${INSTALLDIR}`;
 
-export PYTHONPATH=${INSTALLDIR}
-
 setuptools_egg=setuptools-0.6c9-py${python_version}.egg
 setuptools=http://pypi.python.org/packages/${python_version}/s/setuptools/${setuptools_egg};
 
@@ -39,8 +37,6 @@ if [ -z `which easy_install-${python_version}` ]; then
   export PATH=${INSTALLDIR}:${PATH}
   echo "### Installation of ${setuptools_egg} is done!"
 fi
-
-source ./functions.sh
 
 install docutils http://docutils.sourceforge.net/docutils-snapshot.tgz
 install django django 
