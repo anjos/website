@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class PublicationAdmin(admin.ModelAdmin):
   list_display = ('title', 'date', 'publication_type', 'has_abstract', 
-      'count_documents')
+      'count_files')
   list_filter = ['date']
   list_per_page = 10
   ordering = ['-date']

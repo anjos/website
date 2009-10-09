@@ -2,12 +2,12 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # Find my django projects
-PROJECT=template files publications google
+PROJECT=publications projects files template
 
 # These are helpers
 MAKE_MESSAGE=django-admin.py makemessages
 COMPILE_MESSAGE=django-admin.py compilemessages
-LANGUAGES=en pt_BR
+LANGUAGES=en pt_BR fr es
 
 .PHONY: simpleclean clean 
 
@@ -36,6 +36,7 @@ build:
 	  $(COMPILE_MESSAGE); \
 		echo "Subproject '"$$p"' done."; \
 		cd -; done
+	@echo "Compiling 'project'..."; $(COMPILE_MESSAGE); echo "Project done."; 
 
 # ACTION: validates django models and nothing else
 validate:

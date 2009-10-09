@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-22 18:41+0200\n"
+"POT-Creation-Date: 2009-10-09 16:17+0200\n"
 "PO-Revision-Date: 2007-08-19 21:37+0200\n"
 "Last-Translator: andre <(null)>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
@@ -25,59 +25,68 @@ msgstr "Página Inicial"
 msgid "Select what you wish to see from the links above."
 msgstr ""
 
-#: themes/simple.html:12 themes/theme1.html:38
+#: simple.html:17 themed.html:38
 msgid "Automatically generated at "
 msgstr "Gerada automaticamente em "
 
-#: themes/theme1.html:17
+#: themed.html:18
 msgid "Swing back to the home page"
 msgstr ""
 
-#: themes/theme1.html:22 themes/theme1.html.py:23
-msgid "bookmarks"
-msgstr "favoritos"
-
-#: themes/theme1.html:23
-#, fuzzy
-msgid "My latest bookmarks"
-msgstr "favoritos"
-
-#: themes/theme1.html:24
+#: themed.html:23
 #, fuzzy
 msgid "All my publications"
 msgstr "publicações"
 
-#: themes/theme1.html:24
+#: themed.html:23
 msgid "publications"
 msgstr "publicações"
 
-#: themes/theme1.html:25
+#: themed.html:24
 msgid "My Curriculum Vitae"
 msgstr ""
 
-#: themes/theme1.html:25
+#: themed.html:24
 msgid "r&eacute;sum&eacute;"
 msgstr "curriculum"
 
-#: themes/theme1.html:26
+#: themed.html:25
 msgid "My preferred photos"
 msgstr ""
 
-#: themes/theme1.html:26
+#: themed.html:25
 msgid "photos"
 msgstr "fotos"
 
-#: themes/theme1.html:27
+#: themed.html:26
+msgid "Media events and personal recordings"
+msgstr ""
+
+#: themed.html:26
+msgid "videos"
+msgstr ""
+
+#: themed.html:27
 msgid "Source code, documents and other stuff in a Repository"
 msgstr ""
 
-#: themes/theme1.html:27
-msgid "projects"
-msgstr "projetos"
+#: themed.html:27
+msgid "software"
+msgstr ""
 
-#: themes/theme1.html:39
+#: themed.html:39
 msgid "Get a US$ 47 rebate subscribing to Dreamhost by clicking here now!"
 msgstr ""
+
+#~ msgid "bookmarks"
+#~ msgstr "favoritos"
+
+#, fuzzy
+#~ msgid "My latest bookmarks"
+#~ msgstr "favoritos"
+
+#~ msgid "projects"
+#~ msgstr "projetos"
 
 #~ msgid "So..."
 #~ msgstr "Então..."

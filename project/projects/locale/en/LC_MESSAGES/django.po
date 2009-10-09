@@ -1,0 +1,306 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-09 16:17+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: feeds.py:25
+#, python-format
+msgid "%s latest downloads"
+msgstr ""
+
+#: feeds.py:28
+#, python-format
+msgid "The last %(entries)d downloads available for %(project)s"
+msgstr ""
+
+#: feeds.py:58
+#, python-format
+msgid "%s latest developer downloads"
+msgstr ""
+
+#: feeds.py:61
+#, python-format
+msgid "The last %(entries)d developer downloads available for %(project)s"
+msgstr ""
+
+#: feeds.py:99
+#, python-format
+msgid "%s Changelog"
+msgstr ""
+
+#: feeds.py:102
+#, python-format
+msgid "The last %(entries)d MacOSX Sparkle updates for %(project)s"
+msgstr ""
+
+#: models.py:9
+msgid "Project name"
+msgstr ""
+
+#: models.py:10
+msgid ""
+"Insert a short, meaningful unique name for your project. Only letters, "
+"digits and underscores."
+msgstr ""
+
+#: models.py:11
+msgid "Start date"
+msgstr ""
+
+#: models.py:12
+msgid "The start date of this project."
+msgstr ""
+
+#: models.py:13
+msgid "Last update"
+msgstr ""
+
+#: models.py:14
+msgid "The date on the last update of this project description."
+msgstr ""
+
+#: models.py:15
+msgid "Brief description"
+msgstr ""
+
+#: models.py:16
+#, python-format
+msgid "Brief description of this project (max %d characters)"
+msgstr ""
+
+#: models.py:18
+msgid "Description"
+msgstr ""
+
+#: models.py:19
+msgid ""
+"The description of the project is presented on its detailed view page. You "
+"should be really descriptive here."
+msgstr ""
+
+#: models.py:20
+msgid "Version control repository URL"
+msgstr ""
+
+#: models.py:21
+msgid "Complete URL to view your version control repository for this project"
+msgstr ""
+
+#: models.py:22
+msgid "Version control trunk subdirectory"
+msgstr ""
+
+#: models.py:23
+msgid ""
+"The directory within your repository that holds the main trunk of this "
+"project's development"
+msgstr ""
+
+#: models.py:24
+msgid "Wiki page"
+msgstr ""
+
+#: models.py:25
+msgid "Complete URL for the top wiki page of your project"
+msgstr ""
+
+#: models.py:26
+msgid "DSA project key"
+msgstr ""
+
+#: models.py:27
+msgid ""
+"If you have one, insert here the <b>public</b> DSA key for this project."
+msgstr ""
+
+#: models.py:32
+msgid "Public downloads"
+msgstr ""
+
+#: models.py:40
+msgid "All downloads"
+msgstr ""
+
+#: models.py:45 template/project_detail.html:36
+msgid "Screenshots"
+msgstr ""
+
+#: models.py:50
+msgid "Icons"
+msgstr ""
+
+#: models.py:74 template/project_detail.html:48
+msgid "Last updated"
+msgstr ""
+
+#: models.py:78
+msgid "project"
+msgstr ""
+
+#: models.py:79
+msgid "projects"
+msgstr ""
+
+#: models.py:87
+msgid "Short description"
+msgstr ""
+
+#: models.py:88
+msgid "Enter an (obligatory) short description of this download"
+msgstr ""
+
+#: models.py:89 template/download_detail.html:8
+msgid "Version"
+msgstr ""
+
+#: models.py:90
+msgid ""
+"Enter an alpha-numeric version identifier for this download (e.g. 0.3.7, or "
+"r245)"
+msgstr ""
+
+#: models.py:91
+msgid "DSA Digest"
+msgstr ""
+
+#: models.py:93
+msgid ""
+"Insert the DSA digest for this download. It will be used to check the file "
+"sanity and authenticate it"
+msgstr ""
+
+#: models.py:94
+msgid "Developer release"
+msgstr ""
+
+#: models.py:95
+msgid ""
+"Mark this box if you want this download to be only visible to developers "
+"subscribing a special feed."
+msgstr ""
+
+#: models.py:96
+msgid "VC tag directory for this release"
+msgstr ""
+
+#: models.py:97
+msgid ""
+"The directory within your repository that holds the tagged trunk of this "
+"project's development"
+msgstr ""
+
+#: models.py:104
+msgid "download"
+msgstr ""
+
+#: models.py:105
+msgid "downloads"
+msgstr ""
+
+#: models.py:116
+msgid "screenshot"
+msgstr ""
+
+#: models.py:117
+msgid "screenshots"
+msgstr ""
+
+#: models.py:127
+msgid "icon"
+msgstr ""
+
+#: models.py:128
+msgid "icons"
+msgstr ""
+
+#: template/download_detail.html:8 template/project_detail.html:11
+msgid "Project"
+msgstr ""
+
+#: template/download_detail.html:12 template/notes_detail.html:5
+#: template/notes_detail.html.py:8 template/feeds/downloads_title.html:1
+#: template/feeds/sparkle_title.html:1
+msgid "version"
+msgstr ""
+
+#: template/download_detail.html:14 template/notes_detail.html:10
+#: template/feeds/downloads_description.html:6
+msgid "Download details"
+msgstr ""
+
+#: template/download_detail.html:18 template/notes_detail.html:5
+#: template/notes_detail.html.py:13 template/project_detail.html:26
+#: template/feeds/downloads_description.html:9
+msgid "bytes"
+msgstr ""
+
+#: template/project_detail.html:19
+msgid ""
+"Click here for a exhaustive listing of all downloads available for this "
+"project"
+msgstr ""
+
+#: template/project_detail.html:19
+msgid "Downloads"
+msgstr ""
+
+#: template/project_detail.html:22
+msgid "Download the latest version"
+msgstr ""
+
+#: template/project_detail.html:39
+msgid "Click for a larger version"
+msgstr ""
+
+#: template/project_detail.html:44
+msgid "Information"
+msgstr ""
+
+#: template/project_detail.html:46
+msgid "Creation Date"
+msgstr ""
+
+#: template/project_detail.html:51
+msgid "Version Control Repository"
+msgstr ""
+
+#: template/project_detail.html:55
+msgid "Wiki"
+msgstr ""
+
+#: template/project_detail.html:58
+msgid "Public DSA key"
+msgstr ""
+
+#: template/project_detail.html:63
+msgid "edit"
+msgstr ""
+
+#: template/project_detail.html:63
+msgid "upload"
+msgstr ""
+
+#: template/project_list.html:3
+msgid "Projects"
+msgstr ""
+
+#: template/project_list.html:7
+msgid "Projects (last updated first)"
+msgstr ""
+
+#: template/project_list.html:18
+msgid "No projects are available."
+msgstr ""

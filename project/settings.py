@@ -5,12 +5,11 @@ TEMPLATE_DEBUG = DEBUG
 import os
 
 BASEDIR = os.environ['BASEDIR'] #defined by the caller!
-
-INSTALLDIR = os.path.join(BASEDIR, 'stuff')
+INSTALLDIR = os.environ['INSTALLDIR'] #defined by the caller!
 DATABASE = os.path.join(BASEDIR, 'db.sql3')
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Andre Anjos', 'andre.dos.anjos@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -61,7 +60,7 @@ TEMPLATE_LOADERS = (
 TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.auth', #for users and permissions
   'django.core.context_processors.media', #for MEDIA_URL
-  'stuff.context_processors.site', #for site
+  'project.context_processors.site', #for site
 )
 
 MIDDLEWARE_CLASSES = (
@@ -72,7 +71,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.doc.XViewMiddleware',
 )
 
-ROOT_URLCONF = 'stuff.urls'
+ROOT_URLCONF = 'project.urls'
 
 TEMPLATE_DIRS = (
   # Put strings here, like "/home/html/django_templates".
@@ -80,8 +79,6 @@ TEMPLATE_DIRS = (
   '%s/template' % INSTALLDIR,
   '%s/files/template' % INSTALLDIR,
   '%s/publications/template' % INSTALLDIR,
-  '%s/google/template' % INSTALLDIR,
-  '%s/google/templatetags' % INSTALLDIR,
   '%s/projects/template' % INSTALLDIR,
 )
 
@@ -94,9 +91,12 @@ INSTALLED_APPS = (
   'django.contrib.markup',
 
   # These are mine
-  'stuff.publications',
-  'stuff.files',
-  'stuff.google',
-  'stuff.projects',
+  'project.publications',
+  'project.files',
+  'project.projects',
+
+  # External projects reused
+  'djangoogle',
+  'audit',
 )
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-22 18:41+0200\n"
+"POT-Creation-Date: 2009-10-09 16:17+0200\n"
 "PO-Revision-Date: 2007-08-19 21:39+0200\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
@@ -17,101 +17,251 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: admin.py:22 models.py:36
-msgid "Files"
-msgstr "Arquivos"
-
-#: feeds.py:12
-msgid "Publications at "
-msgstr "Publicacoes em "
+#: feeds.py:13
+#, fuzzy
+msgid "Andre Anjos latest publications"
+msgstr "Título da publicação"
 
 #: feeds.py:14
-msgid "The last things I wrote"
+#, fuzzy, python-format
+msgid "The last %d publications I have written"
 msgstr "As ultimas coisas que escrevi"
 
+#: feeds.py:31
+msgid "Andre Anjos latest documents"
+msgstr ""
+
+#: feeds.py:32
+#, python-format
+msgid "The last %d documents I have uploaded"
+msgstr ""
+
+#: models.py:15
+msgid "Journal"
+msgstr ""
+
+#: models.py:16
+msgid "Proceedings of Conference"
+msgstr ""
+
+#: models.py:17
+msgid "Thesis"
+msgstr ""
+
+#: models.py:18
+msgid "Technical Report"
+msgstr ""
+
+#: models.py:19
+msgid "Other"
+msgstr ""
+
 #: models.py:22
+msgid "National"
+msgstr ""
+
+#: models.py:23
+msgid "International"
+msgstr ""
+
+#: models.py:26
 msgid "Title of the publication"
 msgstr "Título da publicação"
 
-#: models.py:23
+#: models.py:27
 msgid "Publishing date"
 msgstr "Data de publicação"
 
-#: models.py:24
+#: models.py:28
 msgid "Author names"
 msgstr "Nome dos autores"
 
-#: models.py:25
+#: models.py:29
 msgid "Type of publication"
 msgstr "Tipo de publicação"
 
-#: models.py:26
-msgid "Journal or proceedings"
-msgstr "Journal ou anais"
+#: models.py:31
+#, fuzzy
+msgid "Type of audience"
+msgstr "Tipo de publicação"
 
-#: models.py:27
+#: models.py:33
+#, fuzzy
+msgid "Publication name"
+msgstr "Publicação"
+
+#: models.py:34
 msgid "Volume"
 msgstr "Volume"
 
-#: models.py:28
+#: models.py:35
 msgid "Number"
 msgstr "Número"
 
-#: models.py:29
+#: models.py:36
 msgid "Pages"
 msgstr "Páginas"
 
-#: models.py:30 models.py:41
+#: models.py:37 models.py:47 template/feeds/publications_description.html:9
 msgid "Abstract"
 msgstr "Sumário"
 
-#: models.py:45
+#: models.py:42
+msgid "Files"
+msgstr "Arquivos"
+
+#: models.py:51
 msgid "publication"
 msgstr "publicação"
 
-#: models.py:46
+#: models.py:52
 msgid "publications"
 msgstr "publicações"
+
+#: models.py:61
+#, fuzzy
+msgid "Name"
+msgstr "Número"
+
+#: models.py:62
+msgid "The name of the file. Can contain spaces and other special characters"
+msgstr ""
+
+#: models.py:63
+msgid "Description"
+msgstr ""
+
+#: models.py:64
+msgid "Explain what this file is - be verbose!"
+msgstr ""
+
+#: models.py:65
+#, fuzzy
+msgid "File"
+msgstr "Arquivos"
+
+#: models.py:66
+msgid "Specify here the file that will be uploaded."
+msgstr ""
+
+#: models.py:67
+msgid "Upload date"
+msgstr ""
+
+#: models.py:68
+msgid "Sets the insertion date of this file"
+msgstr ""
+
+#: models.py:69
+msgid "Publicly visible"
+msgstr ""
+
+#: models.py:70
+msgid "Sets the visibility of this file for not anonymous users."
+msgstr ""
+
+#: models.py:71
+msgid "MD5 checksum"
+msgstr ""
+
+#: models.py:71
+msgid ""
+"Insert an optional MD5 checksum. If you leave it blank I'll calculate the "
+"checksum based on the file contents I stored"
+msgstr ""
+
+#: models.py:109
+#, fuzzy
+msgid "file"
+msgstr "Arquivos"
+
+#: models.py:110
+#, fuzzy
+msgid "files"
+msgstr "Arquivos"
+
+#: models.py:124
+msgid "Size (bytes)"
+msgstr ""
 
 #: template/publication_detail.html:4
 msgid "Publication"
 msgstr "Publicação"
 
-#: template/publication_detail.html:11
+#: template/publication_detail.html:10
+#: template/feeds/publications_description.html:5
 #, python-format
 msgid " At %(date)s in %(media)s"
 msgstr "Em %(media)s, %(date)s"
 
-#: template/publication_detail.html:11
+#: template/publication_detail.html:10 template/simple_list.html:14
+#: template/feeds/publications_description.html:5
 msgid "volume"
 msgstr "volume"
 
-#: template/publication_detail.html:11
+#: template/publication_detail.html:10 template/simple_list.html:14
+#: template/feeds/publications_description.html:5
 msgid "number"
 msgstr "número"
 
-#: template/publication_detail.html:11
+#: template/publication_detail.html:10 template/simple_list.html:14
+#: template/feeds/publications_description.html:5
 msgid "pages"
 msgstr "páginas"
 
-#: template/publication_detail.html:17
+#: template/publication_detail.html:16
 msgid "edit"
 msgstr "editar"
 
-#: template/publication_list.html:6
+#: template/publications_by_year.html:9
 msgid "Publications"
 msgstr "Publicações"
 
-#: template/publication_list.html:10
+#: template/publications_by_year.html:13
 msgid ""
 "Publications (in reverse chronological\n"
 "      order)"
 msgstr ""
 
-#: template/publication_list.html:23
+#: template/publications_by_year.html:34
 msgid "No publications are available."
 msgstr "Não há publicações disponíveis."
 
-#: template/feeds/publications_description.html:7
-msgid "File(s)"
-msgstr "Arquivo(s)"
+#: template/simple_list.html:4
+#, fuzzy
+msgid "Publication List (simple)"
+msgstr "Publicacoes em "
+
+#: template/simple_list.html:8
+msgid "Publications (in reverse chronological order)"
+msgstr ""
+
+#: template/simple_list.html:14
+#, python-format
+msgid ""
+"<font class=\"date\">%(date)s</font>, <font class=\"media\">%(media)s</font>"
+msgstr ""
+
+#: template/feeds/documents_title.html:2
+msgid "attached to"
+msgstr ""
+
+#: template/feeds/publications_description.html:5
+#, fuzzy
+msgid "Publisher"
+msgstr "Data de publicação"
+
+#: template/feeds/publications_description.html:6
+#, fuzzy
+msgid "Authors"
+msgstr "Nome dos autores"
+
+#: template/feeds/publications_description.html:15
+msgid "Document(s) attached"
+msgstr ""
+
+#~ msgid "Journal or proceedings"
+#~ msgstr "Journal ou anais"
+
+#~ msgid "File(s)"
+#~ msgstr "Arquivo(s)"

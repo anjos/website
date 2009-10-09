@@ -6,25 +6,24 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: publications 0.1\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-10-09 16:17+0200\n"
-"PO-Revision-Date: 2007-03-20 23:52+0100\n"
-"Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: feeds.py:13
-#, fuzzy
 msgid "Andre Anjos latest publications"
-msgstr "Title of the publication"
+msgstr ""
 
 #: feeds.py:14
-#, fuzzy, python-format
+#, python-format
 msgid "The last %d publications I have written"
-msgstr "The last things I wrote"
+msgstr ""
 
 #: feeds.py:31
 msgid "Andre Anjos latest documents"
@@ -65,62 +64,59 @@ msgstr ""
 
 #: models.py:26
 msgid "Title of the publication"
-msgstr "Title of the publication"
+msgstr ""
 
 #: models.py:27
 msgid "Publishing date"
-msgstr "Publishing date"
+msgstr ""
 
 #: models.py:28
 msgid "Author names"
-msgstr "Author names"
+msgstr ""
 
 #: models.py:29
 msgid "Type of publication"
-msgstr "Type of publication"
+msgstr ""
 
 #: models.py:31
-#, fuzzy
 msgid "Type of audience"
-msgstr "Type of publication"
+msgstr ""
 
 #: models.py:33
-#, fuzzy
 msgid "Publication name"
-msgstr "Publication"
+msgstr ""
 
 #: models.py:34
 msgid "Volume"
-msgstr "Volume"
+msgstr ""
 
 #: models.py:35
 msgid "Number"
-msgstr "Number"
+msgstr ""
 
 #: models.py:36
 msgid "Pages"
-msgstr "Pages"
+msgstr ""
 
 #: models.py:37 models.py:47 template/feeds/publications_description.html:9
 msgid "Abstract"
-msgstr "Abstract"
+msgstr ""
 
 #: models.py:42
 msgid "Files"
-msgstr "Files"
+msgstr ""
 
 #: models.py:51
 msgid "publication"
-msgstr "publication"
+msgstr ""
 
 #: models.py:52
 msgid "publications"
-msgstr "publications"
+msgstr ""
 
 #: models.py:61
-#, fuzzy
 msgid "Name"
-msgstr "Number"
+msgstr ""
 
 #: models.py:62
 msgid "The name of the file. Can contain spaces and other special characters"
@@ -135,9 +131,8 @@ msgid "Explain what this file is - be verbose!"
 msgstr ""
 
 #: models.py:65
-#, fuzzy
 msgid "File"
-msgstr "Files"
+msgstr ""
 
 #: models.py:66
 msgid "Specify here the file that will be uploaded."
@@ -170,14 +165,12 @@ msgid ""
 msgstr ""
 
 #: models.py:109
-#, fuzzy
 msgid "file"
-msgstr "Files"
+msgstr ""
 
 #: models.py:110
-#, fuzzy
 msgid "files"
-msgstr "Files"
+msgstr ""
 
 #: models.py:124
 msgid "Size (bytes)"
@@ -185,36 +178,36 @@ msgstr ""
 
 #: template/publication_detail.html:4
 msgid "Publication"
-msgstr "Publication"
+msgstr ""
 
 #: template/publication_detail.html:10
 #: template/feeds/publications_description.html:5
 #, python-format
 msgid " At %(date)s in %(media)s"
-msgstr "At %(date)s in %(media)s"
+msgstr ""
 
 #: template/publication_detail.html:10 template/simple_list.html:14
 #: template/feeds/publications_description.html:5
 msgid "volume"
-msgstr "volume"
+msgstr ""
 
 #: template/publication_detail.html:10 template/simple_list.html:14
 #: template/feeds/publications_description.html:5
 msgid "number"
-msgstr "number"
+msgstr ""
 
 #: template/publication_detail.html:10 template/simple_list.html:14
 #: template/feeds/publications_description.html:5
 msgid "pages"
-msgstr "pages"
+msgstr ""
 
 #: template/publication_detail.html:16
 msgid "edit"
-msgstr "edit"
+msgstr ""
 
 #: template/publications_by_year.html:9
 msgid "Publications"
-msgstr "Publications"
+msgstr ""
 
 #: template/publications_by_year.html:13
 msgid ""
@@ -224,12 +217,11 @@ msgstr ""
 
 #: template/publications_by_year.html:34
 msgid "No publications are available."
-msgstr "No publications are available."
+msgstr ""
 
 #: template/simple_list.html:4
-#, fuzzy
 msgid "Publication List (simple)"
-msgstr "Publications at "
+msgstr ""
 
 #: template/simple_list.html:8
 msgid "Publications (in reverse chronological order)"
@@ -246,21 +238,13 @@ msgid "attached to"
 msgstr ""
 
 #: template/feeds/publications_description.html:5
-#, fuzzy
 msgid "Publisher"
-msgstr "Publishing date"
+msgstr ""
 
 #: template/feeds/publications_description.html:6
-#, fuzzy
 msgid "Authors"
-msgstr "Author names"
+msgstr ""
 
 #: template/feeds/publications_description.html:15
 msgid "Document(s) attached"
 msgstr ""
-
-#~ msgid "Journal or proceedings"
-#~ msgstr "Journal or proceedings"
-
-#~ msgid "File(s)"
-#~ msgstr "File(s)"

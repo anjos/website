@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: files 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-22 18:41+0200\n"
+"POT-Creation-Date: 2009-10-09 16:17+0200\n"
 "PO-Revision-Date: 2007-08-19 21:38+0200\n"
 "Last-Translator: Andre Anjos <Andre.dos.Anjos@gmail.com>\n"
 "Language-Team: Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
@@ -17,60 +17,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: feeds.py:10
-#, python-format
-msgid "Files at %s"
-msgstr "Arquivos em %s"
-
-#: feeds.py:12
-msgid "The last public uploads to the site"
-msgstr "Últimos uploads públicos no site"
-
-#: models.py:11
+#: models.py:8
 msgid "Name"
 msgstr "Nome"
 
-#: models.py:12
+#: models.py:9
 msgid "The name of the file. Can contain spaces and other special characters"
 msgstr "O nome do arquivo. Pode conter espaços e caracteres especiais"
 
-#: models.py:13
+#: models.py:10
 msgid "Description"
 msgstr "Descrição"
 
-#: models.py:14
+#: models.py:11
 msgid "Explain what this file is - be verbose!"
 msgstr "Explique o que é este arquivo - seja descritivo!"
 
-#: models.py:15
+#: models.py:12
 msgid "File"
 msgstr "Arquivo"
 
-#: models.py:16
+#: models.py:13
 msgid "Specify here the file that will be uploaded."
 msgstr "Specifique aqui o arquivo que será enviado."
 
-#: models.py:17
+#: models.py:14
 msgid "Upload date"
 msgstr "Data de upload"
 
-#: models.py:18
+#: models.py:15
 msgid "Sets the insertion date of this file"
 msgstr "Ajusta a data de inserção na base de dados, deste arquivo."
 
-#: models.py:19
+#: models.py:16
 msgid "Publicly visible"
 msgstr "Visível publicamente"
 
-#: models.py:20
+#: models.py:17
 msgid "Sets the visibility of this file for not anonymous users."
 msgstr "Ajuste a visibilidade deste arquivo para usuários anônimos."
 
-#: models.py:21
+#: models.py:18
 msgid "MD5 checksum"
 msgstr "checksum MD5"
 
-#: models.py:22
+#: models.py:19
 msgid ""
 "Insert an optional MD5 checksum. If you leave it blank I'll calculate the "
 "checksum based on the file contents I stored"
@@ -78,10 +69,20 @@ msgstr ""
 "Insira um checksum MD5 opcional. Se você deixá-lo em branco eu o calcularei "
 "automaticamente, baseando-se no arquivo enviado."
 
-#: models.py:50
+#: models.py:57
 msgid "file"
 msgstr "arquivo"
 
-#: models.py:51
+#: models.py:58
 msgid "files"
 msgstr "arquivos"
+
+#: models.py:72
+msgid "Size (bytes)"
+msgstr ""
+
+#~ msgid "Files at %s"
+#~ msgstr "Arquivos em %s"
+
+#~ msgid "The last public uploads to the site"
+#~ msgstr "Últimos uploads públicos no site"

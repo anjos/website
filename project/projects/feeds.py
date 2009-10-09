@@ -25,8 +25,8 @@ class LatestDownloadsForProject(Feed):
     return _("%s latest downloads" % obj.name)
 
   def description(self, obj):
-    return _("The last %d downloads available for %s" % \
-        (entries_per_feed, obj.name))
+    return _("The last %(entries)d downloads available for %(project)s" % \
+        {'entries': entries_per_feed, 'project': obj.name})
 
   def link(self, obj):
     return "/project/%s" % (obj.name)
@@ -58,8 +58,8 @@ class LatestDeveloperDownloadsForProject(LatestDownloadsForProject):
     return _("%s latest developer downloads" % obj.name)
 
   def description(self, obj):
-    return _("The last %d developer downloads available for %s" % \
-        (entries_per_feed, obj.name))
+    return _("The last %(entries)d developer downloads available for %(project)s" % \
+        {'entries': entries_per_feed, 'project': obj.name})
 
   def items(self, obj):
     return obj.download_set.order_by('-date')[:entries_per_feed]
@@ -99,8 +99,8 @@ class SparkleUpdatesForProject(Feed):
     return _("%s Changelog" % obj.name)
 
   def description(self, obj):
-    return _("The last %d MacOSX Sparkle updates for %s" % \
-        (entries_per_feed, obj.name))
+    return _("The last %(entries)d MacOSX Sparkle updates for %(project)s" % \
+        {'entries':entries_per_feed, 'project':obj.name})
 
   def link(self, obj):
     return "/project/%s" % (obj.name)
