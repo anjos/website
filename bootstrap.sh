@@ -59,3 +59,4 @@ fi
 # some projects of mine
 git_install djangoogle andreanjos@git.andreanjos.org:git/djangoogle.git
 git_install audit andreanjos@git.andreanjos.org:git/audit.git
+git_install nav andreanjos@git.andreanjos.org:git/nav.git

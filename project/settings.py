@@ -60,7 +60,9 @@ TEMPLATE_LOADERS = (
 TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.auth', #for users and permissions
   'django.core.context_processors.media', #for MEDIA_URL
+  'django.core.context_processors.i18n', #for LANGUAGES  
   'project.context_processors.site', #for site
+  'nav.context_processors.navigation', #for our menus
 )
 
 MIDDLEWARE_CLASSES = (
@@ -98,5 +100,6 @@ INSTALLED_APPS = (
   # External projects reused
   'djangoogle',
   'audit',
+  'nav',
 )
 

@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load nav_tags %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -20,14 +21,11 @@
   </div>
 
   <div class="navigation">
-    <a href="/publication/" title="{% trans 'All my publications' %}">{% trans "publications" %}</a> &middot; 
-    <a href="{{ MEDIA_URL }}cv/cv.pdf" title="{% trans 'My Curriculum Vitae' %}">{% trans "r&eacute;sum&eacute;" %}</a> &middot; 
-    <a href="/google/photos/" title="{% trans 'My preferred photos' %}" %}>{% trans "photos" %}</a> &middot; 
-    <a href="/google/videos/" title="{% trans 'Media events and personal recordings' %}" %}>{% trans "videos" %}</a> &middot; 
-    <a href="/project/" title="{% trans 'Source code, documents and other stuff in a Repository' %}">{% trans "software" %}</a>
-  </div>
-
-  <div class="path">
+    <ul>
+      {% for item in navigation %}
+      <li><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></li>
+      {% endfor %}
+    </ul>
   </div>
 
   <div class="content">
@@ -35,8 +33,7 @@
   </div>
 
   <div class="footer">
-   <p>{% trans "Automatically generated at " %}{% now "r" %}
-     <a title="{% trans 'Get a US$ 47 rebate subscribing to Dreamhost by clicking here now!' %}" href="http://www.dreamhost.com/r.cgi?295665/green.cgi?adois.org|ANJOSREBATE47"><img border="0" alt="Green Web Hosting! This site hosted by DreamHost." src="https://secure.newdream.net/green3.gif" height="15" width="80" /></a>
+   <p><a title="{% trans 'Get a US$ 47 rebate subscribing to Dreamhost by clicking here now!' %}" href="http://www.dreamhost.com/r.cgi?295665/green.cgi?adois.org|ANJOSREBATE47"><img border="0" alt="Green Web Hosting! This site hosted by DreamHost." src="https://secure.newdream.net/green3.gif" height="15" width="80" /></a>
    </p>
   </div>
 

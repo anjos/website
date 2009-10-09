@@ -22,16 +22,21 @@ body div.banner img {
 }
 
 body div.navigation {
-  color: #7af;
   text-align: center;
+}
+
+body div.navigation ul li {
+  color: #7af;
+  display: inline;
+  list-style-type: none;
+	padding: 5px 0px 0px 5px;
+	font: 18px verdana, arial, sans-serif; 
   font-weight: bold;
-  font-size: 1.2em;
-  padding: 0.5em;
 }
 
 body div.navigation a {
-  text-decoration: none;
   color: #7af;
+	text-decoration: none;
 }
 
 body div.navigation a:hover {
@@ -57,10 +62,10 @@ body div.subnavigation a:hover {
 }
 
 body div.main {
-  width: 820px;
+  width: 900px;
   margin-right: auto;
   margin-left : auto;
-  border-width: 0px;
+  border-width: 20px;
   color: #222;
   text-align: left;
 }
