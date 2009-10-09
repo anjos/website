@@ -5,7 +5,7 @@ from django.conf import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls, name='admin'),
     url(r'^publication/', include('project.publications.urls')),
     url(r'^google/', include('djangoogle.urls')),
     url(r'^project/', include('project.projects.urls')),
