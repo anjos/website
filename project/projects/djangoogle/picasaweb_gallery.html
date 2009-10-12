@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load djangoogle_tags %}
+
+{% block title %}{% trans "Photo Gallery" %}{% if owner %} ({{ owner }}){% endif %}{% endblock %}
+
+{% block media %} <!-- extends the current media block -->
+{{ block.super }}
+<link href="{{ MEDIA_URL }}djangoogle/css/picasaweb.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+{% block content %}
+
+<div class="djangoogle">
+<div class="picasaweb">
+
+<h2 class="title">{% trans "Photo Gallery" %}{% if owner %} ({{ owner }}){% endif %}</h2>
+
+{% if objects %}
+<p class="preamble">{% trans "From this page you can access our photo albums. Click on the arrows bellow to go back in history." %}</p>
+
+{% pagination objects %}
+
+{% for entry in objects.object_list %}
+<table class="entry">
+  <tr class="photo">
+    <td>
+      <a href="{% url picasaweb-view-album entry.parent.id entry.id %}" title="{% trans 'Click here to launch a slideshow of this album' %}"><img class="photo" width="{{ entry.thumbnail.width }}" height="{{ entry.thumbnail.height }}" src="{{ entry.thumbnail.url }}"/></a>
+    </td>
+  </tr>
+  <tr class="title"><td><a href="{{ entry.web_url }}"><img class="picasaweb-logo" src="{{ MEDIA_URL }}djangoogle/img/picasaweb.gif" title="{% trans 'Click here to view this album directly inside PicasaWeb' %}" alt="{% trans 'PicasaWeb' %}"></a> {{ entry.title }}</td></tr>
+  <tr class="details">
+    <td>
+      {% if entry.description %}{{ entry.description }}<br/>{% endif %}
+      {% if entry.location %}({{ entry.location }})<br/>{% endif %}
+      {% blocktrans with entry.numphotos as numphotos and entry.numphotos|pluralize as plural %}{{ numphotos }} photo{{ plural }} by{% endblocktrans %} "<a href="{% url picasaweb-user-view entry.parent.id %}">{{ entry.nickname|lower }}</a>"<br/>
+      {% trans "published" %} {{ entry.published|date:"D, j/M/Y"|lower }}<br/>
+      {% trans "updated" %} {{ entry.updated|date:"D, j/M/Y"|lower }}
+    </td>
+  </tr>
+</table>
+{% endfor %}
+
+{% else %}
+
+<p class="preamble">{% trans "Cannot connect to PicasaWeb service." %}</p>
+
+{% endif %}<!-- ends the big if clause above on objects.object_list -->
+
+</div><!-- ends "picasaweb" div --> 
+</div><!-- ends "djangoogle" div -->
+
+{% endblock %}

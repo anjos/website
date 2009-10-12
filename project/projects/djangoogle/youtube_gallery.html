@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load djangoogle_filters %}
+{% load djangoogle_tags %}
+
+{% block title %}{% trans "Video Gallery" %}{% endblock %}
+
+{% block media %} <!-- extends the current media block -->
+{{ block.super }}
+<link href="{{ MEDIA_URL }}djangoogle/css/youtube.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+{% block content %}
+
+<div class="djangoogle">
+<div class="youtube">
+
+<h2 class="title">{% trans "Video Gallery" %}</h2>
+
+{% if objects %}
+
+<p class="preamble">{% trans "From this page you can access all videos registered. Click on the arrows bellow to go back in history." %}</p>
+
+{% pagination objects %}
+
+{% for entry in objects.object_list %}
+<table class="entry">
+  <tr class="thumbnail">
+    <td>
+      <a href="{% url youtube-view-video entry.parent.id entry.id %}"><img class="photo" width="280" height="210" src="{{ entry.thumbnail.url }}"/></a>
+    </td>
+  </tr>
+  <tr class="title"><td><div class="album">{{ entry.title }}</div></td></tr>
+  <tr class="details">
+    <td>
+      {% if entry.description %}{{ entry.description }}<br/>{% endif %}
+      {{ entry.published|date:"j/M/Y" }} ({{ entry.author }})<br/>
+      {{ entry.duration }} {% trans "seconds" %}<br/>
+      {% trans "Playlist" %}: <a href="{% url youtube-list-view entry.parent.id %}" title="{% trans 'Click here to only view videos from this playlist' %}">{{ entry.parent.name }}</a>
+    </td>
+  </tr>
+</table>
+{% endfor %}
+
+{% else %}
+
+<p class="preamble">{% trans "Cannot connect to YouTube service at" %} {% now "H:i j/M/Y" %}</p>
+
+{% endif %}
+
+</div><!-- ends "youtube" div --> 
+</div><!-- ends "djangoogle" div -->
+
+{% endblock %}

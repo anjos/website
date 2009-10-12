@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load djangoogle_tags %}
+
+{% block title %}{% trans "Slideshow of" %} {{ object.title }}{% endblock %}
+
+{% block media %} <!-- extends the current media block -->
+{{ block.super }}
+<link href="{{ MEDIA_URL }}djangoogle/css/picasaweb.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+{% block content %}
+
+<div class="djangoogle">
+<div class="picasaweb">
+
+<h2 class="title">{% trans "Slideshow of" %} {{ object.title }}</h2>
+
+{% if object %}
+
+<p class="slideshow">{% autoescape off %}{% picasaweb_slideshow object LANGUAGE_CODE 600 480 %}{% endautoescape %}</p>
+
+<h2>{% trans "Album details" %}</h2>
+<p>{% trans "Author" %}: <a href="{% url picasaweb-user-view object.parent.id %}" title="{% trans 'Click to see other albums by this author' %}">{{ object.author }}</a></p>
+<p>{% trans "Description" %}: {{ object.description }}</p>
+<p>{% trans "Location" %}: {{ object.location }}</p>
+<p>{% trans "Number of photos" %}: {{ object.numphotos }}</p>
+<p>{% trans "Published" %}: {{ object.published|date:"D, j/M/Y" }}</p>
+<p>{% trans "Updated" %}: {{ object.updated|date:"D, j/M/Y" }}</p>
+
+{% else %}
+
+<p class="preamble">{% trans "Cannot connect to PicasaWeb service." %}</p>
+
+{% endif %}<!-- ends the big if clause above on objects.object_list -->
+
+</div><!-- ends "picasaweb" div --> 
+</div><!-- ends "djangoogle" div -->
+
+{% endblock %}

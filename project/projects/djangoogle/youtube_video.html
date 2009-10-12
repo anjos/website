@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load djangoogle_filters %}
+
+{% block title %}{% trans "Video Gallery" %} :: {{ object.title }}{% endblock %}
+
+{% block media %} <!-- extends the current media block -->
+{{ block.super }}
+<link href="{{ MEDIA_URL }}djangoogle/css/youtube.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+{% block content %}
+
+<div class="djangoogle">
+<div class="youtube">
+
+<h2 class="title">{{ object.title }}</h2>
+<p class="date">{% trans "published" %}: {{ object.published|date:"j/M/Y" }}</p> 
+{% if object %}
+<div class="video">
+{{ object.flash_player_html|safe }}<br/>
+{% if object.description %}{% trans "Description" %}: {{ object.description }}<br/>{% endif %}
+{% trans "Uploaded by" %}: {{ object.author }}<br/>
+{% trans "Duration" %}: {{ object.duration }} {% trans "seconds" %}
+</div>
+
+{% else %}
+<p class="preamble">{% trans "Cannot connect to YouTube service at" %} {% now "H:i j/M/Y" %}</p>
+
+{% endif %}
+
+</div><!-- ends "youtube" div --> 
+</div><!-- ends "djangoogle" div -->
+
+{% endblock %}

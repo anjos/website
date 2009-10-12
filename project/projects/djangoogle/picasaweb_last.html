@@ -1,0 +1,37 @@
+{% load i18n %}
+{% load djangoogle_filters %}
+
+{% if lastalbum %}
+
+<div class="djangoogle">
+<div class="picasaweb">
+  
+<table class="last-album">
+  <tr class="thumbnail">
+    <td>
+        <a href="{{ lastalbum.GetHtmlLink.href }}"><img class="photo"
+           width="{{ lastalbum.media.thumbnail.0.width }}" 
+           height="{{ lastalbum.media.thumbnail.0.height }}"
+           src="{{ lastalbum.media.thumbnail.0.url }}"/></a>
+    </td>
+  </tr>
+  <tr class="caption">
+    <td>{{ lastalbum.title.text }}</td>
+  </tr>
+  <tr>
+    <td class="comment">
+      {% blocktrans with lastalbum.numphotos.text as numphotos and lastalbum.numphotos.text|str2int|pluralize as plural %}{{ numphotos }} photo{{ plural }}{% endblocktrans %}, {% trans "updated" %} {{ lastalbum.updated.text|gd_date:"%a, %d/%b/%Y" }}
+    </td>
+  </tr>
+</table>
+{% else %}
+<table class="last-album">
+  <tr class="caption">
+    <td>{% trans "Cannot connect to PicasaWeb service at" %}<br/>{% now "H:i j/M/Y" %}</td>
+  </tr>
+</table>
+
+</div><!-- ends "picasaweb" div --> 
+</div><!-- ends "djangoogle" div -->
+
+{% endif %}

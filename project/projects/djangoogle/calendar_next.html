@@ -1,0 +1,11 @@
+{% load i18n %}
+{% if object %}
+<div class="calendar-next-event">
+  <p class="name"><a href="{{ object.link }}">{{ object.start_date|date:"l, d/F/Y" }} - {{ object.title }}</a></p>
+  {% if object.description %}<p><font class="highlight">{% trans "Description" %}</font>: {{ object.description|truncatewords:10 }}</p>{% endif %}
+  <p><font class="highlight">{% trans "When" %}</font>: {{ object.start_date|date:"l, d/F/Y, H:i" }} {% trans "until" %} {% if object.ends_at_same_day %}{{ object.end_date|date:"H:i" }}{% else %}{{ object.end_date|date:"l, d/F/Y, H:i" }}{% endif %}</p>
+  <p><font class="highlight">{% trans "Where" %}</font>: {{ object.where }}</p>
+</div>
+{% else %}
+  <p>{% trans "No new events (or cannot connect to Google Calendar service at" %} {% now "H:i j/M/Y" %})</p>
+{% endif %}

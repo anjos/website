@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block media %} <!-- extends the current media block -->
+{{ block.super }}
+<link href="{{ MEDIA_URL }}djangoogle/css/calendar.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+{% block title %}{% trans "Calendar" %}{% endblock %}
+
+{% block content %}
+<h2 class="title">{% trans "Next appointments" %}</h2>
+
+{% if entries %}
+<p class="date">{% trans "updated" %}: {{ updated|date:"H:i j/M/y" }}</p>
+<table class="calendar-gallery">
+  {% for entry in entries %}
+  <tr class="{% cycle "even" "odd" %}"><td>
+      <p class="name"><a href="{{ entry.link }}">{{ entry.start_date|date:"l, d/F/Y" }} - {{ entry.title }}</a></p>
+      <ul class="description">
+        {% if entry.description %}<li>{% trans "Description" %}: {{ entry.description }}</li>{% endif %}
+        <li>{% trans "When" %}: {{ entry.start_date|date:"l, d/F/Y, H:i" }} {% trans "until" %} {% if entry.ends_at_same_day %}{{ entry.end_date|date:"H:i" }}{% else %}{{ entry.end_date|date:"l, d/F/Y, H:i" }}{% endif %}</li>
+        <li>{% trans "Where" %}: {{ entry.where }}</li>
+      </ul>
+  </td></tr>
+  {% endfor %}
+</table>
+{% else %}
+<p class="date">{% trans "updated" %}: {% now "H:i j/M/Y" %}</p> 
+  <p>{% trans "Cannot connect to Google Calendar service at" %} {% now "H:i j/M/Y" %}. {% trans "Or maybe you have no calendars configured?" %}</p>
+{% endif %}
+{% endblock %}
