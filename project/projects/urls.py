@@ -13,20 +13,20 @@ all_feeds = dict(feeds)
 all_feeds[SparkleUpdatesForProject.basename] = SparkleUpdatesForProject
 
 project_list = { 'queryset': Project.objects.order_by('-date'),
-                 'template_name': 'project_list.html',
+                 'template_name': 'projects/list.html',
                }
 
 project_detail = { 'queryset': Project.objects.filter(),
-                   'template_name': 'project_detail.html',
+                   'template_name': 'projects/detail.html',
                    'extra_context': {'feeds': feeds.values()},
                  }
 
 download_detail = { 'queryset': Download.objects.filter(),
-                    'template_name': 'download_detail.html',
+                    'template_name': 'projects/download_detail.html',
                   }
 
 notes_detail = { 'queryset': Download.objects.filter(),
-                 'template_name': 'notes_detail.html',
+                 'template_name': 'projects/notes_detail.html',
                }
 
 urlpatterns = patterns('',

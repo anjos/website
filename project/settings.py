@@ -80,8 +80,7 @@ TEMPLATE_DIRS = (
   # Always use forward slashes, even on Windows.
   '%s/templates' % INSTALLDIR,
   '%s/publications/templates' % INSTALLDIR,
-  '%s/files/template' % INSTALLDIR,
-  '%s/projects/template' % INSTALLDIR,
+  '%s/projects/templates' % INSTALLDIR,
 )
 
 INSTALLED_APPS = (
@@ -94,7 +93,6 @@ INSTALLED_APPS = (
 
   # These are mine
   'project.publications',
-  'project.files',
   'project.projects',
 
   # External projects reused

@@ -31,8 +31,8 @@ class LatestDownloadsForProject(Feed):
   def link(self, obj):
     return "/project/%s" % (obj.name)
 
-  title_template = "feeds/downloads_title.html"
-  description_template = "feeds/downloads_description.html"
+  title_template = "projects/feeds/downloads_title.html"
+  description_template = "projects/feeds/downloads_description.html"
 
   def items(self, obj):
     return obj.download_set.exclude(development__exact=True).order_by('-date')[:entries_per_feed]
@@ -105,8 +105,8 @@ class SparkleUpdatesForProject(Feed):
   def link(self, obj):
     return "/project/%s" % (obj.name)
 
-  title_template = "feeds/sparkle_title.html"
-  description_template = "feeds/sparkle_description.html"
+  title_template = "projects/feeds/sparkle_title.html"
+  description_template = "projects/feeds/sparkle_description.html"
 
   def items(self, obj):
     return obj.download_set.exclude(development__exact=True).order_by('-date')
