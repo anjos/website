@@ -7,3 +7,4 @@ django.mo
 .*.swp
 db.sql3
 media/publications
+media/projects
