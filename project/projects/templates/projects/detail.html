@@ -43,10 +43,6 @@
         </td></tr>
         <tr><td>{% trans "Last updated" %}: {{ object.updated_on|date:"j/F/Y" }}
         </td></tr>
-        {% if object.clone_url %}
-        <tr><td>{% trans "Git clone URL" %}: <a href="{{ object.clone_url }}">{{ object.clone_url }}</a>
-        </td></tr>
-        {% endif %}
         {% if object.wiki_page %}
         <tr><td>{% trans "Wiki" %}: <a href="{{ object.wiki_page }}">{{ object.wiki_page }}</a></td></tr>
         {% endif %}
@@ -54,6 +50,20 @@
         <tr><td>{% trans "Public DSA key" %}: <a href="{% url projects:dsakey object.slug %}">DSA key</a></td></tr>
         {% endif %}
       </table>
+      {% if object.git_repo %}
+      {% with object.git_repo as repo %}
+      <p class="details">{% trans "Repository" %}</p>
+      <ul>
+        {% if object.clone_url %}
+        <li>{% trans "Git clone URL" %}: <a href="{{ object.clone_url }}">{{ object.clone_url }}</a></li>
+        {% endif %}
+        <li>{% trans "Number of commits" %}: {{ repo.commit_count }}</li>
+        {% if repo.tag %}<li>{% trans "Last tag" %}: {{ repo.tag.0 }}</li>{% endif %}
+        <li>{% trans "Last commit" %}: {{ object.git_last|date:"l, H:i j/M/Y" }}, {{ repo.log.0.summary }}</li>
+        <li>{% trans "First commit" %}: {{ object.git_start|date:"j/M/Y" }}</li>
+      </ul>
+      {% endwith %}
+      {% endif %}
     </div>
     <div class="actions">
       [ <a href="/admin/projects/project/{{ object.slug }}/">{% trans "edit" %}</a> | <a href="/admin/projects/download/add/">{% trans "upload" %}</a> ]

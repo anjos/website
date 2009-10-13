@@ -4,6 +4,7 @@ from django.utils.translation import ugettext
 from django.utils.translation import string_concat  as _cat
 from conf import settings
 import os, datetime
+import git
 
 class Project(models.Model):
   """Describes a software project."""
@@ -54,6 +55,21 @@ class Project(models.Model):
     else:
       return self.updated
   updated_on.short_description = _('Last updated')
+
+  def git_repo(self):
+    path = os.path.join(settings.PROJECTS_GIT_BASE_DIRECTORY, self.git_dir)
+    if os.path.exists(path): return git.Repo(path)
+    return None
+
+  def git_start(self):
+    r = self.git_repo()
+    if not r or not r.log(): return
+    return datetime.datetime(*(r.log()[-1].committed_date[0:7]))
+
+  def git_last(self):
+    r = self.git_repo()
+    if not r or not r.log(): return
+    return datetime.datetime(*(r.log()[0].committed_date[0:7]))
 
   # make it translatable
   class Meta:
