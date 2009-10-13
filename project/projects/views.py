@@ -11,10 +11,10 @@ from django.shortcuts import render_to_response
 from django.core.exceptions import ObjectDoesNotExist
 from projects.models import Project, Download
 
-def projects_dsa_pubkey(request, object_id):
+def projects_dsa_pubkey(request, slug):
   """View the DSA public key of project as a downloadable file"""
   try:
-    p = Project.objects.get(name=object_id)
+    p = Project.objects.get(slug=slug)
   except: 
     raise ObjectDoesNotExist
 

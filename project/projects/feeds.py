@@ -5,37 +5,36 @@ from projects.models import Project, Download
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import string_concat  as _cat
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.urlresolvers import reverse
 
-entries_per_feed = 20
 site = Site.objects.get_current()
 
 class LatestDownloadsForProject(Feed):
-  feed_type = Atom1Feed
   basename = 'downloads'
 
   def get_object(self, bits):
     if len(bits) != 1:
       raise ObjectDoesNotExist
     try:
-      return Project.objects.get(name=bits[0])
+      return Project.objects.get(slug=bits[0])
     except:
       raise ObjectDoesNotExist
 
   def title(self, obj):
-    return _("%s latest downloads" % obj.name)
+    return _("%s downloads" % obj.name)
 
   def description(self, obj):
-    return _("The last %(entries)d downloads available for %(project)s" % \
-        {'entries': entries_per_feed, 'project': obj.name})
+    return _("Downloads available for %(project)s" % \
+        {'project': obj.name})
 
   def link(self, obj):
-    return "/project/%s" % (obj.name)
+    return reverse('projects:detail', args=(obj.slug,))
 
   title_template = "projects/feeds/downloads_title.html"
   description_template = "projects/feeds/downloads_description.html"
 
   def items(self, obj):
-    return obj.download_set.exclude(development__exact=True).order_by('-date')[:entries_per_feed]
+    return obj.download_set.exclude(development=True).order_by('-date')
 
   def item_link(self, item):
     return item.data.url
@@ -55,14 +54,14 @@ class LatestDeveloperDownloadsForProject(LatestDownloadsForProject):
   basename = 'developer'
 
   def title(self, obj):
-    return _("%s latest developer downloads" % obj.name)
+    return _("%s developer downloads" % obj.name)
 
   def description(self, obj):
-    return _("The last %(entries)d developer downloads available for %(project)s" % \
-        {'entries': entries_per_feed, 'project': obj.name})
+    return _("Developer downloads available for %(project)s" % \
+        {'project': obj.name})
 
   def items(self, obj):
-    return obj.download_set.order_by('-date')[:entries_per_feed]
+    return obj.download_set.order_by('-date')
 
 class SparkleUpcastFeed(Rss201rev2Feed):
   """Special Sparkle Upcast feed, with all stuff that Sparkle wants to have."""
@@ -91,7 +90,7 @@ class SparkleUpdatesForProject(Feed):
     if len(bits) != 1:
       raise ObjectDoesNotExist
     try:
-      return Project.objects.get(name=bits[0])
+      return Project.objects.get(slug=bits[0])
     except:
       raise ObjectDoesNotExist
 
@@ -99,11 +98,11 @@ class SparkleUpdatesForProject(Feed):
     return _("%s Changelog" % obj.name)
 
   def description(self, obj):
-    return _("The last %(entries)d MacOSX Sparkle updates for %(project)s" % \
-        {'entries':entries_per_feed, 'project':obj.name})
+    return _("MacOSX Sparkle updates for %(project)s" % \
+        {'project':obj.name})
 
   def link(self, obj):
-    return "/project/%s" % (obj.name)
+    return reverse('projects:detail', args=(obj.slug,))
 
   title_template = "projects/feeds/sparkle_title.html"
   description_template = "projects/feeds/sparkle_description.html"

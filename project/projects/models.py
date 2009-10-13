@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext
 from django.utils.translation import string_concat  as _cat
 from conf import settings
+import os, datetime
 
 class Project(models.Model):
   """Describes a software project."""
@@ -20,35 +22,15 @@ class Project(models.Model):
 
   clone_url = models.CharField(_('Clone URL'), max_length=1024, help_text=_('The cloning URL for this project.'))
 
-  git_dir = models.FilePathField(_('Git directory'), path=PROJECTS_GIT_BASE_DIRECTORY, match=r'.*\.git$', recursive=True, max_length=1024, help_text=_('Name of the git directory containing your project. This path has to be relative to the base git directory.'))
+  git_dir = models.FilePathField(_('Git directory'), path=settings.PROJECTS_GIT_BASE_DIRECTORY, match=r'.*\.git$', recursive=True, max_length=1024, help_text=_('Choose the git directory containing your project.'), null=True, blank=True)
 
   wiki_page = models.CharField(_('Wiki page'), max_length=1024, help_text=_('Complete URL for the top wiki page of your project'))
 
   dsa_pubkey = models.TextField(_('DSA project key'), null=True, blank=True, help_text=_('If you have one, insert here the <b>public</b> DSA key for this project.')) 
 
-  def count_downloads(self):
-    """Counts the number of public downloads attached to this project."""
-    return len(self.public_downloads())
-  count_downloads.short_description = _('Public downloads')
-
   def public_downloads(self):
     return self.download_set.filter(development=False)
 
-  def count_all_downloads(self):
-    """Counts the number of downloads attached to this project."""
-    return len(self.download_set.all())
-  count_all_downloads.short_description = _('All downloads')
-
-  def count_screenshots(self):
-    """Counts the number of screenshots attached to this project."""
-    return len(self.screenshot_set.all())
-  count_screenshots.short_description = _('Screenshots')
-
-  def count_icons(self):
-    """Counts the number of icons attached to this project."""
-    return len(self.icon_set.all())
-  count_icons.short_description = _('Icons')
-  
   def updated_on(self):
     """Returns the last modification time for this project.
     
@@ -111,6 +93,10 @@ class Download(models.Model):
 
   project=models.ForeignKey(Project, null=False, blank=False)
 
+  def __unicode__(self):
+    return ugettext(u'Download %(version)s from %(project)s' % \
+        {'version': self.version, 'project': self.project.name})
+
   # make it translatable
   class Meta:
     verbose_name = _('download')
@@ -126,7 +112,11 @@ class Screenshot(models.Model):
 
   date = models.DateTimeField(_('Upload date'), auto_now_add=True, help_text=_('Sets the insertion date of this file'))
 
-  project=models.ForeignKey(Project)
+  project=models.ForeignKey(Project, null=False, blank=False)
+
+  def __unicode__(self):
+    return ugettext(u'Screenshot %(name)s from %(project)s' % \
+        {'name': self.name, 'project': self.project.name})
 
   # make it translatable
   class Meta:
@@ -140,7 +130,10 @@ class Icon(models.Model):
 
   date = models.DateTimeField(_('Upload date'), auto_now_add=True, help_text=_('Sets the insertion date of this file'))
 
-  project=models.ForeignKey(Project)
+  project=models.ForeignKey(Project, null=False, blank=False)
+
+  def __unicode__(self):
+    return ugettext(u'Icon from %(project)s' % {'project': self.project.name})
 
   # make it translatable
   class Meta:

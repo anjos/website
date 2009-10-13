@@ -5,7 +5,7 @@
 export BASEDIR=`pwd`
 export INSTALLDIR=${BASEDIR}/sw
 export PATH=${INSTALLDIR}:${HOME}/sw/bin:${PATH}
-export PYTHONPATH=${BASEDIR}:${INSTALLDIR}:${PYTHONPATH}
+export PYTHONPATH=${BASEDIR}/project:${BASEDIR}:${INSTALLDIR}:${PYTHONPATH}
 export PYTHON=`which python2.5`
 export DJANGO_SETTINGS_MODULE='project.settings'
 

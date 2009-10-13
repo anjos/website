@@ -5,7 +5,7 @@
 {% block header %}
   <!-- Feeds go here if the caller has provided so -->
   {% for feed in feeds %}
-  <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}" href="/project/feeds/{{ feed.basename }}/{{ object.name }}"/>
+  <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}" href="/project/feeds/{{ feed.basename }}/{{ object.slug }}"/>
   {% endfor %}
 {% endblock %}
 {% block title %}{% trans "Project" %} :: {{ object }}{% endblock %}
@@ -18,27 +18,23 @@
         <!-- <p class="downloads_header">
         <a href="downloads" title="{% trans 'Click here for a exhaustive listing of all downloads available for this project' %}">{% trans "Downloads" %}</a></p> -->
         {% for f in object.public_downloads %}
-        {% if f.exists %}
-        <a class="download_link" href="/project/download/{{ f.id }}" title="{% trans 'Download the latest version' %}">
+        <a class="download_link" href="{% url projects:download f.id %}" title="{% trans 'Download the latest version' %}">
           <p class="download_entry">
           <span class="download_decoration"></span>
           <font class="download_name">{{ f.name }}</font><br />
           <font class="download_detail">{{ f.data.size }} {% trans "bytes" %}, {{ f.date|date:"j/F/Y" }}</font>
           </p>
         </a>
-        {% endif %}
         {% endfor %}
       </div>
       {% endif %}
       <p class="title">{{ object.name }}</p>
       <p class="description">{{ object.description|textile }}</p>
-      {% if object.count_screenshots %}
+      {% if object.screenshot_set.count %}
       <p class="details">{% trans "Screenshots" %}</p>
         {% for f in object.screenshot_set.all %}
-        {% if f.public %}
         <a class="screenshot_link" href="{{ f.data.url }}" title="{% trans 'Click for a larger version' %}"><img class="screenshot_img" src="{{ f.data.url }}" height="200px" alt="{{ f.data.name }}"></img></a>
         <p class="screenshot_caption">{{ f.description }}</p>
-        {% endif %}
         {% endfor %}
       {% endif %}
       <p class="details">{% trans "Information" %}</p>
@@ -47,20 +43,20 @@
         </td></tr>
         <tr><td>{% trans "Last updated" %}: {{ object.updated_on|date:"j/F/Y" }}
         </td></tr>
-        {% if object.vc_url %}
-        <tr><td>{% trans "Version Control Repository" %}: <a href="{{ object.vc_url }}{{ object.trunk_dir }}">{{ object.vc_url }}{{ object.trunk_dir }}</a>
+        {% if object.clone_url %}
+        <tr><td>{% trans "Git clone URL" %}: <a href="{{ object.clone_url }}">{{ object.clone_url }}</a>
         </td></tr>
         {% endif %}
         {% if object.wiki_page %}
         <tr><td>{% trans "Wiki" %}: <a href="{{ object.wiki_page }}">{{ object.wiki_page }}</a></td></tr>
         {% endif %}
         {% if object.dsa_pubkey %}
-        <tr><td>{% trans "Public DSA key" %}: <a href="/project/dsakey/{{ object.name }}">DSA key</a></td></tr>
+        <tr><td>{% trans "Public DSA key" %}: <a href="{% url projects:dsakey object.slug %}">DSA key</a></td></tr>
         {% endif %}
       </table>
     </div>
     <div class="actions">
-      [ <a href="/admin/projects/project/{{ object.name }}/">{% trans "edit" %}</a> | <a href="/admin/projects/download/add/">{% trans "upload" %}</a> ]
+      [ <a href="/admin/projects/project/{{ object.slug }}/">{% trans "edit" %}</a> | <a href="/admin/projects/download/add/">{% trans "upload" %}</a> ]
     </div>
   </body>
 {% endblock %}
