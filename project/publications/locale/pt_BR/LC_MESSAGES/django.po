@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-09 16:35+0200\n"
+"POT-Creation-Date: 2009-12-02 15:44+0100\n"
 "PO-Revision-Date: 2007-08-19 21:39+0200\n"
 "Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
 "Language-Team: Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
@@ -32,9 +32,9 @@ msgid "Andre Anjos latest files"
 msgstr ""
 
 #: feeds.py:32
-#, python-format
-msgid "The last %d files I have uploaded"
-msgstr ""
+#, fuzzy, python-format
+msgid "The last %d documents I have uploaded"
+msgstr "As ultimas coisas que escrevi"
 
 #: models.py:15
 msgid "Journal"
@@ -102,8 +102,7 @@ msgstr "Número"
 msgid "Pages"
 msgstr "Páginas"
 
-#: models.py:37 models.py:47
-#: templates/publications/feeds/publications_description.html:9
+#: models.py:37 models.py:47 templates/publications/feeds/description.html:9
 msgid "Abstract"
 msgstr "Sumário"
 
@@ -185,51 +184,51 @@ msgstr "Arquivos"
 msgid "Size (bytes)"
 msgstr ""
 
-#: templates/publications/publication_detail.html:4
-msgid "Publication"
-msgstr "Publicação"
-
-#: templates/publications/publication_detail.html:10
-#: templates/publications/feeds/publications_description.html:5
-#, python-format
-msgid " At %(date)s in %(media)s"
-msgstr "Em %(media)s, %(date)s"
-
-#: templates/publications/publication_detail.html:10
-#: templates/publications/simple_list.html:14
-#: templates/publications/feeds/publications_description.html:5
-msgid "volume"
-msgstr "volume"
-
-#: templates/publications/publication_detail.html:10
-#: templates/publications/simple_list.html:14
-#: templates/publications/feeds/publications_description.html:5
-msgid "number"
-msgstr "número"
-
-#: templates/publications/publication_detail.html:10
-#: templates/publications/simple_list.html:14
-#: templates/publications/feeds/publications_description.html:5
-msgid "pages"
-msgstr "páginas"
-
-#: templates/publications/publication_detail.html:16
-msgid "edit"
-msgstr "editar"
-
-#: templates/publications/publications_by_year.html:9
+#: templates/publications/by_year.html:9
 msgid "Publications"
 msgstr "Publicações"
 
-#: templates/publications/publications_by_year.html:13
+#: templates/publications/by_year.html:13
 msgid ""
 "Publications (in reverse chronological\n"
 "      order)"
 msgstr ""
 
-#: templates/publications/publications_by_year.html:34
+#: templates/publications/by_year.html:34
 msgid "No publications are available."
 msgstr "Não há publicações disponíveis."
+
+#: templates/publications/detail.html:4
+msgid "Publication"
+msgstr "Publicação"
+
+#: templates/publications/detail.html:10
+#: templates/publications/feeds/description.html:5
+#, python-format
+msgid " At %(date)s in %(media)s"
+msgstr "Em %(media)s, %(date)s"
+
+#: templates/publications/detail.html:10
+#: templates/publications/simple_list.html:14
+#: templates/publications/feeds/description.html:5
+msgid "volume"
+msgstr "volume"
+
+#: templates/publications/detail.html:10
+#: templates/publications/simple_list.html:14
+#: templates/publications/feeds/description.html:5
+msgid "number"
+msgstr "número"
+
+#: templates/publications/detail.html:10
+#: templates/publications/simple_list.html:14
+#: templates/publications/feeds/description.html:5
+msgid "pages"
+msgstr "páginas"
+
+#: templates/publications/detail.html:16
+msgid "edit"
+msgstr "editar"
 
 #: templates/publications/simple_list.html:4
 #, fuzzy
@@ -246,22 +245,22 @@ msgid ""
 "<font class=\"date\">%(date)s</font>, <font class=\"media\">%(media)s</font>"
 msgstr ""
 
-#: templates/publications/feeds/files_title.html:2
-msgid "attached to"
-msgstr ""
-
-#: templates/publications/feeds/publications_description.html:5
+#: templates/publications/feeds/description.html:5
 #, fuzzy
 msgid "Publisher"
 msgstr "Data de publicação"
 
-#: templates/publications/feeds/publications_description.html:6
+#: templates/publications/feeds/description.html:6
 #, fuzzy
 msgid "Authors"
 msgstr "Nome dos autores"
 
-#: templates/publications/feeds/publications_description.html:15
+#: templates/publications/feeds/description.html:15
 msgid "Document(s) attached"
+msgstr ""
+
+#: templates/publications/feeds/files_title.html:1
+msgid "attached to"
 msgstr ""
 
 #~ msgid "Journal or proceedings"

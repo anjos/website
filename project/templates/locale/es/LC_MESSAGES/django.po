@@ -8,13 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-09 16:35+0200\n"
+"POT-Creation-Date: 2009-12-02 15:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: base.html:19
+msgid "Swing back to the home page"
+msgstr ""
 
 #: home.html:5
 msgid "Home Page"
@@ -24,54 +28,164 @@ msgstr ""
 msgid "Select what you wish to see from the links above."
 msgstr ""
 
-#: simple.html:17 themed.html:38
-msgid "Automatically generated at "
+#: djangoogle/calendar_entries.html:10
+msgid "Calendar"
 msgstr ""
 
-#: themed.html:18
-msgid "Swing back to the home page"
+#: djangoogle/calendar_entries.html:13
+msgid "Next appointments"
 msgstr ""
 
-#: themed.html:23
-msgid "All my publications"
+#: djangoogle/calendar_entries.html:16 djangoogle/calendar_entries.html:30
+#: djangoogle/picasaweb_gallery.html:39 djangoogle/picasaweb_last.html:23
+msgid "updated"
 msgstr ""
 
-#: themed.html:23
-msgid "publications"
+#: djangoogle/calendar_entries.html:22 djangoogle/calendar_next.html:5
+#: djangoogle/picasaweb_slideshow.html:26 djangoogle/youtube_video.html:23
+msgid "Description"
 msgstr ""
 
-#: themed.html:24
-msgid "My Curriculum Vitae"
+#: djangoogle/calendar_entries.html:23 djangoogle/calendar_next.html:6
+msgid "When"
 msgstr ""
 
-#: themed.html:24
-msgid "r&eacute;sum&eacute;"
+#: djangoogle/calendar_entries.html:23 djangoogle/calendar_next.html:6
+msgid "until"
 msgstr ""
 
-#: themed.html:25
-msgid "My preferred photos"
+#: djangoogle/calendar_entries.html:24 djangoogle/calendar_next.html:7
+msgid "Where"
 msgstr ""
 
-#: themed.html:25
-msgid "photos"
+#: djangoogle/calendar_entries.html:31
+msgid "Cannot connect to Google Calendar service at"
 msgstr ""
 
-#: themed.html:26
-msgid "Media events and personal recordings"
+#: djangoogle/calendar_entries.html:31
+msgid "Or maybe you have no calendars configured?"
 msgstr ""
 
-#: themed.html:26
-msgid "videos"
+#: djangoogle/calendar_next.html:10
+msgid "No new events (or cannot connect to Google Calendar service at"
 msgstr ""
 
-#: themed.html:27
-msgid "Source code, documents and other stuff in a Repository"
+#: djangoogle/pagination.html:7
+msgid "Page"
 msgstr ""
 
-#: themed.html:27
-msgid "software"
+#: djangoogle/pagination.html:7
+msgid "of"
 msgstr ""
 
-#: themed.html:39
-msgid "Get a US$ 47 rebate subscribing to Dreamhost by clicking here now!"
+#: djangoogle/picasaweb_gallery.html:6 djangoogle/picasaweb_gallery.html:18
+msgid "Photo Gallery"
+msgstr ""
+
+#: djangoogle/picasaweb_gallery.html:21
+msgid ""
+"From this page you can access our photo albums. Click on the arrows bellow "
+"to go back in history."
+msgstr ""
+
+#: djangoogle/picasaweb_gallery.html:29
+msgid "Click here to launch a slideshow of this album"
+msgstr ""
+
+#: djangoogle/picasaweb_gallery.html:32
+msgid "Click here to view this album directly inside PicasaWeb"
+msgstr ""
+
+#: djangoogle/picasaweb_gallery.html:32
+msgid "PicasaWeb"
+msgstr ""
+
+#: djangoogle/picasaweb_gallery.html:37
+#, python-format
+msgid "%(numphotos)s photo%(plural)s by"
+msgstr ""
+
+#: djangoogle/picasaweb_gallery.html:38 djangoogle/youtube_video.html:19
+msgid "published"
+msgstr ""
+
+#: djangoogle/picasaweb_gallery.html:47 djangoogle/picasaweb_slideshow.html:34
+msgid "Cannot connect to PicasaWeb service."
+msgstr ""
+
+#: djangoogle/picasaweb_last.html:23
+#, python-format
+msgid "%(numphotos)s photo%(plural)s"
+msgstr ""
+
+#: djangoogle/picasaweb_last.html:30
+msgid "Cannot connect to PicasaWeb service at"
+msgstr ""
+
+#: djangoogle/picasaweb_slideshow.html:6
+#: djangoogle/picasaweb_slideshow.html:18
+msgid "Slideshow of"
+msgstr ""
+
+#: djangoogle/picasaweb_slideshow.html:24
+msgid "Album details"
+msgstr ""
+
+#: djangoogle/picasaweb_slideshow.html:25
+msgid "Author"
+msgstr ""
+
+#: djangoogle/picasaweb_slideshow.html:25
+msgid "Click to see other albums by this author"
+msgstr ""
+
+#: djangoogle/picasaweb_slideshow.html:27
+msgid "Location"
+msgstr ""
+
+#: djangoogle/picasaweb_slideshow.html:28
+msgid "Number of photos"
+msgstr ""
+
+#: djangoogle/picasaweb_slideshow.html:29
+msgid "Published"
+msgstr ""
+
+#: djangoogle/picasaweb_slideshow.html:30
+msgid "Updated"
+msgstr ""
+
+#: djangoogle/youtube_gallery.html:7 djangoogle/youtube_gallery.html.py:19
+#: djangoogle/youtube_video.html:6
+msgid "Video Gallery"
+msgstr ""
+
+#: djangoogle/youtube_gallery.html:23
+msgid ""
+"From this page you can access all videos registered. Click on the arrows "
+"bellow to go back in history."
+msgstr ""
+
+#: djangoogle/youtube_gallery.html:39 djangoogle/youtube_video.html:25
+msgid "seconds"
+msgstr ""
+
+#: djangoogle/youtube_gallery.html:40
+msgid "Playlist"
+msgstr ""
+
+#: djangoogle/youtube_gallery.html:40
+msgid "Click here to only view videos from this playlist"
+msgstr ""
+
+#: djangoogle/youtube_gallery.html:48 djangoogle/youtube_video.html:29
+msgid "Cannot connect to YouTube service at"
+msgstr ""
+
+#: djangoogle/youtube_video.html:24
+msgid "Uploaded by"
+msgstr ""
+
+#: djangoogle/youtube_video.html:25
+msgid "Duration"
 msgstr ""

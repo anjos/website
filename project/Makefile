@@ -31,12 +31,15 @@ msg:
 # loaded by your web application
 build:
 	@echo "Compiling language files"
-	@for p in $(PROJECT); do cd $$p; \
+	@for p in $(PROJECT); do \
+		[ ! -d $$p/locale ] && continue; \
+		cd $$p; \
 		echo "Compiling subproject '"$$p"'..."; \
-	  $(COMPILE_MESSAGE); \
-		echo "Subproject '"$$p"' done."; \
-		cd -; done
-	@echo "Compiling 'project'..."; $(COMPILE_MESSAGE); echo "Project done."; 
+		$(COMPILE_MESSAGE); \
+		echo 'Subproject '$$p' done.'; \
+		cd -; \
+	done
+	@if [ -d locale ]; then echo "Compiling 'project'..."; $(COMPILE_MESSAGE); echo "Project done."; fi
 
 # ACTION: validates django models and nothing else
 validate:

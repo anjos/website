@@ -29,6 +29,14 @@ TIME_ZONE = 'Europe/Zurich'
 # http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
 # http://blogs.law.harvard.edu/tech/stories/storyReader$15
 LANGUAGE_CODE = 'en'
+# Valid languages for this website
+gettext = lambda s: s
+LANGUAGES = (
+  ('pt-br', gettext('Brazilian Portuguese')),
+  ('en', gettext('English')),
+  ('fr', gettext('French')),
+  )
+# Where to find MO compilations
 LOCALE_PATHS = ( '%s/template/locale' % INSTALLDIR, 
                 )
 
