@@ -69,15 +69,23 @@ ul, ol {
 	margin: 0;
 	padding: 112px 78px 0 0;
 	list-style: none;
-	line-height: normal;
 }
 
 #menu li {
 	display: inline;
+	padding: 1px 5px;
+	border-top: 1px solid #BAD300;
+	border-left: 1px solid #A9C817;
+	border-right: 1px solid #7DAB00;
+	border-bottom: 1px solid #578900;
+	background: #6E9D00 url(images/green-button-background.gif) repeat-x;
+	font-size: 11px;
+	color: #FFFFFF;
 }
 
 #menu a {
-	padding-left: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
 	text-decoration: none;
 	font-size: 13px;
 	font-weight: bold;
