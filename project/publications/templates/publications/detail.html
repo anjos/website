@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load markup %}
+{% block header %}
+  {{ block.super }}
+  <link href="{{ MEDIA_URL }}publications/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
 {% block title %}{% trans "Publication" %} :: {{ object }}{% endblock %}
-
 {% block content %}
   <div class="publication">
      <p class="title">{{ object.title }}</p>

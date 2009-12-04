@@ -1,0 +1,83 @@
+div.project p.details {
+  margin-top: 1em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+div.project table {
+  width: 100%;
+  padding: 5px;
+}
+
+div.project table tr.even {
+  background-color: #ddd;
+}
+
+div.project table.project_list {
+  font-size: 14px;
+}
+
+div.project table.project_list tr {
+  height: 50px;
+}
+
+div.project table.project_list td {
+  padding: 3px;
+}
+
+div.project table.project_list tr.even {
+  background-color: #cef;
+}
+
+div.project table.project_list tr.odd {
+  background-color: #eee;
+}
+
+div.project div.downloads {
+  float: right;
+}
+
+div.project span.download_decoration {
+  background-image: url(../img/download.png);
+  float: left;
+  border-width: 0px;
+  height: 40px;
+  width: 40px;
+  padding: 2px;
+  background-repeat: no-repeat; 
+}
+
+div.project p.downloads_header {
+}
+
+div.project a.download_link {
+  text-decoration: none;
+  border-width: 0px;
+  color: #333;
+}
+
+div.project p.download_entry {
+  padding: 0.7em;
+  background-color: #8f8;
+  -moz-border-radius: 0.5em; 
+  -khtml-border-radius: 0.5em; 
+  -webkit-border-radius: 0.5em; 
+  border-radius: 0.5em;
+}
+
+div.project font.download_detail {
+  font-size: 0.6em;
+  font-style: italic;
+}
+
+div.project a.screenshot_link {
+  text-decoration: none;
+  border-width: 0px;
+  color: #fff;
+}
+
+div.project p.screenshot_caption {
+  font-style: italic;
+  font-size: 0.6em;
+}
+

@@ -38,16 +38,17 @@ class Project(models.Model):
     Returns the last time a download was added to this project or the last
     time a modification was done to its description (the most recent of the two
     is returned."""
+    from datetime import datetime, time
+
     downloads = [k.date for k in self.download_set.all()]
     screenshots = [k.date for k in self.screenshot_set.all()]
     icons = [k.date for k in self.icon_set.all()]
-    latest = None
+    latest = datetime.now() 
     if downloads: latest = max(downloads)
     if screenshots and max(screenshots) > latest: latest = max(screenshots)
     if icons and max(icons) > latest: latest = max(icons)
 
     if latest:
-      from datetime import datetime, time
       uptime = datetime.combine(self.updated, time(0))
       if  uptime > latest:
         return self.updated
@@ -57,6 +58,7 @@ class Project(models.Model):
   updated_on.short_description = _('Last updated')
 
   def git_repo(self):
+    if not self.git_dir: return None
     path = os.path.join(settings.PROJECTS_GIT_BASE_DIRECTORY, self.git_dir)
     if os.path.exists(path): return git.Repo(path)
     return None

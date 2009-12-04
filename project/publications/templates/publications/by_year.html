@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block header %}
+  {{ block.super }}
   <!-- Feeds go here if the caller has provided so -->
   {% for feed in feeds %}
   <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}" href="/publication/feeds/{{ feed.basename }}/"/>
   {% endfor %}
+  <link href="{{ MEDIA_URL }}publications/css/style.css" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 {% block title %}{% trans "Publications" %}{% endblock %}
 

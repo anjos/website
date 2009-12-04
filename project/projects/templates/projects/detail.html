@@ -3,6 +3,8 @@
 {% load markup %}
 
 {% block header %}
+  {{ block.super }}
+  <link href="{{ MEDIA_URL }}projects/css/style.css" rel="stylesheet" type="text/css" media="screen" />
   <!-- Feeds go here if the caller has provided so -->
   {% for feed in feeds %}
   <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}" href="/project/feeds/{{ feed.basename }}/{{ object.slug }}"/>
@@ -29,7 +31,7 @@
       </div>
       {% endif %}
       <p class="title">{{ object.name }}</p>
-      <p class="description">{{ object.description|textile }}</p>
+      <p class="preamble">{{ object.description|textile }}</p>
       {% if object.screenshot_set.count %}
       <p class="details">{% trans "Screenshots" %}</p>
         {% for f in object.screenshot_set.all %}

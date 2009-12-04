@@ -1,0 +1,92 @@
+p.publication_year {
+  margin-top: 1em;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+div.publication table {
+  width: 100%;
+  font-size: 1.1em;
+}
+
+div.publication table.publication_list tr {
+  background-color: #eee;
+  height: 3em;
+}
+
+div.publication table.publication_list td {
+  padding: 3px; 
+}
+
+div.publication table.publication_list td.publication_date {
+  width: 12%;
+}
+
+div.publication table.publication_list td.publication_type {
+  width: 15%;
+}
+
+div.publication table.publication_list td.publication_attachments {
+  width: 10%;
+}
+
+div.publication table.publication_list td.publication_attachments a {
+  padding: 0.2em;
+  background-color: #5d5;
+  -moz-border-radius: 0.1em; 
+  -khtml-border-radius: 0.1em; 
+  -webkit-border-radius: 0.1em; 
+  border-radius: 0.1em;
+  text-decoration: none;
+}
+
+div.publication table.publication_list td.publication_attachments a:hover {
+  text-decoration: underline;
+}
+
+div.publication table.publication_list tr.even {
+  background-color: #cef;
+}
+
+div.publication table.publication_list tr.odd {
+}
+
+div.publication p.detail {
+  margin-top: 10px;
+  font-size: 1.1em;
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+div.publication p.authors {
+  margin-top: 10px;
+  font-size: 1.1em;
+  text-align: center;
+  font-weight: bold;
+}
+
+div.publication div.abstract {
+  margin-top: 10px;
+  color: #000;
+  font-family: serif;
+  text-indent: 1.3em;
+  font-size: 1.3em;
+}
+
+div.publication table.files {
+  font-size: 1em;
+  background-color: #dca;
+  border: 1px solid #333;
+}
+
+div.publication table.files th {
+  text-align: center;
+}
+
+div.publication table.files a:link, div.publication table.files a:visited {
+  font-size: 1em;
+  color: #333;
+  text-align: center;
+  padding: 0.3em;
+}

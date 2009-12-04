@@ -38,8 +38,8 @@ if [ -z `which easy_install-${python_version}` ]; then
   echo "### Installation of ${setuptools_egg} is done!"
 fi
 
-install docutils http://docutils.sourceforge.net/docutils-snapshot.tgz
-install django django 
+install docutils docutils 
+install django django
 install gdata gdata
 install textile textile
 install uuid uuid

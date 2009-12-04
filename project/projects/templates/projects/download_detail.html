@@ -3,6 +3,8 @@
 {% load markup %}
 
 {% block header %}
+  {{ block.super }}
+  <link href="{{ MEDIA_URL }}projects/css/style.css" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 
 {% block title %}{% trans "Project" %} :: {{ object.project.name }} :: {% trans "Version" %} {{ object.version }}{% endblock %}

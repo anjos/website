@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load markup %}
+{% block header %}
+  {{ block.super }}
+  <!-- Feeds go here if the caller has provided so -->
+  <link href="{{ MEDIA_URL }}publications/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
 {% block title %}{% trans "Publication List (simple)" %}{% endblock %}
 
 {% block content %}

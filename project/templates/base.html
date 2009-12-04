@@ -4,38 +4,49 @@
 <html>
   <head>
     <title>{{ site.name }} :: {% block title %} NO TITLE? {% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}theme2/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}theme/style.css" />
     <link rel="icon" href="{{ MEDIA_URL}}favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico" type="image/x-icon"/>
 
     {% block header %}<!-- No header extensions provided -->{% endblock %}
   </head>
 
-  <body>
-  <div class="main">
+<body>
+  <div id="background1">
 
-  <div class="banner">
-    <a href="/">
-      <img src="{{ MEDIA_URL }}theme1/banner.png" title="{% trans 'Swing back to the home page' %}" alt="{{ site.name }}"/>
-    </a>
-  </div>
+    <div id="background2">
 
-  <div class="navigation">
-    <ul>
-      {% for item in navigation %}
-      <li><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
+      <div id="header">
+        <div id="logo">
+          <a href="/"><h1>André Anjos</h1></a>
+        </div> 
+        <div id="menu"> 
+          <ul>
+            {% for item in navigation %}
+            <li><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></li>
+            {% endfor %}
+          </ul>
+        </div> 
+      </div>
+      <!-- end #header --> 
 
-  <div class="content">
-    {% block content %} NO CONTENT? {% endblock %}
-  </div>
+      <div id="page1">
+        <div id="page2">
+          <div id="page3">
+            {% block content %} NO CONTENT? {% endblock %}
+          </div><!-- ends page3 -->
+        </div><!-- ends page2 -->
+      </div><!-- ends page1 -->
 
-  <div class="footer">
-  </div>
+    </div>
+    <!-- ends background2 -->
 
-  </div>
+    <div id="footer">
+      <p>(c) {% now "Y" %} André Anjos</p>
+    </div>
+
+    </div>
+    <!-- ends background1 -->
   
   </body>
 

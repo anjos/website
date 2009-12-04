@@ -2,6 +2,11 @@
 {% load i18n %}
 {% block title %}{% trans "Projects" %}{% endblock %}
 
+{% block header %}
+  {{ block.super }}
+  <link href="{{ MEDIA_URL }}projects/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
 {% block content %}
     <div class="project">
       <p class="title">{% blocktrans %}Projects (last updated first){% endblocktrans %}</p>
