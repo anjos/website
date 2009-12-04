@@ -28,15 +28,13 @@ ln -s `basename ${INSTALLDIR}`-python${python_version} `basename ${INSTALLDIR}`;
 setuptools_egg=setuptools-0.6c9-py${python_version}.egg
 setuptools=http://pypi.python.org/packages/${python_version}/s/setuptools/${setuptools_egg};
 
-if [ -z `which easy_install-${python_version}` ]; then
-  # We install the setuptools
-  echo "### Installing ${setuptools_egg}..."
-  wget ${setuptools} 
-  sh ${setuptools_egg} --install-dir=${INSTALLDIR}
-  rm -f ${setuptools_egg}
-  export PATH=${INSTALLDIR}:${PATH}
-  echo "### Installation of ${setuptools_egg} is done!"
-fi
+# We install the setuptools
+echo "### Installing ${setuptools_egg}..."
+wget ${setuptools} 
+sh ${setuptools_egg} --install-dir=${INSTALLDIR}
+rm -f ${setuptools_egg}
+export PATH=${INSTALLDIR}:${PATH}
+echo "### Installation of ${setuptools_egg} is done!"
 
 install docutils docutils 
 install django django
