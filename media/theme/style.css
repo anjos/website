@@ -16,6 +16,11 @@ body {
 	color: #6B6B6B;
 }
 
+ul, ol {
+  margin-top: 1em;
+  margin-left: 40px;
+}
+
 /* Wrapper */
 
 #background1 {
