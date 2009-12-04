@@ -1,7 +1,10 @@
 #!/usr/bin/python2.5
 import os, sys, site
 
-BASEDIR = os.path.join('/home/andreps', 'andreanjos.org')
+# Special use-case for dreamhost web servers
+if not os.environ.has_key('HOME'): os.environ['HOME'] = '/home/andreps' 
+
+BASEDIR = os.path.join(os.environ['HOME'], 'andreanjos.org')
 os.environ['BASEDIR'] = BASEDIR 
 py = 'python%d.%d' % (sys.version_info[0], sys.version_info[1])
 INSTALLDIR = os.path.join(BASEDIR,'sw-%s' % py)
