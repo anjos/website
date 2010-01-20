@@ -55,6 +55,6 @@ if [ ! -e ${INSTALLDIR}/PIL ]; then
 fi
 
 # some projects of mine
-git_install djangoogle andreanjos@git.andreanjos.org:git/djangoogle.git
-git_install audit andreanjos@git.andreanjos.org:git/audit.git
-git_install nav andreanjos@git.andreanjos.org:git/nav.git
+git_install djangoogle andreps@git.andreanjos.org:git/djangoogle.git
+git_install audit andreps@git.andreanjos.org:git/audit.git
+git_install nav andreps@git.andreanjos.org:git/nav.git
