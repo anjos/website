@@ -13,12 +13,13 @@ publication_detail = { 'queryset': Publication.objects.filter(),
                      }
 
 urlpatterns = patterns('',
-                       (r'^$', publications_by_year),
-                       (r'^list/$', simple_list),
-                       (r'^feeds/(?P<url>.*)/$', 
+                       url(r'^$', short_list, name='short_list'),
+                       url(r'^year/$', publications_by_year, name='list'),
+                       url(r'^list/$', simple_list, name='simple_list'),
+                       url(r'^feeds/(?P<url>.*)/$',
                         'django.contrib.syndication.views.feed', 
                         {'feed_dict': feeds}),
-                       (r'^(?P<object_id>\d+)/$', list_detail.object_detail,
+                       url(r'^(?P<object_id>\d+)/$', list_detail.object_detail,
                         publication_detail),
                       )
 

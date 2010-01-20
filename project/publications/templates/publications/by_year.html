@@ -8,12 +8,12 @@
   {% endfor %}
   <link href="{{ MEDIA_URL }}publications/css/style.css" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
-{% block title %}{% trans "Publications" %}{% endblock %}
+{% block title %}{% trans "Complete list of Publications" %}{% endblock %}
 
 {% block content %}
     <div class="publication">
-      <p class="title">{% blocktrans %}Publications (in reverse chronological
-      order){% endblocktrans %}</p>
+      <p class="title">{% blocktrans %}Complete list of Publications{% endblocktrans %}</p>
+      <p class="intro">{% trans "This is a complete list of publications I have authored or co-authored." %} <a href="{% url publications:short_list %}">{% trans "Here" %}</a> {% trans "you can find a shorter list, with the most significative contributions." %}
       {% if objects_by_year %}
           {% for year,object_list in objects_by_year %}
             <p class="publication_year">{{ year }}</p>

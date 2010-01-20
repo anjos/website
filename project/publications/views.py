@@ -16,6 +16,26 @@ feeds = { LatestPublications.basename: LatestPublications,
           LatestFiles.basename   : LatestFiles,
         }
 
+
+def short_list(request):
+  """A personalized listing of publications"""
+
+  data = {}
+  for p in Publication.objects.filter(importance__gte=3).order_by('-date'):
+    if data.has_key(p.date.year): data[p.date.year].append(p)
+    else: data[p.date.year] = [p]
+
+  years = data.keys()
+  years.sort(reverse=True)
+
+  data = [(y, data[y]) for y in years]
+
+  return render_to_response('publications/short_list.html',
+                            {'objects_by_year': data, 
+                             'feeds': feeds.values(),
+                            },
+                            context_instance=RequestContext(request))
+
 def publications_by_year(request):
   """A personalized listing of publications"""
 

@@ -9,14 +9,14 @@ from django.utils.translation import ugettext_lazy as _
 
 class PublicationAdmin(admin.ModelAdmin):
   list_display = ('title', 'date', 'publication_type', 'has_abstract', 
-      'count_files')
+      'count_files', 'importance')
   list_filter = ['date']
   list_per_page = 10
   ordering = ['-date']
   search_fields = ['title', 'date', 'media']
   date_hierarchy = 'date'
   fieldsets = (
-      (None, {'fields': ('title', 'date', 'author_list', 
+      (None, {'fields': ('title', 'importance', 'date', 'author_list', 
                          ('audience', 'publication_type', 'media'),
                          ('volume', 'number', 'pages'), 
                          'abstract')}),

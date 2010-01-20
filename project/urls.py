@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', admin.site.urls, name='admin'),
-    url(r'^publication/', include('project.publications.urls')),
+    url(r'^publication/', include('project.publications.urls', namespace='publications')),
     url(r'^google/', include('djangoogle.urls')),
     url(r'^project/', include('project.projects.urls', namespace='projects')),
     url(r'^i18n/', include('django.conf.urls.i18n')),

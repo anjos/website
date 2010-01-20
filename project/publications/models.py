@@ -23,6 +23,11 @@ class Publication(models.Model):
                          ('I', _(u'International')),
                         )
 
+  importance_value =(('3', _(u'Very important')),
+                     ('2', _(u'Important')),
+                     ('1', _(u'Not important')),
+                    )
+
   title = models.CharField(_('Title of the publication'), max_length=256)
   date = models.DateField(_('Publishing date'))
   author_list = models.TextField(_('Author names'))
@@ -35,6 +40,9 @@ class Publication(models.Model):
   number = models.CharField(_('Number'), null=True, blank=True, max_length=16)
   pages = models.CharField(_('Pages'), null=True, blank=True, max_length=16)
   abstract = models.TextField(_('Abstract'), blank=True)
+  importance = models.CharField(_('Importance'), default='1',
+      max_length=1, null=False, blank=False, choices=importance_value,
+      help_text=_(u'Choose how important is this publication. Based on this choice, the publication may or may not be shown on special listings'))
 
   def count_files(self):
     """Counts the number of files attached to this publication."""
@@ -52,7 +60,8 @@ class Publication(models.Model):
     verbose_name_plural = _('publications')
 
   def __unicode__(self):
-    return self.title + (' (%s)' % self.date.strftime('%b %y'))
+    prefix = '[%s] ' % (int(self.importance)*'*')
+    return prefix + self.title + (' (%s)' % self.date.strftime('%b %y'))
 
 class File(models.Model):
   """Describes a file that is associated with a publication."""
