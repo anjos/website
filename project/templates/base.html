@@ -18,13 +18,22 @@
 
       <div id="header">
         <div id="logo">
-          <a href="/"><h1>André Anjos</h1></a>
+          <a href="/"><h1>{{ site.name }}</h1></a>
         </div> 
         <div id="menu"> 
           <ul>
+            {% if user.is_staff %}
+            <li class="admin"><a href="{% url admin:index %}"><img src="{{ MEDIA_URL }}extras/tango/16x16/categories/preferences-system.png" align="top" title="{% trans "administration panel" %}" alt="{% trans "admin" %}"/></a></li>
+            <li class="admin"><a href="{% url audit-overview %}"><img src="{{ MEDIA_URL }}extras/tango/16x16/status/dialog-information.png" align="top" title="{% trans "website statistics" %}" alt="{% trans "statistics" %}"/></a></li>
+            {% endif %}
             {% for item in navigation %}
             <li><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></li>
             {% endfor %}
+            {% if user.is_authenticated %}
+            <li class="admin"><a href="{% url logout %}?next={{ full_path }}"><img src="{{ MEDIA_URL }}extras/tango/16x16/actions/system-log-out.png" align="top" title="{% trans "logout" %}" alt="{% trans "logout" %}"/></a></li>
+            {% else %}
+            <li class="admin"><a href="{% url login %}?next={{ full_path }}"><img src="{{ MEDIA_URL }}extras/tango/16x16/actions/go-next.png" align="top" title="{% trans "logout" %}" alt="{% trans "logout" %}"/></a></li>
+            {% endif %}
           </ul>
         </div> 
       </div>

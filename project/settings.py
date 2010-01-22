@@ -70,6 +70,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.media', #for MEDIA_URL
   'django.core.context_processors.i18n', #for LANGUAGES  
   'project.context_processors.site', #for site
+  'project.context_processors.full_path', #for the full_path
   'nav.context_processors.navigation', #for our menus
 )
 
@@ -79,6 +80,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
+    'audit.middleware.Activity',
 )
 
 ROOT_URLCONF = 'project.urls'

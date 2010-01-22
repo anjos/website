@@ -83,6 +83,13 @@ ul, ol {
 	color: #FFFFFF;
 }
 
+#menu li.admin {
+	display: inline;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
 #menu a {
 	padding-left: 10px;
 	padding-right: 10px;
@@ -90,6 +97,10 @@ ul, ol {
 	font-size: 13px;
 	font-weight: bold;
 	color: #FFFFFF;
+}
+
+#menu li.admin a {
+  padding: 0;
 }
 
 #menu a:hover {
