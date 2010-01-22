@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block media %}
+{{ block.super }}
+<link href="{{ MEDIA_URL }}extras/audit/css/adjustments.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+{% block title %}{% trans "Website Access Statistics" %}{% endblock %}
+
+{% block content %}
+<div class="audit">
+<h2 class="title">Website Access Statistics</h2>
+
+<h4>
+  {% if months %}
+    <a href="{% url audit-overview-months months %}">{% trans "Overview" %}</a> &middot;
+    <a href="{% url audit-popularity-months months %}">{% trans "Popularity" %}</a> &middot;
+    <a href="{% url audit-identity-months months %}">{% trans "Identity" %}</a> &middot;
+    <a href="{% url audit-performance-months months %}">{% trans "Performance" %}</a>
+  {% else %}
+    <a href="{% url audit-overview %}">{% trans "Overview" %}</a> &middot;
+    <a href="{% url audit-popularity %}">{% trans "Popularity" %}</a> &middot;
+    <a href="{% url audit-identity %}">{% trans "Identity" %}</a> &middot;
+    <a href="{% url audit-performance %}">{% trans "Performance" %}</a>
+  {% endif %}
+</h4>
+
+<h3>{% trans "Summary" %}</h3>
+<ul>
+  <li>{% trans "Start date" %}: {{ date|date:"j/M/Y" }} ({{ ago }} {% trans "months ago" %})</li>
+  <li>{% trans "Total hits for logged-in users" %}: {{ hits.0 }}</li>
+  <li>{% trans "Total hits for anonymous users" %}: {{ hits.1 }}</li>
+  <li>{% trans "Number of errors" %}: {{ errors.total }} ({% trans "Logged users" %}: {{ errors.log }}/{% trans "Anonymous" %}: {{ errors.unlog }})</li>
+</ul>
+
+{% if logunlog %}
+<h3>{% trans "Site usage" %}</h3>
+<table><tr><td><img src="{{ logunlog.url }}" width="{{ logunlog.width }}" height="{{ logunlog.height }}"/></td></tr><caption>{{ logunlog.caption }}</caption></table>
+{% endif %}
+
+{% if fidelity %}
+<h3>{% trans "User fidelity" %}</h3>
+<table><tr><td><img src="{{ fidelity.url }}" width="{{ fidelity.width }}" height="{{ fidelity.height }}"/></td></tr><caption>{{ fidelity.caption }}</caption></table>
+{% endif %}
+
+{% if weekly %}
+<h3>{% trans "Popularity" %}</h3>
+<table><tr><td><img src="{{ weekly.url }}" width="{{ weekly.width }}" height="{{ weekly.height }}"/></td></tr><caption>{{ weekly.caption }}</caption></table>
+{% endif %}
+
+{% if popularity %}
+<table><tr><td><img src="{{ popularity.url }}" width="{{ popularity.width }}" height="{{ popularity.height }}"/></td></tr><caption>{{ popularity.caption }}</caption></table>
+{% endif %}
+
+{% if hours %}
+<table><tr><td><img src="{{ hours.url }}" width="{{ hours.width }}" height="{{ hours.height }}"/></td></tr><caption>{{ hours.caption }}</caption></table>
+{% endif %}
+
+{% if serving %}
+<table><tr><td><img src="{{ serving.url }}" width="{{ serving.width }}" height="{{ serving.height }}"/></td></tr><caption>{{ serving.caption }}</caption></table>
+{% endif %}
+
+{% if country %}
+<h3>Access by country</h3>
+{% for obj in country %}
+<table><tr><td>{% if obj %}<img src="{{ obj.url }}" width="{{ obj.width }}" height="{{ obj.height }}"/>{% else %}{% trans "No data available" %}{% endif %}</td></tr><caption>{{ obj.caption }}</caption></table>
+{% endfor %}
+{% endif %}
+
+
+{% if city %}
+<h3>Access by city</h3>
+{% for obj in city %}
+<table><tr><td>{% if obj %}<img src="{{ obj.url }}" width="{{ obj.width }}" height="{{ obj.height }}"/>{% else %}{% trans "No data available" %}{% endif %}</td></tr><caption>{{ obj.caption }}</caption></table>
+{% endfor %}
+{% endif %}
+
+{% if os %}
+<h3>Access by OS</h3>
+{% for obj in os %}
+<table><tr><td>{% if obj %}<img src="{{ obj.url }}" width="{{ obj.width }}" height="{{ obj.height }}"/>{% else %}{% trans "No data available" %}{% endif %}</td></tr><caption>{{ obj.caption }}</caption></table>
+{% endfor %}
+{% endif %}
+
+{% if browser %}
+<h3>Access by browser</h3>
+{% for obj in browser %}
+<table><tr><td>{% if obj %}<img src="{{ obj.url }}" width="{{ obj.width }}" height="{{ obj.height }}"/>{% else %}{% trans "No data available" %}{% endif %}</td></tr><caption>{{ obj.caption }}</caption></table>
+{% endfor %}
+{% endif %}
+
+{% if visited %} 
+<h3>Most popular URLs</h3>
+<ol>
+  {% for obj in visited %}<li><a href="{{ obj.0 }}">{{ obj.0 }}</a>: {{ obj.1 }} {% trans "visit" %}{{ obj.1|pluralize:_("s") }}</li>{% endfor %}
+</ol>
+{% endif %}
+</div>
+{% endblock %}
