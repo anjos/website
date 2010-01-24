@@ -114,3 +114,6 @@ INSTALLED_APPS = (
   'nav',
 )
 
+# Controls how many albums per page to see
+DJANGOOGLE_ALBUMS_PER_PAGE = 8 
+
