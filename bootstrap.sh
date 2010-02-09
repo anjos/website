@@ -58,3 +58,4 @@ fi
 git_install djangoogle andreps@git.andreanjos.org:git/djangoogle.git
 git_install audit andreps@git.andreanjos.org:git/audit.git
 git_install nav andreps@git.andreanjos.org:git/nav.git
+git_install djpro andreps@git.andreanjos.org:git/djpro.git

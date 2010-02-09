@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
 from django.contrib import admin
 from django.conf import settings
+import djpro.urls
 
 admin.autodiscover()
 
@@ -8,7 +9,7 @@ urlpatterns = patterns('',
     url(r'^admin/', admin.site.urls),
     url(r'^publication/', include('project.publications.urls', namespace='publications')),
     url(r'^google/', include('djangoogle.urls')),
-    url(r'^project/', include('project.projects.urls', namespace='projects')),
+    url(r'^project/', djpro.urls.namespaced),
     url(r'^audit/', include('audit.urls')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^jsi18n/(?P<packages>\S+?)/$', 
