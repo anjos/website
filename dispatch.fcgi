@@ -4,6 +4,10 @@ import os, sys, site
 # Special use-case for dreamhost web servers
 if not os.environ.has_key('HOME'): os.environ['HOME'] = '/home/andreps' 
 
+# We add our basic software directory
+os.environ['PATH'] = ':'.join([os.path.join(os.environ['HOME'], 'sw', 'bin'),
+    os.environ['PATH']])
+
 BASEDIR = os.path.join(os.environ['HOME'], 'andreanjos.org')
 os.environ['BASEDIR'] = BASEDIR 
 py = 'python%d.%d' % (sys.version_info[0], sys.version_info[1])
