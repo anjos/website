@@ -111,8 +111,13 @@ INSTALLED_APPS = (
   'audit',
   'nav',
   'djpro',
+
+  # Other projects
+  'robots',
 )
 
 # Controls how many albums per page to see
 DJANGOOGLE_ALBUMS_PER_PAGE = 8 
 
+# Disables the sitemap functionality for robots
+ROBOTS_USE_SITEMAP = False
