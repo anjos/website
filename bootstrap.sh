@@ -45,6 +45,7 @@ install pygments pygments
 install gitpython gitpython
 install pytz pytz
 install flup flup
+install django-robots django-robots
 
 install pil --find-links http://www.pythonware.com/products/pil/ ${imaging}
 # This fixes the PIL installation for Django
