@@ -78,12 +78,14 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    #'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'audit.middleware.Activity',
+    #'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 ROOT_URLCONF = 'project.urls'
@@ -102,6 +104,7 @@ INSTALLED_APPS = (
   'django.contrib.sites',
   'django.contrib.admin',
   'django.contrib.markup',
+  # 'django.contrib.sitemaps',
 
   # These are mine
   'project.publications',
@@ -121,3 +124,9 @@ DJANGOOGLE_ALBUMS_PER_PAGE = 8
 
 # Disables the sitemap functionality for robots
 ROBOTS_USE_SITEMAP = False
+
+# Enables filesystem caching
+# CACHE_DIR = os.path.join(BASEDIR, 'cache')
+# CACHE_BACKEND = 'file://%s' % CACHE_DIR
+# CACHE_MIDDLEWARE_SECONDS = 600
+# CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True # only for outsiders
