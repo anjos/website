@@ -14,15 +14,15 @@
 
 <h4>
   {% if months %}
-    <a href="{% url audit-overview-months months %}">{% trans "Overview" %}</a> &middot;
-    <a href="{% url audit-popularity-months months %}">{% trans "Popularity" %}</a> &middot;
-    <a href="{% url audit-identity-months months %}">{% trans "Identity" %}</a> &middot;
-    <a href="{% url audit-performance-months months %}">{% trans "Performance" %}</a>
+    <a href="{% url audit:overview-months months %}">{% trans "Overview" %}</a> &middot;
+    <a href="{% url audit:popularity-months months %}">{% trans "Popularity" %}</a> &middot;
+    <a href="{% url audit:identity-months months %}">{% trans "Identity" %}</a> &middot;
+    <a href="{% url audit:performance-months months %}">{% trans "Performance" %}</a>
   {% else %}
-    <a href="{% url audit-overview %}">{% trans "Overview" %}</a> &middot;
-    <a href="{% url audit-popularity %}">{% trans "Popularity" %}</a> &middot;
-    <a href="{% url audit-identity %}">{% trans "Identity" %}</a> &middot;
-    <a href="{% url audit-performance %}">{% trans "Performance" %}</a>
+    <a href="{% url audit:overview %}">{% trans "Overview" %}</a> &middot;
+    <a href="{% url audit:popularity %}">{% trans "Popularity" %}</a> &middot;
+    <a href="{% url audit:identity %}">{% trans "Identity" %}</a> &middot;
+    <a href="{% url audit:performance %}">{% trans "Performance" %}</a>
   {% endif %}
 </h4>
 
@@ -96,7 +96,7 @@
 {% endif %}
 
 {% if visited %}
-<h3>{% trans "Most popular URLs (excludes bots)" %}</h3>
+<h3>{% trans "Most popular URLs (visited by people, not bots)" %}</h3>
 <ol>
   {% for obj in visited %}<li><a href="{{ obj.0 }}">{{ obj.0 }}</a>: {{ obj.1 }} {% trans "visit" %}{{ obj.1|pluralize:_("s") }}</li>{% endfor %}
 </ol>

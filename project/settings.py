@@ -130,3 +130,6 @@ ROBOTS_USE_SITEMAP = False
 # CACHE_BACKEND = 'file://%s' % CACHE_DIR
 # CACHE_MIDDLEWARE_SECONDS = 600
 # CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True # only for outsiders
+
+# We keep 50% of robot data, for statistics
+AUDIT_KEEP_BOT_STATISTICS = 0.5
