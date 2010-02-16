@@ -13,13 +13,15 @@ publication_detail = { 'queryset': Publication.objects.filter(),
                      }
 
 urlpatterns = patterns('',
-                       url(r'^$', short_list, name='short_list'),
+                       url(r'^$', short_list, name='short-list'),
                        url(r'^year/$', publications_by_year, name='list'),
-                       url(r'^list/$', simple_list, name='simple_list'),
+                       url(r'^list/$', simple_list, name='simple-list'),
                        url(r'^feeds/(?P<url>.*)/$',
                         'django.contrib.syndication.views.feed', 
                         {'feed_dict': feeds}),
                        url(r'^(?P<object_id>\d+)/$', list_detail.object_detail,
-                        publication_detail),
+                        publication_detail, name='detail'),
                       )
 
+# use this instead of urlpatterns directly
+namespaced = (urlpatterns, 'djub', 'djub')

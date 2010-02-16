@@ -13,7 +13,7 @@
 {% block content %}
     <div class="publication">
       <p class="title">{% blocktrans %}Short list of Publications{% endblocktrans %}</p>
-      <p class="intro">{% trans "This is a short list of publications I have authored or co-authored, including a link to my graduate, master and doctorate thesis." %} <a href="{% url publications:list %}">{% trans "Here" %}</a> {% trans "you can find a complete list of my past publications together with access links to electronic versions." %}</p>
+      <p class="intro">{% trans "This is a short list of publications I have authored or co-authored, including a link to my graduate, master and doctorate thesis." %} <a href="{% url djub:list %}">{% trans "Here" %}</a> {% trans "you can find a complete list of my past publications together with access links to electronic versions." %}</p>
       {% if objects_by_year %}
           {% for year,object_list in objects_by_year %}
             <p class="publication_year">{{ year }}</p>

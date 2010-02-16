@@ -3,12 +3,13 @@ from django.contrib import admin
 from django.conf import settings
 import djpro.urls
 import audit.urls
+import publications.urls
 
 admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', admin.site.urls),
-    url(r'^publication/', include('project.publications.urls', namespace='publications')),
+    url(r'^publication/', publications.urls.namespaced),
     url(r'^google/', include('djangoogle.urls')),
     url(r'^project/', djpro.urls.namespaced),
     url(r'^audit/', audit.urls.namespaced),
