@@ -1,9 +1,27 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load publications %}
 {% block media %}
+  {{ block.super }}
+  {% publications_media %}
+  <link href="{{ MEDIA_URL }}theme/bubble.css" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 {% block title %}{% trans "Home Page" %}{% endblock %}
 
 {% block content %}
-   <p>{% blocktrans %}Select what you wish to see from the links above.{% endblocktrans %}</p>
+<table class="home">
+  <tr>
+    <td>
+      {% last_publications_bubble 5 %}
+    </td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+</table>
 {% endblock %}

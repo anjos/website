@@ -1,0 +1,64 @@
+/** Details for bubbles **/
+.bubble {
+  font-size: 0.8em;
+}
+
+.bubble table {
+  width: 100%;
+  border-spacing: 0px;
+  border: 1px solid #eee;
+  border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+}
+
+.bubble table * table {
+  border-spacing: 1px;
+  border: none;
+  border-radius: 0em;
+  -webkit-border-radius: 0em;
+  -moz-border-radius: 0em;
+  font-size: 0.8em;
+}
+
+.bubble table tr.bubble_title td {
+  background-color: #77a;
+  color: white;
+  font-family: arial, helvetica, sans;
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.bubble table tr th {
+  background-color: gray;
+  color: white;
+  /* order is top right bottom left */
+  padding: 0em 0.5em 0em 0.5em;
+  text-align: left;
+}
+
+.bubble table * table tr:last-child td:first-child {
+  border-bottom-left-radius: 0.5em;
+  -webkit-border-bottom-left-radius: 0.5em;
+  -moz-border-radius-bottomleft: 0.5em;
+}
+
+.bubble table * table tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5em;
+  -webkit-border-bottom-right-radius: 0.5em;
+  -moz-border-radius-bottomright: 0.5em;
+}
+
+table.home {
+  border: 1px solid red;
+  border-spacing: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  padding: 1.5em;
+}
+
+table.home td {
+  width: 50%;
+}
