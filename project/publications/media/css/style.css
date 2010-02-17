@@ -1,3 +1,5 @@
+@import "widgets.css";
+
 p.publication_year {
   margin-top: 1em;
   font-size: 1.8em;
@@ -9,46 +11,46 @@ p.publication_year {
   font-size: 1.1em;
 }
 
-.publication table.publication_list tr {
-  background-color: #eee;
+.publication tr {
   height: 3em;
 }
 
-.publication table.publication_list td {
+.publication td {
   padding: 3px; 
 }
 
-.publication table.publication_list td.publication_date {
+.publication td.publication_date {
   width: 12%;
 }
 
-.publication table.publication_list td.publication_type {
+.publication td.publication_type {
   width: 15%;
 }
 
-.publication table.publication_list td.publication_attachments {
+.publication td.publication_attachments {
   width: 10%;
 }
 
-.publication table.publication_list td.publication_attachments a {
-  padding: 0.2em;
-  background-color: #5d5;
-  -moz-border-radius: 0.1em; 
-  -khtml-border-radius: 0.1em; 
-  -webkit-border-radius: 0.1em; 
-  border-radius: 0.1em;
+.publication_attachments a {
   text-decoration: none;
 }
 
-.publication table.publication_list td.publication_attachments a:hover {
-  text-decoration: underline;
+.publication_attachments .attachment {
+  background-color: green;
+  border-color: green;
+  color: white;
+  font-family: arial, helvetica, sans;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0.1em;
+  border-style: outset;
+  border-width: 1px;
 }
 
-.publication table.publication_list tr.even {
-  background-color: #cef;
-}
-
-.publication table.publication_list tr.odd {
+.publication_attachments .attachment:hover {
+  background-color: #0c0;
+  border-color: #0c0;
+  border-style: inset;
 }
 
 .publication p.detail {
@@ -90,4 +92,3 @@ p.publication_year {
   text-align: center;
   padding: 0.3em;
 }
-

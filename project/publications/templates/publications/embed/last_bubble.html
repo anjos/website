@@ -3,31 +3,35 @@
 {% if objects %}
 <span class="publication">
   <span class="bubble">
-    <table>
-      <tr class="bubble_title"><td>{% trans "Lastest publications" %}</td></tr>
-      <tr>
-        <td class="bubble_contents">
-          <table class="publication_list">
-            <tr>
-              <th>{% trans "date" %}</th>
-              <th>{% trans "title" %}</th>
-              <th>{% trans "downloads" %}</th>
-            </tr>
-            {% for obj in objects %}
-            <tr class="{% cycle 'even' 'odd' %}">
-              <td class="publication_date"><span class="tag">{{ obj.date|date:"d/m/y" }}</span></td>
-              <td class="publication_title"><a href="{% url djub:detail obj.id %}">{{ obj.title }}</a></td>
-              <td class="publication_attachments">
-                {% for a in obj.file_set.all %}
-                  {% if a.public %}<a href="{{ a.data.url }}">{{ forloop.counter }}</a>{% endif %}
-                {% endfor %}
-              </td>
-            </tr>
-            {% endfor %}
-          </table>
-        </td>
-      </tr>
-    </table>
+    <span class="list">
+      <table>
+        <tr class="bubble_title"><td>{% trans "Lastest publications" %}</td></tr>
+        <tr>
+          <td class="bubble_contents">
+            <table>
+              {% if include_header %}
+              <tr>
+                <th>{% trans "date" %}</th>
+                <th>{% trans "title" %}</th>
+                <th>{% trans "downloads" %}</th>
+              </tr>
+              {% endif %}
+              {% for obj in objects %}
+              <tr class="{% cycle 'even' 'odd' %}">
+                <td class="publication_date">{{ obj.date|date:"d/m/y" }}</td>
+                <td class="publication_title"><a href="{% url djub:detail obj.id %}" title="{% trans "view details" %}">{{ obj.title|truncatewords:"10" }}</a></td>
+                <td class="publication_attachments">
+                  {% for a in obj.file_set.all %}
+                  {% if a.public %}<a href="{{ a.data.url }}" title="{% trans 'download' %} {{ a.data }}"><span class="attachment">{{ forloop.counter }}</span></a>{% endif %}
+                  {% endfor %}
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+          </td>
+        </tr>
+      </table>
+    </span>
   </span>
 </span>
 {% endif %}

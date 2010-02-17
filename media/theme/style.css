@@ -174,14 +174,10 @@ div.actions a:hover {
   text-decoration: underline;
 }
 
-.repository * table {
-  font-size: 1.1em;
-}
-
-.repository .bubble * table {
-  font-size: 0.9em;
-}
-
-.repository .contrast table td.tags a {
+table td.tags a, table td.heads a, p.navigation a {
   text-decoration: none;
+}
+
+.bubble * td {
+  font-size: 0.8em;
 }

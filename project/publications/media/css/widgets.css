@@ -1,0 +1,29 @@
+.publication tr.even {
+  background-color: #cef;
+}
+
+.publication tr.odd {
+  background-color: #eee;
+}
+
+.publication_attachments a {
+  text-decoration: none;
+}
+
+.publication_attachments .attachment {
+  background-color: green;
+  border-color: green;
+  color: white;
+  font-family: arial, helvetica, sans;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0.1em;
+  border-style: outset;
+  border-width: 1px;
+}
+
+.publication_attachments .attachment:hover {
+  background-color: #0c0;
+  border-color: #0c0;
+  border-style: inset;
+}

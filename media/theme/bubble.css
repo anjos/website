@@ -1,6 +1,5 @@
 /** Details for bubbles **/
 .bubble {
-  font-size: 0.8em;
 }
 
 .bubble table {
@@ -18,16 +17,17 @@
   border-radius: 0em;
   -webkit-border-radius: 0em;
   -moz-border-radius: 0em;
-  font-size: 0.8em;
+  font-size: 0.95em;
 }
 
 .bubble table tr.bubble_title td {
-  background-color: #77a;
+  background-color: gray;
   color: white;
   font-family: arial, helvetica, sans;
-  font-size: 1.4em;
   font-weight: bold;
-  padding: 0.5em;
+  padding: 0.3em;
+  text-align: right;
+  font-size: 0.9em;
 }
 
 .bubble table tr th {
@@ -55,10 +55,41 @@ table.home {
   border-spacing: 0px;
   margin-left: auto;
   margin-right: auto;
-  width: 95%;
-  padding: 1.5em;
 }
 
-table.home td {
-  width: 50%;
+table.home td.blocks {
+  padding: 0.3em;
+  width: 40%;
+  vertical-align: top;
+}
+
+/** a post adjustment for repositories **/
+.repository .bubble td.heads, .repository .bubble td.tags {
+  width: 10%;
+}
+
+.repository .bubble table.inner tr td:last-child {
+  width: 20%;
+}
+
+.repository .bubble table.inner td:first-child {
+  width: 20%;
+}
+
+.repository tr td {
+  padding: 0em;
+}
+
+/** a post adjustment for publications **/
+.publication .bubble td.publication_date {
+  width: 20%;
+}
+
+.publication .bubble td.publication_attachments {
+  width: 10%;
+}
+
+/** general post adjustment **/
+.bubble tr td {
+  padding: 0.2em;
 }

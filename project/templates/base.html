@@ -4,11 +4,11 @@
 <html>
   <head>
     <title>{{ site.name }} :: {% block title %} NO TITLE? {% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}theme/style.css" />
     <link rel="icon" href="{{ MEDIA_URL}}favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico" type="image/x-icon"/>
 
     {% block media %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}theme/style.css" />
   </head>
 
 <body>
