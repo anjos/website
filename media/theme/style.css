@@ -9,10 +9,6 @@ Released for free under a Creative Commons Attribution 2.5 License
 	padding: 0;
 }
 
-img {
-  border: none;
-}
-
 body {
 	background: #F6F6F6 url(images/background.jpg) repeat-x;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -178,28 +174,14 @@ div.actions a:hover {
   text-decoration: underline;
 }
 
-table td.tags a, table td.heads a, p.navigation a {
+.repository * table {
+  font-size: 1.1em;
+}
+
+.repository .bubble * table {
+  font-size: 0.9em;
+}
+
+.repository .contrast table td.tags a {
   text-decoration: none;
-}
-
-.bubble * td {
-  font-size: 0.8em;
-}
-
-/* This fixes code highlighting that overflows the page width */
-.repository .highlight {
-  width: 800px;
-  overflow: auto;
-}
-
-.repository table.highlighttable td.linenos {
-  vertical-align: top;
-}
-
-.repository table.highlighttable td {
-  font-size: 1.0em;
-}
-
-.repository .diffs .command, .repository .view .path {
-  font-size: 1.2em;
 }

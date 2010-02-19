@@ -71,6 +71,17 @@ table.home td.personal {
   border: 4px white solid;
   background-color: #eee;
   vertical-align: top;
+  font-size: 0.8em;
+}
+
+table.home td.personal p {
+  text-indent: 2em;
+  padding: 0.5em;
+}
+
+table.home td.personal h3 {
+  text-align: right;
+  padding: 0.5em;
 }
 
 /** a post adjustment for repositories **/

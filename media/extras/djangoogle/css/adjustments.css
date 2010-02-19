@@ -5,15 +5,5 @@ table.entry tr.title {
 }
 
 table.entry {
-  height: 330px;
-}
-
-.pagination {
-  background-color: #eee;
-  padding: 1em;
-  border: 5px white solid;
-}
-
-.pagination p {
-  text-align: center;
+  height: 320px;
 }
