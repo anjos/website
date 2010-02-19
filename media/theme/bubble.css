@@ -3,7 +3,6 @@
 }
 
 .bubble table {
-  width: 100%;
   border-spacing: 0px;
   border: 1px solid #eee;
   border-radius: 0.5em;
@@ -56,9 +55,21 @@ table.home {
   margin-right: auto;
 }
 
+table.home table.bottom td.media {
+  vertical-align: top;
+}
+
 table.home td.blocks {
   padding: 0.3em;
-  width: 40%;
+  width: 300px;
+}
+
+table.home td.personal {
+  border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border: 4px white solid;
+  background-color: #eee;
   vertical-align: top;
 }
 
@@ -91,4 +102,34 @@ table.home td.blocks {
 /** general post adjustment **/
 .bubble tr td {
   padding: 0.2em;
+}
+
+/** adjustments for djangoogle **/
+.djangoogle .bubble td.bubble_contents table.preview {
+  height: 100%;
+}
+
+.djangoogle .bubble table.preview .comment {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.djangoogle .bubble td.even table.preview {
+  background-color: #cef;
+}
+
+.djangoogle .bubble td.odd table.preview {
+  background-color: #eee;
+}
+
+.djangoogle .bubble tr:last-child td:first-child table.preview {
+  border-bottom-left-radius: 0.5em;
+  -webkit-border-bottom-left-radius: 0.5em;
+  -moz-border-radius-bottomleft: 0.5em;
+}
+
+.djangoogle .bubble tr:last-child td:last-child table.preview {
+  border-bottom-right-radius: 0.5em;
+  -webkit-border-bottom-right-radius: 0.5em;
+  -moz-border-radius-bottomright: 0.5em;
 }

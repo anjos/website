@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load publications %}
-{% load djpro_media repository_bubble %}
+{% load djpro_media repository_bubble djangoogle_tags %}
 {% block media %}
   {{ block.super }}
   {% publications_widgets_media %}
   {% djpro_repository_media %}
+  {% djangoogle_last_media %}
   <link href="{{ MEDIA_URL }}theme/bubble.css" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 {% block title %}{% trans "Home Page" %}{% endblock %}
@@ -13,7 +14,7 @@
 {% block content %}
 <table class="home">
   <tr>
-    <td rowspan="2">Summary about yourself.</td>
+    <td class="personal" rowspan="2">Summary about yourself.</td>
     <td class="blocks">
       {% last_publications_bubble 5 0 %}
     </td>
@@ -24,9 +25,17 @@
     </td>
   </tr>
   <tr>
-    <td>
-    </td>
-    <td>
+    <td colspan="2">
+      <table class="bottom">
+        <tr>
+          <td class="media">
+            {% last_albums 3 100 %}
+          </td>
+          <td class="media">
+            {% last_videos 1 100 %}
+          </td>
+        </tr>
+      </table>
     </td>
   </tr>
 </table>

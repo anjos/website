@@ -9,6 +9,10 @@ Released for free under a Creative Commons Attribution 2.5 License
 	padding: 0;
 }
 
+img {
+  border: none;
+}
+
 body {
 	background: #F6F6F6 url(images/background.jpg) repeat-x;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
