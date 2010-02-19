@@ -183,11 +183,23 @@ table td.tags a, table td.heads a, p.navigation a {
 }
 
 .bubble * td {
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 /* This fixes code highlighting that overflows the page width */
 .repository .highlight {
   width: 800px;
   overflow: auto;
+}
+
+.repository table.highlighttable td.linenos {
+  vertical-align: top;
+}
+
+.repository table.highlighttable td {
+  font-size: 1.0em;
+}
+
+.repository .diffs .command, .repository .view .path {
+  font-size: 1.2em;
 }
