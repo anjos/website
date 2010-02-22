@@ -7,8 +7,8 @@
 
 {% block media %} <!-- extends the current media block -->
 {{ block.super }}
-<link href="{{ MEDIA_URL }}djangoogle/css/picasaweb.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="{{ MEDIA_URL }}extras/djangoogle/css/adjustments.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="{% url media "djangoogle/css/picasaweb.css" %}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{% url media "extras/djangoogle/css/adjustments.css" %}" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 
 {% block content %}
@@ -27,15 +27,15 @@
 <table class="entry">
   <tr class="photo">
     <td>
-      <a href="{% url picasaweb-view-album entry.parent.id entry.id %}" title="{% trans 'Click here to launch a slideshow of this album' %}"><img class="photo" width="{{ entry.thumbnail.width }}" height="{{ entry.thumbnail.height }}" src="{{ entry.thumbnail.url }}"/></a>
+      <a href="{% url djangoogle:picasaweb-view-album entry.parent.id entry.id %}" title="{% trans 'Click here to launch a slideshow of this album' %}"><img class="photo" width="{{ entry.thumbnail.width }}" height="{{ entry.thumbnail.height }}" src="{{ entry.thumbnail.url }}"/></a>
     </td>
   </tr>
-  <tr class="title"><td><a href="{{ entry.web_url }}"><img class="picasaweb-logo" src="{{ MEDIA_URL }}djangoogle/img/picasaweb.gif" title="{% trans 'Click here to view this album directly inside PicasaWeb' %}" alt="{% trans 'PicasaWeb' %}"></a> {{ entry.title }}</td></tr>
+  <tr class="title"><td><a href="{{ entry.web_url }}"><img class="picasaweb-logo" src="{% url media "djangoogle/img/picasaweb.gif" %}" title="{% trans 'Click here to view this album directly inside PicasaWeb' %}" alt="{% trans 'PicasaWeb' %}"></a> {{ entry.title }}</td></tr>
   <tr class="details">
     <td>
       {% if entry.description %}{{ entry.description }}<br/>{% endif %}
       {% if entry.location %}({{ entry.location }})<br/>{% endif %}
-      {% blocktrans with entry.numphotos as numphotos and entry.numphotos|pluralize as plural %}{{ numphotos }} photo{{ plural }} by{% endblocktrans %} "<a href="{% url picasaweb-user-view entry.parent.id %}">{{ entry.nickname|lower }}</a>"<br/>
+      {% blocktrans with entry.numphotos as numphotos and entry.numphotos|pluralize as plural %}{{ numphotos }} photo{{ plural }} by{% endblocktrans %} "<a href="{% url djangoogle:picasaweb-user-view entry.parent.id %}">{{ entry.nickname|lower }}</a>"<br/>
       {% trans "published" %} {{ entry.published|date:"D, j/M/Y"|lower }}<br/>
       {% trans "updated" %} {{ entry.updated|date:"D, j/M/Y"|lower }}
     </td>

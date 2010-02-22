@@ -3,7 +3,7 @@
 
 {% block media %}
   {{ block.super }}
-  <link href="{{ MEDIA_URL }}extras/audit/css/adjustments.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="{% url media "extras/audit/css/adjustments.css" %}" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 
 {% block title %}{% trans "Website Access Statistics" %}{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block media %}
+{{ block.super }}
+<link href="{% url media "theme/about.css" %}" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+{% block title %}{% trans "About me" %}{% endblock %}
+
+{% block content %}
+<h2>{% trans "About me" %}</h2>
+<p>My name is André (Rabello dos) Anjos. I presently work for the <a href="http://www.wisc.edu">Universty of Wisconsin, Madison</a>, USA at <a href="http://www.cern.ch">CERN</a>, Switzerland, as a Software Engineer for at the <a href="http://atlas.ch">ATLAS experiment</a>. I'm responsible for the development and maintenance of various software packages for the experiment's Trigger and Data-Acquisition system.</p>
+
+<p>I started studying electronics and computers in 1994, when I joined the <a href="http://www.del.ufrj.br">Electronics Engineering School</a> of the <a href="http://www.ufrj.br">Federal University of Rio de Janeiro</a>. I finished my basic electronic engineering studies in 1999, my masters degree in 2001, finally getting a Ph.D. in Signal Processing in 2006. During this time I have been affiliated to the <a href="http://www.lps.ufrj.br">Signal Processing Laboratory</a>. I have studied different subjects during all these years ranging from digital filters to pattern recognition. Most of my research time during school years was dedicated to <a href="http://en.wikipedia.org/wiki/Artificial_neural_network">Artificial Neural Networks</a>. I have kept a record of <a href="{% url djub:list %}"><b>all</b></a> my publications in this website. You can access them through the links above.</p>
+
+<p>Programming for me debutted in 1994, when I joined the university. I really love programming and spend large parts of my work time and a smaller fraction of my free time doing this. I enjoy simplicity and powerful designs. It is difficult to make something simple. It is far easier to design a complicated unmaintainable solution. You will find a <a href="{% url djpro:view-repo %}">few software projects</a> hosted in this website. Code will range from my thesis sources until the scripts for this website for instance. Take and use whatever fits you. There is nice code browser built-in so you can also inspect written code without downloading it.</p>
+
+<p>You can access my <a href="{% url media "cv/cv.pdf"%}">CV</a> here. If you are interested in code, you can check-out <a href="{% url djpro:view-repo %}">my repositories here</a>. Publications are available <a href="{% url djub:short-list %}">here</a>. Specifically, if you wonder how this website is hacked together, you should <a href="{% url djpro:view-repo %}?r=website.git">look here</a>. Here you will also find some <a href="{% url picasaweb-view %}">photos</a> and <a href="{% url youtube-view %}">videos</a> as well.</p>
+{% endblock %}

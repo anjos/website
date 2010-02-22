@@ -8,8 +8,8 @@
 
 {% block media %} <!-- extends the current media block -->
 {{ block.super }}
-<link href="{{ MEDIA_URL }}djangoogle/css/youtube.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="{{ MEDIA_URL }}extras/djangoogle/css/adjustments.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="{% url media "djangoogle/css/youtube.css" %}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{% url media "extras/djangoogle/css/adjustments.css" %}" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 
 {% block content %}
@@ -29,7 +29,7 @@
 <table class="entry">
   <tr class="thumbnail">
     <td>
-      <a href="{% url youtube-view-video entry.parent.id entry.id %}"><img class="photo" width="280" height="210" src="{{ entry.thumbnail.url }}"/></a>
+      <a href="{% url djangoogle:youtube-view-video entry.parent.id entry.id %}"><img class="photo" width="280" height="210" src="{{ entry.thumbnail.url }}"/></a>
     </td>
   </tr>
   <tr class="title"><td><div class="album">{{ entry.title }}</div></td></tr>
@@ -38,7 +38,7 @@
       {% if entry.description %}{{ entry.description }}<br/>{% endif %}
       {{ entry.published|date:"j/M/Y" }} ({{ entry.author }})<br/>
       {{ entry.duration }} {% trans "seconds" %}<br/>
-      {% trans "Playlist" %}: <a href="{% url youtube-list-view entry.parent.id %}" title="{% trans 'Click here to only view videos from this playlist' %}">{{ entry.parent.name }}</a>
+      {% trans "Playlist" %}: <a href="{% url djangoogle:youtube-list-view entry.parent.id %}" title="{% trans 'Click here to only view videos from this playlist' %}">{{ entry.parent.name }}</a>
     </td>
   </tr>
 </table>

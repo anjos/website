@@ -13,6 +13,10 @@ def index(request):
   return render_to_response('home.html',
                             context_instance=RequestContext(request))
 
+def about(request):
+  return render_to_response('about.html',
+                            context_instance=RequestContext(request))
+
 def login(request):
   return django_login(request, template_name='admin/login.html')
 
