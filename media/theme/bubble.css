@@ -75,10 +75,11 @@ table.home td.notes {
   border: 4px white solid;
   background-color: #eee;
   vertical-align: top;
-  font-size: 0.8em;
+  padding: 0.8em;
+  color: #333;
 }
 
-table.home td.personal p {
+table.home td.notes p {
   text-indent: 2em;
   padding: 0.5em;
 }

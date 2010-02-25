@@ -15,8 +15,9 @@
 <table class="home">
   <tr>
     <td class="notes">
-      <h3>{% trans "Hello..." %}</h3>
-      <p></p>
+      <h3>{% trans "Hello there!" %}</h3>
+      <p>{% blocktrans %}I have created this website so it helps me keep track of stuff I do. You will find a mixed set of things here, ranging from photos with in my workplace and software I write.{% endblocktrans %}</p>
+      <p>{% blocktrans %}The blocks to your right and bellow show a few of the latest additions. On the top you will find links to get you right on your bussiness. If you would like to know a bit more about me, please visit{% endblocktrans %} <a href="{% url project-about %}">{% trans "the about page" %}</a>.</p>
     </td>
     <td class="blocks">
       {% last_publications_bubble 5 0 %}
