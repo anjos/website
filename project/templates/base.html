@@ -32,7 +32,7 @@
             {% if user.is_authenticated %}
             <li class="admin"><a href="{% url logout %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/system-log-out.png" %}" align="top" title="{% trans "logout" %}" alt="{% trans "logout" %}"/></a></li>
             {% else %}
-            <li class="admin"><a href="{% url login %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/go-next.png" %}" align="top" title="{% trans "logout" %}" alt="{% trans "logout" %}"/></a></li>
+            <li class="admin"><a href="{% url login %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/go-next.png" %}" align="top" title="{% trans "login" %}" alt="{% trans "login" %}"/></a></li>
             {% endif %}
           </ul>
         </div> 
