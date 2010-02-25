@@ -178,11 +178,16 @@ div.actions a:hover {
   font-size: 1.1em;
 }
 
-.repository .bubble * table {
+.repository .bubble table {
   font-size: 0.9em;
 }
 
-.repository .contrast table td.tags a {
+.repository .bubble .list table {
+  font-size: 1em;
+}
+
+.repository td.tags a,
+.repository td.heads a {
   text-decoration: none;
 }
 

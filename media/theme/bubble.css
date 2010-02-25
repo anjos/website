@@ -65,7 +65,7 @@ table.home td.media {
 table.home td.blocks {
   vertical-align: top;
   padding: 0.3em;
-  width: 50%;
+  width: 45%;
 }
 
 table.home td.notes {
@@ -105,6 +105,10 @@ table.home td.personal h3 {
   padding: 0em;
 }
 
+table.home .repository .bubble .list table {
+  font-size: 0.9em;
+}
+
 /** a post adjustment for publications **/
 .publication .bubble td.publication_date {
   width: 20%;
@@ -114,14 +118,26 @@ table.home td.personal h3 {
   width: 10%;
 }
 
+.publication .bubble .list table {
+  font-size: 0.9em;
+}
+
 /** general post adjustment **/
 .bubble tr td {
   padding: 0.2em;
 }
 
 /** adjustments for djangoogle **/
-.djangoogle .bubble td.bubble_contents table.preview {
-  height: 100%;
+.djangoogle .bubble td.bubble_contents .preview {
+  height: 130px;
+}
+
+.djangoogle .bubble td.bubble_contents .preview .object_title {
+  font-size: 0.9em;
+}
+
+.djangoogle .bubble td.bubble_contents .preview .comment {
+  font-size: 0.6em;
 }
 
 .djangoogle .bubble table.preview .comment {
@@ -129,21 +145,21 @@ table.home td.personal h3 {
   font-style: italic;
 }
 
-.djangoogle .bubble td.even table.preview {
+.djangoogle .bubble td.even .preview {
   background-color: #cef;
 }
 
-.djangoogle .bubble td.odd table.preview {
+.djangoogle .bubble td.odd .preview {
   background-color: #eee;
 }
 
-.djangoogle .bubble tr:last-child td:first-child table.preview {
+.djangoogle .bubble tr:last-child td:first-child .preview {
   border-bottom-left-radius: 0.5em;
   -webkit-border-bottom-left-radius: 0.5em;
   -moz-border-radius-bottomleft: 0.5em;
 }
 
-.djangoogle .bubble tr:last-child td:last-child table.preview {
+.djangoogle .bubble tr:last-child td:last-child .preview {
   border-bottom-right-radius: 0.5em;
   -webkit-border-bottom-right-radius: 0.5em;
   -moz-border-radius-bottomright: 0.5em;
