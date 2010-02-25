@@ -32,7 +32,7 @@
       <a href="{% url djangoogle:youtube-view-video entry.parent.id entry.id %}"><img class="photo" width="280" height="210" src="{{ entry.thumbnail.url }}"/></a>
     </td>
   </tr>
-  <tr class="title"><td><div class="album">{{ entry.title }}</div></td></tr>
+  <tr class="title"><td><div class="album"><a href="{{ entry.youtube_link }}"><img class="youtube-logo" src="{% url media "djangoogle/img/png/16/youtube.png" %}" title="{% trans 'Click here to view this video directly inside YouTube' %}" alt="{% trans 'YouTube' %}" width="31" height="16"></a> {{ entry.title }}</div></td></tr>
   <tr class="details">
     <td>
       {% if entry.description %}{{ entry.description }}<br/>{% endif %}
