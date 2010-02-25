@@ -39,3 +39,6 @@ push:
 	$(RSYNC) ./db.sql3 $(RSYNC_MASTER)/
 	@echo 'Synchronizing local media with that of master server'
 	$(RSYNC) ./media/ $(RSYNC_MASTER)/media/
+
+test:
+	make --directory=project test
