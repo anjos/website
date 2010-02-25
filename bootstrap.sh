@@ -25,7 +25,7 @@ fi
 cd `dirname ${INSTALLDIR}`;
 ln -s `basename ${INSTALLDIR}`-python${python_version} `basename ${INSTALLDIR}`;
 
-setuptools_egg=setuptools-0.6c9-py${python_version}.egg
+setuptools_egg=setuptools-0.6c11-py${python_version}.egg
 setuptools=http://pypi.python.org/packages/${python_version}/s/setuptools/${setuptools_egg};
 
 # We install the setuptools
