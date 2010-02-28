@@ -18,26 +18,32 @@
 
       <div id="header">
         <div id="logo">
-          <a href="/"><h1>{{ site.name }}</h1></a>
-        </div> 
-        <div id="menu"> 
-          <ul>
+          <a href="/" title="{% trans "Click here to get back to the start page" %}"><img class="photo" width="150" height="200" src="{% url media "theme/images/andreanjos.jpg" %}"/>
+            <h1>{{ site.name }}</h1></a>
+          <div class="address">
+            <p>Signal Processing Engineer, Ph.D.</p>
+            <p>+41 22 767 58 63</p>
+            <p>andre.dos.anjos@cern.ch</p>
+          </div>
+
+          <div id="menu"> 
             {% if user.is_staff %}
-            <li class="admin"><a href="{% url admin:index %}"><img src="{% url media "extras/tango/16x16/categories/preferences-system.png" %}" align="top" title="{% trans "administration panel" %}" alt="{% trans "admin" %}"/></a></li>
-            <li class="admin"><a href="{% url audit:overview %}"><img src="{% url media "extras/tango/16x16/status/dialog-information.png" %}" align="top" title="{% trans "website statistics" %}" alt="{% trans "statistics" %}"/></a></li>
+            <span class="admin"><a href="{% url admin:index %}"><img src="{% url media "extras/tango/16x16/categories/preferences-system.png" %}" align="top" title="{% trans "administration panel" %}" alt="{% trans "admin" %}"/></a></span>
+            <span class="admin"><a href="{% url audit:overview %}"><img src="{% url media "extras/tango/16x16/status/dialog-information.png" %}" align="top" title="{% trans "website statistics" %}" alt="{% trans "statistics" %}"/></a></span>
             {% endif %}
             {% for item in navigation %}
-            <li><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></li>
+            <span class="item"><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></span>
             {% endfor %}
             {% if user.is_authenticated %}
-            <li class="admin"><a href="{% url logout %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/system-log-out.png" %}" align="top" title="{% trans "logout" %}" alt="{% trans "logout" %}"/></a></li>
+            <span class="admin"><a href="{% url logout %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/system-log-out.png" %}" align="top" title="{% trans "logout" %}" alt="{% trans "logout" %}"/></a></span>
             {% else %}
-            <li class="admin"><a href="{% url login %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/go-next.png" %}" align="top" title="{% trans "login" %}" alt="{% trans "login" %}"/></a></li>
+            <span class="admin"><a href="{% url login %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/go-next.png" %}" align="top" title="{% trans "login" %}" alt="{% trans "login" %}"/></a></span>
             {% endif %}
-          </ul>
-        </div> 
-      </div>
-      <!-- end #header --> 
+          </div><!-- ends "menu" -->
+
+        </div><!-- ends "logo"-->
+
+      </div><!-- ends #header --> 
 
       <div id="page1">
         <div id="page2">

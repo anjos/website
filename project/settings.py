@@ -74,7 +74,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.i18n', #for LANGUAGES  
   'project.context_processors.site', #for site
   'project.context_processors.full_path', #for the full_path
-  'nav.context_processors.navigation', #for our menus
+  'project.context_processors.navigation', #for our menus
 )
 
 MIDDLEWARE_CLASSES = (

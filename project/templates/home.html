@@ -14,21 +14,16 @@
 {% block content %}
 <table class="home">
   <tr>
-    <td class="notes">
-      <h3>{% trans "Hello there!" %}</h3>
-      <p>{% blocktrans %}I have created this website so it helps me keep track of stuff I do. You will find a mixed set of things here, ranging from photos with in my workplace and software I write.{% endblocktrans %}</p>
-      <p>{% blocktrans %}The blocks to your right and bellow show a few of the latest additions. On the top you will find links to get you right on your bussiness. If you would like to know a bit more about me, please visit{% endblocktrans %} <a href="{% url project-about %}">{% trans "the about page" %}</a>.</p>
-    </td>
     <td class="blocks">
       {% last_publications_bubble 5 0 %}
     </td>
+    <td rowspan="2" class="media">
+      {% djangoogle_media_box 3 1 1 90 %}
+    </td>
   </tr>
   <tr>
-    <td class="media">
-      {% djangoogle_media_box 3 1 2 80 %}
-    </td>
     <td class="blocks">
-      {% list_bubble 5 1 %}
+      {% list_bubble 6 1 %}
     </td>
   </tr>
 </table>

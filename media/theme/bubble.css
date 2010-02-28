@@ -52,7 +52,6 @@
 /** the main table **/
 
 table.home {
-  border-spacing: 0px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -65,28 +64,6 @@ table.home td.media {
 table.home td.blocks {
   vertical-align: top;
   padding: 0.3em;
-  width: 45%;
-}
-
-table.home td.notes {
-  border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  -moz-border-radius: 0.5em;
-  border: 4px white solid;
-  background-color: #eee;
-  vertical-align: top;
-  padding: 0.8em;
-  color: #333;
-}
-
-table.home td.notes p {
-  text-indent: 2em;
-  padding: 0.5em;
-}
-
-table.home td.personal h3 {
-  text-align: right;
-  padding: 0.5em;
 }
 
 /** a post adjustment for repositories **/
@@ -129,21 +106,12 @@ table.home .repository .bubble .list table {
 }
 
 /** adjustments for djangoogle **/
-.djangoogle .bubble td.bubble_contents .preview {
-  height: 130px;
-}
-
 .djangoogle .bubble td.bubble_contents .preview .object_title {
   font-size: 0.9em;
 }
 
-.djangoogle .bubble td.bubble_contents .preview .comment {
-  font-size: 0.6em;
-}
-
-.djangoogle .bubble table.preview .comment {
-  font-size: 0.9em;
-  font-style: italic;
+.djangoogle .bubble td.bubble_contents .preview {
+  height: 110px;
 }
 
 .djangoogle .bubble td.even .preview {
