@@ -17,5 +17,8 @@ def full_path(request):
 
 def navigation(request):
   nav = Item.objects.filter(parent=None).exclude(name='Welcome').order_by('name')
-  nav = [Item.objects.get(name='Welcome')] + list(nav)
+  try:
+    nav = [Item.objects.get(name='Welcome')] + list(nav)
+  except:
+    pass
   return {'navigation': nav} 
