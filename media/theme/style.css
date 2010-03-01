@@ -207,6 +207,21 @@ div.actions a:hover {
   border: none;
 }
 
+/** For our code **/
+table.highlighttable pre {
+  line-height: 1.6em;
+  font-size: 1.1em;
+}
+
+table.highlighttable td.linenos {
+  vertical-align: top;
+}
+
+table.highlighttable td.code .highlight pre {
+  width: 800px;
+  overflow: auto;
+}
+
 /** For our PyPI index **/
 .project p.intro {
   margin-bottom: 1em;
