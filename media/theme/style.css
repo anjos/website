@@ -203,6 +203,10 @@ div.actions a:hover {
   text-decoration: none;
 }
 
+.djangoogle img.picasaweb-logo, .djangoogle img.youtube-logo {
+  border: none;
+}
+
 /** For our PyPI index **/
 .project p.intro {
   margin-bottom: 1em;
