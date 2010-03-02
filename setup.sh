@@ -3,5 +3,4 @@
 # Sun 28 Feb 20:48:07 2010
 source sw/bin/activate
 export BASEDIR=`pwd`/
-export PATH=$HOME/sw:${PATH}
 export DJANGO_SETTINGS_MODULE='project.settings'
