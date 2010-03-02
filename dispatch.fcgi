@@ -1,4 +1,4 @@
-#!/usr/bin/env sw/bin/python
+#!/home/andreps/andreanjos.org/sw/bin/python
 
 import os, sys
 

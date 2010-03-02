@@ -13,13 +13,14 @@ generate_bootstrap:
 	$(MAKE) --directory=scripts generate
 
 bootstrap: generate_bootstrap
-	@./scripts/bootstrap.py --no-site-packages --quiet --python=python2.5 sw
+	@./scripts/bootstrap.py --quiet --python=python2.5 sw
 
 upgrade:
-	@./scripts/bootstrap.py --no-site-packages --quiet --python=python2.5 --upgrade sw
+	@./scripts/bootstrap.py --quiet --python=python2.5 --upgrade sw
 
 restart:
-	@pkill -9 dispatch.fcgi 
+	@pkill -9 python
+	@pkill -9 dispatch.fcgi
 
 clean: 	
 	@find . -name '*~' -print0 | xargs -0 rm -vf 
