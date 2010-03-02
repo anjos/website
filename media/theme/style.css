@@ -276,7 +276,6 @@ table.highlighttable td.code .highlight pre {
   background-color: #9f9;
   width: 40%;
   padding: 0.5em;
-  margin-bottom: 1em;
 }
 
 .project .description {
@@ -286,6 +285,7 @@ table.highlighttable td.code .highlight pre {
 }
 
 .project p.subtitle {
+  margin-top: 1em;
   font-size: 1.4em;
   font-weight: bold;
 }

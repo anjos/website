@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load publications %}
-{% load djpro_media repository_bubble djangoogle_tags %}
+{% load djpro_media djpro_tags djangoogle_tags %}
 {% block media %}
   {{ block.super }}
   {% publications_widgets_media %}
@@ -23,7 +23,7 @@
   </tr>
   <tr>
     <td class="blocks">
-      {% list_bubble 6 1 %}
+      {% project_list_bubble 6 1 %}
     </td>
   </tr>
 </table>
