@@ -30,7 +30,6 @@ def after_install(options, home_dir):
   else: bin = 'bin'
   
   installer = [os.path.join(home_dir, bin, 'pip'), 'install']
-  print 'Installer is set to ', installer
   installer.append('--find-links=%s' % SWURL)
   if options.upgrade: installer.append('--upgrade')
 

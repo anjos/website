@@ -10,3 +10,4 @@ media/projects
 media/audit
 scripts/bootstrap.py
 scripts/sw
+pip-log.txt
