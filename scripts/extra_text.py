@@ -28,8 +28,9 @@ def after_install(options, home_dir):
   """
   if sys.platform == 'win32': bin = 'Scripts'
   else: bin = 'bin'
-
+  
   installer = [os.path.join(home_dir, bin, 'pip'), 'install']
+  print 'Installer is set to ', installer
   installer.append('--find-links=%s' % SWURL)
   if options.upgrade: installer.append('--upgrade')
 
