@@ -13,10 +13,10 @@ generate_bootstrap:
 	$(MAKE) --directory=scripts generate
 
 bootstrap: generate_bootstrap
-	@./scripts/bootstrap.py --quiet --python=python2.5 sw
+	@./scripts/bootstrap.py --no-site-packages --quiet --python=python2.5 sw
 
 upgrade:
-	@./scripts/bootstrap.py --quiet --python=python2.5 --upgrade sw
+	@./scripts/bootstrap.py --no-site-packages --quiet --python=python2.5 --upgrade sw
 
 restart:
 	@pkill -9 dispatch.fcgi 
