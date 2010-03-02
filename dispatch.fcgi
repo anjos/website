@@ -1,23 +1,14 @@
-#!/usr/bin/python2.5
-import os, sys, site
+#!/usr/bin/env python
+import os, sys
 
-# Special use-case for dreamhost web servers
+# Sets-up the environment 
 if not os.environ.has_key('HOME'): os.environ['HOME'] = '/home/andreps' 
-
-# We add our basic software directory
-os.environ['PATH'] = ':'.join([os.path.join(os.environ['HOME'], 'sw', 'bin'),
-    os.environ['PATH']])
-
 BASEDIR = os.path.join(os.environ['HOME'], 'andreanjos.org')
 os.environ['BASEDIR'] = BASEDIR 
-py = 'python%d.%d' % (sys.version_info[0], sys.version_info[1])
-INSTALLDIR = os.path.join(BASEDIR,'sw-%s' % py)
-os.environ['INSTALLDIR'] = INSTALLDIR
-site.addpackage(INSTALLDIR, 'easy-install.pth', set(sys.path))
 
-sys.path.insert(0, BASEDIR)
-sys.path.insert(0, INSTALLDIR)
-sys.path.insert(0, os.path.join(BASEDIR, 'project'))
+# Load the virtualenv
+activate_this = os.path.join(BASEDIR, 'sw', 'bin', 'activate_this.py')
+execfile(activate_this, dict(__file__=activate_this))
 
 # Set the DJANGO_SETTINGS_MODULE environment variable.
 os.environ['DJANGO_SETTINGS_MODULE'] = "settings"

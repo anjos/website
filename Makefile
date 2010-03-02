@@ -4,22 +4,33 @@
 # This you must set correctly
 RSYNC_MASTER='andreps@andreanjos.org:andreanjos.org'
 RSYNC=rsync --rsh=ssh --recursive --times --perms --owner --group --verbose --compress
-PROC=$(shell ps awux | grep fcgi | grep $(PYTHON) | grep -v ps | awk '{ print $$2 }')
 
-all:
+all: bootstrap test
 
-.PHONY: clean restart 
+.PHONY: clean restart mrproper generate_bootstrap bootstrap upgrade 
+
+generate_bootstrap:
+	$(MAKE) --directory=scripts generate
+
+bootstrap: generate_bootstrap
+	@./scripts/bootstrap.py --quiet --python=python2.5 sw
+
+upgrade:
+	@./scripts/bootstrap.py --quiet --python=python2.5 --upgrade sw
 
 restart:
 	@pkill -9 dispatch.fcgi 
 
-reinstall:
-	@rm -rf sw*
-	@./bootstrap.sh $(PYTHON)
-	
 clean: 	
 	@find . -name '*~' -print0 | xargs -0 rm -vf 
-	make --directory=project clean
+	$(MAKE) --directory=scripts clean
+	$(MAKE) --directory=project clean
+
+mrproper: clean
+	@rm -rf sw
+	$(MAKE) --directory=scripts mrproper 
+	$(MAKE) --directory=project mrproper 
+	@find . -name '*.pyc' -or -name '*.pyo' -print0 | xargs -0 rm -vf
 
 pull:
 	@echo 'Pulling Git sources'
@@ -29,7 +40,7 @@ pull:
 	@echo 'Synchronize media directory'
 	$(RSYNC) $(RSYNC_MASTER)/media ./
 	@echo 'Re-compiling language files'
-	$(MAKE) -C project clean
+	$(MAKE) --directory=project clean
 	@echo 'Synchronization is done'
 
 push:
@@ -41,4 +52,4 @@ push:
 	$(RSYNC) ./media/ $(RSYNC_MASTER)/media/
 
 test:
-	make --directory=project test
+	$(MAKE) --directory=project BASEDIR=$(shell pwd) test

@@ -3,13 +3,21 @@
 
 # Find my django projects
 PROJECT=publications templates
-
-# These are helpers
-MAKE_MESSAGE=django-admin.py makemessages
-COMPILE_MESSAGE=django-admin.py compilemessages
 LANGUAGES=en pt_BR fr es
 
-.PHONY: simpleclean clean 
+ifeq ($(BASEDIR),)
+PREFIX=
+else
+PREFIX=$(BASEDIR)/sw/bin/
+endif
+
+MAKE_MESSAGE=PYTHONPATH=$(BASEDIR) $(PREFIX)django-admin.py makemessages
+COMPILE_MESSAGE=PYTHONPATH=$(BASEDIR) $(PREFIX)django-admin.py compilemessages
+PYTHON=PYTHONPATH=$(PYTHONPATH) $(PREFIX)python
+
+# These are helpers
+
+.PHONY: mrproper clean 
 
 # ACTION: Executes a simple cleanup (remove '~' files and pyc files) and then
 # will compile the PO locale files.
@@ -76,9 +84,9 @@ smtp:
 	@echo "Spawing test SMTP server at localhost:1025..."
 	$(PYTHON) -m smtpd -n -c DebuggingServer localhost:1025
 
-clean: simpleclean	
+clean: mrproper
 	$(PYTHON) -m compileall .
 
-simpleclean:
+mrproper:
 	find . -name '*~' -print0 | xargs -0 rm -vf 
 	find . -name '*.py?' -print0 | xargs -0 rm -vf
