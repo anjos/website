@@ -13,10 +13,10 @@ generate_bootstrap:
 	$(MAKE) --directory=scripts generate
 
 bootstrap: generate_bootstrap
-	@./scripts/bootstrap.py --quiet --python=python2.5 sw
+	@./scripts/bootstrap.py --quiet --no-site-packages --python=python2.5 sw
 
 upgrade:
-	@./scripts/bootstrap.py --quiet --python=python2.5 --upgrade sw
+	@./scripts/bootstrap.py --quiet --no-site-packages --python=python2.5 --upgrade sw
 
 restart:
 	@skill -9 dispatch.fcgi
@@ -27,7 +27,7 @@ clean:
 	$(MAKE) --directory=project clean
 
 mrproper: clean
-	@rm -rf sw
+	@rm -rf sw pip-log.txt
 	$(MAKE) --directory=scripts mrproper 
 	$(MAKE) --directory=project mrproper 
 	@find . -name '*.pyc' -or -name '*.pyo' -print0 | xargs -0 rm -vf

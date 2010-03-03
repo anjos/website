@@ -5,15 +5,8 @@
 PROJECT=publications templates
 LANGUAGES=en pt_BR fr es
 
-ifeq ($(BASEDIR),)
-PREFIX=
-else
-PREFIX=$(BASEDIR)/sw/bin/
-endif
-
-MAKE_MESSAGE=PYTHONPATH=$(BASEDIR) $(PREFIX)django-admin.py makemessages
-COMPILE_MESSAGE=PYTHONPATH=$(BASEDIR) $(PREFIX)django-admin.py compilemessages
-PYTHON=PYTHONPATH=$(PYTHONPATH) $(PREFIX)python
+MAKE_MESSAGE=django-admin.py makemessages
+COMPILE_MESSAGE=django-admin.py compilemessages
 
 # These are helpers
 
@@ -49,43 +42,26 @@ build:
 	done
 	@if [ -d locale ]; then echo "Compiling 'project'..."; $(COMPILE_MESSAGE); echo "Project done."; fi
 
-# ACTION: validates django models and nothing else
 validate:
-	@echo "Validating django models..."
-	$(PYTHON) manage.py validate 
+	./manage.py validate
 
-# ACTION: makes sure the existing DB schema is a reflection of what the current
-# application models are
 syncdb: validate
-	@echo "Sychronizing database (initialize, if empty)..."
-	$(PYTHON) manage.py syncdb
+	./manage.py syncdb
 
-# ACTION: prints the django help message
-help: 
-	$(PYTHON) manage.py help
-
-# ACTION: launches a python prompt with all our application and models
-# available, excellent for prototyping filters
 shell:
-	$(PYTHON) manage.py shell
+	./manage.py shell
 
-# ACTION: goes into the database shell so you can edit things manually 
 dbshell:
-	$(PYTHON) manage.py dbshell
+	./manage.py dbshell
 
-# ACTION: this will actually validate, syncdb and start the development
-# webserver, bound to port 8080 of your machine
 test: build validate syncdb
-	@echo "Running python test server..."
-	$(PYTHON) manage.py runserver 8080
+	./manage.py runserver 8080
 
-# ACTION: spawns a test SMTP server
 smtp:
-	@echo "Spawing test SMTP server at localhost:1025..."
-	$(PYTHON) -m smtpd -n -c DebuggingServer localhost:1025
+	python -m smtpd -n -c DebuggingServer localhost:1025
 
 clean: mrproper
-	$(PYTHON) -m compileall .
+	python -m compileall .
 
 mrproper:
 	find . -name '*~' -print0 | xargs -0 rm -vf 

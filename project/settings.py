@@ -4,8 +4,9 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 import os
 
-BASEDIR = os.environ['BASEDIR'] #defined by the caller!
-INSTALLDIR = os.path.join(BASEDIR, 'project') #defined by the caller!
+# These locations are calculated based on the settings.py location
+BASEDIR = os.path.dirname(os.path.dirname(__file__))
+INSTALLDIR = os.path.join(BASEDIR, 'project') 
 DATABASE = os.path.join(BASEDIR, 'db.sql3')
 
 ADMINS = (

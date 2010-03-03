@@ -28,6 +28,10 @@ def after_install(options, home_dir):
   """
   if sys.platform == 'win32': bin = 'Scripts'
   else: bin = 'bin'
+
+  # we first install pip, which is easier to use
+  installer = [os.path.join(home_dir, bin, 'easy_install'), '--quiet']
+  subprocess.call(installer + ['pip'])
   
   installer = [os.path.join(home_dir, bin, 'pip'), 'install']
   installer.append('--find-links=%s' % SWURL)
