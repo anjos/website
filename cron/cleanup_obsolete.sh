@@ -3,4 +3,4 @@
 # Sex 03 Jul 2009 16:58:58 CEST
 
 source `dirname $0`/setup.sh
-${BASEDIR}/cron/cleanup_obsolete.py $*
+cleanup_obsolete.py $*
