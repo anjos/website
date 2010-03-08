@@ -193,3 +193,31 @@ div.actions a:hover {
 table.highlighttable td.code .highlight pre {
   width: 800px;
 }
+
+/** A few adjustments for projects **/
+.project table.layout {
+  width: 100%;
+}
+
+.project table.layout table.list {
+  font-size: 0.9em;
+  width: 100%;
+}
+
+.djit table.layout table * td {
+  font-size: 0.85em;
+}
+
+.djit > p.title {
+  color: #555;
+  font-size: 1.8em;
+}
+
+.djit table.layout {
+  border-spacing: 15px;
+}
+
+.djit > table.list {
+  font-size: 1.1em;
+  width: 100%;
+}
