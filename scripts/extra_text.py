@@ -9,16 +9,19 @@ to the virtualenv homepage for the explanation on those.
 
 import os, sys, subprocess
 
-SWURL = 'http://andreanjos.org/project/pypi/simple/'
+SWURL = 'http://sw.andreanjos.org/git/simple/'
 PACKAGES = [
     'PIL', 
-    'djpro', 
+    'djpro',
     'djangoogle',
     'nav', 
     'audit', 
     'uuid', 
     'flup', 
-    'django-robots'
+    'django-robots',
+    ]
+SOURCES = [
+    ('git+http://github.com/simonw/django-openid.git', 'django-openid'),
     ]
 
 def after_install(options, home_dir):
@@ -39,6 +42,9 @@ def after_install(options, home_dir):
 
   # a sequence of installs
   subprocess.call(installer + PACKAGES)
+
+  # a few source packages
+  for k in SOURCES: subprocess.call(installer + ['--editable=%s#egg=%s' % k ])
 
 def extend_parser(parser):
   """Adds an upgrade option."""

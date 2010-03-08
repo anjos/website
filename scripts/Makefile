@@ -14,6 +14,7 @@ generate:
 clean: 
 	@find . -name '*~' -print0 | xargs -0 rm -vf 
 	@rm -rf ${SCRIPT} ${INSTALLDIR}
+	@rm -f ez_setup.*
 
 mrproper: clean
 	@rm -rf ${INSTALLDIR}

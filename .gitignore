@@ -9,5 +9,6 @@ media/publications
 media/projects
 media/audit
 scripts/bootstrap.py
+scripts/ez_setup.py
 scripts/sw
 pip-log.txt
