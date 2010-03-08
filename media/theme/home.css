@@ -1,0 +1,55 @@
+/** Special simplified arrangements for the home page **/
+tr.even {
+  background-color: #cef;
+}
+
+tr.odd {
+  background-color: #eee;
+}
+
+
+table.home {
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 10px;
+}
+
+table.home td.blocks {
+  vertical-align: top;
+  border: 1px #eee solid;
+  padding: 0px;
+}
+
+table.home p.title {
+  background-color: gray;
+  color: white;
+  font-family: arial, helvetica, sans;
+  font-weight: bold;
+  padding: 0.3em;
+  text-align: right;
+  font-size: 13px;
+  margin: 0px;
+}
+
+table.home td.blocks table.list {
+  font-size: 0.8em;
+  border-spacing: 2px;
+}
+
+table.home td.blocks .djangoogle * table {
+  border-spacing: 2px;
+  font-size: 0.8em;
+}
+
+/** a post adjustment for publications **/
+.djub td.publication_date {
+  width: 5%;
+}
+
+.djub td.publication_attachments {
+  width: 5%;
+}
+
+.djub table.list td {
+  padding: 3px;
+}

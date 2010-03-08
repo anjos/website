@@ -1,29 +1,36 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load publications %}
-{% load djpro_media djpro_tags djangoogle_tags %}
+{% load djpro_tags djangoogle_tags %}
 {% block media %}
   {{ block.super }}
   {% publications_widgets_media %}
-  {% djpro_repository_media %}
   {% djangoogle_last_media %}
+  <link href="{% url media "djit/css/style.css" %}" rel="stylesheet" type="text/css" media="screen" />
   <link href="{% url media "theme/bubble.css" %}" rel="stylesheet" type="text/css" media="screen" />
+  <link href="{% url media "theme/home.css" %}" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 {% block title %}{% trans "Home Page" %}{% endblock %}
 
 {% block content %}
-<table class="home">
-  <tr>
-    <td class="blocks">
+<table class="home layout">
+  <tr class="top">
+    <td class="blocks left">
+      <p class="title">{% trans "Latest publications" %}</p>
+      <div class="djub">
       {% last_publications_bubble 5 0 %}
+    </div>
     </td>
-    <td rowspan="2" class="media">
+    <td rowspan="2" class="right blocks media">
       {% djangoogle_media_box 3 1 1 90 %}
     </td>
   </tr>
-  <tr>
-    <td class="blocks">
-      {% project_list_bubble 6 1 %}
+  <tr class="bottom">
+    <td class="blocks left">
+      <p class="title">{% trans "Latest software changes" %}</p>
+      <div class="djit">
+      {% djpro_list 6 1 %}
+      </div>
     </td>
   </tr>
 </table>

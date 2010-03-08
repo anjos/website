@@ -1,25 +1,4 @@
-/** Details for bubbles **/
-.bubble {
-}
-
-.bubble table {
-  border-spacing: 0px;
-  border: 1px solid #eee;
-  border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  -moz-border-radius: 0.5em;
-}
-
-.bubble table * table {
-  border-spacing: 1px;
-  border: none;
-  border-radius: 0em;
-  -webkit-border-radius: 0em;
-  -moz-border-radius: 0em;
-  font-size: 0.95em;
-}
-
-.bubble table tr.bubble_title td {
+tr.bubble_title td {
   background-color: gray;
   color: white;
   font-family: arial, helvetica, sans;
@@ -29,88 +8,7 @@
   font-size: 13px;
 }
 
-.bubble table tr th {
-  background-color: gray;
-  color: white;
-  /* order is top right bottom left */
-  padding: 0em 0.5em 0em 0.5em;
-  text-align: left;
-}
-
-.bubble table * table tr:last-child td:first-child {
-  border-bottom-left-radius: 0.5em;
-  -webkit-border-bottom-left-radius: 0.5em;
-  -moz-border-radius-bottomleft: 0.5em;
-}
-
-.bubble table * table tr:last-child td:last-child {
-  border-bottom-right-radius: 0.5em;
-  -webkit-border-bottom-right-radius: 0.5em;
-  -moz-border-radius-bottomright: 0.5em;
-}
-
-/** the main table **/
-
-table.home {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-table.home td.media {
-  padding: 0.3em;
-  vertical-align: top;
-}
-
-table.home td.blocks {
-  vertical-align: top;
-  padding: 0.3em;
-  width: 60%;
-}
-
-/** a post adjustment for repositories **/
-.repository .bubble td.heads, .repository .bubble td.tags {
-  width: 10%;
-}
-
-.repository .bubble table.inner tr td:last-child {
-  width: 20%;
-}
-
-.repository .bubble table.inner td:first-child {
-  width: 20%;
-}
-
-.repository tr td {
-  padding: 0em;
-}
-
-table.home .repository .bubble .list table {
-  font-size: 0.9em;
-}
-
-/** a post adjustment for publications **/
-.publication .bubble td.publication_date {
-  width: 20%;
-}
-
-.publication .bubble td.publication_attachments {
-  width: 10%;
-}
-
-.publication .bubble .list table {
-  font-size: 0.9em;
-}
-
-/** general post adjustment **/
-.bubble tr td {
-  padding: 0.2em;
-}
-
 /** adjustments for djangoogle **/
-.djangoogle .bubble td.bubble_contents .preview .object_title {
-  font-size: 0.9em;
-}
-
 .djangoogle .bubble td.bubble_contents .preview {
   height: 110px;
 }
@@ -123,14 +21,3 @@ table.home .repository .bubble .list table {
   background-color: #eee;
 }
 
-.djangoogle .bubble tr:last-child td:first-child .preview {
-  border-bottom-left-radius: 0.5em;
-  -webkit-border-bottom-left-radius: 0.5em;
-  -moz-border-radius-bottomleft: 0.5em;
-}
-
-.djangoogle .bubble tr:last-child td:last-child .preview {
-  border-bottom-right-radius: 0.5em;
-  -webkit-border-bottom-right-radius: 0.5em;
-  -moz-border-radius-bottomright: 0.5em;
-}

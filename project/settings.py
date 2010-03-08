@@ -114,6 +114,7 @@ INSTALLED_APPS = (
   'djangoogle',
   'audit',
   'nav',
+  'djit',
   'djpro',
 
   # Other projects

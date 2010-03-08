@@ -5,6 +5,7 @@ import djpro.urls
 import audit.urls
 import publications.urls
 import djangoogle.urls
+import djit.urls
 
 admin.autodiscover()
 
@@ -12,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^admin/', admin.site.urls),
     url(r'^publication/', publications.urls.namespaced),
     url(r'^google/', djangoogle.urls.namespaced),
+    url(r'^git/', djit.urls.namespaced),
     url(r'^project/', djpro.urls.namespaced),
     url(r'^audit/', audit.urls.namespaced),
     # url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', 
