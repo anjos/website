@@ -37,7 +37,8 @@
             {% if user.is_authenticated %}
             <span class="admin"><a href="{% url logout %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/system-log-out.png" %}" align="top" title="{% trans "logout" %}" alt="{% trans "logout" %}"/></a></span>
             {% else %}
-            <span class="admin"><a href="{% url login %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/go-next.png" %}" align="top" title="{% trans "login" %}" alt="{% trans "login" %}"/></a></span>
+            <span class="admin"><a title="{% trans "login using your Google account" %}" href="/openid/login/?next={{ full_path }}"><img src="http://www.google.com/favicon.ico" width="16" height="16"/></a>
+            <span class="admin"><a href="{% url login %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/go-next.png" %}" align="top" title="{% trans "login with a standard username and password" %}" alt="{% trans "login" %}"/></a></span>
             {% endif %}
           </div><!-- ends "menu" -->
 

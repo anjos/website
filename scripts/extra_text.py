@@ -19,9 +19,11 @@ PACKAGES = [
     'uuid', 
     'flup', 
     'django-robots',
+    'python-openid',
+    'django-openid-auth',
     ]
 SOURCES = [
-    ('git+http://github.com/simonw/django-openid.git', 'django-openid'),
+    #('git+http://github.com/simonw/django-openid.git', 'django-openid'),
     ]
 
 def after_install(options, home_dir):

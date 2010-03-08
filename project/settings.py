@@ -57,7 +57,7 @@ MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/media/django/'
 
 # The default url for logging into the site
-LOGIN_URL = '/login/'
+LOGIN_URL = '/openid/login/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'wk&_+uqn)()=fz07y0qdl%@=m^gp^taf$&7ql&@-ffjk9aln_7'
@@ -87,6 +87,11 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.doc.XViewMiddleware',
     'audit.middleware.Activity',
     #'django.middleware.cache.FetchFromCacheMiddleware',
+)
+
+AUTHENTICATION_BACKENDS = (
+    'django_openid_auth.auth.OpenIDBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 ROOT_URLCONF = 'project.urls'
@@ -119,6 +124,7 @@ INSTALLED_APPS = (
 
   # Other projects
   'robots',
+  'django_openid_auth',
 )
 
 # Controls how many albums per page to see
@@ -135,3 +141,10 @@ ROBOTS_USE_SITEMAP = False
 
 # We keep 50% of robot data, for statistics
 AUDIT_KEEP_BOT_STATISTICS = 0.5
+
+# Which server do we authenticate against
+OPENID_SSO_SERVER_URL = 'https://www.google.com/accounts/o8/id'
+# Allow admins to login using this system
+OPENID_USE_AS_ADMIN_LOGIN = True
+# You may need this to establish your connection with Google for a start
+# OPENID_CREATE_USERS = True
