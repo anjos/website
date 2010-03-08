@@ -21,3 +21,6 @@ tr.bubble_title td {
   background-color: #eee;
 }
 
+.djangoogle .bubble .list > table {
+  width: 100%;
+}

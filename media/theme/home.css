@@ -20,6 +20,10 @@ table.home td.blocks {
   padding: 0px;
 }
 
+table.home td.right {
+  width: 40%;
+}
+
 table.home p.title {
   background-color: gray;
   color: white;
