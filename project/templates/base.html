@@ -17,32 +17,45 @@
     <div id="background2">
 
       <div id="header">
-        <div id="logo">
-          <a href="/" title="{% trans "Click here to get back to the start page" %}"><img class="photo" width="150" height="200" src="{% url media "theme/images/andreanjos.jpg" %}"/>
-            <h1>{{ site.name }}</h1></a>
-          <div class="address">
-            <p>Signal Processing Engineer, Ph.D.</p>
-            <p>+41 22 767 58 63</p>
-            <p>andre.dos.anjos@cern.ch</p>
-          </div>
-
-          <div id="menu"> 
-            {% if user.is_staff %}
-            <span class="admin"><a href="{% url admin:index %}"><img src="{% url media "extras/tango/16x16/categories/preferences-system.png" %}" align="top" title="{% trans "administration panel" %}" alt="{% trans "admin" %}"/></a></span>
-            <span class="admin"><a href="{% url audit:overview %}"><img src="{% url media "extras/tango/16x16/status/dialog-information.png" %}" align="top" title="{% trans "website statistics" %}" alt="{% trans "statistics" %}"/></a></span>
-            {% endif %}
-            {% for item in navigation %}
-            <span class="item"><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></span>
-            {% endfor %}
-            {% if user.is_authenticated %}
-            <span class="admin"><a href="{% url logout %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/system-log-out.png" %}" align="top" title="{% trans "logout" %}" alt="{% trans "logout" %}"/></a></span>
-            {% else %}
-            <span class="admin"><a title="{% trans "login using your Google account" %}" href="/openid/login/?next={{ full_path }}"><img src="http://www.google.com/favicon.ico" width="16" height="16"/></a>
-            <span class="admin"><a href="{% url login %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/go-next.png" %}" align="top" title="{% trans "login with a standard username and password" %}" alt="{% trans "login" %}"/></a></span>
-            {% endif %}
-          </div><!-- ends "menu" -->
-
-        </div><!-- ends "logo"-->
+        <table>
+          <tr>
+            <td id="photo" rowspan="3">
+              <a href="/" title="{% trans "Click here to get back to the start page" %}"><img src="{% url media "theme/images/andreanjos.jpg" %}"/></a>
+            </td>
+            <td id="site_title" colspan="2">
+              <a href="/" title="{% trans "Click here to get back to the start page" %}"><h1>{{ site.name }}</h1></a>
+            </td>
+          </tr>
+          <tr>
+            <td id="address">
+              <p>Signal Processing Engineer, Ph.D.</p>
+              <p>+41 22 767 58 63</p>
+              <p>andre.dos.anjos@cern.ch</p>
+            </td>
+            <td id="user">
+              {% if user.is_authenticated %}
+              <p>{% trans "logged in as: " %}<span class="username">{{ user.get_full_name|lower }}</span> (<span class="email">{{ user.email }}</span>)</p>
+              {% endif %}
+            </td>
+          </tr>
+          <tr>
+            <td id="menu" colspan="2">
+              {% if user.is_staff %}
+              <span class="admin"><a href="{% url admin:index %}"><img src="{% url media "extras/tango/16x16/categories/preferences-system.png" %}" align="top" title="{% trans "administration panel" %}" alt="{% trans "admin" %}"/></a></span>
+              <span class="admin"><a href="{% url audit:overview %}"><img src="{% url media "extras/tango/16x16/status/dialog-information.png" %}" align="top" title="{% trans "website statistics" %}" alt="{% trans "statistics" %}"/></a></span>
+              {% endif %}
+              {% for item in navigation %}
+              <span class="item"><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></span>
+              {% endfor %}
+              {% if user.is_authenticated %}
+              <span class="admin"><a href="{% url logout %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/system-log-out.png" %}" align="top" title="{% trans "logout" %}" alt="{% trans "logout" %}"/></a></span>
+              {% else %}
+              <span class="admin"><a title="{% trans "login using your Google account" %}" href="/openid/login/?next={{ full_path }}"><img src="http://www.google.com/favicon.ico" width="16" height="16"/></a>
+              <span class="admin"><a href="{% url login %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/go-next.png" %}" align="top" title="{% trans "login with a standard username and password" %}" alt="{% trans "login" %}"/></a></span>
+              {% endif %}
+            </td>
+          </tr>
+        </table><!-- ends #header_table -->
 
       </div><!-- ends #header --> 
 

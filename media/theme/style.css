@@ -39,83 +39,120 @@ ul, ol {
   text-decoration: none;
 }
 
-/* Logo */
-
-#logo {
+#header > table {
+  /* border: 1px red solid; */
   margin-left: 50px;
   margin-right: 50px;
   margin-top: 5px;
+  margin-bottom: 3px;
   float: left;
   width: 860px;
+  height: 126px;
+  border-collapse: collapse;
 }
 
-#logo h1 {
-	margin: 0;
+#header > table td {
+  /* border: 1px black solid; */
+}
+
+#header td#site_title {
+  height: 20%;
+}
+
+#header td#site_title h1 {
+	margin-left: 5px;
 	letter-spacing: -2px;
 	font-size: 40px;
 	color: #fff;
 }
 
-#logo h1 a {
+#header td#site_title h1 a {
 	text-decoration: none;
 	color: #fff;
 }
 
-#logo .address {
-  margin-top: 2px;
+#header td#address {
   color: #ddd;
+  font-size: 0.85em;
 }
 
-#logo img.photo {
+#header td#address p {
+	margin-left: 5px;
+}
+
+#header td#photo {
+  width: 90px;
+}
+
+#header td#photo img {
   float: left;
-  width: 90;
-  height: 120;
+  width: 90px;
+  height: 120px;
   padding: 2px;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 2px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  margin-right: 5px;
 }
 
 /* Menu */
 
-#menu {
-	float: right;
-  margin-bottom: 5px;
+#header td#menu {
+	text-align: right;
+  vertical-align: bottom;
 }
 
-#menu .item a {
+#header td#menu .item a {
   background-color: #6e9d00;
   border-color: #6e9d00;
   color: white;
-  font-size: 1em;
+  font-size: 0.8em;
   border-width: 1px;
   border-style: outset;
-	padding: 1px 10px 1px 10px; /* top right bottom left */
+	padding: 1px 8px 1px 8px; /* top right bottom left */
 }
 
-#menu .item a:hover {
+#header td#menu .item a:hover {
   border-style: inset;
 }
 
-#menu .admin img {
+#header td#menu .admin img {
   border: none;
   background: none;
   padding: 0px;
   margin: 0px;
-  vertical-align: top;
+  vertical-align: text-top;
 }
 
-#menu a {
+#header td#menu a {
 	text-decoration: none;
 	font-size: 13px;
 	color: #FFFFFF;
 }
 
-#menu a:hover {
+#header td#menu a:hover {
 	text-decoration: none;
+}
+
+#header td#user {
+  vertical-align: bottom;
+  text-align: right;
+}
+
+#header td#user p {
+  color: #eee;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+
+#header td#user p .username {
+  font-weight: bold;
+}
+
+#header td#user p .email {
+  font-style: italic;
 }
 
 /* Page */
