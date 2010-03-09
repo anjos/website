@@ -16,20 +16,26 @@
 <table class="home layout">
   <tr class="top">
     <td class="blocks left">
-      <p class="title">{% trans "Latest publications" %}</p>
-      <div class="djub">
-      {% last_publications_bubble 5 0 %}
-    </div>
+      <div class="box">
+        <p class="title">{% trans "Latest publications" %}</p>
+        <div class="djub">
+        {% last_publications_bubble 5 0 %}
+        </div>
+      </div>
     </td>
     <td rowspan="2" class="right blocks media">
+      <div class="box">
       {% djangoogle_media_box 3 1 1 90 %}
+      </div>
     </td>
   </tr>
   <tr class="bottom">
     <td class="blocks left">
-      <p class="title">{% trans "Latest software changes" %}</p>
-      <div class="djit">
-      {% djpro_list 6 1 %}
+      <div class="box">
+        <p class="title">{% trans "Latest software changes" %}</p>
+        <div class="djit">
+        {% djpro_list 6 1 %}
+        </div>
       </div>
     </td>
   </tr>

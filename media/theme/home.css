@@ -16,8 +16,11 @@ table.home {
 
 table.home td.blocks {
   vertical-align: top;
-  border: 1px #eee solid;
   padding: 0px;
+}
+
+table.home td.blocks > .box {
+  border: 1px #eee solid;
 }
 
 table.home td.right {
