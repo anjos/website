@@ -12,3 +12,4 @@ scripts/bootstrap.py
 scripts/ez_setup.py
 scripts/sw
 pip-log.txt
+cache/
