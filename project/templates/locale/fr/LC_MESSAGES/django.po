@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-02 15:44+0100\n"
+"POT-Creation-Date: 2010-03-10 15:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,176 +16,240 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: base.html:19
-msgid "Swing back to the home page"
+#: about.html:9 about.html.py:20
+msgid "About me"
 msgstr ""
 
-#: home.html:5
+#: about.html:17
+msgid ""
+"This photo was taken during the start-up of LHC activities at the ATLAS "
+"Control Room, September 10th., 2008"
+msgstr ""
+
+#: about.html:29
+msgid ""
+"This photo was taken during the official visit of the brazilian Ambassador "
+"Minister for Science, Technology and Innovation, H.E. Mr. Ronaldo Mota "
+"Sardenberg, at CERN, July 23rd., 2002"
+msgstr ""
+
+#: base.html:23 base.html.py:26
+msgid "Click here to get back to the start page"
+msgstr ""
+
+#: base.html:37
+msgid "logged in as: "
+msgstr ""
+
+#: base.html:44
+msgid "administration panel"
+msgstr ""
+
+#: base.html:44
+msgid "admin"
+msgstr ""
+
+#: base.html:45
+msgid "website statistics"
+msgstr ""
+
+#: base.html:45
+msgid "statistics"
+msgstr ""
+
+#: base.html:51
+msgid "logout"
+msgstr ""
+
+#: base.html:53
+msgid "login using your Google account"
+msgstr ""
+
+#: base.html:54
+msgid "login with a standard username and password"
+msgstr ""
+
+#: base.html:54
+msgid "login"
+msgstr ""
+
+#: home.html:13
 msgid "Home Page"
 msgstr ""
 
-#: home.html:9
-msgid "Select what you wish to see from the links above."
+#: home.html:20
+msgid "Latest publications"
 msgstr ""
 
-#: djangoogle/calendar_entries.html:10
-msgid "Calendar"
+#: home.html:35
+msgid "Latest software changes"
 msgstr ""
 
-#: djangoogle/calendar_entries.html:13
-msgid "Next appointments"
+#: audit/overview.html:9 audit/overview.html.py:13
+msgid "Website Access Statistics"
 msgstr ""
 
-#: djangoogle/calendar_entries.html:16 djangoogle/calendar_entries.html:30
-#: djangoogle/picasaweb_gallery.html:39 djangoogle/picasaweb_last.html:23
-msgid "updated"
+#: audit/overview.html:17 audit/overview.html.py:22
+msgid "Overview"
 msgstr ""
 
-#: djangoogle/calendar_entries.html:22 djangoogle/calendar_next.html:5
-#: djangoogle/picasaweb_slideshow.html:26 djangoogle/youtube_video.html:23
-msgid "Description"
+#: audit/overview.html:18 audit/overview.html.py:23 audit/overview.html:48
+msgid "Popularity"
 msgstr ""
 
-#: djangoogle/calendar_entries.html:23 djangoogle/calendar_next.html:6
-msgid "When"
+#: audit/overview.html:19 audit/overview.html.py:24
+msgid "Identity"
 msgstr ""
 
-#: djangoogle/calendar_entries.html:23 djangoogle/calendar_next.html:6
-msgid "until"
+#: audit/overview.html:20 audit/overview.html.py:25
+msgid "Performance"
 msgstr ""
 
-#: djangoogle/calendar_entries.html:24 djangoogle/calendar_next.html:7
-msgid "Where"
+#: audit/overview.html:29
+msgid "Summary"
 msgstr ""
 
-#: djangoogle/calendar_entries.html:31
-msgid "Cannot connect to Google Calendar service at"
+#: audit/overview.html:31
+msgid "Start date"
 msgstr ""
 
-#: djangoogle/calendar_entries.html:31
-msgid "Or maybe you have no calendars configured?"
+#: audit/overview.html:31
+msgid "months ago"
 msgstr ""
 
-#: djangoogle/calendar_next.html:10
-msgid "No new events (or cannot connect to Google Calendar service at"
+#: audit/overview.html:32
+msgid "Total hits for logged-in users"
 msgstr ""
 
-#: djangoogle/pagination.html:7
-msgid "Page"
+#: audit/overview.html:32 audit/overview.html.py:33 audit/overview.html:34
+#, python-format
+msgid "%(counter)s error"
+msgid_plural "%(counter)s errors"
+msgstr[0] ""
+msgstr[1] ""
+
+#: audit/overview.html:33
+msgid "Total hits for anonymous users"
 msgstr ""
 
-#: djangoogle/pagination.html:7
-msgid "of"
+#: audit/overview.html:34
+msgid "Total hits for robots"
 msgstr ""
 
-#: djangoogle/picasaweb_gallery.html:6 djangoogle/picasaweb_gallery.html:18
+#: audit/overview.html:38
+msgid "Site usage"
+msgstr ""
+
+#: audit/overview.html:43
+msgid "User fidelity"
+msgstr ""
+
+#: audit/overview.html:65
+msgid "Access by country"
+msgstr ""
+
+#: audit/overview.html:67 audit/overview.html.py:75 audit/overview.html:82
+#: audit/overview.html.py:89
+msgid "No data available"
+msgstr ""
+
+#: audit/overview.html:73
+msgid "Access by city"
+msgstr ""
+
+#: audit/overview.html:80
+msgid "Access by OS"
+msgstr ""
+
+#: audit/overview.html:87
+msgid "Access by browser"
+msgstr ""
+
+#: audit/overview.html:94
+msgid "Access by bots"
+msgstr ""
+
+#: audit/overview.html:99
+msgid "Most popular URLs (visited by people, not bots)"
+msgstr ""
+
+#: audit/overview.html:101
+msgid "visit"
+msgstr ""
+
+#: audit/overview.html:101
+msgid "s"
+msgstr ""
+
+#: djangoogle/picasaweb_gallery.html:6 djangoogle/picasaweb_gallery.html:19
 msgid "Photo Gallery"
 msgstr ""
 
-#: djangoogle/picasaweb_gallery.html:21
+#: djangoogle/picasaweb_gallery.html:22
 msgid ""
 "From this page you can access our photo albums. Click on the arrows bellow "
 "to go back in history."
 msgstr ""
 
-#: djangoogle/picasaweb_gallery.html:29
+#: djangoogle/picasaweb_gallery.html:30
 msgid "Click here to launch a slideshow of this album"
 msgstr ""
 
-#: djangoogle/picasaweb_gallery.html:32
+#: djangoogle/picasaweb_gallery.html:33
 msgid "Click here to view this album directly inside PicasaWeb"
 msgstr ""
 
-#: djangoogle/picasaweb_gallery.html:32
+#: djangoogle/picasaweb_gallery.html:33
 msgid "PicasaWeb"
 msgstr ""
 
-#: djangoogle/picasaweb_gallery.html:37
+#: djangoogle/picasaweb_gallery.html:38
 #, python-format
 msgid "%(numphotos)s photo%(plural)s by"
 msgstr ""
 
-#: djangoogle/picasaweb_gallery.html:38 djangoogle/youtube_video.html:19
+#: djangoogle/picasaweb_gallery.html:39
 msgid "published"
 msgstr ""
 
-#: djangoogle/picasaweb_gallery.html:47 djangoogle/picasaweb_slideshow.html:34
+#: djangoogle/picasaweb_gallery.html:40
+msgid "updated"
+msgstr ""
+
+#: djangoogle/picasaweb_gallery.html:48
 msgid "Cannot connect to PicasaWeb service."
 msgstr ""
 
-#: djangoogle/picasaweb_last.html:23
-#, python-format
-msgid "%(numphotos)s photo%(plural)s"
-msgstr ""
-
-#: djangoogle/picasaweb_last.html:30
-msgid "Cannot connect to PicasaWeb service at"
-msgstr ""
-
-#: djangoogle/picasaweb_slideshow.html:6
-#: djangoogle/picasaweb_slideshow.html:18
-msgid "Slideshow of"
-msgstr ""
-
-#: djangoogle/picasaweb_slideshow.html:24
-msgid "Album details"
-msgstr ""
-
-#: djangoogle/picasaweb_slideshow.html:25
-msgid "Author"
-msgstr ""
-
-#: djangoogle/picasaweb_slideshow.html:25
-msgid "Click to see other albums by this author"
-msgstr ""
-
-#: djangoogle/picasaweb_slideshow.html:27
-msgid "Location"
-msgstr ""
-
-#: djangoogle/picasaweb_slideshow.html:28
-msgid "Number of photos"
-msgstr ""
-
-#: djangoogle/picasaweb_slideshow.html:29
-msgid "Published"
-msgstr ""
-
-#: djangoogle/picasaweb_slideshow.html:30
-msgid "Updated"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:7 djangoogle/youtube_gallery.html.py:19
-#: djangoogle/youtube_video.html:6
+#: djangoogle/youtube_gallery.html:7 djangoogle/youtube_gallery.html.py:20
 msgid "Video Gallery"
 msgstr ""
 
-#: djangoogle/youtube_gallery.html:23
+#: djangoogle/youtube_gallery.html:24
 msgid ""
 "From this page you can access all videos registered. Click on the arrows "
 "bellow to go back in history."
 msgstr ""
 
-#: djangoogle/youtube_gallery.html:39 djangoogle/youtube_video.html:25
+#: djangoogle/youtube_gallery.html:35
+msgid "Click here to view this video directly inside YouTube"
+msgstr ""
+
+#: djangoogle/youtube_gallery.html:35
+msgid "YouTube"
+msgstr ""
+
+#: djangoogle/youtube_gallery.html:40
 msgid "seconds"
 msgstr ""
 
-#: djangoogle/youtube_gallery.html:40
+#: djangoogle/youtube_gallery.html:41
 msgid "Playlist"
 msgstr ""
 
-#: djangoogle/youtube_gallery.html:40
+#: djangoogle/youtube_gallery.html:41
 msgid "Click here to only view videos from this playlist"
 msgstr ""
 
-#: djangoogle/youtube_gallery.html:48 djangoogle/youtube_video.html:29
+#: djangoogle/youtube_gallery.html:49
 msgid "Cannot connect to YouTube service at"
-msgstr ""
-
-#: djangoogle/youtube_video.html:24
-msgid "Uploaded by"
-msgstr ""
-
-#: djangoogle/youtube_video.html:25
-msgid "Duration"
 msgstr ""
