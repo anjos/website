@@ -197,9 +197,15 @@ ul, ol {
 /* From this poin onwards, we have elements that are required
  * for every web page in this website
  */
-.title {
+p.title {
   text-align: center;
   font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+p.subtitle {
+  font-size: 1.6em;
+  margin-top: 1em;
   margin-bottom: 0.5em;
 }
 
@@ -257,4 +263,42 @@ table.highlighttable td.code .highlight pre {
 .djit > table.list {
   font-size: 1.1em;
   width: 100%;
+}
+
+/** For our publications **/
+.publication td {
+  font-size: 0.9em;
+}
+
+.publication td.type {
+  width: 15%;
+}
+
+.publication td.date {
+  width: 10%;
+}
+
+.publication p.detail {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.publication p.authors {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 1em;
+}
+
+.publication .abstract {
+  font-size: 1.2em;
+  margin: 1em;
+  font-family: serif;
+}
+
+.publication .files {
+  text-align: right;
+  font-family: sans;
+  background-color: #efe;
+  border: 1px solid green;
+  padding: 5px;
 }

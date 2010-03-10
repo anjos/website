@@ -12,6 +12,7 @@ import os, sys, subprocess
 SWURL = 'http://sw.andreanjos.org/git/simple/'
 PACKAGES = [
     'PIL', 
+    'django-publications',
     'djpro',
     'djangoogle',
     'nav', 

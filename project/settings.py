@@ -112,15 +112,13 @@ INSTALLED_APPS = (
   'django.contrib.markup',
   # 'django.contrib.sitemaps',
 
-  # These are mine
-  'project.publications',
-
   # External projects reused
   'djangoogle',
   'audit',
   'nav',
   'djit',
   'djpro',
+  'publications',
 
   # Other projects
   'robots',
