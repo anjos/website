@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-10 15:31+0100\n"
+"POT-Creation-Date: 2010-03-15 19:08+0100\n"
 "PO-Revision-Date: 2007-08-19 21:37+0200\n"
 "Last-Translator: andre <(null)>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
@@ -19,13 +19,15 @@ msgstr ""
 
 #: about.html:9 about.html.py:20
 msgid "About me"
-msgstr ""
+msgstr "Sobre mim"
 
 #: about.html:17
 msgid ""
 "This photo was taken during the start-up of LHC activities at the ATLAS "
 "Control Room, September 10th., 2008"
 msgstr ""
+"Esta foto foi tirada durante o início das operações do LHC na sala de "
+"Controle do experimento ATLAS, dia 10 de Setembro de 2008"
 
 #: about.html:29
 msgid ""
@@ -33,165 +35,73 @@ msgid ""
 "Minister for Science, Technology and Innovation, H.E. Mr. Ronaldo Mota "
 "Sardenberg, at CERN, July 23rd., 2002"
 msgstr ""
+"Esta foto foi tirada durante a visita oficial do Embassador brasileiro para "
+"a Ciência, Tecnologia e Inovação, H.E. Sr. Ronaldo Mota Sardenberg, no CERN "
+"no dia 23 de Julho de 2002"
 
 #: base.html:23 base.html.py:26
 msgid "Click here to get back to the start page"
-msgstr ""
+msgstr "Clique aqui para voltar para a página principal"
 
 #: base.html:37
 msgid "logged in as: "
-msgstr ""
+msgstr "autenticado como:"
 
 #: base.html:44
 msgid "administration panel"
-msgstr ""
+msgstr "painel de adminstração"
 
 #: base.html:44
 msgid "admin"
-msgstr ""
+msgstr "admin"
 
 #: base.html:45
 msgid "website statistics"
-msgstr ""
+msgstr "estatísticas do site"
 
 #: base.html:45
 msgid "statistics"
-msgstr ""
+msgstr "estatísticas"
 
 #: base.html:51
 msgid "logout"
-msgstr ""
+msgstr "sair"
 
 #: base.html:53
 msgid "login using your Google account"
-msgstr ""
+msgstr "autenticar usando sua conta Google"
 
 #: base.html:54
 msgid "login with a standard username and password"
-msgstr ""
+msgstr "autenticar usando um nome de usuário e senha"
 
 #: base.html:54
 msgid "login"
-msgstr ""
+msgstr "autenticar"
 
 #: home.html:13
 msgid "Home Page"
 msgstr "Página Inicial"
 
 #: home.html:20
-#, fuzzy
 msgid "Latest publications"
-msgstr "publicações"
+msgstr "Últimas publicações"
 
 #: home.html:35
 msgid "Latest software changes"
-msgstr ""
-
-#: audit/overview.html:9 audit/overview.html.py:13
-msgid "Website Access Statistics"
-msgstr ""
-
-#: audit/overview.html:17 audit/overview.html.py:22
-msgid "Overview"
-msgstr ""
-
-#: audit/overview.html:18 audit/overview.html.py:23 audit/overview.html:48
-msgid "Popularity"
-msgstr ""
-
-#: audit/overview.html:19 audit/overview.html.py:24
-msgid "Identity"
-msgstr ""
-
-#: audit/overview.html:20 audit/overview.html.py:25
-msgid "Performance"
-msgstr ""
-
-#: audit/overview.html:29
-msgid "Summary"
-msgstr ""
-
-#: audit/overview.html:31
-msgid "Start date"
-msgstr ""
-
-#: audit/overview.html:31
-msgid "months ago"
-msgstr ""
-
-#: audit/overview.html:32
-msgid "Total hits for logged-in users"
-msgstr ""
-
-#: audit/overview.html:32 audit/overview.html.py:33 audit/overview.html:34
-#, python-format
-msgid "%(counter)s error"
-msgid_plural "%(counter)s errors"
-msgstr[0] ""
-msgstr[1] ""
-
-#: audit/overview.html:33
-msgid "Total hits for anonymous users"
-msgstr ""
-
-#: audit/overview.html:34
-msgid "Total hits for robots"
-msgstr ""
-
-#: audit/overview.html:38
-msgid "Site usage"
-msgstr ""
-
-#: audit/overview.html:43
-msgid "User fidelity"
-msgstr ""
-
-#: audit/overview.html:65
-msgid "Access by country"
-msgstr ""
-
-#: audit/overview.html:67 audit/overview.html.py:75 audit/overview.html:82
-#: audit/overview.html.py:89
-msgid "No data available"
-msgstr ""
-
-#: audit/overview.html:73
-msgid "Access by city"
-msgstr ""
-
-#: audit/overview.html:80
-msgid "Access by OS"
-msgstr ""
-
-#: audit/overview.html:87
-msgid "Access by browser"
-msgstr ""
-
-#: audit/overview.html:94
-msgid "Access by bots"
-msgstr ""
-
-#: audit/overview.html:99
-msgid "Most popular URLs (visited by people, not bots)"
-msgstr ""
-
-#: audit/overview.html:101
-msgid "visit"
-msgstr ""
-
-#: audit/overview.html:101
-msgid "s"
-msgstr ""
+msgstr "Últimas mudanças de software"
 
 #: djangoogle/picasaweb_gallery.html:6 djangoogle/picasaweb_gallery.html:19
 msgid "Photo Gallery"
-msgstr ""
+msgstr "Galeria de fotos"
 
 #: djangoogle/picasaweb_gallery.html:22
 msgid ""
 "From this page you can access our photo albums. Click on the arrows bellow "
 "to go back in history."
 msgstr ""
+"Nesta página você pode acessar meus álbuns de fotos. Clique nas setas abaixo "
+"para voltar no tempo."
 
 #: djangoogle/picasaweb_gallery.html:30
 msgid "Click here to launch a slideshow of this album"
@@ -255,44 +165,3 @@ msgstr ""
 #: djangoogle/youtube_gallery.html:49
 msgid "Cannot connect to YouTube service at"
 msgstr ""
-
-#, fuzzy
-#~ msgid "Page"
-#~ msgstr "Página Inicial"
-
-#, fuzzy
-#~ msgid "Location"
-#~ msgstr "publicações"
-
-#, fuzzy
-#~ msgid "Duration"
-#~ msgstr "publicações"
-
-#~ msgid "Automatically generated at "
-#~ msgstr "Gerada automaticamente em "
-
-#~ msgid "r&eacute;sum&eacute;"
-#~ msgstr "curriculum"
-
-#~ msgid "photos"
-#~ msgstr "fotos"
-
-#~ msgid "bookmarks"
-#~ msgstr "favoritos"
-
-#, fuzzy
-#~ msgid "My latest bookmarks"
-#~ msgstr "favoritos"
-
-#~ msgid "projects"
-#~ msgstr "projetos"
-
-#~ msgid "So..."
-#~ msgstr "Então..."
-
-#~ msgid ""
-#~ "...use the links above to select the particular information you are "
-#~ "interested on."
-#~ msgstr ""
-#~ "...use os links acima para selecionar a informação na qual você está "
-#~ "interessado."
