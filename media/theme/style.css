@@ -329,7 +329,7 @@ table.highlighttable td.code .highlight pre {
   border-style: inset;
 }
 
-.audit .window {
+.audit .time-window {
   padding: 6px;
   text-align: center;
   font-size: 90%;
