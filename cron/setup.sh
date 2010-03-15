@@ -4,5 +4,5 @@
 
 base=`dirname $0`/..
 source $base/sw/bin/activate
-export PYTHONPATH=$base
+export PYTHONPATH=$base:$base/project
 export PATH=$base/cron:$PATH

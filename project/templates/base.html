@@ -42,7 +42,7 @@
             <td id="menu" colspan="2">
               {% if user.is_staff %}
               <span class="admin"><a href="{% url admin:index %}"><img src="{% url media "extras/tango/16x16/categories/preferences-system.png" %}" align="top" title="{% trans "administration panel" %}" alt="{% trans "admin" %}"/></a></span>
-              <span class="admin"><a href="{% url audit:overview %}"><img src="{% url media "extras/tango/16x16/status/dialog-information.png" %}" align="top" title="{% trans "website statistics" %}" alt="{% trans "statistics" %}"/></a></span>
+              <span class="admin"><a href="{% url audit:index %}"><img src="{% url media "extras/tango/16x16/status/dialog-information.png" %}" align="top" title="{% trans "website statistics" %}" alt="{% trans "statistics" %}"/></a></span>
               {% endif %}
               {% for item in navigation %}
               <span class="item"><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></span>
