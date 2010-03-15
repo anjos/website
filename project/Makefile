@@ -24,7 +24,7 @@ all: compile
 # ACTION: Builds the PO locale files, by reading our source code and updating
 # the existing message catalog. This will not compile the resulting PO source
 # files.
-msg:
+strings:
 	$(call admin_cd,templates,makemessages --all --extension=html,py,txt);
 
 # ACTION: This will literally compile the PO files into MO files, that can be
