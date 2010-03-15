@@ -38,7 +38,7 @@ LANGUAGES = (
   ('fr', gettext('French')),
   )
 # Where to find MO compilations
-LOCALE_PATHS = ( '%s/template/locale' % INSTALLDIR, 
+LOCALE_PATHS = ( '%s/templates/locale' % INSTALLDIR, 
                 )
 
 SITE_ID = 1
