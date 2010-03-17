@@ -33,8 +33,8 @@ LANGUAGE_CODE = 'en'
 # Valid languages for this website
 gettext = lambda s: s
 LANGUAGES = (
-  ('pt-br', gettext('Brazilian Portuguese')),
   ('en', gettext('English')),
+  ('pt-br', gettext('Brazilian Portuguese')),
   ('fr', gettext('French')),
   )
 # Where to find MO compilations
