@@ -7,7 +7,6 @@ django.mo
 db.sql3
 media/publications
 media/projects
-media/audit
 scripts/bootstrap.py
 scripts/ez_setup.py
 scripts/sw
