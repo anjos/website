@@ -85,6 +85,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'audit.middleware.Activity',
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
@@ -110,6 +111,7 @@ INSTALLED_APPS = (
   'django.contrib.sites',
   'django.contrib.admin',
   'django.contrib.markup',
+  'django.contrib.flatpages',
   # 'django.contrib.sitemaps',
 
   # External projects reused

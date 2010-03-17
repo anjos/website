@@ -1,29 +1,29 @@
-.about {
+.flat {
   padding-bottom: 100px;
 }
 
-.about p {
+.flat p {
   text-indent: 2em;
   padding: 0.5em;
 }
 
-.about h2 {
+.flat h2 {
   padding: 0.5em;
 }
 
-.about .right {
+.flat .right {
   float: right;
 }
 
-.about .left {
+.flat .left {
   float: left;
 }
 
-.about .annotated_photo {
+.flat .annotated_photo {
   margin: 5px;
 }
 
-.about .annotated_photo img {
+.flat .annotated_photo img {
   padding: 4px;
   background-color: white;
   border: 1px solid #ccc;
@@ -33,7 +33,7 @@
   margin-right: 5px;
 }
 
-.about .annotated_photo p {
+.flat .annotated_photo p {
   text-indent: 0px;
   font-style: italic;
   font-size: smaller;
