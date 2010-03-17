@@ -25,7 +25,7 @@ urlpatterns = patterns('',
       'django.views.i18n.javascript_catalog'),
     url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog'),
     url(r'^$', 'project.views.index', name='project-index'),
-    url(r'^about/$', 'project.views.about', name='project-about'),
+    #url(r'^about/$', 'project.views.about', name='project-about'),
     url(r'^login/$', 'project.views.login', name='login'), 
     url(r'^logout/$', 'project.views.logout', name='logout'),
 

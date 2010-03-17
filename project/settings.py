@@ -37,6 +37,7 @@ LANGUAGES = (
   ('pt-br', gettext('Brazilian Portuguese')),
   ('fr', gettext('French')),
   )
+DEFAULT_LANGUAGE = 1
 # Where to find MO compilations
 LOCALE_PATHS = ( '%s/templates/locale' % INSTALLDIR, 
                 )
@@ -76,6 +77,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   'project.context_processors.site', #for site
   'project.context_processors.full_path', #for the full_path
   'project.context_processors.navigation', #for our menus
+  'multilingual.context_processors.multilingual', #for multilingual
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,7 +87,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'multilingual.flatpages.middleware.FlatpageFallbackMiddleware',
     'audit.middleware.Activity',
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
@@ -125,6 +127,8 @@ INSTALLED_APPS = (
   # Other projects
   'robots',
   'django_openid_auth',
+  'multilingual',
+  'multilingual.flatpages',
 )
 
 # Controls how many albums per page to see

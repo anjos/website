@@ -8,30 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-17 11:41+0100\n"
+"POT-Creation-Date: 2010-03-17 16:33+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: about.html:9 about.html.py:20
-msgid "About me"
-msgstr "Apropos de moi"
-
-#: about.html:17
-msgid ""
-"This photo was taken during the start-up of LHC activities at the ATLAS "
-"Control Room, September 10th., 2008"
-msgstr ""
-
-#: about.html:29
-msgid ""
-"This photo was taken during the official visit of the brazilian Ambassador "
-"Minister for Science, Technology and Innovation, H.E. Mr. Ronaldo Mota "
-"Sardenberg, at CERN, July 23rd., 2002"
-msgstr ""
 
 #: base.html:23 base.html.py:26
 msgid "Click here to get back to the start page"
@@ -161,3 +144,6 @@ msgstr ""
 #: djangoogle/youtube_gallery.html:49
 msgid "Cannot connect to YouTube service at"
 msgstr ""
+
+#~ msgid "About me"
+#~ msgstr "Apropos de moi"

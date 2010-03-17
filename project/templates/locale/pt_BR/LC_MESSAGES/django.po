@@ -9,35 +9,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-17 11:41+0100\n"
+"POT-Creation-Date: 2010-03-17 16:33+0100\n"
 "PO-Revision-Date: 2007-08-19 21:37+0200\n"
 "Last-Translator: andre <(null)>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: about.html:9 about.html.py:20
-msgid "About me"
-msgstr "Sobre mim"
-
-#: about.html:17
-msgid ""
-"This photo was taken during the start-up of LHC activities at the ATLAS "
-"Control Room, September 10th., 2008"
-msgstr ""
-"Esta foto foi tirada durante o início das operações do LHC na sala de "
-"Controle do experimento ATLAS, dia 10 de Setembro de 2008"
-
-#: about.html:29
-msgid ""
-"This photo was taken during the official visit of the brazilian Ambassador "
-"Minister for Science, Technology and Innovation, H.E. Mr. Ronaldo Mota "
-"Sardenberg, at CERN, July 23rd., 2002"
-msgstr ""
-"Esta foto foi tirada durante a visita oficial do Embassador brasileiro para "
-"a Ciência, Tecnologia e Inovação, H.E. Sr. Ronaldo Mota Sardenberg, no CERN "
-"no dia 23 de Julho de 2002"
 
 #: base.html:23 base.html.py:26
 msgid "Click here to get back to the start page"
@@ -49,7 +27,7 @@ msgstr "Dr. em Engenharia de Processamento de Sinais"
 
 #: base.html:37
 msgid "logged in as: "
-msgstr "autenticado como:"
+msgstr "autenticado como: "
 
 #: base.html:44
 msgid "administration panel"
@@ -169,3 +147,4 @@ msgstr ""
 #: djangoogle/youtube_gallery.html:49
 msgid "Cannot connect to YouTube service at"
 msgstr ""
+
