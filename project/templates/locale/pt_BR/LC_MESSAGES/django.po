@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-15 19:08+0100\n"
+"POT-Creation-Date: 2010-03-17 11:41+0100\n"
 "PO-Revision-Date: 2007-08-19 21:37+0200\n"
 "Last-Translator: andre <(null)>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
@@ -42,6 +42,10 @@ msgstr ""
 #: base.html:23 base.html.py:26
 msgid "Click here to get back to the start page"
 msgstr "Clique aqui para voltar para a página principal"
+
+#: base.html:31
+msgid "Signal Processing Engineer, Ph.D."
+msgstr "Dr. em Engenharia de Processamento de Sinais"
 
 #: base.html:37
 msgid "logged in as: "
