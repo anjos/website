@@ -113,7 +113,6 @@ INSTALLED_APPS = (
   'django.contrib.sites',
   'django.contrib.admin',
   'django.contrib.markup',
-  'django.contrib.flatpages',
   # 'django.contrib.sitemaps',
 
   # External projects reused
