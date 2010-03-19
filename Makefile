@@ -19,7 +19,7 @@ upgrade:
 	@./scripts/bootstrap.py --quiet --no-site-packages --python=python2.5 --upgrade sw
 
 restart:
-	@skill -9 dispatch.fcgi
+	@skill -15 python
 
 clean: 	
 	@find . -name '*~' -print0 | xargs -0 rm -vf 
