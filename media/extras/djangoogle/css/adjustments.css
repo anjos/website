@@ -1,9 +1,0 @@
-/* complements djangoogle setup for my website */
-
-table.entry tr.title {
-  font-size: 1em;
-}
-
-table.entry {
-  height: 320px;
-}
