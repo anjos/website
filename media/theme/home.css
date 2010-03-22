@@ -19,7 +19,7 @@ table.home td.blocks {
   padding: 0px;
 }
 
-table.home td.blocks {
+table.home td.blocks table.list {
   border: 1px #eee solid;
 }
 
@@ -39,15 +39,11 @@ table.home p.title {
 }
 
 table.home td.blocks table.list {
-  font-size: 0.8em;
+  font-size: 0.85em;
   border-spacing: 2px;
 }
 
 /** adjustments for djangoogle **/
-.djangoogle td.contents .preview {
-  height: 110px;
-}
-
 .djangoogle table.list {
   width: 100%;
 }
