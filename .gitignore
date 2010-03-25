@@ -12,3 +12,4 @@ scripts/ez_setup.py
 scripts/sw
 pip-log.txt
 cache/
+backup/
