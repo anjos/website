@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-17 16:33+0100\n"
+"POT-Creation-Date: 2010-04-08 17:32+0200\n"
 "PO-Revision-Date: 2007-03-22 00:10+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,157 +28,18 @@ msgstr ""
 msgid "logged in as: "
 msgstr ""
 
-#: base.html:44
-msgid "administration panel"
-msgstr ""
-
-#: base.html:44
-msgid "admin"
-msgstr ""
-
-#: base.html:45
-msgid "website statistics"
-msgstr ""
-
-#: base.html:45
-msgid "statistics"
-msgstr ""
-
-#: base.html:51
-msgid "logout"
-msgstr ""
-
-#: base.html:53
-msgid "login using your Google account"
-msgstr ""
-
-#: base.html:54
-msgid "login with a standard username and password"
-msgstr ""
-
-#: base.html:54
-msgid "login"
-msgstr ""
-
-#: home.html:13
+#: home.html:12
 msgid "Home Page"
-msgstr "Home Page"
+msgstr ""
 
-#: home.html:20
-#, fuzzy
+#: home.html:19
 msgid "Latest publications"
-msgstr "publications"
+msgstr ""
+
+#: home.html:26
+msgid "Latest media"
+msgstr ""
 
 #: home.html:35
 msgid "Latest software changes"
 msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:6 djangoogle/picasaweb_gallery.html:19
-msgid "Photo Gallery"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:22
-msgid ""
-"From this page you can access our photo albums. Click on the arrows bellow "
-"to go back in history."
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:30
-msgid "Click here to launch a slideshow of this album"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:33
-msgid "Click here to view this album directly inside PicasaWeb"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:33
-msgid "PicasaWeb"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:38
-#, python-format
-msgid "%(numphotos)s photo%(plural)s by"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:39
-msgid "published"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:40
-msgid "updated"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:48
-msgid "Cannot connect to PicasaWeb service."
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:7 djangoogle/youtube_gallery.html.py:20
-msgid "Video Gallery"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:24
-msgid ""
-"From this page you can access all videos registered. Click on the arrows "
-"bellow to go back in history."
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:35
-msgid "Click here to view this video directly inside YouTube"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:35
-msgid "YouTube"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:40
-msgid "seconds"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:41
-msgid "Playlist"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:41
-msgid "Click here to only view videos from this playlist"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:49
-msgid "Cannot connect to YouTube service at"
-msgstr ""
-
-#, fuzzy
-#~ msgid "Page"
-#~ msgstr "Home Page"
-
-#, fuzzy
-#~ msgid "Location"
-#~ msgstr "publications"
-
-#, fuzzy
-#~ msgid "Duration"
-#~ msgstr "publications"
-
-#~ msgid "Automatically generated at "
-#~ msgstr "Automatically generated at "
-
-#~ msgid "r&eacute;sum&eacute;"
-#~ msgstr "r&eacute;sum&eacute;"
-
-#~ msgid "photos"
-#~ msgstr "photos"
-
-#~ msgid "bookmarks"
-#~ msgstr "bookmarks"
-
-#, fuzzy
-#~ msgid "My latest bookmarks"
-#~ msgstr "bookmarks"
-
-#~ msgid "So..."
-#~ msgstr "So..."
-
-#~ msgid "repository"
-#~ msgstr "repository"
-
-#~ msgid "cavaquinho"
-#~ msgstr "cavaquinho"
