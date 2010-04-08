@@ -13,10 +13,10 @@ generate_bootstrap:
 	$(MAKE) --directory=scripts generate
 
 bootstrap: generate_bootstrap
-	@./scripts/bootstrap.py --quiet --no-site-packages --python=python2.5 sw
+	@./scripts/bootstrap.py --quiet --no-site-packages --python=python2.6 sw
 
 upgrade:
-	@./scripts/bootstrap.py --quiet --no-site-packages --python=python2.5 --upgrade sw
+	@./scripts/bootstrap.py --quiet --no-site-packages --python=python2.6 --upgrade sw
 
 restart:
 	@skill -15 python

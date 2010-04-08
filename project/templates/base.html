@@ -40,19 +40,10 @@
           </tr>
           <tr>
             <td id="menu" colspan="2">
-              {% if user.is_staff %}
-              <span class="admin"><a href="{% url admin:index %}"><img src="{% url media "extras/tango/16x16/categories/preferences-system.png" %}" align="top" title="{% trans "administration panel" %}" alt="{% trans "admin" %}"/></a></span>
-              <span class="admin"><a href="{% url audit:index %}"><img src="{% url media "extras/tango/16x16/status/dialog-information.png" %}" align="top" title="{% trans "website statistics" %}" alt="{% trans "statistics" %}"/></a></span>
-              {% endif %}
-              {% for item in navigation %}
-              <span class="item"><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></span>
-              {% endfor %}
-              {% if user.is_authenticated %}
-              <span class="admin"><a href="{% url logout %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/system-log-out.png" %}" align="top" title="{% trans "logout" %}" alt="{% trans "logout" %}"/></a></span>
-              {% else %}
-              <span class="admin"><a title="{% trans "login using your Google account" %}" href="/openid/login/?next={{ full_path }}"><img src="http://www.google.com/favicon.ico" width="16" height="16"/></a>
-              <span class="admin"><a href="{% url login %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/go-next.png" %}" align="top" title="{% trans "login with a standard username and password" %}" alt="{% trans "login" %}"/></a></span>
-              {% endif %}
+            {% menu_items for user as items %}
+            {% for item in items %}
+            <span class="{% if item.has_image %}admin{% else %}item{% endif %}"><a href="{% item_url item %}" title="{% get_description item LANGUAGE_CODE %}">{% if item.has_image %}<img src="{{ item.get_image_url }}" height="{{ item.image_height }}" width="{{ image.image_width }}" alt="{% get_name item LANGUAGE_CODE %}"/>{% else %}{% get_name item LANGUAGE_CODE %}{% endif %}</a></span>
+            {% endfor %}
             </td>
           </tr>
         </table><!-- ends #header_table -->
