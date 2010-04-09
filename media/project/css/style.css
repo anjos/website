@@ -10,7 +10,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 }
 
 body {
-	background: #F6F6F6 url(images/background.jpg) repeat-x;
+	background: #F6F6F6 url(../img/background.jpg) repeat-x;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #6B6B6B;
@@ -32,7 +32,7 @@ ul, ol {
 
 #header {
 	height: 140px;
-	background: #087FE7 url(images/img03.jpg) no-repeat;
+	background: #087FE7 url(../img/img03.jpg) no-repeat;
 }
 
 #header a:hover, #header a {
@@ -159,12 +159,12 @@ ul, ol {
 
 #page1 {
   /* border: 1px black solid; */
-	background: url(images/img02.jpg) repeat-y;
+	background: url(../img/img02.jpg) repeat-y;
 }
 
 #page2 {
   /* border: 1px green solid; */
-	background: url(images/top-of-page.jpg) no-repeat;
+	background: url(../img/top-of-page.jpg) no-repeat;
 	padding: 0 0 0 40px; /* top right bottom left */
 }
 
@@ -180,7 +180,7 @@ ul, ol {
 
 #footer {
 	height: 108px;
-	background: url(images/bottom.jpg) no-repeat;
+	background: url(../img/bottom.jpg) no-repeat;
 }
 
 #footer p {

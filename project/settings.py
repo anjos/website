@@ -59,6 +59,7 @@ ADMIN_MEDIA_PREFIX = '/media/django/'
 
 # The default url for logging into the site
 LOGIN_URL = '/openid/login/'
+LOGIN_REDIRECT_URL = '/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'wk&_+uqn)()=fz07y0qdl%@=m^gp^taf$&7ql&@-ffjk9aln_7'
@@ -74,6 +75,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.auth', #for users and permissions
   'django.core.context_processors.media', #for MEDIA_URL
   'django.core.context_processors.i18n', #for LANGUAGES  
+  'django.core.context_processors.request', #for the request on all pages
   'project.context_processors.site', #for site
   'project.context_processors.full_path', #for the full_path
   'project.context_processors.navigation', #for our menus

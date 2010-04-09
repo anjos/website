@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "OpenID authentication failed" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "OpenID authentication failed" %}</h1>
+<p style="background-color: #eee; font-style: italic; color: red; padding: 5px;">{{ message|escape }}</p>
+<ul>
+  {% for k, v in request.GET.iteritems %}
+  <li><span style="font-weight: bold">{{ k }}</span>: <code>{{ v }}</code>
+  {% endfor %}
+</ul>
+<p class="solution">{% trans "If you believe this is an error, please ask the adminstrator to add it to the appropriate account." %}</p>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% url media "project/css/admin.css" %}" />
+{% endblock %}
+
+{% block title %}{% if title %}{{ title }} | {% endif %}{% blocktrans with site.domain as domain %}{{ domain }}{% endblocktrans %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="/" title="{% trans "click here to go back to the front page" %}"><img class="icon" src="{% url media "favicon.ico" %}" width="16" height="16"/></a> {{ site.domain }} ({{ site.name }})</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

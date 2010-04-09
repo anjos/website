@@ -1,0 +1,23 @@
+/** Style for our personalized admin site **/
+
+#header {
+  background-color: #444;
+}
+
+#branding h1#site-name {
+  color: white;
+}
+
+.module h2, .module caption, .inline-group h2 {
+  /** for the bar backgrounds in the adminstration index **/
+}
+
+img.icon {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.admin img {
+  vertical-align: middle;
+}

@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="{% url media "favicon.ico" %}" type="image/x-icon"/>
 
     {% block media %}{% endblock %}
-    <link rel="stylesheet" type="text/css" href="{% url media "theme/style.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% url media "project/css/style.css" %}" />
   </head>
 
 <body>
@@ -20,7 +20,7 @@
         <table>
           <tr>
             <td id="photo" rowspan="3">
-              <a href="/" title="{% trans "Click here to get back to the start page" %}"><img src="{% url media "theme/images/andreanjos.jpg" %}"/></a>
+              <a href="/" title="{% trans "Click here to get back to the start page" %}"><img src="{% url media "project/img/andreanjos.jpg" %}"/></a>
             </td>
             <td id="site_title" colspan="2">
               <a href="/" title="{% trans "Click here to get back to the start page" %}"><h1>{{ site.name }}</h1></a>
