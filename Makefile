@@ -4,6 +4,7 @@
 # This you must set correctly
 RSYNC_MASTER='andreps@andreanjos.org:andreanjos.org'
 RSYNC=rsync --rsh=ssh --recursive --times --perms --owner --group --verbose --compress
+PYTHON=python2.6
 
 all: bootstrap test
 
@@ -13,10 +14,12 @@ generate_bootstrap:
 	$(MAKE) --directory=scripts generate
 
 bootstrap: generate_bootstrap
-	@./scripts/bootstrap.py --quiet --no-site-packages --python=python2.6 sw
+	@./scripts/bootstrap.py --quiet --no-site-packages --python=$(PYTHON) sw
+	@cd sw/lib && if [ ! -l current ]; then ln -s $(PYTHON) current; fi && cd -
 
 upgrade:
-	@./scripts/bootstrap.py --quiet --no-site-packages --python=python2.6 --upgrade sw
+	@./scripts/bootstrap.py --quiet --no-site-packages --python=$(PYTHON) --upgrade sw
+	@cd sw/lib && if [ ! -l current ]; then ln -s $(PYTHON) current; fi && cd -
 
 restart:
 	@skill -15 python
