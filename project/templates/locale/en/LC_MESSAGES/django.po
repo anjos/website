@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-08 17:32+0200\n"
+"POT-Creation-Date: 2010-04-09 13:30+0200\n"
 "PO-Revision-Date: 2007-03-22 00:10+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,4 +42,39 @@ msgstr ""
 
 #: home.html:35
 msgid "Latest software changes"
+msgstr ""
+
+#: admin/base_site.html:9
+#, python-format
+msgid "%(domain)s"
+msgstr ""
+
+#: admin/base_site.html:12
+msgid "click here to go back to the front page"
+msgstr ""
+
+#: admin/login.html:19
+msgid "Username:"
+msgstr ""
+
+#: admin/login.html:22
+msgid "Password:"
+msgstr ""
+
+#: admin/login.html:26
+msgid "Log in"
+msgstr ""
+
+#: admin/login.html:27
+msgid "login using your Google account"
+msgstr ""
+
+#: openid/failure.html:3 openid/failure.html.py:6
+msgid "OpenID authentication failed"
+msgstr ""
+
+#: openid/failure.html:13
+msgid ""
+"If you believe this is an error, please ask the adminstrator to add it to "
+"the appropriate account."
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-08 17:32+0200\n"
+"POT-Creation-Date: 2010-04-09 13:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,28 +18,65 @@ msgstr ""
 
 #: base.html:23 base.html.py:26
 msgid "Click here to get back to the start page"
-msgstr ""
+msgstr "Cliquez ici pour revenir à là page d'accueil"
 
 #: base.html:31
 msgid "Signal Processing Engineer, Ph.D."
-msgstr ""
+msgstr "Docteur en Ingénierie de Traitement du Signal"
 
 #: base.html:37
 msgid "logged in as: "
-msgstr ""
+msgstr "connecté comme: "
 
 #: home.html:12
 msgid "Home Page"
-msgstr ""
+msgstr "Page d'Accueil"
 
 #: home.html:19
 msgid "Latest publications"
-msgstr ""
+msgstr "Dernières publications"
 
 #: home.html:26
 msgid "Latest media"
-msgstr ""
+msgstr "Dernières médias"
 
 #: home.html:35
 msgid "Latest software changes"
+msgstr "Dernières modifications aux logiciels"
+
+#: admin/base_site.html:9
+#, python-format
+msgid "%(domain)s"
+msgstr "%(domain)s"
+
+#: admin/base_site.html:12
+msgid "click here to go back to the front page"
+msgstr "cliquez ici pour revenir à là page d'accueil"
+
+#: admin/login.html:19
+msgid "Username:"
+msgstr "Utilisateur:"
+
+#: admin/login.html:22
+msgid "Password:"
+msgstr "Mot de passe:"
+
+#: admin/login.html:26
+msgid "Log in"
+msgstr "Connecter"
+
+#: admin/login.html:27
+msgid "login using your Google account"
+msgstr "Connecter en utilisant votre idéntifiant Google"
+
+#: openid/failure.html:3 openid/failure.html.py:6
+msgid "OpenID authentication failed"
+msgstr "Autentication avec OpenID a échoué"
+
+#: openid/failure.html:13
+msgid ""
+"If you believe this is an error, please ask the adminstrator to add it to "
+"the appropriate account."
 msgstr ""
+"Si vous croyez que c'est un erreur, demandez l'adminstrateur du site de "
+"rajouter cet identité sur votre compte."
