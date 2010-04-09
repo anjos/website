@@ -13,3 +13,4 @@ scripts/sw
 pip-log.txt
 cache/
 backup/
+favicon.*
