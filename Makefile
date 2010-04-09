@@ -15,11 +15,11 @@ generate_bootstrap:
 
 bootstrap: generate_bootstrap
 	@./scripts/bootstrap.py --quiet --no-site-packages --python=$(PYTHON) sw
-	@cd sw/lib && if [ ! -l current ]; then ln -s $(PYTHON) current; fi && cd -
+	@cd sw/lib && if [ ! -L current ]; then ln -s $(PYTHON) current; fi && cd -
 
 upgrade:
 	@./scripts/bootstrap.py --quiet --no-site-packages --python=$(PYTHON) --upgrade sw
-	@cd sw/lib && if [ ! -l current ]; then ln -s $(PYTHON) current; fi && cd -
+	@cd sw/lib && if [ ! -L current ]; then ln -s $(PYTHON) current; fi && cd -
 
 restart:
 	@skill -15 python
