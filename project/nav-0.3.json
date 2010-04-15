@@ -1,0 +1,510 @@
+[
+  {
+    "pk": 1, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "All my publications and documents for download", 
+      "language": "en", 
+      "url": "{% url publications:short-list %}", 
+      "image": "", 
+      "image_width": null, 
+      "sites": [
+        1, 
+        2
+      ], 
+      "image_height": null, 
+      "image_url": "", 
+      "user": "X", 
+      "groups": [], 
+      "order": 6, 
+      "name": "Publications"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "Software Projects that I host", 
+      "language": "en", 
+      "url": "{% url djpro:list %}", 
+      "image": "", 
+      "image_width": null, 
+      "sites": [
+        1, 
+        2
+      ], 
+      "image_height": null, 
+      "image_url": "", 
+      "user": "X", 
+      "groups": [], 
+      "order": 7, 
+      "name": "Software"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "Photos", 
+      "language": "en", 
+      "url": "{% url djangoogle:picasaweb-view %}", 
+      "image": "", 
+      "image_width": null, 
+      "sites": [
+        1, 
+        2
+      ], 
+      "image_height": null, 
+      "image_url": "", 
+      "user": "X", 
+      "groups": [], 
+      "order": 5, 
+      "name": "Photos"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "My CV", 
+      "language": "en", 
+      "url": "{% url media \"cv/cv.pdf\" %}", 
+      "image": "", 
+      "image_width": null, 
+      "sites": [
+        1, 
+        2
+      ], 
+      "image_height": null, 
+      "image_url": "", 
+      "user": "X", 
+      "groups": [], 
+      "order": 4, 
+      "name": "Curriculum"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "Videos", 
+      "language": "en", 
+      "url": "{% url djangoogle:youtube-view %}", 
+      "image": "", 
+      "image_width": null, 
+      "sites": [
+        1, 
+        2
+      ], 
+      "image_height": null, 
+      "image_url": "", 
+      "user": "X", 
+      "groups": [], 
+      "order": 8, 
+      "name": "Videos"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "Click here if you want to know a little bit more about me", 
+      "language": "en", 
+      "url": "/about/", 
+      "image": "", 
+      "image_width": null, 
+      "sites": [
+        1, 
+        2
+      ], 
+      "image_height": null, 
+      "image_url": "", 
+      "user": "X", 
+      "groups": [], 
+      "order": 3, 
+      "name": "About me"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "Click here to go back to the start page", 
+      "language": "en", 
+      "url": "/", 
+      "image": "", 
+      "image_width": null, 
+      "sites": [
+        1, 
+        2
+      ], 
+      "image_height": null, 
+      "image_url": "", 
+      "user": "X", 
+      "groups": [], 
+      "order": 2, 
+      "name": "Welcome"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "Click here to access our administration panel", 
+      "language": "en", 
+      "url": "{% url admin:index %}", 
+      "image": "", 
+      "image_width": 16, 
+      "sites": [
+        1, 
+        2, 
+        3
+      ], 
+      "image_height": 16, 
+      "image_url": "http://media.andreanjos.org/icons/tango/16x16/categories/preferences-system.png", 
+      "user": "S", 
+      "groups": [], 
+      "order": 0, 
+      "name": "Administration Panel"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "Access statistics for this website", 
+      "language": "en", 
+      "url": "{% url audit:index %}", 
+      "image": "", 
+      "image_width": 16, 
+      "sites": [
+        1, 
+        2
+      ], 
+      "image_height": 16, 
+      "image_url": "http://media.andreanjos.org/icons/tango/16x16/emblems/emblem-favorite.png", 
+      "user": "L", 
+      "groups": [], 
+      "order": 1, 
+      "name": "Website statistics"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "Connect to this website using a username and a password", 
+      "language": "en", 
+      "url": "{% url login %}?next={{ full_path }}", 
+      "image": "", 
+      "image_width": 16, 
+      "sites": [
+        1, 
+        2, 
+        3
+      ], 
+      "image_height": 16, 
+      "image_url": "http://media.andreanjos.org/icons/tango/16x16/actions/go-next.png", 
+      "user": "N", 
+      "groups": [], 
+      "order": 10, 
+      "name": "Login"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "Login using your Google account", 
+      "language": "en", 
+      "url": "/openid/login/?next={{ full_path }}", 
+      "image": "", 
+      "image_width": 16, 
+      "sites": [
+        1, 
+        2, 
+        3
+      ], 
+      "image_height": 16, 
+      "image_url": "http://www.google.com/favicon.ico", 
+      "user": "N", 
+      "groups": [], 
+      "order": 9, 
+      "name": "Google login"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "description": "Disconnect from this website", 
+      "language": "en", 
+      "url": "{% url logout %}?next={{ full_path }}", 
+      "image": "", 
+      "image_width": 16, 
+      "sites": [
+        1, 
+        2, 
+        3
+      ], 
+      "image_height": 16, 
+      "image_url": "http://media.andreanjos.org/icons/tango/16x16/actions/system-log-out.png", 
+      "user": "L", 
+      "groups": [], 
+      "order": 11, 
+      "name": "Logout"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 1, 
+      "name": "Publications", 
+      "language": "fr", 
+      "description": "Toutes mes publications et documents \u00e0 t\u00e9l\u00e9charger"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 2, 
+      "name": "Logiciels", 
+      "language": "fr", 
+      "description": "Les projets de logiciels que ne sont pas h\u00e9berg\u00e9s ailleurs"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 3, 
+      "name": "Photos", 
+      "language": "fr", 
+      "description": "Photos"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 4, 
+      "name": "Curriculum", 
+      "language": "fr", 
+      "description": "Mon CV"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 1, 
+      "name": "Publica\u00e7\u00f5es", 
+      "language": "pt-br", 
+      "description": "Todas as minhas publica\u00e7\u00f5es e documentos para baixar"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 2, 
+      "name": "Software", 
+      "language": "pt-br", 
+      "description": "Projetos de software"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 3, 
+      "name": "Fotos", 
+      "language": "pt-br", 
+      "description": "Fotos"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 4, 
+      "name": "Curriculum", 
+      "language": "pt-br", 
+      "description": "Meu CV"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 5, 
+      "name": "V\u00eddeos", 
+      "language": "pt-br", 
+      "description": "V\u00eddeos"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 5, 
+      "name": "Vid\u00e9os", 
+      "language": "fr", 
+      "description": "Vid\u00e9os"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 7, 
+      "name": "In\u00edcio", 
+      "language": "pt-br", 
+      "description": "Clique aqui para voltar \u00e0 p\u00e1gina inicial"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 6, 
+      "name": "Sobre mim", 
+      "language": "pt-br", 
+      "description": "Clique aqui se quiser saber um pouco sobre mim"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 7, 
+      "name": "Accueil", 
+      "language": "fr", 
+      "description": "Cliquez ici pour revenir \u00e0 l\u00e0 page d'accueil"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 6, 
+      "name": "A propos de moi", 
+      "language": "fr", 
+      "description": "Cliquez ici pour savoir un peu plus sur moi"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 8, 
+      "name": "Painel de Administra\u00e7\u00e3o", 
+      "language": "pt-br", 
+      "description": "Clique aqui para acessar nosso painel de administra\u00e7\u00e3o"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 9, 
+      "name": "Estat\u00edstica de acesso", 
+      "language": "pt-br", 
+      "description": "Acesse as estat\u00edsticas para este website"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 10, 
+      "name": "Login", 
+      "language": "pt-br", 
+      "description": "Conectar a este website usando um nome de usu\u00e1rio e senha"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 11, 
+      "name": "Login Google", 
+      "language": "pt-br", 
+      "description": "Conecte-se ao website usando sua conta Google"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 12, 
+      "name": "Desconectar", 
+      "language": "pt-br", 
+      "description": "Desconectar deste website"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 8, 
+      "name": "Panneau d'administration", 
+      "language": "fr", 
+      "description": "Cliquez ici pour acc\u00e9der le panneau d'administration du site"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 9, 
+      "name": "Statistiques d'acc\u00e8s au site", 
+      "language": "fr", 
+      "description": "Acc\u00e9dez les statistiques d'acc\u00e8s au site en cliquant ici"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 10, 
+      "name": "Connexion", 
+      "language": "fr", 
+      "description": "Connectez a ce site avec un nom d'utilisateur et mot-de-passe"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 11, 
+      "name": "Connexion Google", 
+      "language": "fr", 
+      "description": "Connectez a ce site avec votre compte Google"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 12, 
+      "name": "D\u00e9connexion", 
+      "language": "fr", 
+      "description": "D\u00e9connectez de ce site"
+    }
+  }
+]

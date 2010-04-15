@@ -78,7 +78,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.request', #for the request on all pages
   'project.context_processors.site', #for site
   'project.context_processors.full_path', #for the full_path
-  'project.context_processors.navigation', #for our menus
   'multilingual.context_processors.multilingual', #for multilingual
 )
 
@@ -130,6 +129,7 @@ INSTALLED_APPS = (
   'django_openid_auth',
   'multilingual',
   'multilingual.flatpages',
+  'order',
 )
 
 # Controls how many albums per page to see
