@@ -78,7 +78,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.request', #for the request on all pages
   'project.context_processors.site', #for site
   'project.context_processors.full_path', #for the full_path
-  'multilingual.context_processors.multilingual', #for multilingual
 )
 
 MIDDLEWARE_CLASSES = (
