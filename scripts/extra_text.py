@@ -23,6 +23,7 @@ PACKAGES = [
     'python-openid',
     'django-openid-auth',
     'django-multilingual',
+    'django-flatties',
     ]
 SOURCES = [
     #('git+http://github.com/simonw/django-openid.git', 'django-openid'),

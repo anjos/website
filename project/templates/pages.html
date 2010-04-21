@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-{% load i18n multilingual_tags %}
+{% load flatties_tags %}
 
 {% block media %}
 {{ block.super }}
 <link href="{% url media "project/css/flat.css" %}" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 
-{% block title %}{{ flatpage.title }}{% endblock %}
+{% block title %}{% get_title object LANGUAGE_CODE %}{% endblock %}
 
 {% block content %}
 <div class="flat">
-{% render_template flatpage.content %}
+{% get_content object LANGUAGE_CODE %}
 </div>
 {% endblock %}
