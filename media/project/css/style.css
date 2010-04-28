@@ -302,7 +302,7 @@ table.highlighttable td.code .highlight pre {
 }
 
 .djit table.list {
-  font-size: 0.9em;
+  font-size: 98%;
 }
 
 /** For our publications **/
