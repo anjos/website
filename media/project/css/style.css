@@ -250,22 +250,59 @@ table.highlighttable td.code .highlight pre {
   width: 100%;
 }
 
-.djit table.layout table * td {
-  font-size: 0.85em;
+/* Navigation style */
+.project p.navigation a {
+  background-color: #b00;
+  border-color: #b00;
+  color: white;
+  font-family: arial, helvetica, sans;
+  font-weight: bold;
+  font-size: 90%;
+  border-style: outset;
+  border-width: 1px;
+  text-decoration: none;
+  padding: 2px;
 }
 
-.djit > p.title {
-  color: #555;
-  font-size: 1.8em;
+.project p.navigation a:hover  {
+  background-color: #d00;
+  border-color: #d00;
+  border-style: inset;
+}
+
+.djit * table {
+  color: #333;
+  width: 100%;
 }
 
 .djit table.layout {
-  border-spacing: 15px;
+  border-spacing: 10px;
+  width: 100%;
 }
 
-.djit > table.list {
-  font-size: 1.1em;
-  width: 100%;
+.djit table.shortlog {
+  font-size: 0.75em;
+}
+
+.djit td.action form {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.djit td.action form input {
+  width: 30px;
+}
+
+.djit td.action form input:focus {
+  width: 80px;
+}
+
+.djit td.sha1 {
+  text-align: center;
+}
+
+.djit table.list {
+  font-size: 0.9em;
 }
 
 /** For our publications **/
