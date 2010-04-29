@@ -1,11 +1,9 @@
 from django.conf.urls.defaults import *
 from django.contrib import admin
 from django.conf import settings
-import djpro.urls
 import audit.urls
 import publications.urls
 import djangoogle.urls
-import djit.urls
 import flatties.urls
 
 admin.autodiscover()
@@ -14,8 +12,6 @@ urlpatterns = patterns('',
   url(r'^admin/', admin.site.urls),
   url(r'^publication/', publications.urls.namespaced),
   url(r'^google/', djangoogle.urls.namespaced),
-  url(r'^git/', djit.urls.namespaced),
-  url(r'^project/', djpro.urls.namespaced),
   url(r'^audit/', audit.urls.namespaced),
   url(r'^openid/', include('django_openid_auth.urls')),
   url(r'^pages/', flatties.urls.namespaced),

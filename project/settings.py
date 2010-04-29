@@ -118,8 +118,6 @@ INSTALLED_APPS = (
   'djangoogle',
   'audit',
   'nav',
-  'djit',
-  'djpro',
   'publications',
   'order',
   'flatties',
