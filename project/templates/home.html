@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load publication_tags %}
-{% load djpro_tags djangoogle_tags %}
+{% load djangoogle_tags %}
 {% block media %}
   {{ block.super }}
   {% djangoogle_last_media %}
@@ -18,24 +18,14 @@
       <div class="box">
         <p class="title">{% trans "Latest publications" %}</p>
         <div class="publication">
-        {% last_publications 5 0 %}
+        {% last_publications 10 0 %}
         </div>
       </div>
     </td>
-    <td rowspan="2" class="right blocks media">
+    <td class="right blocks media">
       <p class="title">{% trans "Latest media" %}</p>
       <div class="djangoogle">
-      {% djangoogle_media_box 3 1 1 90 %}
-      </div>
-    </td>
-  </tr>
-  <tr class="bottom">
-    <td class="blocks left">
-      <div class="box">
-        <p class="title">{% trans "Latest software changes" %}</p>
-        <div class="djit">
-        {% djpro_list 6 1 %}
-        </div>
+      {% djangoogle_media_box 2 1 1 90 %}
       </div>
     </td>
   </tr>
