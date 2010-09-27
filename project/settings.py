@@ -96,6 +96,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.doc.XViewMiddleware',
     'audit.middleware.Activity',
     'django.middleware.cache.FetchFromCacheMiddleware',
+    'maintenancemode.middleware.MaintenanceModeMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -157,3 +158,6 @@ OPENID_SSO_SERVER_URL = 'https://www.google.com/accounts/o8/id'
 OPENID_USE_AS_ADMIN_LOGIN = True
 # You may need this to establish your connection with Google for a start
 # OPENID_CREATE_USERS = True
+
+# For the maintenance mode middleware
+#MAINTENANCE_MODE = True

@@ -24,6 +24,7 @@ PACKAGES = [
     'django-openid-auth',
     'django-flatties',
     'mysql-python',
+    'django-maintenancemode', 
     ]
 SOURCES = [
     #('git+http://github.com/simonw/django-openid.git', 'django-openid'),
