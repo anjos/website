@@ -1,7 +1,8 @@
 # Django settings for my personal webpage
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
+SEND_BROKEN_LINK_EMAILS = True
 import os
 
 # These locations are calculated based on the settings.py location
