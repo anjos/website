@@ -3,6 +3,8 @@
 
 {% block extrastyle %}
 {{ block.super }}
+<link rel="icon" href="{% url media "favicon.ico" %}" type="image/x-icon"/>
+<link rel="shortcut icon" href="{% url media "favicon.ico" %}" type="image/x-icon"/>
 <link rel="stylesheet" type="text/css" href="{% url media "project/css/admin.css" %}" />
 {% endblock %}
 
