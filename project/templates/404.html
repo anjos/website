@@ -1,0 +1,10 @@
+{% extends "simple.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Page not found" %}{% endblock %}
+{% block header %}{% trans "404 error - Page not found" %}{% endblock %}
+
+{% block content %}
+<p>{% trans "The following requested page is not available:" %}</p>
+<code>{{ request_path }}</code>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "simple.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "We are currently under maintenance!" %}{% endblock %}
+{% block header %}{% trans "We are currently under maintenance!" %}{% endblock %}
+
+{% block content %}
+<p>{% trans "I apologize, but I'm currently making modifications to this website. It should be back soon. Please try again later!" %}</p>
+{% endblock %}

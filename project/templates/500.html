@@ -1,0 +1,9 @@
+{% extends "simple.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Internal server error" %}{% endblock %}
+{% block header %}{% trans "500 error - Internal server error" %}{% endblock %}
+
+{% block content %}
+<p>{% trans "An internal server error has occurred. Reload to try again, or simply use your browser's back button." %}</p>
+{% endblock %}
