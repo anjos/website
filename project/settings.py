@@ -1,6 +1,6 @@
 # Django settings for my personal webpage
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 SEND_BROKEN_LINK_EMAILS = True
 import os
