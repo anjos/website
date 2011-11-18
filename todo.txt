@@ -1,0 +1,4 @@
+* Atualizei manualmente, o app de publicacoes para conter um ponteiro para
+  pagina de citacoes do Google:
+  http://scholar.google.com/citations?user=pAfLhMoAAAAJ. Quando vc atualizar o
+  sistema, nao esqueca de incluir isso no app.
