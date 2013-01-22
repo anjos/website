@@ -13,9 +13,9 @@ parts
 *.egg-info
 django.mo
 db.sql3
-media/publications
-media/projects
+static/publications
+static/projects
 cache/
 backup/
 favicon.*
-project/dbconfig.py
+dbconfig.py
