@@ -1,1 +1,0 @@
-source sw/bin/activate

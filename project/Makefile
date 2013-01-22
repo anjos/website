@@ -51,8 +51,5 @@ smtp:
 	$(python) -m smtpd -n -c DebuggingServer localhost:1025
 
 clean: mrproper
-	$(python) -m compileall .
-
-mrproper:
 	find . -name '*~' -print0 | xargs -0 rm -vf 
 	find . -name '*.py?' -print0 | xargs -0 rm -vf
