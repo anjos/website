@@ -24,5 +24,8 @@ in case you have a github account. After that bootstrap the environment::
   $ ./bin/buildout
   ...
 
-That should install required dependencies and get you ready for testing.
+That should install required dependencies and get you ready for testing. Next,
+you will need to copy media only available remotely, to the current working
+directory::
 
+  $ rsync -avz andreps@andreanjos.org:andreanjos.org/media/ media/

@@ -40,16 +40,11 @@ SITE_ID = 1
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.join(BASEDIR, 'media')
+STATIC_ROOT = os.path.join(BASEDIR, 'static')
 
-# URL that handles the media served from MEDIA_ROOT.
+# URL that handles the media served from STATIC_ROOT.
 # Example: "http://media.lawrence.com"
-MEDIA_URL = '/media/'
-
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/django/'
+STATIC_URL = '/static/'
 
 # The default url for logging into the site
 LOGIN_URL = '/openid/login/'
@@ -107,11 +102,11 @@ INSTALLED_APPS = (
   'django.contrib.sites',
   'django.contrib.admin',
   'django.contrib.markup',
+  'django.contrib.staticfiles',
   # 'django.contrib.sitemaps',
 
   # External projects reused
   'djangoogle',
-  'audit',
   'nav',
   'publications',
   'order',
