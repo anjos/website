@@ -23,6 +23,10 @@ setup(
     include_package_data=True,
     zip_safe=False,
 
+    namespace_packages=[
+      "anjos",
+      ],
+
     install_requires=[
      
       # pretty generic
@@ -31,6 +35,7 @@ setup(
       'flup',
       'uuid',
       'mysql-python',
+      'python-openid',
       
       # others
       'django-robots',

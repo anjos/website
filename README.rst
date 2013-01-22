@@ -28,4 +28,9 @@ That should install required dependencies and get you ready for testing. Next,
 you will need to copy media only available remotely, to the current working
 directory::
 
-  $ rsync -avz andreps@andreanjos.org:andreanjos.org/media/ media/
+  $ rsync -avz andreps@andreanjos.org:andreanjos.org/static/ static/
+
+Finally, you will need to get hold of the MySQL connection string. You can copy
+the one on your private server, if you have the right to do so::
+
+  $ scp andreps@andreanjos.org:andreanjos.org/anjos/website/dbconfig.py anjos/website 

@@ -4,11 +4,10 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 SEND_BROKEN_LINK_EMAILS = True
 import os
-from project.dbconfig import DATABASES
+from .dbconfig import DATABASES
 
 # These locations are calculated based on the settings.py location
 BASEDIR = os.path.dirname(os.path.dirname(__file__))
-INSTALLDIR = os.path.join(BASEDIR, 'project') 
 
 ADMINS = (
     ('Andre Anjos', 'andre.dos.anjos@gmail.com'),
@@ -33,7 +32,7 @@ LANGUAGES = (
   )
 DEFAULT_LANGUAGE = 1
 # Where to find MO compilations
-LOCALE_PATHS = ( '%s/templates/locale' % INSTALLDIR, 
+LOCALE_PATHS = ( '%s/templates/locale' % BASEDIR, 
                 )
 
 SITE_ID = 1
@@ -54,19 +53,29 @@ LOGIN_REDIRECT_URL = '/'
 SECRET_KEY = 'wk&_+uqn)()=fz07y0qdl%@=m^gp^taf$&7ql&@-ffjk9aln_7'
 
 # List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-)
+if DEBUG:
+  TEMPLATE_LOADERS = [
+      'django.template.loaders.filesystem.Loader',
+      'django.template.loaders.app_directories.Loader',      
+      ]
+else:
+  TEMPLATE_LOADERS = [
+      ('django.template.loaders.cached.Loader',(
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+        'forum.modules.template_loader.module_templates_loader',
+        'forum.skins.load_template_source',
+        )),
+      ]
 
 # What we like to have in every page we render, as context
 TEMPLATE_CONTEXT_PROCESSORS = (
-  'django.core.context_processors.auth', #for users and permissions
+  'django.contrib.auth.context_processors.auth', #for users and permissions
   'django.core.context_processors.media', #for MEDIA_URL
   'django.core.context_processors.i18n', #for LANGUAGES  
   'django.core.context_processors.request', #for the request on all pages
-  'project.context_processors.site', #for site
-  'project.context_processors.full_path', #for the full_path
+  'anjos.website.context_processors.site', #for site
+  'anjos.website.context_processors.full_path', #for the full_path
 )
 
 MIDDLEWARE_CLASSES = (
@@ -76,7 +85,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
-    'audit.middleware.Activity',
     'django.middleware.cache.FetchFromCacheMiddleware',
     'maintenancemode.middleware.MaintenanceModeMiddleware',
 )
@@ -86,13 +94,13 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-ROOT_URLCONF = 'project.urls'
+ROOT_URLCONF = 'anjos.website.urls'
 
 TEMPLATE_DIRS = (
   # Put strings here, like "/home/html/django_templates".
   # Always use forward slashes, even on Windows.
-  '%s/templates' % INSTALLDIR,
-  '%s/publications/templates' % INSTALLDIR,
+  '%s/templates' % BASEDIR,
+  '%s/publications/templates' % BASEDIR,
 )
 
 INSTALLED_APPS = (
@@ -130,9 +138,6 @@ CACHE_BACKEND = 'file://%s' % CACHE_DIR
 # Edit this if you want to cache the whole site and use the cache middleware
 CACHE_MIDDLEWARE_SECONDS = 600
 CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True # only for outsiders
-
-# We keep 50% of robot data, for statistics
-AUDIT_KEEP_BOT_STATISTICS = 0.5
 
 # Which server do we authenticate against
 OPENID_SSO_SERVER_URL = 'https://www.google.com/accounts/o8/id'
