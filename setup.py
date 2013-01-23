@@ -10,7 +10,7 @@ from setuptools import setup, find_packages
 
 setup(
 
-    name="anjos-website",
+    name="anjos.website",
     version="1.0.0",
     description="My professional website",
     license="FreeBSD",
