@@ -10,6 +10,11 @@ from .dbconfig import DATABASES
 D = os.path.dirname
 BASEDIR = D(__file__)
 
+#DATABASES['default'] = {
+#    'ENGINE': 'django.db.backends.sqlite3', 
+#    'NAME': os.path.join(D(D(BASEDIR)), 'db.sql3')
+#    }
+
 ADMINS = (
     ('Andre Anjos', 'andre.dos.anjos@gmail.com'),
 )
@@ -89,6 +94,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
     'maintenancemode.middleware.MaintenanceModeMiddleware',
