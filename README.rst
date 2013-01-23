@@ -26,16 +26,14 @@ in case you have a github account. After that bootstrap the environment::
 
 That should install required dependencies and get you ready for testing. Next,
 you will need to copy media only available remotely, to the current working
-directory::
+directory and collect all apps static files::
 
+  $ ./bin/dj collectstatic --noinput
+  ...
   $ rsync -avz andreps@andreanjos.org:andreanjos.org/static/ static/
+  ...
 
 You will need to get hold of the MySQL connection string. You can copy
 the one on your private server, if you have the right to do so::
 
   $ scp andreps@andreanjos.org:andreanjos.org/anjos/website/dbconfig.py anjos/website 
-
-You will need to collect all static material from the different packages into
-the ``static`` dir::
-
-  $ ./bin/dj collectstatic

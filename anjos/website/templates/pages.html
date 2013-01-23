@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% load flatties_tags %}
 
 {% block media %}
 {{ block.super }}
-<link href="{% url static "project/css/flat.css" %}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{% static "website/css/flat.css" %}" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 
 {% block title %}{% get_title object LANGUAGE_CODE %}{% endblock %}

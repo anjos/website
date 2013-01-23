@@ -5,11 +5,11 @@
 <html>
   <head>
     <title>{{ site.name }} :: {% block title %} NO TITLE? {% endblock %}</title>
-    <link rel="icon" href="{% static "favicon.ico" %}" type="image/x-icon"/>
-    <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon"/>
+    <link rel="icon" href="{% static "website/favicon.ico" %}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{% static "website/favicon.ico" %}" type="image/x-icon"/>
 
     {% block media %}{% endblock %}
-    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "website/css/style.css" %}" />
   </head>
 
 <body>
@@ -21,7 +21,7 @@
         <table>
           <tr>
             <td id="photo" rowspan="3">
-              <a href="/" title="{% trans "Click here to get back to the start page" %}"><img src="{% static "img/andreanjos.jpg" %}"/></a>
+              <a href="/" title="{% trans "Click here to get back to the start page" %}"><img src="{% static "website/img/andreanjos.jpg" %}"/></a>
             </td>
             <td id="site_title" colspan="2">
               <a href="/" title="{% trans "Click here to get back to the start page" %}"><h1>{{ site.name }}</h1></a>
@@ -30,7 +30,7 @@
           <tr>
             <td id="address">
               <p>{% trans "Signal Processing Engineer, Ph.D." %}</p>
-              <p>+41 27 721 77 63</p>
+              <p>Idiap Research Institue, +41277217763</p>
               <p>andre.anjos@idiap.ch</p>
             </td>
             <td id="user">

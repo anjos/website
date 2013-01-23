@@ -1,17 +1,18 @@
 {% extends "admin/base.html" %}
 {% load i18n %}
+{% load staticfiles %}
 
 {% block extrastyle %}
 {{ block.super }}
-<link rel="icon" href="{% url static "favicon.ico" %}" type="image/x-icon"/>
-<link rel="shortcut icon" href="{% url static "favicon.ico" %}" type="image/x-icon"/>
-<link rel="stylesheet" type="text/css" href="{% url static "project/css/admin.css" %}" />
+<link rel="icon" href="{% static "website/favicon.ico" %}" type="image/x-icon"/>
+<link rel="shortcut icon" href="{% static "website/favicon.ico" %}" type="image/x-icon"/>
+<link rel="stylesheet" type="text/css" href="{% static "website/css/admin.css" %}" />
 {% endblock %}
 
 {% block title %}{% if title %}{{ title }} | {% endif %}{% blocktrans with site.domain as domain %}{{ domain }}{% endblocktrans %}{% endblock %}
 
 {% block branding %}
-<h1 id="site-name"><a href="/" title="{% trans "click here to go back to the front page" %}"><img class="icon" src="{% url static "favicon.ico" %}" width="16" height="16"/></a> {{ site.domain }} ({{ site.name }})</h1>
+<h1 id="site-name"><a href="/" title="{% trans "click here to go back to the front page" %}"><img class="icon" src="{% static "website/favicon.ico" %}" width="16" height="16"/></a> {{ site.domain }} ({{ site.name }})</h1>
 {% endblock %}
 
 {% block nav-global %}{% endblock %}
