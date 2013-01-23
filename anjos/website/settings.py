@@ -41,6 +41,10 @@ SITE_ID = 1
 # Absolute path to the directory that holds static media.
 # Example: "/home/media/media.lawrence.com/"
 STATIC_ROOT = os.path.join(D(D(BASEDIR)), 'static') + os.sep
+# Add these extra paths when collecting static stuff:
+STATICFILES_DIRS = [
+    os.path.join(BASEDIR, 'static'),
+    ]
 
 # URL that handles the static media served from STATIC_ROOT.
 # Example: "http://media.lawrence.com"
