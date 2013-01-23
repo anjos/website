@@ -30,7 +30,12 @@ directory::
 
   $ rsync -avz andreps@andreanjos.org:andreanjos.org/static/ static/
 
-Finally, you will need to get hold of the MySQL connection string. You can copy
+You will need to get hold of the MySQL connection string. You can copy
 the one on your private server, if you have the right to do so::
 
   $ scp andreps@andreanjos.org:andreanjos.org/anjos/website/dbconfig.py anjos/website 
+
+You will need to collect all static material from the different packages into
+the ``static`` dir::
+
+  $ ./bin/dj collectstatic

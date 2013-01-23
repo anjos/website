@@ -7,7 +7,8 @@ import os
 from .dbconfig import DATABASES
 
 # These locations are calculated based on the settings.py location
-BASEDIR = os.path.dirname(os.path.dirname(__file__))
+D = os.path.dirname
+BASEDIR = D(__file__)
 
 ADMINS = (
     ('Andre Anjos', 'andre.dos.anjos@gmail.com'),
@@ -37,11 +38,11 @@ LOCALE_PATHS = ( '%s/templates/locale' % BASEDIR,
 
 SITE_ID = 1
 
-# Absolute path to the directory that holds media.
+# Absolute path to the directory that holds static media.
 # Example: "/home/media/media.lawrence.com/"
-STATIC_ROOT = os.path.join(BASEDIR, 'static')
+STATIC_ROOT = os.path.join(D(D(BASEDIR)), 'static') + os.sep
 
-# URL that handles the media served from STATIC_ROOT.
+# URL that handles the static media served from STATIC_ROOT.
 # Example: "http://media.lawrence.com"
 STATIC_URL = '/static/'
 
@@ -71,7 +72,7 @@ else:
 # What we like to have in every page we render, as context
 TEMPLATE_CONTEXT_PROCESSORS = (
   'django.contrib.auth.context_processors.auth', #for users and permissions
-  'django.core.context_processors.media', #for MEDIA_URL
+  'django.core.context_processors.static', #for STATIC_URL
   'django.core.context_processors.i18n', #for LANGUAGES  
   'django.core.context_processors.request', #for the request on all pages
   'anjos.website.context_processors.site', #for site
@@ -100,7 +101,6 @@ TEMPLATE_DIRS = (
   # Put strings here, like "/home/html/django_templates".
   # Always use forward slashes, even on Windows.
   '%s/templates' % BASEDIR,
-  '%s/publications/templates' % BASEDIR,
 )
 
 INSTALLED_APPS = (
@@ -132,8 +132,17 @@ DJANGOOGLE_ALBUMS_PER_PAGE = 8
 ROBOTS_USE_SITEMAP = False
 
 # Enables filesystem caching
-CACHE_DIR = os.path.join(BASEDIR, 'cache')
-CACHE_BACKEND = 'file://%s' % CACHE_DIR
+if DEBUG:
+  cache_backend = 'django.core.cache.backends.dummy.DummyCache'
+else:
+  cache_backend = 'django.core.cache.backends.filebased.FileBasedCache'
+
+CACHES = {
+    'default': {
+        'BACKEND': cache_backend,
+        'LOCATION': os.path.join(D(D(BASEDIR)), 'cache'),
+    }
+}
 
 # Edit this if you want to cache the whole site and use the cache middleware
 CACHE_MIDDLEWARE_SECONDS = 600
