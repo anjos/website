@@ -13,8 +13,8 @@ parts
 *.egg-info
 django.mo
 db.sql3
-static/publications
-static/projects
+static/
+static/
 cache/
 backup/
 favicon.*
