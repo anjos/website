@@ -12,6 +12,8 @@ Installation
 Clone this package using the following command::
 
   $ git clone git@github.com:anjos/website
+  $ git submodule init
+  $ git submodule update
 
 After that, bootstrap the environment::
 
@@ -19,6 +21,11 @@ After that, bootstrap the environment::
   ...
   $ ./bin/buildout
   ...
+
+Create the PDF for your CV::
+
+  $ cd anjos/website/static/cv
+  $ make
 
 By default, the settings on the project are setup to work with a local
 ``db.sql3`` that should be placed at the root of the package. You can also work
