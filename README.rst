@@ -20,8 +20,11 @@ After that, bootstrap the environment::
   $ ./bin/buildout
   ...
 
-You will need to get hold of the MySQL connection string. You can copy
-the one on your private server, if you have the right to do so::
+By default, the settings on the project are setup to work with a local
+``db.sql3`` that should be placed at the root of the package. You can also work
+against a MySQL server. In such a case, you will need to get hold of the MySQL
+connection string. You can copy the one on your private server, if you have the
+right to do so::
 
   $ scp andreps@andreanjos.org:andreanjos.org/anjos/website/dbconfig.py anjos/website 
 
@@ -53,28 +56,17 @@ working directory and collect all apps static files::
   $ rsync -avz andreps@andreanjos.org:andreanjos.org/static/ static/
   ...
 
-To work locally, using an SQLite database for development, you can dump the
-current data on your server and load it again on a local sqlite3 database::
-
-  $ ./bin/dj dumpdata > data.json
-  $ vim anjos/website/settings.py # change to the local database configuration
-  $ ./bin/dj syncdb --noinput
-  $ ./bin/dj reset auth --noinput
-  $ ./bin/dj reset contenttypes --noinput
-  $ ./bin/dj loaddata data.json
-  $ rm -f data.json
-
-Usage
------
-
-To start a test server::
-
-  $ ./bin/dj runserver
-
 Maintenance
 -----------
 
 Here are some common tips for maintenance.
+
+Running a Test Server
+=====================
+
+To start a test server::
+
+  $ ./bin/dj runserver
 
 Removing Obsolete ContentTypes
 ===============================
@@ -87,3 +79,26 @@ This happens when you remove applications from your website::
   ...     ct.delete()
   ...
   >>>
+
+Moving a MySQL database to SQLite3
+==================================
+
+To work locally, using an SQLite database for development, you can dump the
+current data on your server and load it again on a local sqlite3 database::
+
+  $ ./bin/dj dumpdata > data.json
+  $ vim anjos/website/settings.py # change to the local database configuration
+  $ ./bin/dj syncdb --noinput
+  $ ./bin/dj reset auth --noinput
+  $ ./bin/dj reset contenttypes --noinput
+  $ ./bin/dj loaddata data.json
+  $ rm -f data.json
+
+Installing on Dreamhost
+=======================
+
+Follow these steps:
+
+1. Make sure that the database configuration is set right;
+2. Make sure that the variable ``DREAMHOST`` is set to ``True`` at the top of the
+   ``settings.py`` file.
