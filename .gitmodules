@@ -13,3 +13,6 @@
 [submodule "src/django-order"]
 	path = src/django-order
 	url = git@github.com:anjos/django-order
+[submodule "anjos/website/static/cv"]
+	path = anjos/website/static/cv
+	url = git@github.com:anjos/cv
