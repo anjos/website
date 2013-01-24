@@ -1,6 +1,7 @@
 # Django settings for my personal webpage
 
 DEBUG = True
+DREAMHOST = True
 TEMPLATE_DEBUG = DEBUG
 SEND_BROKEN_LINK_EMAILS = True
 import os
@@ -45,18 +46,22 @@ LOCALE_PATHS = ( '%s/templates/locale' % BASEDIR,
 
 SITE_ID = 1
 
-# Absolute path to the directory that holds static media.
+# STATIC_ROOT: Absolute path to the directory that holds static media.
 # Example: "/home/media/media.lawrence.com/"
-STATIC_ROOT = os.path.join(D(D(D(BASEDIR))), 'public') + os.sep
-# STATIC_ROOT = os.path.join(D(D(BASEDIR)), 'static') + os.sep
-# Add these extra paths when collecting static stuff:
+# STATICFILES_DIRS: Add these extra paths when collecting static stuff
+# STATIC_URL: Relative path to the files through the webserver
+
+if DREAMHOST:
+  STATIC_ROOT = os.path.join(D(D(D(BASEDIR))), 'public') + os.sep
+  STATIC_URL = '/'
+
+else:
+  STATIC_ROOT = os.path.join(D(D(BASEDIR)), 'static') + os.sep
+  STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASEDIR, 'static'),
     ]
-
-# URL that handles the static media served from STATIC_ROOT.
-# Example: "http://media.lawrence.com"
-STATIC_URL = '/static/'
 
 # The default url for logging into the site
 LOGIN_URL = '/openid/login/'
