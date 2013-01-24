@@ -10,9 +10,11 @@ from .dbconfig import DATABASES
 D = os.path.dirname
 BASEDIR = D(__file__)
 
-#DATABASES['default'] = {
-#    'ENGINE': 'django.db.backends.sqlite3', 
-#    'NAME': os.path.join(D(D(BASEDIR)), 'db.sql3')
+#DATABASES = {
+#    'default': {
+#      'ENGINE': 'django.db.backends.sqlite3', 
+#      'NAME': os.path.join(D(D(BASEDIR)), 'db.sql3')
+#      }
 #    }
 
 ADMINS = (
