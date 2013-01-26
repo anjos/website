@@ -34,7 +34,6 @@ connection string. You can copy the one on your private server, if you have the
 right to do so::
 
   $ scp andreanjos@andreanjos.org:andreanjos.org/anjos/website/dbconfig.py anjos/website 
-
 Otherwise, here is a template (it should be placed on the same directory as
 ``settings.py`` is)::
 
@@ -108,4 +107,9 @@ Follow these steps:
 
 1. Make sure that the database configuration is set right;
 2. Make sure that the variable ``DREAMHOST`` is set to ``True`` at the top of the
-   ``settings.py`` file.
+   ``settings.py`` file;
+3. Link ``passenger_wsgi.py``::
+
+   $ cd <website-directory>
+   $ ln -s anjos.website/bin/dj.wsgi passenger_wsgi.py
+
