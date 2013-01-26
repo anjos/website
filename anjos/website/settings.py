@@ -81,8 +81,6 @@ else:
       ('django.template.loaders.cached.Loader',(
         'django.template.loaders.filesystem.Loader',
         'django.template.loaders.app_directories.Loader',
-        'forum.modules.template_loader.module_templates_loader',
-        'forum.skins.load_template_source',
         )),
       ]
 
