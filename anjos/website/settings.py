@@ -1,22 +1,22 @@
 # Django settings for my personal webpage
 
-DEBUG = True
-DREAMHOST = False
+DEBUG = False
+DREAMHOST = True
 TEMPLATE_DEBUG = DEBUG
 SEND_BROKEN_LINK_EMAILS = True
 import os
-#from .dbconfig import DATABASES
+from .dbconfig import DATABASES
 
 # These locations are calculated based on the settings.py location
 D = os.path.dirname
 BASEDIR = os.path.realpath(D(__file__))
 
-DATABASES = {
-    'default': {
-      'ENGINE': 'django.db.backends.sqlite3', 
-      'NAME': os.path.join(D(D(BASEDIR)), 'db.sql3')
-      }
-    }
+#DATABASES = {
+#    'default': {
+#      'ENGINE': 'django.db.backends.sqlite3',
+#      'NAME': os.path.join(D(D(BASEDIR)), 'db.sql3')
+#      }
+#    }
 
 ADMINS = (
     ('Andre Anjos', 'andre.dos.anjos@gmail.com'),
