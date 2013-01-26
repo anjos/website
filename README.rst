@@ -107,9 +107,9 @@ Follow these steps:
 
 1. Make sure that the database configuration is set right;
 2. Make sure that the variable ``DREAMHOST`` is set to ``True`` at the top of the
-   ``settings.py`` file;
+   ``settings.py`` file. Do the same for ``DEBUG`` (setting it to ``False``);
 3. Link ``passenger_wsgi.py``::
 
    $ cd <website-directory>
    $ ln -s anjos.website/bin/dj.wsgi passenger_wsgi.py
-
+4. Set up the backup cronjob to execute daily (``backup/do_it.sh``)
