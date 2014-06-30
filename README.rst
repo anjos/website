@@ -84,12 +84,7 @@ Removing Obsolete ContentTypes
 
 This happens when you remove applications from your website::
 
-  $ ./bin/dj shell
-  >>> from django.contrib.contenttypes.models import ContentType
-  >>> for ct in ContentType.objects.filter(app_label='audit'):
-  ...     ct.delete()
-  ...
-  >>>
+  $ ./bin/remove_app.py <appname>
 
 Moving a MySQL database to SQLite3
 ==================================

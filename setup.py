@@ -52,6 +52,7 @@ setup(
 
     entry_points = {
       'console_scripts': [
+        'remove_app.py = anjos.personal.scripts.remove_app:main',
         ],
       },
 
