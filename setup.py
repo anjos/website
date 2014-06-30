@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 setup(
 
     name="anjos.website",
-    version="1.0.0",
+    version="1.0.1",
     description="My professional website",
     license="FreeBSD",
     author='Andre Anjos',
