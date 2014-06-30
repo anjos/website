@@ -11,13 +11,6 @@ from .dbconfig import DATABASES
 D = os.path.dirname
 BASEDIR = os.path.realpath(D(__file__))
 
-#DATABASES = {
-#    'default': {
-#      'ENGINE': 'django.db.backends.sqlite3',
-#      'NAME': os.path.join(D(D(BASEDIR)), 'db.sql3')
-#      }
-#    }
-
 ADMINS = (
     ('Andre Anjos', 'andre.dos.anjos@gmail.com'),
 )
