@@ -36,16 +36,24 @@ right to do so::
 Otherwise, here is a template (it should be placed on the same directory as
 ``settings.py`` is)::
 
+  import os
+
   DATABASES = {
-    'default': {
-      'ENGINE': 'django.db.backends.mysql',
-      'NAME': 'db_name',
-      'USER': '******',
-      'PASSWORD': '******',
-      'HOST': 'mysql.dbhost.com',
-      'PORT': '3306',
-    },
-  }
+      'local': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(os.path.dirname(__file__), 'local.sql3')
+        },
+      'server': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '<database-name>',
+        'USER': '<database-user>',
+        'PASSWORD': '*********',
+        'HOST': 'mysql.andreanjos.org',
+        'PORT': '3306',
+        },
+      }
+
+  DATABASES['default'] = DATABASES['server']
 
 .. warning::
 

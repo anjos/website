@@ -45,12 +45,15 @@ SITE_ID = 1
 # STATIC_URL: Relative path to the files through the webserver
 
 if DREAMHOST:
-  STATIC_ROOT = os.path.join(D(D(D(BASEDIR))), 'public') + os.sep
-  STATIC_URL = '/'
+  STATIC_ROOT = os.path.join(D(D(D(BASEDIR))), 'public', 'static') + os.sep
+  MEDIA_ROOT = os.path.join(D(D(D(BASEDIR))), 'public', 'media') + os.sep
 
 else:
   STATIC_ROOT = os.path.join(D(D(BASEDIR)), 'static') + os.sep
-  STATIC_URL = '/static/'
+  MEDIA_ROOT = os.path.join(D(D(BASEDIR)), 'media') + os.sep
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
     os.path.join(BASEDIR, 'static'),
