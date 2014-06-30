@@ -1,0 +1,2 @@
+include README.rst bootstrap.py buildout.cfg
+recursive-include *.html *.po *.mo *.css *.ico *.jpg

@@ -33,7 +33,7 @@ against a MySQL server. In such a case, you will need to get hold of the MySQL
 connection string. You can copy the one on your private server, if you have the
 right to do so::
 
-  $ scp andreanjos@andreanjos.org:andreanjos.org/anjos/website/dbconfig.py anjos/website 
+  $ scp andreanjos@andreanjos.org:andreanjos.org/anjos/website/dbconfig.py anjos/website
 Otherwise, here is a template (it should be placed on the same directory as
 ``settings.py`` is)::
 
@@ -47,9 +47,9 @@ Otherwise, here is a template (it should be placed on the same directory as
       'PORT': '3306',
     },
   }
-  
+
 .. warning::
-  
+
   Make sure you don't make the above file public, or checks it into the git
   repository. It contains sensitive data (username, password and the database
   server address).
@@ -59,7 +59,7 @@ working directory and collect all apps static files::
 
   $ ./bin/dj collectstatic --noinput
   ...
-  $ rsync -avz andreps@andreanjos.org:andreanjos.org/static/ static/
+  $ rsync -avz andreanjos@andreanjos.org:andreanjos.org/public/ static/
   ...
 
 Maintenance
@@ -79,7 +79,7 @@ Removing Obsolete ContentTypes
 
 This happens when you remove applications from your website::
 
-  $ ./manage.py shell
+  $ ./bin/dj shell
   >>> from django.contrib.contenttypes.models import ContentType
   >>> for ct in ContentType.objects.filter(app_label='audit'):
   ...     ct.delete()
@@ -106,10 +106,10 @@ Installing on Dreamhost
 Follow these steps:
 
 1. Make sure that the database configuration is set right;
-2. Make sure that the variable ``DREAMHOST`` is set to ``True`` at the top of the
-   ``settings.py`` file. Do the same for ``DEBUG`` (setting it to ``False``);
+2. Make sure that the variable ``DREAMHOST`` is set to ``True`` at the top of
+   the ``settings.py`` file. Do the same for ``DEBUG`` (setting it to
+   ``False``);
 3. Link ``passenger_wsgi.py``::
-
    $ cd <website-directory>
    $ ln -s anjos.website/bin/dj.wsgi passenger_wsgi.py
 4. Set up the backup cronjob to execute daily (``backup/do_it.sh``)
