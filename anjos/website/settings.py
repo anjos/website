@@ -1,7 +1,7 @@
 # Django settings for my personal webpage
 
-DEBUG = False
-DREAMHOST = True
+DEBUG = True
+DREAMHOST = False
 TEMPLATE_DEBUG = DEBUG
 SEND_BROKEN_LINK_EMAILS = True
 import os
@@ -41,7 +41,7 @@ LANGUAGES = (
   )
 DEFAULT_LANGUAGE = 1
 # Where to find MO compilations
-LOCALE_PATHS = ( '%s/templates/locale' % BASEDIR, 
+LOCALE_PATHS = ( '%s/templates/locale' % BASEDIR,
                 )
 
 SITE_ID = 1
@@ -74,7 +74,7 @@ SECRET_KEY = 'wk&_+uqn)()=fz07y0qdl%@=m^gp^taf$&7ql&@-ffjk9aln_7'
 if DEBUG:
   TEMPLATE_LOADERS = [
       'django.template.loaders.filesystem.Loader',
-      'django.template.loaders.app_directories.Loader',      
+      'django.template.loaders.app_directories.Loader',
       ]
 else:
   TEMPLATE_LOADERS = [
@@ -88,7 +88,7 @@ else:
 TEMPLATE_CONTEXT_PROCESSORS = (
   'django.contrib.auth.context_processors.auth', #for users and permissions
   'django.core.context_processors.static', #for STATIC_URL
-  'django.core.context_processors.i18n', #for LANGUAGES  
+  'django.core.context_processors.i18n', #for LANGUAGES
   'django.core.context_processors.request', #for the request on all pages
   'anjos.website.context_processors.site', #for site
   'anjos.website.context_processors.full_path', #for the full_path
@@ -142,7 +142,7 @@ INSTALLED_APPS = (
 )
 
 # Controls how many albums per page to see
-DJANGOOGLE_ALBUMS_PER_PAGE = 8 
+DJANGOOGLE_ALBUMS_PER_PAGE = 8
 
 # Disables the sitemap functionality for robots
 ROBOTS_USE_SITEMAP = False
