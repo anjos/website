@@ -112,4 +112,10 @@ Follow these steps:
 3. Link ``passenger_wsgi.py``::
    $ cd <website-directory>
    $ ln -s anjos.website/bin/dj.wsgi passenger_wsgi.py
-4. Set up the backup cronjob to execute daily (``backup/do_it.sh``)
+4. Set up the backup cronjob to execute daily (e.g.: ``backup/do_it.sh``). Here
+   is an example::
+
+     #!/bin/sh
+     cd `dirname $0`
+     mysqldump -h mysql.andreanjos.org -u aadjadmin -p******* --opt aa_professional_website > db.sql
+     /usr/sbin/logrotate --state=logrotate.state logrotate.conf
