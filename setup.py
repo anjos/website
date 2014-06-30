@@ -28,25 +28,26 @@ setup(
       ],
 
     install_requires=[
-     
+
       # pretty generic
       'setuptools',
-      'PIL',
+      'pillow',
       'flup',
       'uuid',
       'mysql-python',
       'python-openid',
-      
+
       # others
       'django-robots',
       'django-openid-auth',
       'django-maintenancemode',
-      
+      'django-rosetta',
+
       # mine
-      'django-publications',
       'djangoogle',
       'django-flatties',
       'django-nav',
+      'django-publications',
       ],
 
     entry_points = {
@@ -63,5 +64,5 @@ setup(
       'Natural Language :: English',
       'Programming Language :: Python',
       ],
-    
+
     )
