@@ -18,7 +18,7 @@ Clone this package using the following command::
 After that, bootstrap the environment::
 
   $ python bootstrap.py
-  $ ./bin/buildout
+  $ MAX_CONCURRENCY=1 ./bin/buildout
 
 Create the PDF for your CV::
 
